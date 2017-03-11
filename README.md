@@ -2,11 +2,14 @@
 
 # 1. Building LogicToolbox
 
-run commands:
+Run commands:
 
   $ mkdir -p build/Release
+
   $ cd build/Release
+
   $ cmake ../..
+
   $ make
 
 
