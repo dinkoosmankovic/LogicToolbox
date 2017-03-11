@@ -1,19 +1,7 @@
 
-# Specify .cpp files
-set(TARGET_NAME LogicToolbox)
-set(SRC hello.cpp)
+# Add directories
 
-# Build an executable from main.cpp and all specified source files
-include_directories(../include)
-add_executable(${TARGET_NAME} main.cpp ${SRC})
-target_link_libraries(${TARGET_NAME} ${LIBRARIES})
+add_subdirectory(ModuleOne)
 
-# Build a library from all specified source files
-# This is required for using googletest
-add_library(${TARGET_NAME}-lib ${SRC})
-target_link_libraries(${TARGET_NAME}-lib ${LIBRARIES})
-set_target_properties(${TARGET_NAME}-lib PROPERTIES OUTPUT_NAME LogicToolbox)
-
-# vim:ft=cmake
 
 

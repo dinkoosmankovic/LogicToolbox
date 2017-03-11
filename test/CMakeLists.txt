@@ -19,7 +19,7 @@ ExternalProject_Add(
     LOG_BUILD ON)
 
 ExternalProject_Get_Property(googletest source_dir)
-include_directories(${source_dir}/googletest/include ../include)
+include_directories(${source_dir}/googletest/include ../include/ModuleOne)
 
 set_target_properties(googletest PROPERTIES EXCLUDE_FROM_ALL TRUE)
 ExternalProject_Get_Property(googletest binary_dir)
