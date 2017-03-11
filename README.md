@@ -1,20 +1,24 @@
 # LogicToolbox
 
-1. Building LogicToolbox
+# 1. Building LogicToolbox
 
 run commands:
 
-mkdir -p build/Release
-cd build/Release
-cmake ../..
-make
+$ mkdir -p build/Release
+$ cd build/Release
+$ cmake ../..
+$ make
 
 
-2. Building docs
+# 2. Building docs
 
-make doc
+Run command:
+
+$ make doc
 
 
-3. Building tests
+# 3. Building tests
 
-make check
+Run command: 
+
+$ make check
