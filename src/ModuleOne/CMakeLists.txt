@@ -5,7 +5,7 @@ set(MODULE_NAME ModuleOne)
 set(SRC hello.cpp)
 
 # Build an executable from main.cpp and all specified source files
-include_directories(../../${MODULE_NAME}/include)
+include_directories(../../include/${MODULE_NAME})
 add_executable(${TARGET_NAME} main.cpp ${SRC})
 target_link_libraries(${TARGET_NAME} ${LIBRARIES})
 

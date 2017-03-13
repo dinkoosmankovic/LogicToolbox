@@ -19,5 +19,14 @@ void hello();
  */
 std::string get_message();
 
+
+/**
+ * \brief Generates a Hello World message
+ *
+ * There's really not a lot to document here...
+ *
+ */
+std::string get_message1();
+
 #endif /* end of include guard: HELLO_H */
 
