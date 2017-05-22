@@ -1,2 +1,0 @@
-/usr/bin/ar qc ../../lib/libLogicToolbox.a  CMakeFiles/LogicToolbox-lib.dir/hello.cpp.o
-/usr/bin/ranlib ../../lib/libLogicToolbox.a
