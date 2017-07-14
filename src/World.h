@@ -7,13 +7,15 @@
 
 #include <string>
 #include <vector>
+#include <stdexcept>
 #include "Variable.h"
 
 using namespace std;
 
 class World {
     string name;
-    vector<&Variable> variables = nullptr;
+    vector<Variable> variables = nullptr;
+    vector<&World> adjacentList = nullptr;
 public:
     World(string _name);
     World(const World &w);
@@ -21,7 +23,11 @@ public:
     string getName() const;
     vector<&Varible> getVariables() const;
     void setName(string _name);
-    void setVariables(vector<&Variable> _variables);
+    void setVariables(vector<Variable> _variables);
+    void setAdjacentList(vector<&World> _adjacentList);
+    vector<&World> getAdjacentList() const;
+    void addAdjacent(const World& adj);
+    bool removeAdjacentByName(string adjName);
 };
 
 
