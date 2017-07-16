@@ -1,11 +1,17 @@
 #include <iostream>
-
+#include "Parser/Expression.h"
 #include "hello.h"
 
 
+
 void hello() {
-    std::string message = get_message();
-    std::cout << message << std::endl;
+    string exp = "#(X&Y)>$(X|!Y)";
+    cout << exp << endl;
+    Expression test = Expression(exp);
+    vector<Token> tokens = test.getTokens();
+    for(auto i = tokens.begin(); i != tokens.end(); i++){
+        cout << i->value << endl;
+    }
 }
 
 std::string get_message() {
