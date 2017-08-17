@@ -5,7 +5,7 @@
 
 
 void hello() {
-    string exp = "#(X&Y)>$(X|!Y)";
+    string exp = "#((x&y)|(y|x|z)&$(z&x))";
     cout << exp << endl;
     Expression test = Expression(exp);
     vector<Token> tokens = test.getTokens();

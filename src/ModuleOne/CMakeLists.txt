@@ -6,7 +6,7 @@ set(SRC hello.cpp)
 
 # Build an executable from main.cpp and all specified source files
 include_directories(../../include/${MODULE_NAME})
-add_executable(${TARGET_NAME} main.cpp ${SRC} ../Parser/Token.cpp ../Parser/Token.h ../Parser/Expression.cpp ../Parser/Expression.h)
+add_executable(${TARGET_NAME} main.cpp ${SRC} ../Parser/Token.cpp ../Parser/Token.h ../Parser/Expression.cpp ../Parser/Expression.h ../Parser/ExpressionTree.cpp ../Parser/ExpressionTree.h)
 target_link_libraries(${TARGET_NAME} ${LIBRARIES})
 
 # Build a library from all specified source files
