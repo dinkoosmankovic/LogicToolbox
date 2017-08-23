@@ -14,20 +14,21 @@ using namespace std;
 
 class World {
     string name;
-    vector<Variable> variables = nullptr;
-    vector<&World> adjacentList = nullptr;
+    vector<Variable> variables;
+    vector<World*> adjacentList;
 public:
     World(string _name);
     World(const World &w);
     ~World();
     string getName() const;
-    vector<&Varible> getVariables() const;
+    vector<Variable> getVariables() const;
     void setName(string _name);
     void setVariables(vector<Variable> _variables);
-    void setAdjacentList(vector<&World> _adjacentList);
-    vector<&World> getAdjacentList() const;
-    void addAdjacent(const World& adj);
+    void setAdjacentList(vector<World*> _adjacentList);
+    vector<World*> getAdjacentList() const;
+    void addAdjacent(World adj);
     bool removeAdjacentByName(string adjName);
+    bool getVariableValueByName(string name);
 };
 
 

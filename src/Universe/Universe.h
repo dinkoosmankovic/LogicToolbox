@@ -5,17 +5,19 @@
 #ifndef LOGICTOOLBOX_UNIVERSE_H
 #define LOGICTOOLBOX_UNIVERSE_H
 
+
 #include <string>
 #include <vector>
 #include <cmath>
 #include <stdexcept>
+#include "World.h"
 
 using namespace std;
 
 class Universe {
     string name;
-    vector<string> variableNames = nullptr;
-    vector<&World> worlds = nullptr;
+    vector<string> variableNames;
+    vector<World*> worlds;
 public:
     Universe(string _name);
     ~Universe();
@@ -23,8 +25,8 @@ public:
     void setName(string _name);
     vector<string> getVariableNames() const;
     void addVariable(string _name);
-    vector<&World> getWorlds() const;
-    void addWorld(const World& world);
+    vector<World*> getWorlds() const;
+    void addWorld(World world);
 };
 
 
