@@ -7,6 +7,7 @@
 
 #include "../Parser/Expression.h"
 #include "../Universe/Universe.h"
+#include "../Operators.h"
 #include <stack>
 
 using namespace std;
@@ -15,6 +16,10 @@ struct node{
     map<World*,bool> results;
     node* left = nullptr;
     node* right = nullptr;
+    ~node(){
+        delete left;
+        delete right;
+    }
 };
 
 class ResultTree {

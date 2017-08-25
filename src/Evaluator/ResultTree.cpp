@@ -41,6 +41,16 @@ ResultTree::ResultTree(Universe universe, Expression e){
                 stack_of_nodes.pop();
                 newnode->right = stack_of_nodes.top();
                 stack_of_nodes.pop();
+
+                map<World*,bool> newMap;
+                for(World* world : universe.getWorlds()){
+                    bool x = newnode->left->results[world];
+                    bool y = newnode->right->results[world];
+                    newMap[world] = Operator(*i,x,y);
+                }
+
+                newnode->results = newMap;
+
                 stack_of_nodes.push(newnode);
                 break;
             }
@@ -51,6 +61,17 @@ ResultTree::ResultTree(Universe universe, Expression e){
 
                 newnode->left = stack_of_nodes.top();
                 stack_of_nodes.pop();
+
+                map<World*,bool> newMap;
+                for(World* world: universe.getWorlds()){
+
+                    if(i->value == "NOT") newMap[world] = Not(newnode->left->results[world]);
+                    else newMap[world] = Operator(*i, world, newnode->left->results[world]);
+
+                }
+
+                newnode->results = newMap;
+
                 stack_of_nodes.push(newnode);
                 break;
             }
@@ -61,4 +82,8 @@ ResultTree::ResultTree(Universe universe, Expression e){
 
     if(!stack_of_nodes.empty()) root = stack_of_nodes.top();
     else throw logic_error("Stack of nodes is empty!");
+}
+
+ResultTree::~ResultTree(){
+    delete root;
 }

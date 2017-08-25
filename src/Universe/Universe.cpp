@@ -9,7 +9,9 @@ Universe::Universe(string _name) : name(_name){
     variableNames = vector<string>();
     worlds = vector<World*>();
 }
-Universe::~Universe(){}
+Universe::~Universe(){
+    for(auto i: worlds) delete i;
+}
 
 //Getters setters and others
 string Universe::getName() const { return name; }
