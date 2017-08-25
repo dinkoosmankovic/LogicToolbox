@@ -7,9 +7,15 @@
 
 #include "../Parser/Expression.h"
 #include "../Universe/Universe.h"
+#include "../rapidjson/document.h"
+#include "ResultTree.h"
 
 class CoreEvaluator {
-
+    Universe universe;
+public:
+    CoreEvaluator();
+    ~CoreEvaluator();
+    ResultTree returnResultTree(string expression_string);
 };
 
 

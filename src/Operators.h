@@ -14,35 +14,35 @@
 #include "Parser/Token.h"
 
 
-bool And(const bool x, const bool y){
+inline bool And(const bool x, const bool y){
     return x&&y;
 }
 
-bool Or(const bool x, const bool y){
+inline bool Or(const bool x, const bool y){
     return x||y;
 }
 
-bool Not(const bool y){
+inline bool Not(const bool y){
     return  !y;
 }
 
-bool Xor(const bool x, const bool y){
+inline bool Xor(const bool x, const bool y){
     return (x||y) && !(x||y);
 }
 
-bool Nand(const bool x, const bool y){
+inline bool Nand(const bool x, const bool y){
     return !(x&&y);
 }
 
-bool Nor(const bool x, const bool y){
+inline bool Nor(const bool x, const bool y){
     return !(x||y);
 }
 
-bool Impl(const bool x, const bool y){
+inline bool Impl(const bool x, const bool y){
     return !x || y;
 }
 
-bool Equ(const bool x, const bool y){
+inline bool Equ(const bool x, const bool y){
     return !(Xor(x,y));
 }
 
