@@ -18,11 +18,11 @@ vector<World*> World::getAdjacentList() const { return adjacentList; }
 void World::setAdjacentList(vector<World*> _adjacentList) { adjacentList = _adjacentList; }
 
 //Adjacent operations
-void World::addAdjacent(World adj) {
+void World::addAdjacent(World* adj) {
     for(auto i : adjacentList){
-        if(i->name == adj.getName()) throw logic_error("World is already adjacent!");
+        if(i->name == adj->getName()) throw logic_error("World is already adjacent!");
     }
-    adjacentList.push_back(&adj);
+    adjacentList.push_back(adj);
 }
 
 bool World::removeAdjacentByName(string adjName) {

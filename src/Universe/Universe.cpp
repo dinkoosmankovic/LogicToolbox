@@ -33,3 +33,13 @@ void Universe::addWorld(World world) {
     if(worlds.size() >= pow(2,variableNames.size())) throw domain_error("There can not be more worlds!");
     else worlds.push_back(&world);
 }
+
+void Universe::setVariableNames(vector<string> _variableNames) {
+    variableNames = _variableNames;
+}
+
+void Universe::setWorlds(vector<World *> _worlds) {
+    worlds = _worlds;
+}
+
+Universe::Universe() {}

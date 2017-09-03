@@ -26,7 +26,7 @@ public:
     void setVariables(vector<Variable> _variables);
     void setAdjacentList(vector<World*> _adjacentList);
     vector<World*> getAdjacentList() const;
-    void addAdjacent(World adj);
+    void addAdjacent(World* adj);
     bool removeAdjacentByName(string adjName);
     bool getVariableValueByName(string name);
 };

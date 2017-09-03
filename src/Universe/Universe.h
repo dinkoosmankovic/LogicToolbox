@@ -20,10 +20,15 @@ class Universe {
     vector<World*> worlds;
 public:
     Universe(string _name);
+
+    Universe();
+
     ~Universe();
     string getName() const;
     void setName(string _name);
     vector<string> getVariableNames() const;
+    void setWorlds(vector<World*> _worlds);
+    void setVariableNames(vector<string> _variableNames);
     void addVariable(string _name);
     vector<World*> getWorlds() const;
     void addWorld(World world);

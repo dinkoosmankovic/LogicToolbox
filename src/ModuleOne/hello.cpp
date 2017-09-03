@@ -1,17 +1,13 @@
 #include <iostream>
 #include "Parser/Expression.h"
 #include "hello.h"
+#include "../Evaluator/CoreEvaluator.h"
 
 
 
 void hello() {
-    string exp = "#((x&y)|(y|x|z)&$(z&x))";
-    cout << exp << endl;
-    Expression test = Expression(exp);
-    vector<Token> tokens = test.getTokens();
-    for(auto i = tokens.begin(); i != tokens.end(); i++){
-        cout << i->value << endl;
-    }
+    CoreEvaluator coreEvaluator;
+    coreEvaluator.ToString();
 }
 
 std::string get_message() {

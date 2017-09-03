@@ -9,6 +9,7 @@ class Variable {
     string name;
     bool value;
 public:
+    Variable(){};
     Variable(string _name);
     ~Variable();
     Variable(const Variable &v);

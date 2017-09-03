@@ -1,0 +1,75 @@
+{
+  "Name": "InitialUniverse",
+  "VariableNames": [
+    "x",
+    "y"
+  ],
+  "Worlds": [
+    {
+      "Name": "w1",
+      "Variables": [
+        {
+          "Name": "x",
+          "Value": true
+        },
+        {
+          "Name": "y",
+          "Value": true
+        }
+      ],
+      "AdjWorlds": [
+        "w2",
+        "w3"
+      ]
+    },
+    {
+      "Name": "w2",
+      "Variables": [
+        {
+          "Name": "x",
+          "Value": false
+        },
+        {
+          "Name": "y",
+          "Value": true
+        }
+      ],
+      "AdjWorlds": [
+        "w4"
+      ]
+    },
+    {
+      "Name": "w3",
+      "Variables": [
+        {
+          "Name": "x",
+          "Value": true
+        },
+        {
+          "Name": "y",
+          "Value": false
+        }
+      ],
+      "AdjWorlds": [
+        "w2",
+        "w4"
+      ]
+    },
+    {
+      "Name": "w4",
+      "Variables": [
+        {
+          "Name": "x",
+          "Value": false
+        },
+        {
+          "Name": "y",
+          "Value": false
+        }
+      ],
+      "AdjWorlds": [
+        "w1"
+      ]
+    }
+  ]
+}
