@@ -17,70 +17,61 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3ed69f12-3782-414c-8133-3394c7cb1cab" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/include/graphviz/arith.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/include/graphviz/cdt.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/include/graphviz/cgraph.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/include/graphviz/color.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/include/graphviz/geom.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/include/graphviz/graphviz_version.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/include/graphviz/gv.cpp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/include/graphviz/gv.i" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/include/graphviz/gvc.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/include/graphviz/gvcext.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/include/graphviz/gvcjob.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/include/graphviz/gvcommon.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/include/graphviz/gvconfig.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/include/graphviz/gvplugin.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/include/graphviz/gvplugin_device.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/include/graphviz/gvplugin_layout.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/include/graphviz/gvplugin_loadimage.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/include/graphviz/gvplugin_render.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/include/graphviz/gvplugin_textlayout.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/include/graphviz/gvpr.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/include/graphviz/pack.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/include/graphviz/pathgeom.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/include/graphviz/pathplan.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/include/graphviz/textspan.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/include/graphviz/types.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/include/graphviz/usershape.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/include/graphviz/xdot.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Graph/Graph.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/graphviz/arith.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/graphviz/cdt.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/graphviz/cgraph.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/graphviz/color.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/graphviz/geom.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/graphviz/graphviz_version.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/graphviz/gv.cpp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/graphviz/gv.i" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/graphviz/gvc.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/graphviz/gvcext.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/graphviz/gvcjob.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/graphviz/gvcommon.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/graphviz/gvconfig.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/graphviz/gvplugin.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/graphviz/gvplugin_device.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/graphviz/gvplugin_layout.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/graphviz/gvplugin_loadimage.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/graphviz/gvplugin_render.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/graphviz/gvplugin_textlayout.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/graphviz/gvpr.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/graphviz/pack.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/graphviz/pathgeom.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/graphviz/pathplan.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/graphviz/textspan.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/graphviz/types.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/graphviz/usershape.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/graphviz/xdot.h" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/include/Graph/graph.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/include/graphviz/arith.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/include/graphviz/cdt.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/include/graphviz/cgraph.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/include/graphviz/color.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/include/graphviz/geom.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/include/graphviz/graphviz_version.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/include/graphviz/gv.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/include/graphviz/gv.i" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/include/graphviz/gvc.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/include/graphviz/gvcext.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/include/graphviz/gvcjob.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/include/graphviz/gvcommon.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/include/graphviz/gvconfig.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/include/graphviz/gvplugin.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/include/graphviz/gvplugin_device.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/include/graphviz/gvplugin_layout.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/include/graphviz/gvplugin_loadimage.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/include/graphviz/gvplugin_render.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/include/graphviz/gvplugin_textlayout.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/include/graphviz/gvpr.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/include/graphviz/pack.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/include/graphviz/pathgeom.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/include/graphviz/pathplan.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/include/graphviz/textspan.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/include/graphviz/types.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/include/graphviz/usershape.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/include/graphviz/xdot.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/graphviz/arith.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/graphviz/cdt.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/graphviz/cgraph.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/graphviz/color.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/graphviz/geom.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/graphviz/graphviz_version.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/graphviz/gv.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/graphviz/gv.i" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/graphviz/gvc.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/graphviz/gvcext.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/graphviz/gvcjob.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/graphviz/gvcommon.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/graphviz/gvconfig.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/graphviz/gvplugin.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/graphviz/gvplugin_device.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/graphviz/gvplugin_layout.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/graphviz/gvplugin_loadimage.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/graphviz/gvplugin_render.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/graphviz/gvplugin_textlayout.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/graphviz/gvpr.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/graphviz/pack.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/graphviz/pathgeom.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/graphviz/pathplan.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/graphviz/textspan.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/graphviz/types.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/graphviz/usershape.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/graphviz/xdot.h" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CMakeLists.txt" afterPath="$PROJECT_DIR$/CMakeLists.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CMakeLists.txt" afterPath="$PROJECT_DIR$/src/CMakeLists.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Evaluator/CoreEvaluator.cpp" afterPath="$PROJECT_DIR$/src/Evaluator/CoreEvaluator.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Evaluator/CoreEvaluator.h" afterPath="$PROJECT_DIR$/src/Evaluator/CoreEvaluator.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Graph/Graph.cpp" afterPath="$PROJECT_DIR$/src/Graph/Graph.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ModuleOne/CMakeLists.txt" afterPath="$PROJECT_DIR$/src/ModuleOne/CMakeLists.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ModuleOne/hello.cpp" afterPath="$PROJECT_DIR$/src/ModuleOne/hello.cpp" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -161,26 +152,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="105">
               <caret line="115" column="0" lean-forward="false" selection-start-line="115" selection-start-column="0" selection-end-line="115" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="gv.i" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/graphviz/gv.i">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="gv.i" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/include/graphviz/gv.i">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="70" lean-forward="false" selection-start-line="11" selection-start-column="70" selection-end-line="11" selection-end-column="70" />
               <folding />
             </state>
           </provider>
@@ -314,6 +285,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="LogicToolbox" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LogicToolbox" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.CidrFilesViewHelper$MyProjectTreeStructure$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LogicToolbox" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -603,7 +588,7 @@
       <workItem from="1504869419491" duration="16288000" />
       <workItem from="1505044551952" duration="12638000" />
       <workItem from="1505060171186" duration="753000" />
-      <workItem from="1505061386009" duration="2119000" />
+      <workItem from="1505061386009" duration="2269000" />
     </task>
     <task id="LOCAL-00001" summary="Delete build dir">
       <created>1500210097551</created>
@@ -654,11 +639,18 @@
       <option name="project" value="LOCAL" />
       <updated>1505042407744</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary=":bug: Graphviz &lt;-&gt; cmake">
+      <created>1505063769528</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1505063769528</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="75569000" />
+    <option name="totallyTimeSpent" value="75719000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -671,9 +663,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="44" y="-11" width="1323" height="780" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20862745" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20862745" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972136" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39164087" sideWeight="0.49568626" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32972136" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
@@ -729,7 +720,8 @@
     <MESSAGE value="Core result algorithm done, json universe conf file added, rapidjson lib added" />
     <MESSAGE value=":hammer: fixed Operator linker problem and rapidjson include problem" />
     <MESSAGE value="Core algorithm finished, Parser finished." />
-    <option name="LAST_COMMIT_MESSAGE" value="Core algorithm finished, Parser finished." />
+    <MESSAGE value=":bug: Graphviz &lt;-&gt; cmake" />
+    <option name="LAST_COMMIT_MESSAGE" value=":bug: Graphviz &lt;-&gt; cmake" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
