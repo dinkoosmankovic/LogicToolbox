@@ -19,7 +19,6 @@ class World {
 public:
     World(string _name);
     World(const World &w);
-    ~World();
     string getName() const;
     vector<Variable> getVariables() const;
     void setName(string _name);

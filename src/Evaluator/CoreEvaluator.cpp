@@ -50,7 +50,7 @@ CoreEvaluator::CoreEvaluator(){
 
     if(document.HasMember("Worlds")){
         if(document["Worlds"].IsArray()){
-            const Value& tmpWorlds = document["VariableNames"];
+            const Value& tmpWorlds = document["Worlds"];
 
             //Initial creation of worlds
 
@@ -84,15 +84,15 @@ CoreEvaluator::CoreEvaluator(){
 
                                 Variable variable;
 
-                                if(tmpVariables[i].HasMember("Name")){
-                                    if(tmpVariables[i]["Name"].IsString()){
+                                if(tmpVariables[j].HasMember("Name")){
+                                    if(tmpVariables[j]["Name"].IsString()){
 
-                                        string vName = tmpVariables[i]["Name"].GetString();
+                                        string vName = tmpVariables[j]["Name"].GetString();
 
                                         //Check variable exists in the universe
                                         bool exists = false;
-                                        for(auto v : variableNames) {if(v == vName) exists = true; break;}
-                                        if(!exists) throw domain_error("[JSON ERROR] Variable with the name does not exist in this universe!");
+                                        for(auto v : variableNames) if(v == vName) {exists = true; break;}
+                                        if(!exists) throw domain_error("[JSON ERROR] Variable with that name does not exist in this universe!");
 
                                         variable = Variable(vName);
 
@@ -101,8 +101,8 @@ CoreEvaluator::CoreEvaluator(){
 
                                 //Variable value
 
-                                if(tmpVariables[i].HasMember("Value")){
-                                    if(tmpVariables[i]["Value"].IsBool()) variable.setValue(tmpVariables[i]["Value"].GetBool());
+                                if(tmpVariables[j].HasMember("Value")){
+                                    if(tmpVariables[j]["Value"].IsBool()) variable.setValue(tmpVariables[j]["Value"].GetBool());
                                     else throw domain_error("[JSON ERROR] Variable value is not a bool!");
                                 }else throw domain_error("[JSON ERROR] Variable doesn't have \"Value\" tag!");
 
@@ -135,9 +135,9 @@ CoreEvaluator::CoreEvaluator(){
 
                         for(int j = 0; j < adjWorlds.Size(); j++){
 
-                            if(adjWorlds[i].IsString()){
+                            if(adjWorlds[j].IsString()){
 
-                                string worldName = adjWorlds[i].GetString();
+                                string worldName = adjWorlds[j].GetString();
 
                                 bool exists = false;
 
@@ -145,9 +145,10 @@ CoreEvaluator::CoreEvaluator(){
 
                                     if(w->getName() == worldName){
                                         worlds[i]->addAdjacent(w);
+                                        exists = true;
+                                        break;
                                     }
-                                    exists = true;
-                                    break;
+
                                 }
 
                                 if(!exists) throw domain_error("[JSON ERROR] World in adjecent worlds doesn't exist in this universe!");
@@ -192,4 +193,9 @@ void CoreEvaluator::ToString() {
         cout << endl << endl;
     }
 
+}
+
+ResultTree CoreEvaluator::returnResultTree(string expression_string) {
+    Expression newExpression = Expression(expression_string);
+    return ResultTree(&universe,newExpression);
 }

@@ -18,8 +18,8 @@ bool Ness(World* starting_world, map<World*,bool> results){
         World* t = Q.front();
         Q.pop();
 
-        if(visited.find(t) == visited.end()) continue;
-        else visited[t] = true;
+        if(visited.find(t) == visited.end()) visited[t] = true;
+        else if(visited[t]) continue;
 
         if(!results[t]) return false;
 
@@ -45,10 +45,10 @@ bool Poss(World* starting_world, map<World*,bool> results){
         World* t = Q.front();
         Q.pop();
 
-        if(visited.find(t) == visited.end()) continue;
-        else visited[t] = true;
+        if(visited.find(t) == visited.end()) visited[t] = true;
+        else if(visited[t]) continue;
 
-        if(!results[t]) return true;
+        if(results[t]) return true;
 
         children = t->getAdjacentList();
 
@@ -70,8 +70,9 @@ bool Operator(Token op, bool x, bool y) {
     throw logic_error("Something unexpected happened!");
 }
 
-bool Operator(Token op, World* world, map<World*,bool> resutls){
-    if(op.type != TokenType::UNARY_OP || op.value != "NOT")throw logic_error("Passed token is not Ness or Poss!");
+
+bool Operator(World* world, map<World*, bool> resutls, Token op) {
+    if(op.type != TokenType::UNARY_OP || op.value == "NOT")throw logic_error("Passed token is not Ness or Poss!");
     if(op.value == "POSS") return Poss(world,resutls);
     if(op.value == "NESS") return Ness(world, resutls);
     throw logic_error("Something unexpected happened!");

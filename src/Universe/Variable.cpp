@@ -5,8 +5,6 @@ using namespace std;
 
 Variable::Variable(string _name) : name(_name) {}
 
-Variable::~Variable() {}
-
 Variable::Variable(const Variable &v) : name(v.getName()), value(v.getValue()){}
 
 Variable& Variable::operator=(const Variable &v){

@@ -10,7 +10,7 @@ Universe::Universe(string _name) : name(_name){
     worlds = vector<World*>();
 }
 Universe::~Universe(){
-    for(auto i: worlds) delete i;
+    for(auto i: worlds) free(i);
 }
 
 //Getters setters and others

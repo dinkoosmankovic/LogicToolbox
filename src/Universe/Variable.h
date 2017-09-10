@@ -11,7 +11,6 @@ class Variable {
 public:
     Variable(){};
     Variable(string _name);
-    ~Variable();
     Variable(const Variable &v);
     Variable &operator=(const Variable &v);
     string getName() const;

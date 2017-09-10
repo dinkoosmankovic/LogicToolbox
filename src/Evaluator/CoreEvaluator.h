@@ -20,9 +20,10 @@ class CoreEvaluator {
 public:
     CoreEvaluator();
     //~CoreEvaluator();
-    //ResultTree returnResultTree(string expression_string);
+    ResultTree returnResultTree(string expression_string);
     void ToString();
 };
+
 
 
 

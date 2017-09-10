@@ -9,25 +9,32 @@
 #include "../Universe/Universe.h"
 #include "../Operators.h"
 #include <stack>
+#include <iostream>
 
 using namespace std;
 
 struct node{
+    string value;
     map<World*,bool> results;
     node* left = nullptr;
     node* right = nullptr;
-    ~node(){
+    /*~node(){
         delete left;
         delete right;
-    }
+    }*/
 };
 
 class ResultTree {
-    node* root;
+    node* root = nullptr;
+    void DeleteNode(node* leaf);
 public:
-    ResultTree(Universe universe, Expression e);
-    ~ResultTree();
+    ResultTree(Universe *universe, Expression e);
+    //~ResultTree();
+    string toString();
+    void test();
 };
+
+
 
 
 #endif //LOGICTOOLBOX_RESULTTREE_H
