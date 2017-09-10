@@ -199,3 +199,9 @@ ResultTree CoreEvaluator::returnResultTree(string expression_string) {
     Expression newExpression = Expression(expression_string);
     return ResultTree(&universe,newExpression);
 }
+
+void CoreEvaluator::Render() {
+
+    Graph g = Graph(universe);
+
+}

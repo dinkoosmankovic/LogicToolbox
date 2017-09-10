@@ -12,6 +12,7 @@
 #include "rapidjson/filereadstream.h"
 #include <cstdio>
 #include <iostream>
+#include "../Graph/Graph.h"
 
 using namespace rapidjson;
 
@@ -22,12 +23,8 @@ public:
     //~CoreEvaluator();
     ResultTree returnResultTree(string expression_string);
     void ToString();
+    void Render();
 };
-
-
-
-
-
 
 
 #endif //LOGICTOOLBOX_COREEVALUATOR_H

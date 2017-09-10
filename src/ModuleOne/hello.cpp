@@ -7,8 +7,7 @@
 
 void hello() {
     CoreEvaluator coreEvaluator;
-    ResultTree resultTree = coreEvaluator.returnResultTree("#(x|y)>$(x&y)");
-    cout << resultTree.toString();
+    coreEvaluator.Render();
 }
 
 std::string get_message() {

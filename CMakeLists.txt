@@ -18,6 +18,8 @@ set(EXECUTABLE_OUTPUT_PATH "${CMAKE_BINARY_DIR}/bin")
 
 include_directories(${CMAKE_SOURCE_DIR}/src)
 
+
+
 if(COVERAGE_ENABLED)
     set(CMAKE_CXX_FLAGS_DEBUG "-Wall -fPIC -O0 -ggdb -fprofile-arcs -ftest-coverage")
 else()
@@ -54,6 +56,64 @@ if (NOT CMAKE_BUILD_TYPE)
     message(STATUS "No build type selected, defaulting to Debug")
     set(CMAKE_BUILD_TYPE "Debug")
 endif()
+
+if(GRAPHVIZ_ROOT)
+    set(_GRAPHVIZ_INCLUDE_DIR ${GRAPHVIZ_ROOT}/include)
+    set(_GRAPHVIZ_LIBRARY_DIR ${GRAPHVIZ_ROOT}/lib)
+endif()
+
+find_path(GRAPHVIZ_INCLUDE_DIR         NAMES graphviz/cgraph.h
+        HINTS ${_GRAPHVIZ_INCLUDE_DIR})
+find_library(GRAPHVIZ_CDT_LIBRARY      NAMES cdt
+        HINTS ${_GRAPHVIZ_LIBRARY_DIR})
+find_library(GRAPHVIZ_GVC_LIBRARY      NAMES gvc
+        HINTS ${_GRAPHVIZ_LIBRARY_DIR})
+find_library(GRAPHVIZ_CGRAPH_LIBRARY   NAMES cgraph
+        HINTS ${_GRAPHVIZ_LIBRARY_DIR})
+find_library(GRAPHVIZ_PATHPLAN_LIBRARY NAMES pathplan
+        HINTS ${_GRAPHVIZ_LIBRARY_DIR})
+
+if(GRAPHVIZ_INCLUDE_DIR AND GRAPHVIZ_CDT_LIBRARY AND GRAPHVIZ_GVC_LIBRARY
+        AND GRAPHVIZ_CGRAPH_LIBRARY AND GRAPHVIZ_PATHPLAN_LIBRARY)
+    set(GRAPHVIZ_FOUND TRUE)
+else()
+    set(GRAPHVIZ_FOUND FALSE)
+endif()
+
+# Ok, now compute the version
+if(GRAPHVIZ_FOUND)
+    set(FIND_GRAPHVIZ_VERSION_SOURCE
+            "#include <graphviz/graphviz_version.h>\n#include <stdio.h>\n int main()\n {\n printf(\"%s\",PACKAGE_VERSION);return 1;\n }\n")
+    set(FIND_GRAPHVIZ_VERSION_SOURCE_FILE ${CMAKE_BINARY_DIR}/CMakeTmp/FindGRAPHVIZ.cxx)
+    file(WRITE "${FIND_GRAPHVIZ_VERSION_SOURCE_FILE}" "${FIND_GRAPHVIZ_VERSION_SOURCE}")
+
+    set(FIND_GRAPHVIZ_VERSION_ADD_INCLUDES
+            "-DINCLUDE_DIRECTORIES:STRING=${GRAPHVIZ_INCLUDE_DIR}")
+
+    try_run(RUN_RESULT COMPILE_RESULT
+            ${CMAKE_BINARY_DIR}
+            ${FIND_GRAPHVIZ_VERSION_SOURCE_FILE}
+            CMAKE_FLAGS "${FIND_GRAPHVIZ_VERSION_ADD_INCLUDES}"
+            RUN_OUTPUT_VARIABLE GRAPHVIZ_VERSION)
+
+    if(COMPILE_RESULT AND RUN_RESULT EQUAL 1)
+        message(STATUS "Graphviz version: ${GRAPHVIZ_VERSION}")
+    else()
+        message(FATAL_ERROR "Unable to compile or run the graphviz version detection program.")
+    endif()
+
+    set(GRAPHVIZ_INCLUDE_DIRS ${GRAPHVIZ_INCLUDE_DIR} ${GRAPHVIZ_INCLUDE_DIR}/graphviz)
+
+    if(NOT Graphviz_FIND_QUIETLY)
+        message(STATUS "Graphviz include: ${GRAPHVIZ_INCLUDE_DIRS}")
+        message(STATUS "Graphviz libraries: ${GRAPHVIZ_CDT_LIBRARY} ${GRAPHVIZ_GVC_LIBRARY} ${GRAPHVIZ_CGRAPH_LIBRARY} ${GRAPHVIZ_PATHPLAN_LIBRARY}")
+    endif()
+endif()
+
+if(Graphviz_FIND_REQUIRED AND NOT GRAPHVIZ_FOUND)
+    message(FATAL_ERROR "Could not find GraphViz.")
+endif()
+
 
 # Boost, a collection of useful C++ utilities and idioms
 #find_package(Boost COMPONENTS
