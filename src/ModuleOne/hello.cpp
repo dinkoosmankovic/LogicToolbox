@@ -7,6 +7,8 @@
 
 void hello() {
     CoreEvaluator coreEvaluator;
+    coreEvaluator.CreateGraph();
+    coreEvaluator.returnResultTree("#x");
     coreEvaluator.Render();
 }
 

@@ -8,18 +8,22 @@
 #include "graphviz/gvc.h"
 #include "../Evaluator/ResultTree.h"
 #include "../Universe/Universe.h"
+#include <fstream>
 
 class Graph {
     GVC_t* graphContext = nullptr;
     Agraph_t* agraph = nullptr;
     map<World*,Agnode_t*> nodes;
     vector<Agedge_t*> edges;
+    bool created = false;
 public:
-    //Graph();
-    Graph(Universe universe);
+    inline Graph() {}
+    Graph(Universe* universe);
     ~Graph();
-    //void AddResults(ResultTree);
+    void AddResults(ResultTree resultTree);
+    inline bool IsCreated() { return created;}
     //void Render();
+    bool saveImage();
 };
 
 

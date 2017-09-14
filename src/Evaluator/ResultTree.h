@@ -29,7 +29,7 @@ class ResultTree {
     void DeleteNode(node* leaf);
 public:
     ResultTree(Universe *universe, Expression e);
-    //~ResultTree();
+    inline map<World*, bool> getFinalResult() { return root->results;};
     string toString();
     void test();
 };

@@ -4,13 +4,13 @@
 
 #include "CoreEvaluator.h"
 
-CoreEvaluator::CoreEvaluator(){
+CoreEvaluator::CoreEvaluator(const char* PATH /* "UniverseConfig.json" */){
 
     //Read JSON file into Document class
 
     Document document;
 
-    FILE* fp = fopen("/home/infloop/Documents/LogicToolbox/src/ModuleOne/UniverseConfig.json", "r");
+    FILE* fp = fopen(const_cast<char*>(PATH), "r");
     char readBuffer[65536];
     FileReadStream is(fp, readBuffer, sizeof(readBuffer));
 
@@ -169,6 +169,7 @@ CoreEvaluator::CoreEvaluator(){
     universe.setWorlds(worlds);
     universe.setVariableNames(variableNames);
 
+    ToString();
 }
 
 void CoreEvaluator::ToString() {
@@ -196,12 +197,20 @@ void CoreEvaluator::ToString() {
 }
 
 ResultTree CoreEvaluator::returnResultTree(string expression_string) {
+    if(!graph.IsCreated()) graph = Graph(&universe);
     Expression newExpression = Expression(expression_string);
-    return ResultTree(&universe,newExpression);
+    ResultTree resultTree = ResultTree(&universe,newExpression);
+    graph.AddResults(resultTree);
+    return resultTree;
+
+}
+
+void CoreEvaluator::CreateGraph(){
+    graph = Graph(&universe);
 }
 
 void CoreEvaluator::Render() {
 
-    Graph g = Graph(universe);
+    graph.saveImage();
 
 }

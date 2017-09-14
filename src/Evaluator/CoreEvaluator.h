@@ -18,12 +18,14 @@ using namespace rapidjson;
 
 class CoreEvaluator {
     Universe universe;
+    Graph graph;
 public:
-    CoreEvaluator();
+    CoreEvaluator(const char* PATH = "UniverseConfig.json");
     //~CoreEvaluator();
     ResultTree returnResultTree(string expression_string);
     void ToString();
     void Render();
+    void CreateGraph();
 };
 
 
