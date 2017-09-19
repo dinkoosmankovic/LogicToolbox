@@ -120,7 +120,7 @@ ResultTree::ResultTree() {
     created = false;
 }
 
-void ResultTree::Visualise(string world) {
+void ResultTree::Visualise(string world, const char* FILE_PATH) {
 
     World* selected_world = nullptr;
 
@@ -139,7 +139,7 @@ void ResultTree::Visualise(string world) {
     int counter = 0;
     Traverse_V(selected_world,agraph, nullptr,root,&counter);
 
-    string gname = "-oRESULT_"+selected_world->getName()+".png";
+    string gname = (strcmp(FILE_PATH,"") == 0?FILE_PATH:"-oRESULT_"+selected_world->getName()+".png");
 
     char* args[] = {const_cast<char*>("dot"), const_cast<char*>("-Tpng"),
                     const_cast<char*>(gname.c_str())};

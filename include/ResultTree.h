@@ -37,7 +37,7 @@ public:
     string toString();
     void test();
     inline node* getRoot(){ return  root;};
-    void Visualise(string world);
+    void Visualise(string world, const char* FILE_PATH = "");
 };
 
 

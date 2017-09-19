@@ -199,7 +199,7 @@ void CoreEvaluator::ToString() {
 ResultTree CoreEvaluator::returnResultTree(string expression_string) {
     if(!graph.IsCreated()) graph = Graph(&universe);
     Expression newExpression = Expression(expression_string);
-    ResultTree resultTree = ResultTree(&universe,newExpression);
+    resultTree = ResultTree(&universe,newExpression);
     graph.AddResults(resultTree);
     return resultTree;
 
@@ -215,8 +215,8 @@ void CoreEvaluator::RenderUniverse() {
 
 }
 
-bool CoreEvaluator::CreateResultTreeGraph(const char* DOT_FILE) {
+bool CoreEvaluator::CreateResultTreeGraph(string world, const char* FILE) {
 
-
+    resultTree.Visualise(world, FILE)
 
 }

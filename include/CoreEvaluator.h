@@ -27,7 +27,7 @@ public:
     void ToString();
     void RenderUniverse();
     void CreateGraph();
-    bool CreateResultTreeGraph(const char* DOT_FILE= "result_tree.dot");
+    bool CreateResultTreeGraph(string world, const char* DOT_FILE= "result_tree.dot");
 };
 
 
