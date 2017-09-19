@@ -2,7 +2,7 @@
 // Created by infloop on 8/17/17.
 //
 
-#include "CoreEvaluator.h"
+#include "../../include/CoreEvaluator.h"
 
 CoreEvaluator::CoreEvaluator(const char* PATH /* "UniverseConfig.json" */){
 
@@ -209,8 +209,14 @@ void CoreEvaluator::CreateGraph(){
     graph = Graph(&universe);
 }
 
-void CoreEvaluator::Render() {
+void CoreEvaluator::RenderUniverse() {
 
     graph.saveImage();
+
+}
+
+bool CoreEvaluator::CreateResultTreeGraph(const char* DOT_FILE) {
+
+
 
 }

@@ -2,9 +2,9 @@
 // Created by infloop on 7/16/17.
 //
 
-#include "Operators.h"
+#include "../../include/Operators.h"
 
-bool Ness(World* starting_world, map<World*,bool> results){
+bool Ness(World* starting_world, map<World*,bool> results, string m_logic){
 
     queue<World*> Q;
     vector<World*> children;
@@ -23,15 +23,18 @@ bool Ness(World* starting_world, map<World*,bool> results){
 
         if(!results[t]) return false;
 
-        children = t->getAdjacentList();
+        if(m_logic == "D"){
 
-        for(auto i : children) Q.push(i);
+            children = t->getAdjacentList();
+            for(auto i : children) Q.push(i);
+
+        }
     }
 
     return true;
 }
 
-bool Poss(World* starting_world, map<World*,bool> results){
+bool Poss(World* starting_world, map<World*,bool> results, string m_logic){
 
     queue<World*> Q;
     vector<World*> children;
@@ -50,9 +53,12 @@ bool Poss(World* starting_world, map<World*,bool> results){
 
         if(results[t]) return true;
 
-        children = t->getAdjacentList();
+        if(m_logic == "D"){
 
-        for(auto i : children) Q.push(i);
+            children = t->getAdjacentList();
+            for(auto i : children) Q.push(i);
+
+        }
     }
 
     return false;

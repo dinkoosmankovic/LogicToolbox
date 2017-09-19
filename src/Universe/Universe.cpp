@@ -2,7 +2,7 @@
 // Created by root on 7/14/17.
 //
 
-#include "Universe.h"
+#include "../../include/Universe.h"
 
 //Constructors and destructor
 Universe::Universe(string _name) : name(_name){

@@ -2,7 +2,7 @@
 // Created by infloop on 7/16/17.
 //
 
-#include "Token.h"
+#include "../../include/Token.h"
 
 Token::Token(const char read){
 

@@ -6,8 +6,8 @@
 #define LOGICTOOLBOX_GRAPH_H
 
 #include "graphviz/gvc.h"
-#include "../Evaluator/ResultTree.h"
-#include "../Universe/Universe.h"
+#include "ResultTree.h"
+#include "Universe.h"
 #include <fstream>
 
 class Graph {
@@ -19,6 +19,7 @@ class Graph {
 public:
     inline Graph() {}
     Graph(Universe* universe);
+    Graph(ResultTree* resultTree);
     ~Graph();
     void AddResults(ResultTree resultTree);
     inline bool IsCreated() { return created;}

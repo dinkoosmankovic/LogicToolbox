@@ -2,7 +2,7 @@
 // Created by infloop on 7/16/17.
 //
 
-#include "Expression.h"
+#include "../../include/Expression.h"
 
 Expression::Expression(string str_expr) {
     for(int i = 0; i <= str_expr.size(); i++){

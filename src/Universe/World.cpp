@@ -2,7 +2,7 @@
 // Created by root on 7/14/17.
 //
 
-#include "World.h"
+#include "../../include/World.h"
 
 //Constructors and destructor
 World::World(string _name) : name(_name) {}

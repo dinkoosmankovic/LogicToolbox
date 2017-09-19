@@ -1,15 +1,15 @@
 #include <iostream>
-#include "Parser/Expression.h"
+#include "../../include/Expression.h"
 #include "hello.h"
-#include "../Evaluator/CoreEvaluator.h"
+#include "../../include/CoreEvaluator.h"
 
 
 
 void hello() {
     CoreEvaluator coreEvaluator;
     coreEvaluator.CreateGraph();
-    coreEvaluator.returnResultTree("#x");
-    coreEvaluator.Render();
+    ResultTree resultTree = coreEvaluator.returnResultTree("#(x|y)>$(x&y)");
+    resultTree.Visualise("w1");
 }
 
 std::string get_message() {

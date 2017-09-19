@@ -3,7 +3,7 @@
 //
 
 #include <search.h>
-#include "ResultTree.h"
+#include "../../include/ResultTree.h"
 
 ResultTree::ResultTree(Universe *universe, Expression e){
 
@@ -88,6 +88,8 @@ ResultTree::ResultTree(Universe *universe, Expression e){
 
     if(!stack_of_nodes.empty()) {root = stack_of_nodes.top(); stack_of_nodes.pop();}
     else throw logic_error("Stack of nodes is empty!");
+
+    created = true;
 }
 
 /*ResultTree::~ResultTree(){
@@ -112,4 +114,55 @@ string ResultTree::toString() {
 
 void ResultTree::test(){
     cout << root->results.begin()->first->getName();
-};
+}
+
+ResultTree::ResultTree() {
+    created = false;
+}
+
+void ResultTree::Visualise(string world) {
+
+    World* selected_world = nullptr;
+
+    for(auto i : root->results){
+        if(i.first->getName() == world) {
+            selected_world = i.first;
+        }
+    }
+
+    if(selected_world == nullptr) throw logic_error("World with that name does not exist!");
+
+    GVC_t* gvc = gvContext();
+    Agraph_t* agraph = agopen("Graph", Agdirected, 0);
+    agattr(agraph,AGNODE,"color","black");
+    agattr(agraph, AGNODE, "label", "LABEL");
+    int counter = 0;
+    Traverse_V(selected_world,agraph, nullptr,root,&counter);
+
+    string gname = "-oRESULT_"+selected_world->getName()+".png";
+
+    char* args[] = {const_cast<char*>("dot"), const_cast<char*>("-Tpng"),
+                    const_cast<char*>(gname.c_str())};
+
+    gvParseArgs (gvc, sizeof(args)/sizeof(char*), args);
+
+    gvLayoutJobs(gvc, agraph);
+    gvRenderJobs(gvc, agraph);
+
+}
+
+void ResultTree::Traverse_V(World* world, Agraph_t *agraph, Agnode_t *prev, node *curr, int* counter) {
+
+    if(curr != nullptr){
+        Agnode_t* new_node = agnode(agraph, const_cast<char*>(to_string(*counter).c_str()), 1);
+        agset(new_node,"label", const_cast<char*>(curr->value.c_str()));
+        char* color = (curr->results[world]? const_cast<char*>("green"): const_cast<char*>("red"));
+        agset(new_node,"color",color);
+        if(prev != nullptr) agedge(agraph,prev,new_node,"",1);
+        (*counter)++;
+        Traverse_V(world,agraph,new_node,curr->left,counter);
+        (*counter)++;
+        Traverse_V(world,agraph,new_node,curr->right,counter);
+    }
+
+}

@@ -7,8 +7,8 @@ set (CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
 # Build an executable from main.cpp and all specified source files
 include_directories(../../include/${MODULE_NAME})
-add_executable(${TARGET_NAME} main.cpp ${SRC} ../Parser/Token.cpp ../Parser/Token.h ../Parser/Expression.cpp ../Parser/Expression.h ../Evaluator/CoreEvaluator.cpp ../Evaluator/CoreEvaluator.h ../Evaluator/ResultTree.cpp ../Evaluator/ResultTree.h
-        ../Universe/Universe.cpp ../Universe/Universe.h ../Universe/Variable.cpp ../Universe/Variable.h ../Universe/World.cpp ../Universe/World.h ../Operators.cpp ../Operators.h ../Graph/Graph.cpp ../Graph/Graph.h)
+add_executable(${TARGET_NAME} main.cpp ${SRC} ../Parser/Token.cpp ../../include/Token.h ../Parser/Expression.cpp ../../include/Expression.h ../Evaluator/CoreEvaluator.cpp ../../include/CoreEvaluator.h ../Evaluator/ResultTree.cpp ../../include/ResultTree.h
+        ../Universe/Universe.cpp ../../include/Universe.h ../Universe/Variable.cpp ../../include/Variable.h ../Universe/World.cpp ../../include/World.h ../Core/Operators.cpp ../../include/Operators.h ../Graph/Graph.cpp ../../include/Graph.h)
 target_link_libraries(${TARGET_NAME} ${LIBRARIES} gvc cgraph cdt)
 
 # Build a library from all specified source files

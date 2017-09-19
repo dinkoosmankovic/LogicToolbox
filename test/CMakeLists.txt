@@ -30,7 +30,7 @@ else()
   set(Pthread "-pthread")
 endif()
 
-add_executable(${GTEST_TARGET} EXCLUDE_FROM_ALL ${TESTS_FILES} ../src/Operators.cpp ../src/Operators.h)
+add_executable(${GTEST_TARGET} EXCLUDE_FROM_ALL ${TESTS_FILES} ../src/Core/Operators.cpp ../include/Operators.h)
 target_link_libraries(
     ${GTEST_TARGET}
     ${TARGET}

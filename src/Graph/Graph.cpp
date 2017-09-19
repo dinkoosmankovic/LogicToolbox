@@ -1,7 +1,7 @@
 //
 // Created by infloop on 9/10/17.
 //
-#include "Graph.h"
+#include "../../include/Graph.h"
 
 Graph::Graph(Universe* universe) {
 
@@ -79,5 +79,5 @@ void Graph::AddResults(ResultTree resultTree) {
     gvRender(gvContext(), agraph, "dot", result);
     fclose(result);
 
-
 }
+
