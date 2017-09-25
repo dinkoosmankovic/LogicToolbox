@@ -8,8 +8,10 @@
 void hello() {
     CoreEvaluator coreEvaluator;
     coreEvaluator.CreateGraph();
-    ResultTree resultTree = coreEvaluator.returnResultTree("#(x|y)>$(x&y)");
-    resultTree.Visualise("w1");
+    coreEvaluator.RenderUniverse();
+    ResultTree resultTree = coreEvaluator.returnResultTree("x=$(x>y)");
+    //coreEvaluator.RenderUniverse("result.png");
+    //resultTree.Visualise("w3");
 }
 
 std::string get_message() {

@@ -40,16 +40,21 @@ Graph::Graph(Universe* universe) {
 Graph::~Graph() {
 }
 
-bool Graph::saveImage(const char* FILE_PATH)
+bool Graph::saveImage(string FILE_PATH)
 {
     gvFreeLayout(graphContext,agraph);
     string DOT_TEXT_FILE = "graph.dot";
-    std::string o_arg = (strcmp(FILE_PATH,"") == 0?FILE_PATH:std::string("-o") + "image_file.png");
+    string o_arg;
+
+    if(FILE_PATH=="") o_arg = "-o img_file.png";
+    else o_arg = "-o"+FILE_PATH;
     char* args[] = {const_cast<char*>("dot"), const_cast<char*>("-Tpng"),
                     const_cast<char*>(DOT_TEXT_FILE.c_str()),
                     const_cast<char*>(o_arg.c_str()) };
 
     const int argc = sizeof(args)/sizeof(args[0]);
+
+    cout << endl << o_arg<<"______________________________________________";
 
     Agraph_t * g, *prev = NULL;
 

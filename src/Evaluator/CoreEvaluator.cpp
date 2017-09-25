@@ -30,6 +30,15 @@ CoreEvaluator::CoreEvaluator(const char* PATH /* "UniverseConfig.json" */){
         else throw domain_error("[JSON ERROR] Universe name is not a string!");
     }else throw domain_error("[JSON ERROR] Unvierse doesn't have \"Name\" tag!");
 
+    //Read universe logic
+
+    string modalLogic;
+
+    if(document.HasMember("Logic")){
+        if(document["Logic"].IsString()) modalLogic = document["Logic"].GetString();
+        else throw domain_error("[JSON ERROR] Universe logic is not a string!");
+    }else throw domain_error("[JSON ERROR] Unvierse doesn't have \"Logic\" tag!");
+
     //Read variable names
 
     vector<string> variableNames;
@@ -168,6 +177,7 @@ CoreEvaluator::CoreEvaluator(const char* PATH /* "UniverseConfig.json" */){
     universe = Universe(universeName);
     universe.setWorlds(worlds);
     universe.setVariableNames(variableNames);
+    universe.setLogic(modalLogic);
 
     ToString();
 }
@@ -209,14 +219,14 @@ void CoreEvaluator::CreateGraph(){
     graph = Graph(&universe);
 }
 
-void CoreEvaluator::RenderUniverse() {
+void CoreEvaluator::RenderUniverse(string PATH) {
 
-    graph.saveImage();
+    graph.saveImage(PATH);
 
 }
 
 bool CoreEvaluator::CreateResultTreeGraph(string world, const char* FILE) {
 
-    resultTree.Visualise(world, FILE)
+    resultTree.Visualise(world, FILE);
 
 }

@@ -71,7 +71,7 @@ ResultTree::ResultTree(Universe *universe, Expression e){
                 for(World* world: universe->getWorlds()){
 
                     if(i->value == "NOT") newMap[world] = Not(newnode->left->results[world]);
-                    else newMap[world] = Operator(world, newnode->left->results,*i);
+                    else newMap[world] = Operator(world, newnode->left->results,*i,universe->getLogic());
 
                 }
 
@@ -139,10 +139,15 @@ void ResultTree::Visualise(string world, const char* FILE_PATH) {
     int counter = 0;
     Traverse_V(selected_world,agraph, nullptr,root,&counter);
 
-    string gname = (strcmp(FILE_PATH,"") == 0?FILE_PATH:"-oRESULT_"+selected_world->getName()+".png");
+    string gname;
+    if(strcmp(FILE_PATH,"") == 0)
+    gname ="-oRESULT_"+selected_world->getName()+".png";
+    else gname = FILE_PATH;
 
     char* args[] = {const_cast<char*>("dot"), const_cast<char*>("-Tpng"),
                     const_cast<char*>(gname.c_str())};
+
+    cout << args << endl << gname;
 
     gvParseArgs (gvc, sizeof(args)/sizeof(char*), args);
 

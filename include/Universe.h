@@ -16,6 +16,7 @@ using namespace std;
 
 class Universe {
     string name;
+    string modalLogic = "K";
     vector<string> variableNames;
     vector<World*> worlds;
 public:
@@ -32,6 +33,8 @@ public:
     void addVariable(string _name);
     vector<World*> getWorlds() const;
     void addWorld(World world);
+    inline void setLogic(string logic){modalLogic = logic;}
+    inline string getLogic(){ return modalLogic;}
 };
 
 

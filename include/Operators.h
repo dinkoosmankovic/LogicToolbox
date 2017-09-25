@@ -51,7 +51,7 @@ inline bool Equ(const bool x, const bool y){
 bool Ness(World* starting_world, map<World*,bool> results, string m_logic = "K");
 bool Poss(World* starting_world, map<World*,bool> results, string m_logic = "K");
 
-bool Operator(World* world, map<World*,bool> results,Token op);
+bool Operator(World* world, map<World*,bool> results,Token op,string m_logic = "K");
 bool Operator(Token op, bool x, bool y);
 
 //Variable operators

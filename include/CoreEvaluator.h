@@ -25,7 +25,7 @@ public:
     //~CoreEvaluator();
     ResultTree returnResultTree(string expression_string);
     void ToString();
-    void RenderUniverse();
+    void RenderUniverse(string PATH = "");
     void CreateGraph();
     bool CreateResultTreeGraph(string world, const char* DOT_FILE= "result_tree.dot");
 };

@@ -24,7 +24,7 @@ public:
     void AddResults(ResultTree resultTree);
     inline bool IsCreated() { return created;}
     //void Render();
-    bool saveImage(const char* FILE_PATH = "");
+    bool saveImage(string FILE_PATH = "");
 };
 
 

@@ -1,5 +1,6 @@
 {
   "Name": "InitialUniverse",
+  "Logic": "D",
   "VariableNames": [
     "x",
     "y"
@@ -34,9 +35,7 @@
           "Value": true
         }
       ],
-      "AdjWorlds": [
-        "w4"
-      ]
+      "AdjWorlds": []
     },
     {
       "Name": "w3",
@@ -67,9 +66,7 @@
           "Value": false
         }
       ],
-      "AdjWorlds": [
-        "w1"
-      ]
+      "AdjWorlds": []
     }
   ]
 }
