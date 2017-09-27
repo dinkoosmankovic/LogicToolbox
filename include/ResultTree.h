@@ -11,6 +11,7 @@
 #include <stack>
 #include <iostream>
 #include "graphviz/gvc.h"
+#include <chrono>
 
 using namespace std;
 

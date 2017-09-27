@@ -1,0 +1,13 @@
+# Target labels
+ googletest
+# Source files and their labels
+/home/infloop/Documents/LogicToolbox/testCoverage/CMakeFiles/googletest
+/home/infloop/Documents/LogicToolbox/testCoverage/CMakeFiles/googletest.rule
+/home/infloop/Documents/LogicToolbox/testCoverage/CMakeFiles/googletest-complete.rule
+/home/infloop/Documents/LogicToolbox/ThirdParty/src/googletest-stamp/googletest-install.rule
+/home/infloop/Documents/LogicToolbox/ThirdParty/src/googletest-stamp/googletest-mkdir.rule
+/home/infloop/Documents/LogicToolbox/ThirdParty/src/googletest-stamp/googletest-download.rule
+/home/infloop/Documents/LogicToolbox/ThirdParty/src/googletest-stamp/googletest-update.rule
+/home/infloop/Documents/LogicToolbox/ThirdParty/src/googletest-stamp/googletest-patch.rule
+/home/infloop/Documents/LogicToolbox/ThirdParty/src/googletest-stamp/googletest-configure.rule
+/home/infloop/Documents/LogicToolbox/ThirdParty/src/googletest-stamp/googletest-build.rule

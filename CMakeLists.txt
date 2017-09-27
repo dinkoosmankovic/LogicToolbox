@@ -5,10 +5,11 @@ project(LogicToolbox)
 set(PROJECT_VERSION 0.1)
 set(PROJECT_BRIEF "\"Toolbox for logic computations\"")
 
+include(${CMAKE_SOURCE_DIR}/cmake/SetEnv.cmake)
 
 # Enable/disable testing
 option(TESTS_ENABLED "Enable automatic tests" ON)
-# Enable/disable test coverage
+# Enable/disable testCoverage coverage
 option(COVERAGE_ENABLED "Enable test coverage" OFF)
 
 
@@ -115,76 +116,12 @@ if(Graphviz_FIND_REQUIRED AND NOT GRAPHVIZ_FOUND)
     message(FATAL_ERROR "Could not find GraphViz.")
 endif()
 
-
-# Boost, a collection of useful C++ utilities and idioms
-#find_package(Boost COMPONENTS
-#    program_options
-#    filesystem
-#    thread
-#    system
-#    REQUIRED)
-#include_directories(${Boost_INCLUDE_DIR})
-#set(LIBRARIES ${LIBRARIES} ${Boost_LIBRARIES})
-
-# ROOT, a library for HEP data analysis (contains RooFit)
-#find_package(ROOT REQUIRED)
-#include_directories(${ROOT_INCLUDE_DIR})
-#set(LIBRARIES ${LIBRARIES} ${ROOT_LIBRARIES})
-#set(LIBRARIES ${LIBRARIES} ${ROOFIT_LIBRARIES})
- 
-# Eigen3, a template library for high performance linear algebra
-#find_package(Eigen3 REQUIRED)
-#include_directories(EIGEN3_INCLUDE_DIR)
-
-# Basic 3D graphics libraries: OpenGL, glew, glfw
-#find_package(OpenGL REQUIRED)
-#include_directories(${OPENGL_INCLUDE_DIR})
-#set(LIBRARIES ${LIBRARIES} ${OPENGL_LIBRARIES})
-#find_package(GLEW REQUIRED)
-#include_directories(${GLEW_INCLUDE_DIR})
-#set(LIBRARIES ${LIBRARIES} ${GLEW_LIBRARIES})
-#find_package(glfw REQUIRED)
-#include_directories(${GLFW_INCLUDE_DIR})
-#set(LIBRARIES ${LIBRARIES} ${GLFW_LIBRARY})
-
-# protobuf, an efficient data serialization protocol
-#find_package(Protobuf REQUIRED)
-#include_directories(${PROTOBUF_INCLUDE_DIR})
-#set(LIBRARIES ${LIBRARIES} ${PROTOBUF_LIBRARY})
-
-# glog, a powerful logging framework
-#find_package(Glog REQUIRED)
-#include_directories(${GLOG_INCLUDE_DIRS})
-#set(LIBRARIES ${LIBRARIES} ${GLOG_LIBRARIES})
-
-# cpp-yaml
-#include(ExternalProject)
-#ExternalProject_Add(
-#    yaml-cpp
-#    GIT_REPOSITORY https://github.com/jbeder/yaml-cpp
-#    TIMEOUT 10
-#    CMAKE_ARGS -DCMAKE_BUILD_TYPE=${CMAKE_BUILD_TYPE}
-#               -Dgtest_force_shared_crt=ON
-#    INSTALL_COMMAND ""
-#    UPDATE_COMMAND ""
-#    LOG_DOWNLOAD ON
-#    LOG_CONFIGURE ON
-#    LOG_BUILD ON)
-#ExternalProject_Get_Property(yaml-cpp source_dir)
-#ExternalProject_Get_Property(yaml-cpp binary_dir)
-#include_directories(${source_dir}/include)
-#if(MSVC)
-#  set(Suffix ".lib")
-#else()
-#  set(Suffix ".a")
-#endif()
-#set(LIBRARIES ${LIBRARIES} ${binary_dir}/libyaml-cpp${Suffix})
-
 if(TESTS_ENABLED)
-    add_subdirectory(test)
+    add_subdirectory(testCoverage)
 endif()
 
 add_subdirectory(src)
 
+include(${CMAKE_SOURCE_DIR}/cmake/InstallConfig.cmake)
 # vim:ft=cmake
 

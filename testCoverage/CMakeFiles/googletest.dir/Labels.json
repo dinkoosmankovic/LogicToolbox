@@ -1,0 +1,43 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/home/infloop/Documents/LogicToolbox/testCoverage/CMakeFiles/googletest"
+		},
+		{
+			"file" : "/home/infloop/Documents/LogicToolbox/testCoverage/CMakeFiles/googletest.rule"
+		},
+		{
+			"file" : "/home/infloop/Documents/LogicToolbox/testCoverage/CMakeFiles/googletest-complete.rule"
+		},
+		{
+			"file" : "/home/infloop/Documents/LogicToolbox/ThirdParty/src/googletest-stamp/googletest-install.rule"
+		},
+		{
+			"file" : "/home/infloop/Documents/LogicToolbox/ThirdParty/src/googletest-stamp/googletest-mkdir.rule"
+		},
+		{
+			"file" : "/home/infloop/Documents/LogicToolbox/ThirdParty/src/googletest-stamp/googletest-download.rule"
+		},
+		{
+			"file" : "/home/infloop/Documents/LogicToolbox/ThirdParty/src/googletest-stamp/googletest-update.rule"
+		},
+		{
+			"file" : "/home/infloop/Documents/LogicToolbox/ThirdParty/src/googletest-stamp/googletest-patch.rule"
+		},
+		{
+			"file" : "/home/infloop/Documents/LogicToolbox/ThirdParty/src/googletest-stamp/googletest-configure.rule"
+		},
+		{
+			"file" : "/home/infloop/Documents/LogicToolbox/ThirdParty/src/googletest-stamp/googletest-build.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"googletest"
+		],
+		"name" : "googletest"
+	}
+}
