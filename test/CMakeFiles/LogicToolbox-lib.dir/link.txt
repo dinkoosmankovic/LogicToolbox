@@ -1,0 +1,1 @@
+/usr/bin/c++  -fPIC  -std=c++11 -Wall -O0 -ggdb  -shared -Wl,-soname,libLogicToolbox.so -o ../lib/libLogicToolbox.so CMakeFiles/LogicToolbox-lib.dir/hello.cpp.o -lgvc -lcgraph -lcdt 

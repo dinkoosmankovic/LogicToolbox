@@ -116,6 +116,7 @@ LogicToolbox__lib_test_EXTERNAL_OBJECTS =
 bin/LogicToolbox-lib_test: testCoverage/CMakeFiles/LogicToolbox-lib_test.dir/test_hello.cpp.o
 bin/LogicToolbox-lib_test: testCoverage/CMakeFiles/LogicToolbox-lib_test.dir/__/src/Core/Operators.cpp.o
 bin/LogicToolbox-lib_test: testCoverage/CMakeFiles/LogicToolbox-lib_test.dir/build.make
+bin/LogicToolbox-lib_test: lib/libLogicToolbox.so
 bin/LogicToolbox-lib_test: ThirdParty/src/googletest-build/googlemock/gtest/libgtest.a
 bin/LogicToolbox-lib_test: ThirdParty/src/googletest-build/googlemock/gtest/libgtest_main.a
 bin/LogicToolbox-lib_test: testCoverage/CMakeFiles/LogicToolbox-lib_test.dir/link.txt

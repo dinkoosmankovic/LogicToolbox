@@ -12,7 +12,7 @@ add_executable(${TARGET_NAME} main.cpp ${SRC} ../src/Parser/Token.cpp ../include
 target_link_libraries(${TARGET_NAME} ${LIBRARIES} gvc cgraph cdt)
 
 # Build a library from all specified source files
-add_library(${TARGET_NAME}-lib /Graph/Graph.cpp /Evaulator/ResultTree.cpp)
+add_library(${TARGET_NAME}-lib ${SRC})
 target_link_libraries(${TARGET_NAME}-lib ${LIBRARIES} gvc cgraph cdt)
 set_target_properties(${TARGET_NAME}-lib PROPERTIES OUTPUT_NAME LogicToolbox)
 

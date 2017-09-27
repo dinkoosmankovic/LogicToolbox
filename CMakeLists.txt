@@ -121,6 +121,7 @@ if(TESTS_ENABLED)
 endif()
 
 add_subdirectory(src)
+add_subdirectory(test)
 
 include(${CMAKE_SOURCE_DIR}/cmake/InstallConfig.cmake)
 # vim:ft=cmake
