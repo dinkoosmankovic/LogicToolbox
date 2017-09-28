@@ -9,8 +9,6 @@ ResultTree::ResultTree(Universe *universe, Expression e){
 
     vector<Token> token_vector = e.getTokens();
     stack<node*> stack_of_nodes;
-    long int elapsed = 0;
-    auto begin_all = chrono::high_resolution_clock::now();
     for(auto i = token_vector.begin(); i != token_vector.end(); i++){
         switch(i->type){
             case TokenType::LITERAL :
@@ -72,11 +70,7 @@ ResultTree::ResultTree(Universe *universe, Expression e){
 
                     if(i->value == "NOT") newMap[world] = Not(newnode->left->results[world]);
                     else {
-                        auto begin = chrono::high_resolution_clock::now();
                         newMap[world] = Operator(world, newnode->left->results, *i, universe->getLogic());
-                        auto end = chrono::high_resolution_clock::now();
-                        elapsed+=chrono::duration_cast<chrono::nanoseconds>
-                                (end-begin).count();
                     }
 
                 }
@@ -94,12 +88,6 @@ ResultTree::ResultTree(Universe *universe, Expression e){
 
     if(!stack_of_nodes.empty()) {root = stack_of_nodes.top(); stack_of_nodes.pop();}
     else throw logic_error("Stack of nodes is empty!");
-    auto end_all = chrono::high_resolution_clock::now();
-
-    cout << "Zbir svih vremena BFS-a: " << elapsed << "ns" << endl;
-    cout << "Vrijeme izvršavanja algoritma: " << chrono::duration_cast<chrono::nanoseconds>(end_all-begin_all).count()
-         << "ns"
-         << endl;
 
     created = true;
 }
