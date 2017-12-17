@@ -1,7 +1,7 @@
 
 #include <gtest/gtest.h>
 
-#include "hello.h"
+#include "test/hello.h"
 
 TEST(Hello, get_message)
 {

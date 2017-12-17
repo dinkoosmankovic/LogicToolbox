@@ -1,59 +1,21 @@
-include(ExternalProject)
 
-set(TARGET LogicToolbox-lib)
-set(GTEST_TARGET ${TARGET}_test)
-file(GLOB_RECURSE TESTS_FILES RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} *.cpp)
+# Specify .cpp files
+set(TARGET_NAME LogicToolbox)
+set(MODULE_NAME ModuleOne)
+set(SRC hello.cpp)
+set (CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
-set_directory_properties(PROPERTIES EP_PREFIX ${CMAKE_BINARY_DIR}/ThirdParty)
+# Build an executable from main.cpp and all specified source files
+include_directories(../../include/${MODULE_NAME})
+add_executable(${TARGET_NAME} main.cpp ${SRC} ../src/Parser/Token.cpp ../include/Token.h ../src/Parser/Expression.cpp ../include/Expression.h ../src/Evaluator/CoreEvaluator.cpp ../include/CoreEvaluator.h ../src/Evaluator/ResultTree.cpp ../include/ResultTree.h
+        ../src/Universe/Universe.cpp ../include/Universe.h ../src/Universe/Variable.cpp ../include/Variable.h ../src/Universe/World.cpp ../include/World.h ../src/Core/Operators.cpp ../include/Operators.h ../src/Graph/Graph.cpp ../include/Graph.h)
+target_link_libraries(${TARGET_NAME} ${LIBRARIES} gvc cgraph cdt)
 
-ExternalProject_Add(
-    googletest
-    GIT_REPOSITORY https://github.com/google/googletest.git
-    TIMEOUT 10
-    CMAKE_ARGS -DCMAKE_BUILD_TYPE=${CMAKE_BUILD_TYPE}
-               -Dgtest_force_shared_crt=ON
-    INSTALL_COMMAND ""
-    UPDATE_COMMAND ""
-    LOG_DOWNLOAD ON
-    LOG_CONFIGURE ON
-    LOG_BUILD ON)
-
-ExternalProject_Get_Property(googletest source_dir)
-include_directories(${source_dir}/googletest/include ../include/ModuleOne)
-
-set_target_properties(googletest PROPERTIES EXCLUDE_FROM_ALL TRUE)
-ExternalProject_Get_Property(googletest binary_dir)
-if(MSVC)
-  set(Suffix ".lib")
-else()
-  set(Suffix ".a")
-  set(Pthread "-pthread")
-endif()
-
-add_executable(${GTEST_TARGET} EXCLUDE_FROM_ALL ${TESTS_FILES})
-target_link_libraries(
-    ${GTEST_TARGET}
-    ${TARGET}
-    ${binary_dir}/googlemock/gtest/${CMAKE_FIND_LIBRARY_PREFIXES}gtest${Suffix}
-    ${binary_dir}/googlemock/gtest/${CMAKE_FIND_LIBRARY_PREFIXES}gtest_main${Suffix}
-    ${LIBRARIES}
-)
-
-add_dependencies(${GTEST_TARGET} googletest)
-
-if(CMAKE_COMPILER_IS_GNUC OR CMAKE_COMPILER_IS_GNUCXX)
-    target_link_libraries(${GTEST_TARGET} pthread)
-endif()
-
-add_custom_target(check COMMAND ${EXECUTABLE_OUTPUT_PATH}/${GTEST_TARGET} --gtest_output="xml:${CMAKE_BINARY_DIR}/tests.xml" || true)
-add_dependencies(check ${GTEST_TARGET})
-
-if(COVERAGE_ENABLED)
-    find_package(gcovr REQUIRED)
-    target_link_libraries(${GTEST_TARGET} -lgcov)
-    add_custom_target(coverage WORKING_DIRECTORY ${CMAKE_BINARY_DIR} COMMAND ${GCOVR_EXECUTABLE} -r ${CMAKE_SOURCE_PATH}/src --xml -o ${CMAKE_BINARY_DIR}/coverage.xml)
-    add_dependencies(coverage check)
-endif()
+# Build a library from all specified source files
+add_library(${TARGET_NAME}-lib ${SRC})
+target_link_libraries(${TARGET_NAME}-lib ${LIBRARIES} gvc cgraph cdt)
+set_target_properties(${TARGET_NAME}-lib PROPERTIES OUTPUT_NAME LogicToolbox)
 
 # vim:ft=cmake
+
 
