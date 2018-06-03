@@ -1,4 +1,5 @@
 # LogicToolbox
+# Build status: ![alt text](https://travis-ci.org/dinkoosmankovic/LogicToolbox.svg?branch=master)
 
 # 1. Building LogicToolbox
 
@@ -26,4 +27,3 @@ Run command:
 
   $ make check
 
-# Build status: ![alt text](https://travis-ci.org/dinkoosmankovic/LogicToolbox.svg?branch=master)
