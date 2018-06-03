@@ -1,4 +1,4 @@
-# LogicToolbox
+# LogicToolbox - Open source framework for logic computations
 # Build status: ![alt text](https://travis-ci.org/dinkoosmankovic/LogicToolbox.svg?branch=master)
 
 # 1. Building LogicToolbox
