@@ -7,11 +7,11 @@ set(PROJECT_BRIEF "\"Toolbox for logic computations\"")
 
 include(${CMAKE_SOURCE_DIR}/cmake/SetEnv.cmake)
 
+
 # Enable/disable testing
 option(TESTS_ENABLED "Enable automatic tests" ON)
 # Enable/disable testCoverage coverage
 option(COVERAGE_ENABLED "Enable test coverage" OFF)
-
 
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake/")
 set(LIBRARY_OUTPUT_PATH "${CMAKE_BINARY_DIR}/lib")
@@ -124,4 +124,5 @@ add_subdirectory(src)
 add_subdirectory(test)
 
 include(${CMAKE_SOURCE_DIR}/cmake/InstallConfig.cmake)
+
 # vim:ft=cmake
