@@ -1,0 +1,4 @@
+/home/alma/aleksa/LogicToolbox/build-gui-Desktop-Default/CMakeFiles/rebuild_cache.dir
+/home/alma/aleksa/LogicToolbox/build-gui-Desktop-Default/CMakeFiles/GUI_LogicToolbox.dir
+/home/alma/aleksa/LogicToolbox/build-gui-Desktop-Default/CMakeFiles/edit_cache.dir
+/home/alma/aleksa/LogicToolbox/build-gui-Desktop-Default/CMakeFiles/GUI_LogicToolbox_autogen.dir

@@ -1,0 +1,13 @@
+# Target labels
+ googletest
+# Source files and their labels
+/home/alma/LogicToolbox/testCoverage/CMakeFiles/googletest
+/home/alma/LogicToolbox/testCoverage/CMakeFiles/googletest.rule
+/home/alma/LogicToolbox/testCoverage/CMakeFiles/googletest-complete.rule
+/home/alma/LogicToolbox/ThirdParty/src/googletest-stamp/googletest-install.rule
+/home/alma/LogicToolbox/ThirdParty/src/googletest-stamp/googletest-mkdir.rule
+/home/alma/LogicToolbox/ThirdParty/src/googletest-stamp/googletest-download.rule
+/home/alma/LogicToolbox/ThirdParty/src/googletest-stamp/googletest-update.rule
+/home/alma/LogicToolbox/ThirdParty/src/googletest-stamp/googletest-patch.rule
+/home/alma/LogicToolbox/ThirdParty/src/googletest-stamp/googletest-configure.rule
+/home/alma/LogicToolbox/ThirdParty/src/googletest-stamp/googletest-build.rule

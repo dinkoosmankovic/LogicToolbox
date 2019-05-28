@@ -8,6 +8,9 @@ set(PROJECT_BRIEF "\"Toolbox for logic computations\"")
 include(${CMAKE_SOURCE_DIR}/cmake/SetEnv.cmake)
 
 
+set(CMAKE_INCLUDE_CURRENT_DIR ON)
+# Instruct CMake to run moc automatically when needed.
+set(CMAKE_AUTOMOC ON)
 # Enable/disable testing
 option(TESTS_ENABLED "Enable automatic tests" ON)
 # Enable/disable testCoverage coverage
@@ -19,8 +22,6 @@ set(EXECUTABLE_OUTPUT_PATH "${CMAKE_BINARY_DIR}/bin")
 set (CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
 include_directories(${CMAKE_SOURCE_DIR}/src)
-
-
 
 if(COVERAGE_ENABLED)
     set(CMAKE_CXX_FLAGS_DEBUG "-Wall -fPIC -O0 -ggdb -fprofile-arcs -ftest-coverage")
@@ -120,6 +121,7 @@ if(TESTS_ENABLED)
     add_subdirectory(testCoverage)
 endif()
 
+add_subdirectory(gui)
 add_subdirectory(src)
 add_subdirectory(test)
 

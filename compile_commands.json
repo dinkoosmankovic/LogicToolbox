@@ -1,0 +1,142 @@
+[
+{
+  "directory": "/home/alma/LogicToolbox/testCoverage",
+  "command": "/usr/bin/c++   -I/home/alma/LogicToolbox/testCoverage -I/home/alma/LogicToolbox -I/home/alma/LogicToolbox/src -I/home/alma/LogicToolbox/ThirdParty/src/googletest/googletest/include -I/home/alma/LogicToolbox/testCoverage/../include/ModuleOne   -std=c++11 -Wall -O0 -ggdb   -o CMakeFiles/LogicToolbox-lib_test.dir/test_hello.cpp.o -c /home/alma/LogicToolbox/testCoverage/test_hello.cpp",
+  "file": "/home/alma/LogicToolbox/testCoverage/test_hello.cpp"
+},
+{
+  "directory": "/home/alma/LogicToolbox/testCoverage",
+  "command": "/usr/bin/c++   -I/home/alma/LogicToolbox/testCoverage -I/home/alma/LogicToolbox -I/home/alma/LogicToolbox/src -I/home/alma/LogicToolbox/ThirdParty/src/googletest/googletest/include -I/home/alma/LogicToolbox/testCoverage/../include/ModuleOne   -std=c++11 -Wall -O0 -ggdb   -o CMakeFiles/LogicToolbox-lib_test.dir/__/src/Core/Operators.cpp.o -c /home/alma/LogicToolbox/src/Core/Operators.cpp",
+  "file": "/home/alma/LogicToolbox/src/Core/Operators.cpp"
+},
+{
+  "directory": "/home/alma/LogicToolbox/src",
+  "command": "/usr/bin/c++  -Dlogictoolbox_EXPORTS -I/home/alma/LogicToolbox/src -I/home/alma/LogicToolbox   -std=c++11 -Wall -O0 -ggdb -fPIC   -o CMakeFiles/logictoolbox.dir/Core/Operators.cpp.o -c /home/alma/LogicToolbox/src/Core/Operators.cpp",
+  "file": "/home/alma/LogicToolbox/src/Core/Operators.cpp"
+},
+{
+  "directory": "/home/alma/LogicToolbox/src",
+  "command": "/usr/bin/c++  -Dlogictoolbox_EXPORTS -I/home/alma/LogicToolbox/src -I/home/alma/LogicToolbox   -std=c++11 -Wall -O0 -ggdb -fPIC   -o CMakeFiles/logictoolbox.dir/Evaluator/CoreEvaluator.cpp.o -c /home/alma/LogicToolbox/src/Evaluator/CoreEvaluator.cpp",
+  "file": "/home/alma/LogicToolbox/src/Evaluator/CoreEvaluator.cpp"
+},
+{
+  "directory": "/home/alma/LogicToolbox/src",
+  "command": "/usr/bin/c++  -Dlogictoolbox_EXPORTS -I/home/alma/LogicToolbox/src -I/home/alma/LogicToolbox   -std=c++11 -Wall -O0 -ggdb -fPIC   -o CMakeFiles/logictoolbox.dir/Evaluator/ResultTree.cpp.o -c /home/alma/LogicToolbox/src/Evaluator/ResultTree.cpp",
+  "file": "/home/alma/LogicToolbox/src/Evaluator/ResultTree.cpp"
+},
+{
+  "directory": "/home/alma/LogicToolbox/src",
+  "command": "/usr/bin/c++  -Dlogictoolbox_EXPORTS -I/home/alma/LogicToolbox/src -I/home/alma/LogicToolbox   -std=c++11 -Wall -O0 -ggdb -fPIC   -o CMakeFiles/logictoolbox.dir/Graph/Graph.cpp.o -c /home/alma/LogicToolbox/src/Graph/Graph.cpp",
+  "file": "/home/alma/LogicToolbox/src/Graph/Graph.cpp"
+},
+{
+  "directory": "/home/alma/LogicToolbox/src",
+  "command": "/usr/bin/c++  -Dlogictoolbox_EXPORTS -I/home/alma/LogicToolbox/src -I/home/alma/LogicToolbox   -std=c++11 -Wall -O0 -ggdb -fPIC   -o CMakeFiles/logictoolbox.dir/Parser/Expression.cpp.o -c /home/alma/LogicToolbox/src/Parser/Expression.cpp",
+  "file": "/home/alma/LogicToolbox/src/Parser/Expression.cpp"
+},
+{
+  "directory": "/home/alma/LogicToolbox/src",
+  "command": "/usr/bin/c++  -Dlogictoolbox_EXPORTS -I/home/alma/LogicToolbox/src -I/home/alma/LogicToolbox   -std=c++11 -Wall -O0 -ggdb -fPIC   -o CMakeFiles/logictoolbox.dir/Parser/Token.cpp.o -c /home/alma/LogicToolbox/src/Parser/Token.cpp",
+  "file": "/home/alma/LogicToolbox/src/Parser/Token.cpp"
+},
+{
+  "directory": "/home/alma/LogicToolbox/src",
+  "command": "/usr/bin/c++  -Dlogictoolbox_EXPORTS -I/home/alma/LogicToolbox/src -I/home/alma/LogicToolbox   -std=c++11 -Wall -O0 -ggdb -fPIC   -o CMakeFiles/logictoolbox.dir/Universe/Universe.cpp.o -c /home/alma/LogicToolbox/src/Universe/Universe.cpp",
+  "file": "/home/alma/LogicToolbox/src/Universe/Universe.cpp"
+},
+{
+  "directory": "/home/alma/LogicToolbox/src",
+  "command": "/usr/bin/c++  -Dlogictoolbox_EXPORTS -I/home/alma/LogicToolbox/src -I/home/alma/LogicToolbox   -std=c++11 -Wall -O0 -ggdb -fPIC   -o CMakeFiles/logictoolbox.dir/Universe/Variable.cpp.o -c /home/alma/LogicToolbox/src/Universe/Variable.cpp",
+  "file": "/home/alma/LogicToolbox/src/Universe/Variable.cpp"
+},
+{
+  "directory": "/home/alma/LogicToolbox/src",
+  "command": "/usr/bin/c++  -Dlogictoolbox_EXPORTS -I/home/alma/LogicToolbox/src -I/home/alma/LogicToolbox   -std=c++11 -Wall -O0 -ggdb -fPIC   -o CMakeFiles/logictoolbox.dir/Universe/World.cpp.o -c /home/alma/LogicToolbox/src/Universe/World.cpp",
+  "file": "/home/alma/LogicToolbox/src/Universe/World.cpp"
+},
+{
+  "directory": "/home/alma/LogicToolbox/test",
+  "command": "/usr/bin/c++  -DLogicToolbox_lib_EXPORTS -I/home/alma/LogicToolbox/test -I/home/alma/LogicToolbox/test/LogicToolbox-lib_autogen/include -I/home/alma/LogicToolbox -I/home/alma/LogicToolbox/src -I/home/alma/LogicToolbox/test/../../include/ModuleOne   -std=c++11 -Wall -O0 -ggdb -fPIC   -o CMakeFiles/LogicToolbox-lib.dir/hello.cpp.o -c /home/alma/LogicToolbox/test/hello.cpp",
+  "file": "/home/alma/LogicToolbox/test/hello.cpp"
+},
+{
+  "directory": "/home/alma/LogicToolbox/test",
+  "command": "/usr/bin/c++  -DLogicToolbox_lib_EXPORTS -I/home/alma/LogicToolbox/test -I/home/alma/LogicToolbox/test/LogicToolbox-lib_autogen/include -I/home/alma/LogicToolbox -I/home/alma/LogicToolbox/src -I/home/alma/LogicToolbox/test/../../include/ModuleOne   -std=c++11 -Wall -O0 -ggdb -fPIC   -o CMakeFiles/LogicToolbox-lib.dir/LogicToolbox-lib_autogen/mocs_compilation.cpp.o -c /home/alma/LogicToolbox/test/LogicToolbox-lib_autogen/mocs_compilation.cpp",
+  "file": "/home/alma/LogicToolbox/test/LogicToolbox-lib_autogen/mocs_compilation.cpp"
+},
+{
+  "directory": "/home/alma/LogicToolbox/test",
+  "command": "/usr/bin/c++  -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -I/home/alma/LogicToolbox/test -I/home/alma/LogicToolbox/test/LogicToolbox_autogen/include -I/home/alma/LogicToolbox -I/home/alma/LogicToolbox/src -I/home/alma/LogicToolbox/test/../../include/ModuleOne -isystem /usr/include/x86_64-linux-gnu/qt5 -isystem /usr/include/x86_64-linux-gnu/qt5/QtWidgets -isystem /usr/include/x86_64-linux-gnu/qt5/QtGui -isystem /usr/include/x86_64-linux-gnu/qt5/QtCore -isystem /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++   -std=c++11 -Wall -O0 -ggdb   -fPIC -std=gnu++11 -o CMakeFiles/LogicToolbox.dir/main.cpp.o -c /home/alma/LogicToolbox/test/main.cpp",
+  "file": "/home/alma/LogicToolbox/test/main.cpp"
+},
+{
+  "directory": "/home/alma/LogicToolbox/test",
+  "command": "/usr/bin/c++  -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -I/home/alma/LogicToolbox/test -I/home/alma/LogicToolbox/test/LogicToolbox_autogen/include -I/home/alma/LogicToolbox -I/home/alma/LogicToolbox/src -I/home/alma/LogicToolbox/test/../../include/ModuleOne -isystem /usr/include/x86_64-linux-gnu/qt5 -isystem /usr/include/x86_64-linux-gnu/qt5/QtWidgets -isystem /usr/include/x86_64-linux-gnu/qt5/QtGui -isystem /usr/include/x86_64-linux-gnu/qt5/QtCore -isystem /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++   -std=c++11 -Wall -O0 -ggdb   -fPIC -std=gnu++11 -o CMakeFiles/LogicToolbox.dir/hello.cpp.o -c /home/alma/LogicToolbox/test/hello.cpp",
+  "file": "/home/alma/LogicToolbox/test/hello.cpp"
+},
+{
+  "directory": "/home/alma/LogicToolbox/test",
+  "command": "/usr/bin/c++  -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -I/home/alma/LogicToolbox/test -I/home/alma/LogicToolbox/test/LogicToolbox_autogen/include -I/home/alma/LogicToolbox -I/home/alma/LogicToolbox/src -I/home/alma/LogicToolbox/test/../../include/ModuleOne -isystem /usr/include/x86_64-linux-gnu/qt5 -isystem /usr/include/x86_64-linux-gnu/qt5/QtWidgets -isystem /usr/include/x86_64-linux-gnu/qt5/QtGui -isystem /usr/include/x86_64-linux-gnu/qt5/QtCore -isystem /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++   -std=c++11 -Wall -O0 -ggdb   -fPIC -std=gnu++11 -o CMakeFiles/LogicToolbox.dir/__/src/Parser/Token.cpp.o -c /home/alma/LogicToolbox/src/Parser/Token.cpp",
+  "file": "/home/alma/LogicToolbox/src/Parser/Token.cpp"
+},
+{
+  "directory": "/home/alma/LogicToolbox/test",
+  "command": "/usr/bin/c++  -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -I/home/alma/LogicToolbox/test -I/home/alma/LogicToolbox/test/LogicToolbox_autogen/include -I/home/alma/LogicToolbox -I/home/alma/LogicToolbox/src -I/home/alma/LogicToolbox/test/../../include/ModuleOne -isystem /usr/include/x86_64-linux-gnu/qt5 -isystem /usr/include/x86_64-linux-gnu/qt5/QtWidgets -isystem /usr/include/x86_64-linux-gnu/qt5/QtGui -isystem /usr/include/x86_64-linux-gnu/qt5/QtCore -isystem /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++   -std=c++11 -Wall -O0 -ggdb   -fPIC -std=gnu++11 -o CMakeFiles/LogicToolbox.dir/__/src/Parser/Expression.cpp.o -c /home/alma/LogicToolbox/src/Parser/Expression.cpp",
+  "file": "/home/alma/LogicToolbox/src/Parser/Expression.cpp"
+},
+{
+  "directory": "/home/alma/LogicToolbox/test",
+  "command": "/usr/bin/c++  -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -I/home/alma/LogicToolbox/test -I/home/alma/LogicToolbox/test/LogicToolbox_autogen/include -I/home/alma/LogicToolbox -I/home/alma/LogicToolbox/src -I/home/alma/LogicToolbox/test/../../include/ModuleOne -isystem /usr/include/x86_64-linux-gnu/qt5 -isystem /usr/include/x86_64-linux-gnu/qt5/QtWidgets -isystem /usr/include/x86_64-linux-gnu/qt5/QtGui -isystem /usr/include/x86_64-linux-gnu/qt5/QtCore -isystem /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++   -std=c++11 -Wall -O0 -ggdb   -fPIC -std=gnu++11 -o CMakeFiles/LogicToolbox.dir/__/src/Evaluator/CoreEvaluator.cpp.o -c /home/alma/LogicToolbox/src/Evaluator/CoreEvaluator.cpp",
+  "file": "/home/alma/LogicToolbox/src/Evaluator/CoreEvaluator.cpp"
+},
+{
+  "directory": "/home/alma/LogicToolbox/test",
+  "command": "/usr/bin/c++  -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -I/home/alma/LogicToolbox/test -I/home/alma/LogicToolbox/test/LogicToolbox_autogen/include -I/home/alma/LogicToolbox -I/home/alma/LogicToolbox/src -I/home/alma/LogicToolbox/test/../../include/ModuleOne -isystem /usr/include/x86_64-linux-gnu/qt5 -isystem /usr/include/x86_64-linux-gnu/qt5/QtWidgets -isystem /usr/include/x86_64-linux-gnu/qt5/QtGui -isystem /usr/include/x86_64-linux-gnu/qt5/QtCore -isystem /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++   -std=c++11 -Wall -O0 -ggdb   -fPIC -std=gnu++11 -o CMakeFiles/LogicToolbox.dir/__/src/Evaluator/ResultTree.cpp.o -c /home/alma/LogicToolbox/src/Evaluator/ResultTree.cpp",
+  "file": "/home/alma/LogicToolbox/src/Evaluator/ResultTree.cpp"
+},
+{
+  "directory": "/home/alma/LogicToolbox/test",
+  "command": "/usr/bin/c++  -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -I/home/alma/LogicToolbox/test -I/home/alma/LogicToolbox/test/LogicToolbox_autogen/include -I/home/alma/LogicToolbox -I/home/alma/LogicToolbox/src -I/home/alma/LogicToolbox/test/../../include/ModuleOne -isystem /usr/include/x86_64-linux-gnu/qt5 -isystem /usr/include/x86_64-linux-gnu/qt5/QtWidgets -isystem /usr/include/x86_64-linux-gnu/qt5/QtGui -isystem /usr/include/x86_64-linux-gnu/qt5/QtCore -isystem /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++   -std=c++11 -Wall -O0 -ggdb   -fPIC -std=gnu++11 -o CMakeFiles/LogicToolbox.dir/__/src/Universe/Universe.cpp.o -c /home/alma/LogicToolbox/src/Universe/Universe.cpp",
+  "file": "/home/alma/LogicToolbox/src/Universe/Universe.cpp"
+},
+{
+  "directory": "/home/alma/LogicToolbox/test",
+  "command": "/usr/bin/c++  -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -I/home/alma/LogicToolbox/test -I/home/alma/LogicToolbox/test/LogicToolbox_autogen/include -I/home/alma/LogicToolbox -I/home/alma/LogicToolbox/src -I/home/alma/LogicToolbox/test/../../include/ModuleOne -isystem /usr/include/x86_64-linux-gnu/qt5 -isystem /usr/include/x86_64-linux-gnu/qt5/QtWidgets -isystem /usr/include/x86_64-linux-gnu/qt5/QtGui -isystem /usr/include/x86_64-linux-gnu/qt5/QtCore -isystem /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++   -std=c++11 -Wall -O0 -ggdb   -fPIC -std=gnu++11 -o CMakeFiles/LogicToolbox.dir/__/src/Universe/Variable.cpp.o -c /home/alma/LogicToolbox/src/Universe/Variable.cpp",
+  "file": "/home/alma/LogicToolbox/src/Universe/Variable.cpp"
+},
+{
+  "directory": "/home/alma/LogicToolbox/test",
+  "command": "/usr/bin/c++  -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -I/home/alma/LogicToolbox/test -I/home/alma/LogicToolbox/test/LogicToolbox_autogen/include -I/home/alma/LogicToolbox -I/home/alma/LogicToolbox/src -I/home/alma/LogicToolbox/test/../../include/ModuleOne -isystem /usr/include/x86_64-linux-gnu/qt5 -isystem /usr/include/x86_64-linux-gnu/qt5/QtWidgets -isystem /usr/include/x86_64-linux-gnu/qt5/QtGui -isystem /usr/include/x86_64-linux-gnu/qt5/QtCore -isystem /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++   -std=c++11 -Wall -O0 -ggdb   -fPIC -std=gnu++11 -o CMakeFiles/LogicToolbox.dir/__/src/Universe/World.cpp.o -c /home/alma/LogicToolbox/src/Universe/World.cpp",
+  "file": "/home/alma/LogicToolbox/src/Universe/World.cpp"
+},
+{
+  "directory": "/home/alma/LogicToolbox/test",
+  "command": "/usr/bin/c++  -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -I/home/alma/LogicToolbox/test -I/home/alma/LogicToolbox/test/LogicToolbox_autogen/include -I/home/alma/LogicToolbox -I/home/alma/LogicToolbox/src -I/home/alma/LogicToolbox/test/../../include/ModuleOne -isystem /usr/include/x86_64-linux-gnu/qt5 -isystem /usr/include/x86_64-linux-gnu/qt5/QtWidgets -isystem /usr/include/x86_64-linux-gnu/qt5/QtGui -isystem /usr/include/x86_64-linux-gnu/qt5/QtCore -isystem /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++   -std=c++11 -Wall -O0 -ggdb   -fPIC -std=gnu++11 -o CMakeFiles/LogicToolbox.dir/__/src/Core/Operators.cpp.o -c /home/alma/LogicToolbox/src/Core/Operators.cpp",
+  "file": "/home/alma/LogicToolbox/src/Core/Operators.cpp"
+},
+{
+  "directory": "/home/alma/LogicToolbox/test",
+  "command": "/usr/bin/c++  -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -I/home/alma/LogicToolbox/test -I/home/alma/LogicToolbox/test/LogicToolbox_autogen/include -I/home/alma/LogicToolbox -I/home/alma/LogicToolbox/src -I/home/alma/LogicToolbox/test/../../include/ModuleOne -isystem /usr/include/x86_64-linux-gnu/qt5 -isystem /usr/include/x86_64-linux-gnu/qt5/QtWidgets -isystem /usr/include/x86_64-linux-gnu/qt5/QtGui -isystem /usr/include/x86_64-linux-gnu/qt5/QtCore -isystem /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++   -std=c++11 -Wall -O0 -ggdb   -fPIC -std=gnu++11 -o CMakeFiles/LogicToolbox.dir/__/src/Graph/Graph.cpp.o -c /home/alma/LogicToolbox/src/Graph/Graph.cpp",
+  "file": "/home/alma/LogicToolbox/src/Graph/Graph.cpp"
+},
+{
+  "directory": "/home/alma/LogicToolbox/test",
+  "command": "/usr/bin/c++  -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -I/home/alma/LogicToolbox/test -I/home/alma/LogicToolbox/test/LogicToolbox_autogen/include -I/home/alma/LogicToolbox -I/home/alma/LogicToolbox/src -I/home/alma/LogicToolbox/test/../../include/ModuleOne -isystem /usr/include/x86_64-linux-gnu/qt5 -isystem /usr/include/x86_64-linux-gnu/qt5/QtWidgets -isystem /usr/include/x86_64-linux-gnu/qt5/QtGui -isystem /usr/include/x86_64-linux-gnu/qt5/QtCore -isystem /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++   -std=c++11 -Wall -O0 -ggdb   -fPIC -std=gnu++11 -o CMakeFiles/LogicToolbox.dir/__/gui/grana.cpp.o -c /home/alma/LogicToolbox/gui/grana.cpp",
+  "file": "/home/alma/LogicToolbox/gui/grana.cpp"
+},
+{
+  "directory": "/home/alma/LogicToolbox/test",
+  "command": "/usr/bin/c++  -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -I/home/alma/LogicToolbox/test -I/home/alma/LogicToolbox/test/LogicToolbox_autogen/include -I/home/alma/LogicToolbox -I/home/alma/LogicToolbox/src -I/home/alma/LogicToolbox/test/../../include/ModuleOne -isystem /usr/include/x86_64-linux-gnu/qt5 -isystem /usr/include/x86_64-linux-gnu/qt5/QtWidgets -isystem /usr/include/x86_64-linux-gnu/qt5/QtGui -isystem /usr/include/x86_64-linux-gnu/qt5/QtCore -isystem /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++   -std=c++11 -Wall -O0 -ggdb   -fPIC -std=gnu++11 -o CMakeFiles/LogicToolbox.dir/__/gui/cvor.cpp.o -c /home/alma/LogicToolbox/gui/cvor.cpp",
+  "file": "/home/alma/LogicToolbox/gui/cvor.cpp"
+},
+{
+  "directory": "/home/alma/LogicToolbox/test",
+  "command": "/usr/bin/c++  -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -I/home/alma/LogicToolbox/test -I/home/alma/LogicToolbox/test/LogicToolbox_autogen/include -I/home/alma/LogicToolbox -I/home/alma/LogicToolbox/src -I/home/alma/LogicToolbox/test/../../include/ModuleOne -isystem /usr/include/x86_64-linux-gnu/qt5 -isystem /usr/include/x86_64-linux-gnu/qt5/QtWidgets -isystem /usr/include/x86_64-linux-gnu/qt5/QtGui -isystem /usr/include/x86_64-linux-gnu/qt5/QtCore -isystem /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++   -std=c++11 -Wall -O0 -ggdb   -fPIC -std=gnu++11 -o CMakeFiles/LogicToolbox.dir/__/gui/graphwidget.cpp.o -c /home/alma/LogicToolbox/gui/graphwidget.cpp",
+  "file": "/home/alma/LogicToolbox/gui/graphwidget.cpp"
+},
+{
+  "directory": "/home/alma/LogicToolbox/test",
+  "command": "/usr/bin/c++  -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -I/home/alma/LogicToolbox/test -I/home/alma/LogicToolbox/test/LogicToolbox_autogen/include -I/home/alma/LogicToolbox -I/home/alma/LogicToolbox/src -I/home/alma/LogicToolbox/test/../../include/ModuleOne -isystem /usr/include/x86_64-linux-gnu/qt5 -isystem /usr/include/x86_64-linux-gnu/qt5/QtWidgets -isystem /usr/include/x86_64-linux-gnu/qt5/QtGui -isystem /usr/include/x86_64-linux-gnu/qt5/QtCore -isystem /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++   -std=c++11 -Wall -O0 -ggdb   -fPIC -std=gnu++11 -o CMakeFiles/LogicToolbox.dir/LogicToolbox_autogen/mocs_compilation.cpp.o -c /home/alma/LogicToolbox/test/LogicToolbox_autogen/mocs_compilation.cpp",
+  "file": "/home/alma/LogicToolbox/test/LogicToolbox_autogen/mocs_compilation.cpp"
+}
+]
