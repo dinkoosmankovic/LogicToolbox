@@ -6,11 +6,11 @@ class Node;
 
 class Edge : public QGraphicsItem {
 public:
-    Edge (Node *pocetniCvor, Node *krajnjiCvor);
+    Edge (Node *sourceNode, Node *destNode);
     //GET
-    Node *pocetniCvor() const;
-    Node *krajnjiCvor() const;
-    void popravi();
+    Node *sourceNode() const;
+    Node *destNode() const;
+    void adjust();
     enum { Type = UserType + 2 };
     int type() const { return Type; }
 
@@ -19,9 +19,9 @@ protected:
      void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
 
 private:
-     Node *pocetniC, *krajnjiC;
-     QPointF pocetnaTacka;
-     QPointF krajnjaTacka;
-     qreal duzinaGrane;
+     Node *sourceN, *destN;
+     QPointF sourcePoint;
+     QPointF destinationPoint;
+     qreal arrowSize;
 };
 #endif // EDGE_H

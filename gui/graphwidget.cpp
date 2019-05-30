@@ -20,10 +20,10 @@
 #include <QLabel>
 
  QGraphicsScene *scena;
- QString putanja;
+ QString path;
 
  //možda kreirati klasu universe sa svim atributimas
- GraphWidget::GraphWidget(QWidget *roditelj) : QGraphicsView(roditelj),timerId(0){
+ GraphWidget::GraphWidget(QWidget *parent) : QGraphicsView(parent),timerId(0){
      scena = new QGraphicsScene(this);
      scena->setItemIndexMethod(QGraphicsScene::NoIndex);
      scena->width();
@@ -38,7 +38,7 @@
      scale(qreal(1.35), qreal(1.1));
      setMinimumSize(800,750);
      QPushButton *button = new QPushButton("Load .json file", this);
-     connect(button, SIGNAL (released()), this, SLOT(ucitavanjeFajla()));
+     connect(button, SIGNAL (released()), this, SLOT(loadFile()));
      button->setGeometry(QRect(QPoint(0,33),QSize(150, 50)));
      QFont f("Times New Roman", 12, QFont::Bold);
      button->setFont(f);
@@ -48,75 +48,75 @@
      label->setText("<font color='red'>Učitajte datoteku da bi se prikazo graf</font>");
      label->setGeometry(120,262,600,200);*/
  }
- void GraphWidget::ucitavanjeFajla() {
+ void GraphWidget::loadFile() {
      scena->clear();
-     QString imeFajla = QFileDialog::getOpenFileName(this,tr("Otvori"),"",tr("LogicToolbox (*.json)"));
-     putanja = imeFajla;
+     QString file = QFileDialog::getOpenFileName(this,tr("Open"),"",tr("LogicToolbox (*.json)"));
+     path = file;
      JSONParser();
  }
  void GraphWidget::JSONParser() {
 
-     //Čitanje iz JSON fajla
-     QList<QMap<QString, Node*>> listaSvjetova;
-     QList<Node*> listaCvorova;
-     QFile file(putanja);
+     //Reading JSON file
+     QList<QMap<QString, Node*>> worldList;
+     QList<Node*> nodeList;
+     QFile file(path);
      file.open(QIODevice::ReadOnly);
      QByteArray rawData = file.readAll();
      QJsonDocument doc(QJsonDocument::fromJson(rawData));
      QJsonObject jObj = doc.object();
 
-     int brojSvjetova;
+     int numOfWorlds;
      if(jObj["Worlds"].toArray().size() == 0) qDebug() << "Universe doesn't have \"Worlds\" tag!";
-     else if(jObj["Worlds"].toArray().size() != 0) brojSvjetova = jObj["Worlds"].toArray().size();
+     else if(jObj["Worlds"].toArray().size() != 0) numOfWorlds = jObj["Worlds"].toArray().size();
 
      int posA = -100;
      int posB = -50;
-     Node *cvor = new Node(this);
-     QMap<QString, Node*> svijet;
-     for (int i = 0; i<brojSvjetova; i++) {
+     Node *node = new Node(this);
+     QMap<QString, Node*> world;
+     for (int i = 0; i<numOfWorlds; i++) {
 
-         //Računanje broja dostižnih svjetova i broja varijabli za svaki svijet
-         int brVar = jObj["Worlds"].toArray()[i].toObject().value("Variables").toArray().size();
-         int brDostiznih = jObj["Worlds"].toArray()[i].toObject().value("AdjWorlds").toArray().size();
-         QString imeSvijeta = jObj["Worlds"].toArray()[i].toObject().value("Name").toString();
-         cvor = new Node(this);
-         listaCvorova.append(cvor);
-         svijet.clear();
-         svijet.insert(imeSvijeta,cvor);
+         //Counting adjacent worlds and corresponding variables
+         int numOfVariables = jObj["Worlds"].toArray()[i].toObject().value("Variables").toArray().size();
+         int numOfAdjacent = jObj["Worlds"].toArray()[i].toObject().value("AdjWorlds").toArray().size();
+         QString worldName = jObj["Worlds"].toArray()[i].toObject().value("Name").toString();
+         node = new Node(this);
+         nodeList.append(node);
+         world.clear();
+         world.insert(worldName,node);
 
-         //Dodavanje varijabli svjetova
-         for (int j = 0; j< brVar; j++) {
-             QString imeVarijable = jObj["Worlds"].toArray()[i].toObject().value("Variables").toArray()[j].toObject().value("Name").toString();
+         //Adding variables to the worlds
+         for (int j = 0; j< numOfVariables; j++) {
+             QString variableName = jObj["Worlds"].toArray()[i].toObject().value("Variables").toArray()[j].toObject().value("Name").toString();
              bool istinitostVarijable = jObj["Worlds"].toArray()[i].toObject().value("Variables").toArray()[j].toObject().value("Value").toBool();
-             QMap<QString, bool> mapa;
-             mapa.insert(imeVarijable, istinitostVarijable);
-             cvor->dodajVarijablu(mapa);
+             QMap<QString, bool> map;
+             map.insert(variableName, istinitostVarijable);
+             node->addVariable(map);
          }
 
-         //Dodavanje dostižnih svjetova
-         for (int j = 0; j<brDostiznih; j++) {
-             QString dostizniSvijet = jObj["Worlds"].toArray()[i].toObject().value("AdjWorlds").toArray()[j].toString();
-             cvor->dodajDostizniSvijet(dostizniSvijet);
+         //Adding adjacent worlds to the list
+         for (int j = 0; j<numOfAdjacent; j++) {
+             QString adjacentworld = jObj["Worlds"].toArray()[i].toObject().value("AdjWorlds").toArray()[j].toString();
+             node->addAdjacentWorlds(adjacentworld);
          }
 
-         //Kreiranje čvora
-         cvor->setPos(posA, posB);
-         cvor->postaviIme(imeSvijeta);
+         //Creating nodes
+         node->setPos(posA, posB);
+         node->setName(worldName);
          posA += 60;
          posB += 2 * posA - 50 / 2;
-         scena->addItem(cvor);
-         listaSvjetova.append(svijet);
+         scena->addItem(node);
+         worldList.append(world);
      }
 
      //Kreiranje grana i povezivanje
-     for (int i = 0; i<listaCvorova.size(); i++) {
-         if (listaCvorova[i]->vratiDostizne().size() != 0) {
-             for (int j = 0; j<listaCvorova[i]->vratiDostizne().size(); j++) {
-                 for (QMap<QString, Node*> mapa : listaSvjetova) {
+     for (int i = 0; i<nodeList.size(); i++) {
+         if (nodeList[i]->getAdjacentWorlds().size() != 0) {
+             for (int j = 0; j<nodeList[i]->getAdjacentWorlds().size(); j++) {
+                 for (QMap<QString, Node*> map : worldList) {
                      QMap<QString, Node*>::iterator k;
-                     for (k = mapa.begin(); k != mapa.end(); ++k) {
-                         if (listaCvorova[i]->vratiDostizne()[j] == k.key()) {
-                                  scena->addItem(new Edge(listaCvorova[i], k.value()));
+                     for (k = map.begin(); k != map.end(); ++k) {
+                         if (nodeList[i]->getAdjacentWorlds()[j] == k.key()) {
+                                  scena->addItem(new Edge(nodeList[i], k.value()));
                          }
                      }
                  }
@@ -125,7 +125,7 @@
      }
  }
 
- void GraphWidget::pomjeranje()
+ void GraphWidget::moving()
  {
      if (!timerId)
          timerId = startTimer(1000 / 25);

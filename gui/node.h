@@ -12,25 +12,25 @@ class GraphWidget;
 class QGraphicsSceneMouseEvent;
 
 class Node : public QGraphicsItem {
-private:
 
+private:
     QList<Edge *> edgesList;
-    QList<QMap<QString, bool>> varijableSvjetova;
-    QList<QString> dostizniSvjetovi;
-    QString imeSvijeta;
-    QPointF novaPozicija;
-    GraphWidget *graf;
+    QList<QMap<QString, bool>> worldVariables; //Variables inside each world
+    QList<QString> adjacentWorlds;
+    QString worldName;
+    QPointF newPosition;
+    GraphWidget *graph;
 
 public:
     Node(GraphWidget *graphWidget);
-    void ispisiVarijable();
-    void dodajVarijablu (QMap<QString, bool>);
-    void dodajGranu (Edge *edge);
-    void postaviIme(QString ime);
-    void dodajDostizniSvijet (QString imeSvijeta);
-    void isprintajDostizne();
-    QList<QString> vratiDostizne ();
-    QList<Edge *> grane() const;
+    void printVariables();
+    void addVariable (QMap<QString, bool>);
+    void addEdge(Edge *edge);
+    void setName(QString name);
+    void addAdjacentWorlds (QString imeSvijeta);
+    void printAdjacentWorlds();
+    QList<QString> getAdjacentWorlds();
+    QList<Edge *> edges() const;
     enum { Type = UserType + 1};
     int type() const { return Type; }
 
@@ -42,8 +42,8 @@ public:
     //MOGU SE OBRISATI
     void calculateForces();
     bool advance();
-
     void mouseDoubleClickEvent(QGraphicsSceneMouseEvent *event);
+
 protected:
     QVariant itemChange(GraphicsItemChange promjena,const QVariant &vrijednost);
     void mousePressEvent(QGraphicsSceneMouseEvent *event);

@@ -8,19 +8,17 @@ class GraphWidget : public QGraphicsView {
     Q_OBJECT
 
 public:
-    GraphWidget (QWidget *roditelj = 0);
-    void pomjeranje();
+    GraphWidget (QWidget *parent = 0);
+    void moving();
 
 protected:
     void drawBackground(QPainter *painter, const QRectF &rect);
     void JSONParser();
 
-private slots:
-     void ucitavanjeFajla();
-
 private:
     int timerId;
-    Node *sredisnjiCvor;
 
+private slots:
+     void loadFile();
 };
 #endif // GRAPHWIDGET_H

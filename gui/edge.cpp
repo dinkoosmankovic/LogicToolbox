@@ -5,83 +5,75 @@
 #include <iostream>
 
 static const double PI = 3.14159265358979323846264338327950288419717;
-static double dvaPI = 2.0 * PI;
+static double doublePI = 2.0 * PI;
 
-Edge::Edge (Node *pocetniCvor, Node *krajnjiCvor) : duzinaGrane(10) {
+Edge::Edge (Node *sourceNode, Node *destNode) : arrowSize(10) {
      setAcceptedMouseButtons(0);
-     pocetniC = pocetniCvor;
-     krajnjiC = krajnjiCvor;
-     pocetniC->dodajGranu(this);
-     krajnjiC->dodajGranu(this);
-     popravi();
+     sourceN = sourceNode;
+     destN = destNode;
+     sourceN->addEdge(this);
+     destN->addEdge(this);
+     adjust();
 }
 
-Node *Edge::pocetniCvor() const {
-    return pocetniC;
+Node *Edge::sourceNode() const {
+    return sourceN;
 }
 
-Node *Edge::krajnjiCvor() const {
-    return krajnjiC;
+Node *Edge::destNode() const {
+    return destN;
 }
-void Edge::popravi()
+void Edge::adjust()
 {
-    if (!pocetniC || !krajnjiC)
-        return;
-    QLineF linija(mapFromItem(pocetniC, 0, 0), mapFromItem(krajnjiC, 0, 0));
-    qreal duzina = linija.length();
+     if (!sourceN || !destN) return;
+    QLineF line(mapFromItem(sourceN, 0, 0), mapFromItem(destN, 0, 0));
+    qreal length = line.length();
     prepareGeometryChange();
-    if (duzina > qreal(20.)) {
-        QPointF edgeOffset((linija.dx() * 10) / duzina, (linija.dy() * 10) / duzina);
-        pocetnaTacka = linija.p1() + edgeOffset;
-        krajnjaTacka = linija.p2() - edgeOffset;
+    if (length > qreal(20.)) {
+        QPointF edgeOffset((line.dx() * 10) / length, (line.dy() * 10) / length);
+        sourcePoint = line.p1() + edgeOffset;
+        destinationPoint = line.p2() - edgeOffset;
     }
     else {
-        pocetnaTacka = krajnjaTacka = linija.p1();
+        sourcePoint = destinationPoint = line.p1();
     }
 }
 QRectF Edge::boundingRect() const
 {
-    if (!pocetniC || !krajnjiC)
-        return QRectF();
-
+    if (!sourceN || !destN) return QRectF();
     qreal penWidth = 1;
-    qreal extra = (penWidth + duzinaGrane) / 2.0;
-
-    return QRectF(pocetnaTacka, QSizeF(krajnjaTacka.x() - pocetnaTacka.x(),
-                                      krajnjaTacka.y() - pocetnaTacka.y()))
-        .normalized()
-        .adjusted(-extra, -extra, extra, extra);
+    qreal extra = (penWidth + arrowSize) / 2.0;
+    return QRectF(sourcePoint, QSizeF(destinationPoint.x() - sourcePoint.x(), destinationPoint.y() - sourcePoint.y())).normalized().adjusted(-extra, -extra, extra, extra);
 }
 
 void Edge::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidget *)
 {
-    if (!pocetniC || !krajnjiC)
-        return;
+     if (!sourceN || !destN) return;
 
-    QLineF line(pocetnaTacka, krajnjaTacka);
+    QLineF line(sourcePoint, destinationPoint);
     if (qFuzzyCompare(line.length(), qreal(0.))) {
       //  std::cout << line.length()<<std::endl;
         return;
     }
 
-    // Crtanje linije
+    // Drawing lines
     painter->setPen(QPen(Qt::black, 1, Qt::SolidLine, Qt::RoundCap, Qt::BevelJoin));
     painter->drawLine(line);
 
-    // Crtanje strelica
-    double ugao = ::acos(line.dx() / line.length());
+    // Drawing arrows
+    double angle = ::acos(line.dx() / line.length());
     if (line.dy() >= 0)
-        ugao = dvaPI - ugao;
+        angle = doublePI - angle;
 
-  /*  QPointF izvorisnaStrelicaP1 = pocetnaTacka + QPointF(sin(ugao + PI / 3) * duzinaGrane,
-                                                  cos(ugao + PI / 3) * duzinaGrane);
-    QPointF izvorisnaStrelicaP2 = pocetnaTacka + QPointF(sin(ugao + PI - PI / 3) * duzinaGrane,
-                                                  cos(ugao + PI - PI / 3) * duzinaGrane);*/
-    QPointF odredisnaStrelicaP1 = krajnjaTacka + QPointF(sin(ugao - PI / 3) * duzinaGrane,
-                                              cos(ugao - PI / 3) * duzinaGrane);
-    QPointF odredisnaStrelicaP2 = krajnjaTacka + QPointF(sin(ugao - PI + PI / 3) * duzinaGrane,
-                                              cos(ugao - PI + PI / 3) * duzinaGrane);
+  /*  QPointF izvorisnaArrowP1 = sourcePoint + QPointF(sin(angle + PI / 3) * arrowSize,
+                                                  cos(angle + PI / 3) * arrowSize);
+    QPointF izvorisnaArrowP2 = sourcePoint + QPointF(sin(angle + PI - PI / 3) * arrowSize,
+                                                  cos(angle + PI - PI / 3) * arrowSize);*/
+    QPointF destinationArrowP1 = destinationPoint + QPointF(sin(angle - PI / 3) * arrowSize,
+                                              cos(angle - PI / 3) * arrowSize);
+    QPointF destinationArrowP2 = destinationPoint + QPointF(sin(angle - PI + PI / 3) * arrowSize,
+                                              cos(angle - PI + PI / 3) * arrowSize);
 
     painter->setBrush(Qt::black);
-    painter->drawPolygon(QPolygonF() << line.p2() << odredisnaStrelicaP1 << odredisnaStrelicaP2);
+    painter->drawPolygon(QPolygonF() << line.p2() << destinationArrowP1 << destinationArrowP2);
 }
