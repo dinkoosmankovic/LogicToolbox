@@ -2,7 +2,7 @@
 #define GRAPHWIDGET_H
 #include <QGraphicsView>
 
-class Cvor;
+class Node;
 
 class GraphWidget : public QGraphicsView {
     Q_OBJECT
@@ -20,7 +20,7 @@ private slots:
 
 private:
     int timerId;
-    Cvor *sredisnjiCvor;
+    Node *sredisnjiCvor;
 
 };
 #endif // GRAPHWIDGET_H

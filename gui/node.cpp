@@ -16,8 +16,8 @@
 #include <QDebug>
 #include <QPen>
 #include <QLinearGradient>
-#include "grana.h"
-#include "cvor.h"
+#include "edge.h"
+#include "node.h"
 #include "graphwidget.h"
 #include "mainwindow.h"
 
@@ -26,7 +26,7 @@
   POVEĆATI VELIČINU ELIPSE
  */
 
-Cvor::Cvor(GraphWidget *graphWidget) : graf(graphWidget) {
+Node::Node(GraphWidget *graphWidget) : graf(graphWidget) {
 
     setCacheMode(DeviceCoordinateCache);
     setZValue(-1);
@@ -34,22 +34,24 @@ Cvor::Cvor(GraphWidget *graphWidget) : graf(graphWidget) {
     setFlag(ItemSendsGeometryChanges);
 }
 
-void Cvor::dodajGranu(Grana *grana) {
-    listaGrana << grana;
-    grana->popravi();
+void Node::dodajGranu(Edge *edge) {
+    edgesList << edge;
+    edge->popravi();
 }
 
-QList<Grana *> Cvor::grane() const {
-    return listaGrana;
+QList<Edge *> Node::grane() const {
+    return edgesList;
 }
 
-QRectF Cvor::boundingRect() const
+QRectF Node::boundingRect() const
 {
     qreal adjust = 2;
     return QRectF(-10 - adjust, -10 - adjust,23 + adjust, 23 + adjust);
+
 }
 
-QPainterPath Cvor::shape() const
+
+QPainterPath Node::shape() const
 {
     QPainterPath temp;
     temp.addEllipse(-10, -10, 30, 30);
@@ -57,7 +59,7 @@ QPainterPath Cvor::shape() const
 }
 
 //Mijenjanje boje čvorova
-void Cvor::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *)
+void Node::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *)
 {
     //Sunken stanje je stanje kad se klikne na čvor pa da se ilustrira kao da "potonuo" čvor
     painter->setPen(Qt::NoPen);
@@ -78,14 +80,14 @@ void Cvor::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWid
     }
     painter->setBrush(gradient);
     painter->setPen(QPen(Qt::black, 0));
-    painter->drawEllipse(-10, -10, 20, 20);
+     painter->drawEllipse(-7, -7, 20, 20);
 }
 
-QVariant Cvor::itemChange(GraphicsItemChange change, const QVariant &value)
+QVariant Node::itemChange(GraphicsItemChange change, const QVariant &value)
 {
     switch (change) {
     case ItemPositionHasChanged:
-        foreach (Grana *edge, listaGrana)
+        foreach (Edge *edge, edgesList)
             edge->popravi();
         graf->pomjeranje();
         break;
@@ -96,7 +98,7 @@ QVariant Cvor::itemChange(GraphicsItemChange change, const QVariant &value)
     return QGraphicsItem::itemChange(change, value);
 }
 
-bool Cvor::advance()
+bool Node::advance()
 {
     if (novaPozicija == pos())
         return false;
@@ -106,7 +108,7 @@ bool Cvor::advance()
 }
 
 
-void Cvor::calculateForces()
+void Node::calculateForces()
 {
     if (!scene() || scene()->mouseGrabberItem() == this) {
         novaPozicija = pos();
@@ -116,7 +118,7 @@ void Cvor::calculateForces()
     qreal xvel = 0;
     qreal yvel = 0;
     foreach (QGraphicsItem *item, scene()->items()) {
-        Cvor *node = qgraphicsitem_cast<Cvor *>(item);
+        Node *node = qgraphicsitem_cast<Node *>(item);
         if (!node)
             continue;
 
@@ -131,8 +133,8 @@ void Cvor::calculateForces()
     }
 
     // Now subtract all forces pulling items together
-    double weight = (listaGrana.size() + 1) * 10;
-    foreach (Grana *edge, listaGrana) {
+    double weight = (edgesList.size() + 1) * 10;
+    foreach (Edge *edge, edgesList) {
         QPointF vec;
         if (edge->pocetniCvor() == this)
             vec = mapToItem(edge->pocetniCvor(), 0, 0);
@@ -151,7 +153,7 @@ void Cvor::calculateForces()
     novaPozicija.setY(qMin(qMax(novaPozicija.y(), sceneRect.top() + 10), sceneRect.bottom() - 10));
 }
 
-void Cvor::mouseDoubleClickEvent(QGraphicsSceneMouseEvent *event) {
+void Node::mouseDoubleClickEvent(QGraphicsSceneMouseEvent *event) {
     QWidget *wdg = new QWidget;
     wdg->setWindowTitle("World  \"" + this->imeSvijeta + "\" ");
     wdg->resize(200, 200);
@@ -174,42 +176,42 @@ void Cvor::mouseDoubleClickEvent(QGraphicsSceneMouseEvent *event) {
     wdg->show();
 }
 
-void Cvor::mousePressEvent(QGraphicsSceneMouseEvent *event)
+void Node::mousePressEvent(QGraphicsSceneMouseEvent *event)
 {
     update();
     QGraphicsItem::mousePressEvent(event);
 }
 
-void Cvor::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
+void Node::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
 {
     update();
     QGraphicsItem::mouseReleaseEvent(event);
 }
 
-void Cvor::dodajVarijablu (QMap<QString, bool> var) {
+void Node::dodajVarijablu (QMap<QString, bool> var) {
     varijableSvjetova.append(var);
 }
 
-void Cvor::ispisiVarijable() {
+void Node::ispisiVarijable() {
     for (int i = 0; i<varijableSvjetova.length(); i++) {
        // std::cout << varijableSvjetova[i].toStdString()<< std::endl;
     }
 }
 
-void Cvor::postaviIme(QString ime) {
+void Node::postaviIme(QString ime) {
     imeSvijeta = ime;
 }
 
-void Cvor::dodajDostizniSvijet (QString imeSvijeta) {
+void Node::dodajDostizniSvijet (QString imeSvijeta) {
     dostizniSvjetovi.append(imeSvijeta);
 }
 
-void Cvor::isprintajDostizne() {
+void Node::isprintajDostizne() {
     for (int i = 0; i<this->dostizniSvjetovi.count(); i++) {
          std::cout << dostizniSvjetovi[i].toStdString() << std::endl;
     }
 }
 
-QList<QString> Cvor::vratiDostizne () {
+QList<QString> Node::vratiDostizne () {
     return this->dostizniSvjetovi;
 }

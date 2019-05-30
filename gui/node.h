@@ -1,5 +1,5 @@
-#ifndef CVOR_H
-#define CVOR_H
+#ifndef NODE_H
+#define NODE_H
 #include <QGraphicsItem>
 #include <QList>
 #include <QString>
@@ -7,13 +7,14 @@
 #include <iostream>
 
 
-class Grana;
+class Edge;
 class GraphWidget;
 class QGraphicsSceneMouseEvent;
 
-class Cvor : public QGraphicsItem {
+class Node : public QGraphicsItem {
 private:
-    QList<Grana *> listaGrana;
+
+    QList<Edge *> edgesList;
     QList<QMap<QString, bool>> varijableSvjetova;
     QList<QString> dostizniSvjetovi;
     QString imeSvijeta;
@@ -21,15 +22,15 @@ private:
     GraphWidget *graf;
 
 public:
-    Cvor(GraphWidget *graphWidget);
+    Node(GraphWidget *graphWidget);
     void ispisiVarijable();
     void dodajVarijablu (QMap<QString, bool>);
-    void dodajGranu (Grana *grana);
+    void dodajGranu (Edge *edge);
     void postaviIme(QString ime);
     void dodajDostizniSvijet (QString imeSvijeta);
     void isprintajDostizne();
     QList<QString> vratiDostizne ();
-    QList<Grana *> grane() const;
+    QList<Edge *> grane() const;
     enum { Type = UserType + 1};
     int type() const { return Type; }
 
@@ -48,4 +49,4 @@ protected:
     void mousePressEvent(QGraphicsSceneMouseEvent *event);
     void mouseReleaseEvent(QGraphicsSceneMouseEvent *event);
 };
-#endif // CVOR_H
+#endif // NODE_H

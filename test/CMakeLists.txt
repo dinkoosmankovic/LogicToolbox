@@ -9,7 +9,7 @@ set (CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 include_directories(../../include/${MODULE_NAME})
 add_executable(${TARGET_NAME} main.cpp ${SRC} ../src/Parser/Token.cpp ../include/Token.h ../src/Parser/Expression.cpp ../include/Expression.h ../src/Evaluator/CoreEvaluator.cpp ../include/CoreEvaluator.h ../src/Evaluator/ResultTree.cpp ../include/ResultTree.h
         ../src/Universe/Universe.cpp ../include/Universe.h ../src/Universe/Variable.cpp ../include/Variable.h ../src/Universe/World.cpp ../include/World.h ../src/Core/Operators.cpp ../include/Operators.h ../src/Graph/Graph.cpp ../include/Graph.h
-        ../gui/grana.cpp ../gui/cvor.cpp  ../gui/graphwidget.cpp ../gui/cvor.h ../gui/grana.h ../gui/graphwidget.h)
+        ../gui/edge.cpp ../gui/node.cpp  ../gui/graphwidget.cpp ../gui/node.h ../gui/edge.h ../gui/graphwidget.h)
 target_link_libraries(${TARGET_NAME} ${LIBRARIES} gvc cgraph cdt)
 
 # Build a library from all specified source files

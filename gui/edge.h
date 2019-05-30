@@ -1,15 +1,15 @@
-#ifndef GRANA_H
-#define GRANA_H
+#ifndef EDGE_H
+#define EDGE_H
 #include <QGraphicsItem>
 
-class Cvor;
+class Node;
 
-class Grana : public QGraphicsItem {
+class Edge : public QGraphicsItem {
 public:
-    Grana (Cvor *pocetniCvor, Cvor *krajnjiCvor);
+    Edge (Node *pocetniCvor, Node *krajnjiCvor);
     //GET
-    Cvor *pocetniCvor() const;
-    Cvor *krajnjiCvor() const;
+    Node *pocetniCvor() const;
+    Node *krajnjiCvor() const;
     void popravi();
     enum { Type = UserType + 2 };
     int type() const { return Type; }
@@ -19,9 +19,9 @@ protected:
      void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
 
 private:
-     Cvor *pocetniC, *krajnjiC;
+     Node *pocetniC, *krajnjiC;
      QPointF pocetnaTacka;
      QPointF krajnjaTacka;
      qreal duzinaGrane;
 };
-#endif // GRANA_H
+#endif // EDGE_H

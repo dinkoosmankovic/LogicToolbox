@@ -10,15 +10,15 @@ set(CMAKE_AUTOMOC ON)
 find_package(Qt5Widgets)
 set ( SOURCES
     main.cpp
-    cvor.cpp
+    node.cpp
     graphwidget.cpp
-    grana.cpp
+    edge.cpp
     mainwindow.cpp
 
 )
 set(HEADERS
-    cvor.h
-    grana.h
+    node.h
+    edge.h
     graphwidget.h
     mainwindow.h
 

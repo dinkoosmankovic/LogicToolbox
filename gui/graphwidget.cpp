@@ -13,8 +13,8 @@
 #include <QString>
 #include <QMap>
 #include "graphwidget.h"
-#include "cvor.h"
-#include "grana.h"
+#include "node.h"
+#include "edge.h"
 #include <QFileDialog>
 #include "mainwindow.h"
 #include <QLabel>
@@ -57,8 +57,8 @@
  void GraphWidget::JSONParser() {
 
      //Čitanje iz JSON fajla
-     QList<QMap<QString, Cvor*>> listaSvjetova;
-     QList<Cvor*> listaCvorova;
+     QList<QMap<QString, Node*>> listaSvjetova;
+     QList<Node*> listaCvorova;
      QFile file(putanja);
      file.open(QIODevice::ReadOnly);
      QByteArray rawData = file.readAll();
@@ -71,15 +71,15 @@
 
      int posA = -100;
      int posB = -50;
-     Cvor *cvor = new Cvor(this);
-     QMap<QString, Cvor*> svijet;
+     Node *cvor = new Node(this);
+     QMap<QString, Node*> svijet;
      for (int i = 0; i<brojSvjetova; i++) {
 
          //Računanje broja dostižnih svjetova i broja varijabli za svaki svijet
          int brVar = jObj["Worlds"].toArray()[i].toObject().value("Variables").toArray().size();
          int brDostiznih = jObj["Worlds"].toArray()[i].toObject().value("AdjWorlds").toArray().size();
          QString imeSvijeta = jObj["Worlds"].toArray()[i].toObject().value("Name").toString();
-         cvor = new Cvor(this);
+         cvor = new Node(this);
          listaCvorova.append(cvor);
          svijet.clear();
          svijet.insert(imeSvijeta,cvor);
@@ -112,11 +112,11 @@
      for (int i = 0; i<listaCvorova.size(); i++) {
          if (listaCvorova[i]->vratiDostizne().size() != 0) {
              for (int j = 0; j<listaCvorova[i]->vratiDostizne().size(); j++) {
-                 for (QMap<QString, Cvor*> mapa : listaSvjetova) {
-                     QMap<QString, Cvor*>::iterator k;
+                 for (QMap<QString, Node*> mapa : listaSvjetova) {
+                     QMap<QString, Node*>::iterator k;
                      for (k = mapa.begin(); k != mapa.end(); ++k) {
                          if (listaCvorova[i]->vratiDostizne()[j] == k.key()) {
-                                  scena->addItem(new Grana(listaCvorova[i], k.value()));
+                                  scena->addItem(new Edge(listaCvorova[i], k.value()));
                          }
                      }
                  }

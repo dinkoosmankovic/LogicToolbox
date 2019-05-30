@@ -1,5 +1,5 @@
-#include "cvor.h"
-#include "grana.h"
+#include "node.h"
+#include "edge.h"
 #include <QPainter>
 #include <math.h>
 #include <iostream>
@@ -7,7 +7,7 @@
 static const double PI = 3.14159265358979323846264338327950288419717;
 static double dvaPI = 2.0 * PI;
 
-Grana::Grana (Cvor *pocetniCvor, Cvor *krajnjiCvor) : duzinaGrane(10) {
+Edge::Edge (Node *pocetniCvor, Node *krajnjiCvor) : duzinaGrane(10) {
      setAcceptedMouseButtons(0);
      pocetniC = pocetniCvor;
      krajnjiC = krajnjiCvor;
@@ -16,14 +16,14 @@ Grana::Grana (Cvor *pocetniCvor, Cvor *krajnjiCvor) : duzinaGrane(10) {
      popravi();
 }
 
-Cvor *Grana::pocetniCvor() const {
+Node *Edge::pocetniCvor() const {
     return pocetniC;
 }
 
-Cvor *Grana::krajnjiCvor() const {
+Node *Edge::krajnjiCvor() const {
     return krajnjiC;
 }
-void Grana::popravi()
+void Edge::popravi()
 {
     if (!pocetniC || !krajnjiC)
         return;
@@ -39,7 +39,7 @@ void Grana::popravi()
         pocetnaTacka = krajnjaTacka = linija.p1();
     }
 }
-QRectF Grana::boundingRect() const
+QRectF Edge::boundingRect() const
 {
     if (!pocetniC || !krajnjiC)
         return QRectF();
@@ -53,7 +53,7 @@ QRectF Grana::boundingRect() const
         .adjusted(-extra, -extra, extra, extra);
 }
 
-void Grana::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidget *)
+void Edge::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidget *)
 {
     if (!pocetniC || !krajnjiC)
         return;
