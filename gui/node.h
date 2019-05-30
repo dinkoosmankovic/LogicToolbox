@@ -22,6 +22,8 @@ private:
     GraphWidget *graph;
 
 public:
+    enum { Type = UserType + 1};
+    int type() const { return Type; }
     Node(GraphWidget *graphWidget);
     void printVariables();
     void addVariable (QMap<QString, bool>);
@@ -31,15 +33,9 @@ public:
     void printAdjacentWorlds();
     QList<QString> getAdjacentWorlds();
     QList<Edge *> edges() const;
-    enum { Type = UserType + 1};
-    int type() const { return Type; }
-
-    //Reimplementacija već postojećih metoda u baznoj klasi
     QPainterPath shape() const;
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
     QRectF boundingRect() const;
-
-    //MOGU SE OBRISATI
     void calculateForces();
     bool advance();
     void mouseDoubleClickEvent(QGraphicsSceneMouseEvent *event);

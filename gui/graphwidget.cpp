@@ -12,12 +12,12 @@
 #include <QDebug>
 #include <QString>
 #include <QMap>
+#include <QFileDialog>
+#include <QLabel>
+#include "mainwindow.h"
 #include "graphwidget.h"
 #include "node.h"
 #include "edge.h"
-#include <QFileDialog>
-#include "mainwindow.h"
-#include <QLabel>
 
  QGraphicsScene *scena;
  QString path;
@@ -108,7 +108,7 @@
          worldList.append(world);
      }
 
-     //Kreiranje grana i povezivanje
+     //Creating edges and connecting them
      for (int i = 0; i<nodeList.size(); i++) {
          if (nodeList[i]->getAdjacentWorlds().size() != 0) {
              for (int j = 0; j<nodeList[i]->getAdjacentWorlds().size(); j++) {

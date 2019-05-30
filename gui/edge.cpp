@@ -1,8 +1,8 @@
-#include "node.h"
-#include "edge.h"
 #include <QPainter>
 #include <math.h>
 #include <iostream>
+#include "node.h"
+#include "edge.h"
 
 static const double PI = 3.14159265358979323846264338327950288419717;
 static double doublePI = 2.0 * PI;

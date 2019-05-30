@@ -24,6 +24,7 @@
 
 /*TODO
   POVEĆATI VELIČINU ELIPSE
+  PREPRAVITI SVE GETTER-E NA CONST ------ ZA SVAKU KLASU
  */
 
 Node::Node(GraphWidget *graphWidget) : graph(graphWidget) {
@@ -97,9 +98,7 @@ QVariant Node::itemChange(GraphicsItemChange change, const QVariant &value)
 
 bool Node::advance()
 {
-    if (newPosition == pos())
-        return false;
-
+    if (newPosition == pos()) return false;
     setPos(newPosition);
     return true;
 }
@@ -116,9 +115,7 @@ void Node::calculateForces()
     qreal yvel = 0;
     foreach (QGraphicsItem *item, scene()->items()) {
         Node *node = qgraphicsitem_cast<Node *>(item);
-        if (!node)
-            continue;
-
+        if (!node) continue;
         QPointF vec = mapToItem(node, 0, 0);
         qreal dx = vec.x();
         qreal dy = vec.y();
