@@ -19,7 +19,14 @@
 
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow) {
     ui->setupUi(this);
+    ui->comboBox->addItem("K-logic");
+    ui->comboBox->addItem("T-logic");
+    ui->comboBox->addItem("S4-logic");
+    ui->comboBox->addItem("S5-logic");
+    ui->comboBox->addItem("D-logic");
+    this->setWindowTitle("Create .json file");
     ui->groupBox->setStyleSheet("QGroupBox {  border: 1px solid gray;}");
+    ui->groupBox_2->setStyleSheet("QGroupBox {  border: 1px solid gray;}");
 }
 
 MainWindow::~MainWindow() { delete ui; }
@@ -32,8 +39,25 @@ void MainWindow::on_lineEdit_2_editingFinished() {
     wrldNms.append(worlds.split(','));
     setWorldNames(wrldNms);
     QList<QString> temp = getNamesOfTheWorlds();
+   // QVBoxLayout *vbox = new QVBoxLayout;
     for (int i=0; i<getNumOfWorlds(); i++) {
         ui->comboBox_2->addItem(temp[i]);
+        ui->comboBox_3->addItem(temp[i]);
+        /*checkBox1 = new QCheckBox;
+        checkBox1->setText(temp[i]);
+        vbox->addWidget(checkBox1);*/
     }
+   // ui->groupBox->setLayout(vbox);
+}
 
+void MainWindow::on_lineEdit_4_editingFinished() {
+    QString variables = ui->lineEdit_4->text();
+    ui->lineEdit_7->setText(variables);
+    QList<QString> varNames;
+    varNames.append(variables.split(','));
+    setVarNames(varNames);
+   /* QList<QString> temp = getVarNames();
+    for (int i = 0; i<getNumOfVariables(); i++) {
+        qDebug()<<temp[i];
+    }*/
 }
