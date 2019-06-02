@@ -14,6 +14,9 @@
 #include <QMap>
 #include <QFileDialog>
 #include <QLabel>
+#include <QWidget>
+#include <QLineEdit>
+
 #include "mainwindow.h"
 #include "graphwidget.h"
 #include "node.h"
@@ -22,13 +25,14 @@
  QGraphicsScene *scena;
  QString path;
 
- //možda kreirati klasu universe sa svim atributimas
+ //TODO
+ // napisati neki tekst na početku ali neće!!!
+ // kreirati klasu universe sa svim atributima???
+ // uradiiti validaciju pri čitanju i kreiranju json
+
  GraphWidget::GraphWidget(QWidget *parent) : QGraphicsView(parent),timerId(0){
      scena = new QGraphicsScene(this);
      scena->setItemIndexMethod(QGraphicsScene::NoIndex);
-     scena->width();
-
-     scena->height();
      scena->setSceneRect(-250, -250, 600, 525);
      setScene(scena);
      setCacheMode(CacheBackground);
@@ -45,21 +49,38 @@
      load->setFont(f);
 
      QPushButton *create = new QPushButton("Create .json file", this);
-    // connect(load, SIGNAL (released()), this, SLOT(loadFile()));
+     connect(create, SIGNAL (released()), this, SLOT(createFile()));
      create->setGeometry(QRect(QPoint(180,33),QSize(150, 50)));
      create->setFont(f);
+
      /*Label *label = new QLabel(this);
      QFont fa("Times New Roman", 22, QFont::Bold);
      label->setFont(fa);
      label->setText("<font color='red'>Učitajte datoteku da bi se prikazo graf</font>");
      label->setGeometry(120,262,600,200);*/
  }
+
  void GraphWidget::loadFile() {
      scena->clear();
      QString file = QFileDialog::getOpenFileName(this,tr("Open"),"",tr("LogicToolbox (*.json)"));
      path = file;
      JSONParser();
  }
+
+ void GraphWidget::createFile() {
+    /* QWidget *wdg = new QWidget;
+     wdg->setWindowTitle("Create .json file");
+     wdg->resize(500, 500);
+     QLabel *lbl = createLabel(wdg, "Enter logic type:");
+     lbl = createLabel(wdg, "\nEnter universe name:");
+     lbl = createLabel(wdg, "\n\nEnter number of variables:");
+     QLineEdit *edit = new QLineEdit(wdg);
+     edit->setGeometry(100,100,100,100);
+     wdg->show();*/
+     MainWindow *win = new MainWindow(this);
+     win->show();
+ }
+
  void GraphWidget::JSONParser() {
 
      //Reading JSON file
@@ -161,3 +182,10 @@
      painter->drawRect(sceneRect);
  }
 
+ QLabel *GraphWidget::createLabel(QWidget *parent,QString text) {
+     QLabel *label = new QLabel(parent);
+     QFont fa("Times New Roman", 12, QFont::DemiBold);
+     label->setFont(fa);
+     label->setText(text);
+     return label;
+ }

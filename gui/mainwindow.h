@@ -14,19 +14,36 @@ class MainWindow : public QMainWindow
 
 public:
     explicit MainWindow(QWidget *parent = 0);
-   // QString vratiPutanju();
     ~MainWindow();
+
 private slots:
+    void on_lineEdit_2_editingFinished();
 
-    void on_pushButton_clicked();
-
-
-public slots:
-    void on_pushButton_2_clicked();
 private:
-  //     void postaviPutanju(QString s);
-   //     QString putanja;
+    //SET
+    void setLogicType (QString type) { logicType = type; }
+    void setUniverseName (QString name) { universeName = name; }
+    void setNumOfVaribles (int number) { numOfVar = number; }
+    void setVarNames (QString name) { listOfVaribles.append(name); }
+    void setWorldNames (QList<QString> name) { listOfWorldNames.append(name); }
+    void setValueOfVarible (bool val) { varValue = val; }
+
+    //GET
+    QString getLogicType() const { return logicType; }
+    QString getUniverseName() const { return universeName; }
+    int getNumOfVariables() const { return numOfVar; }
+    QList<QString> getVarNames() const { return listOfVaribles; }
+    int getNumOfWorlds() const { return listOfWorldNames.size(); }
+    bool getValueOfVariable() const { return varValue; }
+    QList<QString> getNamesOfTheWorlds() const { return listOfWorldNames; }
+
     Ui::MainWindow *ui;
+    QString logicType;
+    QString universeName;
+    int numOfVar;
+    QList<QString> listOfVaribles;
+    QList<QString> listOfWorldNames;
+    bool varValue;
 };
 
 #endif // MAINWINDOW_H
