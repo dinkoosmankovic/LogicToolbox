@@ -3,6 +3,8 @@
 
 #include <QMainWindow>
 #include <QGraphicsScene>
+#include <QMap>
+
 class QGraphicsSceneMouseEvent;
 namespace Ui {
 class MainWindow;
@@ -18,8 +20,12 @@ public:
 
 private slots:
     void on_lineEdit_2_editingFinished();
-
     void on_lineEdit_4_editingFinished();
+    void on_pushButton_clicked();
+
+    void on_pushButton_2_clicked();
+
+    void on_pushButton_3_clicked();
 
 private:
     //SET
@@ -28,6 +34,7 @@ private:
     void setVarNames (QList<QString> name) { listOfVaribles = name; }
     void setWorldNames (QList<QString> name) { listOfWorldNames.append(name); }
     void setValueOfVarible (bool val) { varValue = val; }
+    void setAdjcWorlds (QList<QMap<QString,QList<QString>>> world) {adjcWorlds = world; }
 
     //GET
     QString getLogicType() const { return logicType; }
@@ -37,12 +44,14 @@ private:
     int getNumOfWorlds() const { return listOfWorldNames.size(); }
     bool getValueOfVariable() const { return varValue; }
     QList<QString> getNamesOfTheWorlds() const { return listOfWorldNames; }
+    QList<QMap<QString, QList<QString>>> getAdjcWorlds() const { return adjcWorlds; }
 
     Ui::MainWindow *ui;
     QString logicType;
     QString universeName;
     QList<QString> listOfVaribles;
     QList<QString> listOfWorldNames;
+    QList<QMap<QString, QList<QString>>> adjcWorlds;
     bool varValue;
 };
 
