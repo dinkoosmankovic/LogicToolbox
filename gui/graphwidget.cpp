@@ -37,11 +37,17 @@
      setTransformationAnchor(AnchorUnderMouse);
      scale(qreal(1.35), qreal(1.1));
      setMinimumSize(800,750);
-     QPushButton *button = new QPushButton("Load .json file", this);
-     connect(button, SIGNAL (released()), this, SLOT(loadFile()));
-     button->setGeometry(QRect(QPoint(0,33),QSize(150, 50)));
+
+     QPushButton *load = new QPushButton("Load .json file", this);
+     connect(load, SIGNAL (released()), this, SLOT(loadFile()));
+     load->setGeometry(QRect(QPoint(0,33),QSize(150, 50)));
      QFont f("Times New Roman", 12, QFont::Bold);
-     button->setFont(f);
+     load->setFont(f);
+
+     QPushButton *create = new QPushButton("Create .json file", this);
+    // connect(load, SIGNAL (released()), this, SLOT(loadFile()));
+     create->setGeometry(QRect(QPoint(180,33),QSize(150, 50)));
+     create->setFont(f);
      /*Label *label = new QLabel(this);
      QFont fa("Times New Roman", 22, QFont::Bold);
      label->setFont(fa);
