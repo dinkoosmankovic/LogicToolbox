@@ -22,9 +22,7 @@ private slots:
     void on_lineEdit_2_editingFinished();
     void on_lineEdit_4_editingFinished();
     void on_pushButton_clicked();
-
     void on_pushButton_2_clicked();
-
     void on_pushButton_3_clicked();
 
 private:
@@ -46,6 +44,7 @@ private:
     QList<QString> getNamesOfTheWorlds() const { return listOfWorldNames; }
     QList<QMap<QString, QList<QString>>> getAdjcWorlds() const { return adjcWorlds; }
 
+    //Atributes
     Ui::MainWindow *ui;
     QString logicType;
     QString universeName;

@@ -1,11 +1,7 @@
-#include "mainwindow.h"
-#include "ui_mainwindow.h"
 #include <QPushButton>
 #include <QMessageBox>
 #include <QObject>
-#include<QRegion>
-#include "graphwidget.h"
-#include "node.h"
+#include <QRegion>
 #include <QWidget>
 #include <iostream>
 #include <QFileDialog>
@@ -23,6 +19,11 @@
 #include <QFileInfo>
 #include <QDir>
 #include <QFile>
+
+#include "mainwindow.h"
+#include "ui_mainwindow.h"
+#include "graphwidget.h"
+#include "node.h"
 
 QList<QMap<QString, QList<QString>>> listAllAdjWrlds;
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow) {
@@ -73,27 +74,10 @@ void MainWindow::on_lineEdit_4_editingFinished() {
 
 void MainWindow::on_pushButton_clicked() {
 
-    /*QJsonObject recordObject;
-      recordObject.insert("FirstName", QJsonValue::fromVariant("John"));
-      recordObject.insert("LastName", QJsonValue::fromVariant("Doe"));
-      recordObject.insert("Age", QJsonValue::fromVariant(43));
-
-      QJsonObject addressObject;
-      addressObject.insert("Street", "Downing Street 10");
-      addressObject.insert("City", "London");
-      addressObject.insert("Country", "Great Britain");
-      recordObject.insert("Address", addressObject);
-
-      QJsonArray phoneNumbersArray;
-      phoneNumbersArray.push_back("+44 1234567");
-      phoneNumbersArray.push_back("+44 2345678");
-      recordObject.insert("Phone Numbers", phoneNumbersArray);
-
-      QJsonDocument doc(recordObject);
-      qDebug() << doc.toJson();*/
     setLogicType(ui->comboBox->currentText());
     setUniverseName(ui->lineEdit->text());
 
+    //Creating JSON file
     QJsonObject jsontx;
 
     //Inserting universe name and type of logic
@@ -104,10 +88,41 @@ void MainWindow::on_pushButton_clicked() {
     QList<QString> temp = getVarNames();
     QJsonArray varName;
     for(int i = 0; i<temp.size(); i++) varName.push_back(temp[i]);
-    jsontx.insert("VariablesName", varName);
+    jsontx.insert("VariableNames", varName);
 
+    //Inserting info about each world
+    QJsonArray worlds;
+    QJsonObject wlrdInfo;
+
+    temp =  getNamesOfTheWorlds();
+  /*  for (int i = 0; i<temp.size(); i++) {
+      //  adjcWrld.push_back("w1");
+        wlrdInfo.insert("Name", QJsonValue::fromVariant(temp[i]));
+      //  wlrdInfo.insert("AdjWorlds", adjcWrld);
+        worlds.push_back(wlrdInfo);
+    }*/
+    //jsontx.insert("Worlds", worlds);
+
+    for(QMap<QString, QList<QString>> map : adjcWorlds) {
+        QMap<QString,QList<QString>>::iterator i;
+        for(i=map.begin(); i!=map.end(); ++i) {
+            QList<QString> tmp = i.value();  //List of adjacent worlds od each world
+            for (int k = 0; k<temp.size();k++) {
+                if (i.key() == temp[k]) {
+                    qDebug()<<i.key();
+                    QJsonArray adjcWrld;
+                    wlrdInfo.insert("Name", QJsonValue::fromVariant(temp[k]));
+                    for(int e=0; e<tmp.size(); e++) adjcWrld.push_back(tmp[e]);
+                    wlrdInfo.insert("AdjWorlds", adjcWrld);
+                    worlds.push_back(wlrdInfo);
+                }
+           }
+        }
+    }
+    jsontx.insert("Worlds", worlds);
+
+    //Saving JSON file
     QJsonDocument doc(jsontx);
-
     QString saveFileName = QFileDialog::getSaveFileName(this, tr("Save Json File"), QString(), tr("JSON (*.json)"));
     QFileInfo fileInfo(saveFileName);
     QDir::setCurrent(fileInfo.path());
@@ -117,10 +132,9 @@ void MainWindow::on_pushButton_clicked() {
     jsonFile.close();   // Close file
 }
 
-void MainWindow::on_pushButton_2_clicked()
-{
+void MainWindow::on_pushButton_2_clicked() {
 
-    ui->lineEdit_3->clear();
+
     QString selectedWrld = ui->comboBox_2->currentText();
     QString temp = ui->lineEdit_3->text();
     QList<QString> adjWorlds;
@@ -129,7 +143,7 @@ void MainWindow::on_pushButton_2_clicked()
     mapOfAdjWrld.insert(selectedWrld, adjWorlds);
     listAllAdjWrlds.append(mapOfAdjWrld);
     setAdjcWorlds(listAllAdjWrlds);
-
+    ui->lineEdit_3->clear();
    /* QList<QMap<QString, bool>> worldVariables;
 
     for(QMap<)
@@ -156,7 +170,4 @@ void MainWindow::on_pushButton_3_clicked() {
      for (int i = 0; i< trueVar.size(); i++) trueVar[i] = trueVar[i] + "T";
      for (int i = 0; i< falseVar.size(); i++) falseVar[i] = falseVar[i] + "F";
      for (int i = 0; i<trueVar.size(); i++) qDebug() << trueVar[i];
-
-
-    // qDebug() << selectedWrld;
 }
