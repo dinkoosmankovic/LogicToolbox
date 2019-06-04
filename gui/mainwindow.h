@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include <QGraphicsScene>
 #include <QMap>
+#include <tuple>
 
 class QGraphicsSceneMouseEvent;
 namespace Ui {
@@ -31,7 +32,7 @@ private:
     void setUniverseName (QString name) { universeName = name; }
     void setVarNames (QList<QString> name) { listOfVaribles = name; }
     void setWorldNames (QList<QString> name) { listOfWorldNames.append(name); }
-    void setValueOfVarible (bool val) { varValue = val; }
+    void setValueOfVarible ( QList<std::tuple<QString, QString, bool>> val) { varValue = val; }
     void setAdjcWorlds (QList<QMap<QString,QList<QString>>> world) {adjcWorlds = world; }
 
     //GET
@@ -40,9 +41,9 @@ private:
     int getNumOfVariables() const { return listOfVaribles.size(); }
     QList<QString> getVarNames() const { return listOfVaribles; }
     int getNumOfWorlds() const { return listOfWorldNames.size(); }
-    bool getValueOfVariable() const { return varValue; }
     QList<QString> getNamesOfTheWorlds() const { return listOfWorldNames; }
     QList<QMap<QString, QList<QString>>> getAdjcWorlds() const { return adjcWorlds; }
+    QList<std::tuple<QString, QString, bool>> getValueOfVariable() const { return  varValue; }
 
     //Atributes
     Ui::MainWindow *ui;
@@ -51,7 +52,7 @@ private:
     QList<QString> listOfVaribles;
     QList<QString> listOfWorldNames;
     QList<QMap<QString, QList<QString>>> adjcWorlds;
-    bool varValue;
+    QList<std::tuple<QString, QString, bool>> varValue;
 };
 
 #endif // MAINWINDOW_H
