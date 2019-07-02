@@ -6,5 +6,5 @@ CXX_FLAGS =  -std=c++11 -Wall -O0 -ggdb
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/alma/LogicToolbox/testCoverage -I/home/alma/LogicToolbox -I/home/alma/LogicToolbox/src -I/home/alma/LogicToolbox/ThirdParty/src/googletest/googletest/include -I/home/alma/LogicToolbox/testCoverage/../include/ModuleOne 
+CXX_INCLUDES = -I/home/alma/Documents/LogicToolbox/testCoverage -I/home/alma/Documents/LogicToolbox -I/home/alma/Documents/LogicToolbox/src -I/home/alma/Documents/LogicToolbox/ThirdParty/src/googletest/googletest/include -I/home/alma/Documents/LogicToolbox/testCoverage/../include/ModuleOne 
 

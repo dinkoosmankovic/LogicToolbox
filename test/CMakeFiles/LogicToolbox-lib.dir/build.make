@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/alma/LogicToolbox
+CMAKE_SOURCE_DIR = /home/alma/Documents/LogicToolbox
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/alma/LogicToolbox
+CMAKE_BINARY_DIR = /home/alma/Documents/LogicToolbox
 
 # Include any dependencies generated for this target.
 include test/CMakeFiles/LogicToolbox-lib.dir/depend.make
@@ -59,16 +59,16 @@ include test/CMakeFiles/LogicToolbox-lib.dir/flags.make
 
 test/CMakeFiles/LogicToolbox-lib.dir/hello.cpp.o: test/CMakeFiles/LogicToolbox-lib.dir/flags.make
 test/CMakeFiles/LogicToolbox-lib.dir/hello.cpp.o: test/hello.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alma/LogicToolbox/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object test/CMakeFiles/LogicToolbox-lib.dir/hello.cpp.o"
-	cd /home/alma/LogicToolbox/test && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/LogicToolbox-lib.dir/hello.cpp.o -c /home/alma/LogicToolbox/test/hello.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alma/Documents/LogicToolbox/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object test/CMakeFiles/LogicToolbox-lib.dir/hello.cpp.o"
+	cd /home/alma/Documents/LogicToolbox/test && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/LogicToolbox-lib.dir/hello.cpp.o -c /home/alma/Documents/LogicToolbox/test/hello.cpp
 
 test/CMakeFiles/LogicToolbox-lib.dir/hello.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/LogicToolbox-lib.dir/hello.cpp.i"
-	cd /home/alma/LogicToolbox/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alma/LogicToolbox/test/hello.cpp > CMakeFiles/LogicToolbox-lib.dir/hello.cpp.i
+	cd /home/alma/Documents/LogicToolbox/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alma/Documents/LogicToolbox/test/hello.cpp > CMakeFiles/LogicToolbox-lib.dir/hello.cpp.i
 
 test/CMakeFiles/LogicToolbox-lib.dir/hello.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/LogicToolbox-lib.dir/hello.cpp.s"
-	cd /home/alma/LogicToolbox/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alma/LogicToolbox/test/hello.cpp -o CMakeFiles/LogicToolbox-lib.dir/hello.cpp.s
+	cd /home/alma/Documents/LogicToolbox/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alma/Documents/LogicToolbox/test/hello.cpp -o CMakeFiles/LogicToolbox-lib.dir/hello.cpp.s
 
 test/CMakeFiles/LogicToolbox-lib.dir/hello.cpp.o.requires:
 
@@ -83,16 +83,16 @@ test/CMakeFiles/LogicToolbox-lib.dir/hello.cpp.o.provides.build: test/CMakeFiles
 
 test/CMakeFiles/LogicToolbox-lib.dir/LogicToolbox-lib_autogen/mocs_compilation.cpp.o: test/CMakeFiles/LogicToolbox-lib.dir/flags.make
 test/CMakeFiles/LogicToolbox-lib.dir/LogicToolbox-lib_autogen/mocs_compilation.cpp.o: test/LogicToolbox-lib_autogen/mocs_compilation.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alma/LogicToolbox/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object test/CMakeFiles/LogicToolbox-lib.dir/LogicToolbox-lib_autogen/mocs_compilation.cpp.o"
-	cd /home/alma/LogicToolbox/test && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/LogicToolbox-lib.dir/LogicToolbox-lib_autogen/mocs_compilation.cpp.o -c /home/alma/LogicToolbox/test/LogicToolbox-lib_autogen/mocs_compilation.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alma/Documents/LogicToolbox/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object test/CMakeFiles/LogicToolbox-lib.dir/LogicToolbox-lib_autogen/mocs_compilation.cpp.o"
+	cd /home/alma/Documents/LogicToolbox/test && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/LogicToolbox-lib.dir/LogicToolbox-lib_autogen/mocs_compilation.cpp.o -c /home/alma/Documents/LogicToolbox/test/LogicToolbox-lib_autogen/mocs_compilation.cpp
 
 test/CMakeFiles/LogicToolbox-lib.dir/LogicToolbox-lib_autogen/mocs_compilation.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/LogicToolbox-lib.dir/LogicToolbox-lib_autogen/mocs_compilation.cpp.i"
-	cd /home/alma/LogicToolbox/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alma/LogicToolbox/test/LogicToolbox-lib_autogen/mocs_compilation.cpp > CMakeFiles/LogicToolbox-lib.dir/LogicToolbox-lib_autogen/mocs_compilation.cpp.i
+	cd /home/alma/Documents/LogicToolbox/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alma/Documents/LogicToolbox/test/LogicToolbox-lib_autogen/mocs_compilation.cpp > CMakeFiles/LogicToolbox-lib.dir/LogicToolbox-lib_autogen/mocs_compilation.cpp.i
 
 test/CMakeFiles/LogicToolbox-lib.dir/LogicToolbox-lib_autogen/mocs_compilation.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/LogicToolbox-lib.dir/LogicToolbox-lib_autogen/mocs_compilation.cpp.s"
-	cd /home/alma/LogicToolbox/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alma/LogicToolbox/test/LogicToolbox-lib_autogen/mocs_compilation.cpp -o CMakeFiles/LogicToolbox-lib.dir/LogicToolbox-lib_autogen/mocs_compilation.cpp.s
+	cd /home/alma/Documents/LogicToolbox/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alma/Documents/LogicToolbox/test/LogicToolbox-lib_autogen/mocs_compilation.cpp -o CMakeFiles/LogicToolbox-lib.dir/LogicToolbox-lib_autogen/mocs_compilation.cpp.s
 
 test/CMakeFiles/LogicToolbox-lib.dir/LogicToolbox-lib_autogen/mocs_compilation.cpp.o.requires:
 
@@ -117,8 +117,8 @@ lib/libLogicToolbox.so: test/CMakeFiles/LogicToolbox-lib.dir/hello.cpp.o
 lib/libLogicToolbox.so: test/CMakeFiles/LogicToolbox-lib.dir/LogicToolbox-lib_autogen/mocs_compilation.cpp.o
 lib/libLogicToolbox.so: test/CMakeFiles/LogicToolbox-lib.dir/build.make
 lib/libLogicToolbox.so: test/CMakeFiles/LogicToolbox-lib.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/alma/LogicToolbox/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX shared library ../lib/libLogicToolbox.so"
-	cd /home/alma/LogicToolbox/test && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/LogicToolbox-lib.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/alma/Documents/LogicToolbox/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX shared library ../lib/libLogicToolbox.so"
+	cd /home/alma/Documents/LogicToolbox/test && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/LogicToolbox-lib.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 test/CMakeFiles/LogicToolbox-lib.dir/build: lib/libLogicToolbox.so
@@ -131,10 +131,10 @@ test/CMakeFiles/LogicToolbox-lib.dir/requires: test/CMakeFiles/LogicToolbox-lib.
 .PHONY : test/CMakeFiles/LogicToolbox-lib.dir/requires
 
 test/CMakeFiles/LogicToolbox-lib.dir/clean:
-	cd /home/alma/LogicToolbox/test && $(CMAKE_COMMAND) -P CMakeFiles/LogicToolbox-lib.dir/cmake_clean.cmake
+	cd /home/alma/Documents/LogicToolbox/test && $(CMAKE_COMMAND) -P CMakeFiles/LogicToolbox-lib.dir/cmake_clean.cmake
 .PHONY : test/CMakeFiles/LogicToolbox-lib.dir/clean
 
 test/CMakeFiles/LogicToolbox-lib.dir/depend:
-	cd /home/alma/LogicToolbox && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/alma/LogicToolbox /home/alma/LogicToolbox/test /home/alma/LogicToolbox /home/alma/LogicToolbox/test /home/alma/LogicToolbox/test/CMakeFiles/LogicToolbox-lib.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/alma/Documents/LogicToolbox && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/alma/Documents/LogicToolbox /home/alma/Documents/LogicToolbox/test /home/alma/Documents/LogicToolbox /home/alma/Documents/LogicToolbox/test /home/alma/Documents/LogicToolbox/test/CMakeFiles/LogicToolbox-lib.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : test/CMakeFiles/LogicToolbox-lib.dir/depend
 

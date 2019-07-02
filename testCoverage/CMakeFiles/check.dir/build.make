@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/alma/LogicToolbox
+CMAKE_SOURCE_DIR = /home/alma/Documents/LogicToolbox
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/alma/LogicToolbox
+CMAKE_BINARY_DIR = /home/alma/Documents/LogicToolbox
 
 # Utility rule file for check.
 
@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /home/alma/LogicToolbox
 include testCoverage/CMakeFiles/check.dir/progress.make
 
 testCoverage/CMakeFiles/check:
-	cd /home/alma/LogicToolbox/testCoverage && ../bin/LogicToolbox-lib_test --gtest_output="xml:/home/alma/LogicToolbox/tests.xml" || true
+	cd /home/alma/Documents/LogicToolbox/testCoverage && ../bin/LogicToolbox-lib_test --gtest_output="xml:/home/alma/Documents/LogicToolbox/tests.xml" || true
 
 check: testCoverage/CMakeFiles/check
 check: testCoverage/CMakeFiles/check.dir/build.make
@@ -67,10 +67,10 @@ testCoverage/CMakeFiles/check.dir/build: check
 .PHONY : testCoverage/CMakeFiles/check.dir/build
 
 testCoverage/CMakeFiles/check.dir/clean:
-	cd /home/alma/LogicToolbox/testCoverage && $(CMAKE_COMMAND) -P CMakeFiles/check.dir/cmake_clean.cmake
+	cd /home/alma/Documents/LogicToolbox/testCoverage && $(CMAKE_COMMAND) -P CMakeFiles/check.dir/cmake_clean.cmake
 .PHONY : testCoverage/CMakeFiles/check.dir/clean
 
 testCoverage/CMakeFiles/check.dir/depend:
-	cd /home/alma/LogicToolbox && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/alma/LogicToolbox /home/alma/LogicToolbox/testCoverage /home/alma/LogicToolbox /home/alma/LogicToolbox/testCoverage /home/alma/LogicToolbox/testCoverage/CMakeFiles/check.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/alma/Documents/LogicToolbox && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/alma/Documents/LogicToolbox /home/alma/Documents/LogicToolbox/testCoverage /home/alma/Documents/LogicToolbox /home/alma/Documents/LogicToolbox/testCoverage /home/alma/Documents/LogicToolbox/testCoverage/CMakeFiles/check.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : testCoverage/CMakeFiles/check.dir/depend
 

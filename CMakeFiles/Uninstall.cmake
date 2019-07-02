@@ -1,10 +1,10 @@
 # Note: http://www.cmake.org/Wiki/CMake_FAQ#Can_I_do_.22make_uninstall.22_with_CMake.3F
 
-if(NOT EXISTS "/home/alma/LogicToolbox/install_manifest.txt")
-  message(FATAL_ERROR "Cannot find install manifest: /home/alma/LogicToolbox/install_manifest.txt")
+if(NOT EXISTS "/home/alma/Documents/LogicToolbox/install_manifest.txt")
+  message(FATAL_ERROR "Cannot find install manifest: /home/alma/Documents/LogicToolbox/install_manifest.txt")
 endif()
 
-file(READ "/home/alma/LogicToolbox/install_manifest.txt" files)
+file(READ "/home/alma/Documents/LogicToolbox/install_manifest.txt" files)
 string(REGEX REPLACE "\n" ";" files "${files}")
 foreach(file ${files})
   message(STATUS "Uninstalling $ENV{DESTDIR}${file}")

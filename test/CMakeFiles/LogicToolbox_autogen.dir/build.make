@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/alma/LogicToolbox
+CMAKE_SOURCE_DIR = /home/alma/Documents/LogicToolbox
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/alma/LogicToolbox
+CMAKE_BINARY_DIR = /home/alma/Documents/LogicToolbox
 
 # Utility rule file for LogicToolbox_autogen.
 
@@ -54,8 +54,8 @@ CMAKE_BINARY_DIR = /home/alma/LogicToolbox
 include test/CMakeFiles/LogicToolbox_autogen.dir/progress.make
 
 test/CMakeFiles/LogicToolbox_autogen:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/alma/LogicToolbox/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Automatic MOC for target LogicToolbox"
-	cd /home/alma/LogicToolbox/test && /usr/bin/cmake -E cmake_autogen /home/alma/LogicToolbox/test/CMakeFiles/LogicToolbox_autogen.dir Debug
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/alma/Documents/LogicToolbox/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Automatic MOC and UIC for target LogicToolbox"
+	cd /home/alma/Documents/LogicToolbox/test && /usr/bin/cmake -E cmake_autogen /home/alma/Documents/LogicToolbox/test/CMakeFiles/LogicToolbox_autogen.dir Debug
 
 LogicToolbox_autogen: test/CMakeFiles/LogicToolbox_autogen
 LogicToolbox_autogen: test/CMakeFiles/LogicToolbox_autogen.dir/build.make
@@ -68,10 +68,10 @@ test/CMakeFiles/LogicToolbox_autogen.dir/build: LogicToolbox_autogen
 .PHONY : test/CMakeFiles/LogicToolbox_autogen.dir/build
 
 test/CMakeFiles/LogicToolbox_autogen.dir/clean:
-	cd /home/alma/LogicToolbox/test && $(CMAKE_COMMAND) -P CMakeFiles/LogicToolbox_autogen.dir/cmake_clean.cmake
+	cd /home/alma/Documents/LogicToolbox/test && $(CMAKE_COMMAND) -P CMakeFiles/LogicToolbox_autogen.dir/cmake_clean.cmake
 .PHONY : test/CMakeFiles/LogicToolbox_autogen.dir/clean
 
 test/CMakeFiles/LogicToolbox_autogen.dir/depend:
-	cd /home/alma/LogicToolbox && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/alma/LogicToolbox /home/alma/LogicToolbox/test /home/alma/LogicToolbox /home/alma/LogicToolbox/test /home/alma/LogicToolbox/test/CMakeFiles/LogicToolbox_autogen.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/alma/Documents/LogicToolbox && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/alma/Documents/LogicToolbox /home/alma/Documents/LogicToolbox/test /home/alma/Documents/LogicToolbox /home/alma/Documents/LogicToolbox/test /home/alma/Documents/LogicToolbox/test/CMakeFiles/LogicToolbox_autogen.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : test/CMakeFiles/LogicToolbox_autogen.dir/depend
 

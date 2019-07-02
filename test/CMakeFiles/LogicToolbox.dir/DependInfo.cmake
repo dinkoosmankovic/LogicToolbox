@@ -4,21 +4,22 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/alma/LogicToolbox/test/LogicToolbox_autogen/mocs_compilation.cpp" "/home/alma/LogicToolbox/test/CMakeFiles/LogicToolbox.dir/LogicToolbox_autogen/mocs_compilation.cpp.o"
-  "/home/alma/LogicToolbox/gui/cvor.cpp" "/home/alma/LogicToolbox/test/CMakeFiles/LogicToolbox.dir/__/gui/cvor.cpp.o"
-  "/home/alma/LogicToolbox/gui/grana.cpp" "/home/alma/LogicToolbox/test/CMakeFiles/LogicToolbox.dir/__/gui/grana.cpp.o"
-  "/home/alma/LogicToolbox/gui/graphwidget.cpp" "/home/alma/LogicToolbox/test/CMakeFiles/LogicToolbox.dir/__/gui/graphwidget.cpp.o"
-  "/home/alma/LogicToolbox/src/Core/Operators.cpp" "/home/alma/LogicToolbox/test/CMakeFiles/LogicToolbox.dir/__/src/Core/Operators.cpp.o"
-  "/home/alma/LogicToolbox/src/Evaluator/CoreEvaluator.cpp" "/home/alma/LogicToolbox/test/CMakeFiles/LogicToolbox.dir/__/src/Evaluator/CoreEvaluator.cpp.o"
-  "/home/alma/LogicToolbox/src/Evaluator/ResultTree.cpp" "/home/alma/LogicToolbox/test/CMakeFiles/LogicToolbox.dir/__/src/Evaluator/ResultTree.cpp.o"
-  "/home/alma/LogicToolbox/src/Graph/Graph.cpp" "/home/alma/LogicToolbox/test/CMakeFiles/LogicToolbox.dir/__/src/Graph/Graph.cpp.o"
-  "/home/alma/LogicToolbox/src/Parser/Expression.cpp" "/home/alma/LogicToolbox/test/CMakeFiles/LogicToolbox.dir/__/src/Parser/Expression.cpp.o"
-  "/home/alma/LogicToolbox/src/Parser/Token.cpp" "/home/alma/LogicToolbox/test/CMakeFiles/LogicToolbox.dir/__/src/Parser/Token.cpp.o"
-  "/home/alma/LogicToolbox/src/Universe/Universe.cpp" "/home/alma/LogicToolbox/test/CMakeFiles/LogicToolbox.dir/__/src/Universe/Universe.cpp.o"
-  "/home/alma/LogicToolbox/src/Universe/Variable.cpp" "/home/alma/LogicToolbox/test/CMakeFiles/LogicToolbox.dir/__/src/Universe/Variable.cpp.o"
-  "/home/alma/LogicToolbox/src/Universe/World.cpp" "/home/alma/LogicToolbox/test/CMakeFiles/LogicToolbox.dir/__/src/Universe/World.cpp.o"
-  "/home/alma/LogicToolbox/test/hello.cpp" "/home/alma/LogicToolbox/test/CMakeFiles/LogicToolbox.dir/hello.cpp.o"
-  "/home/alma/LogicToolbox/test/main.cpp" "/home/alma/LogicToolbox/test/CMakeFiles/LogicToolbox.dir/main.cpp.o"
+  "/home/alma/Documents/LogicToolbox/test/LogicToolbox_autogen/mocs_compilation.cpp" "/home/alma/Documents/LogicToolbox/test/CMakeFiles/LogicToolbox.dir/LogicToolbox_autogen/mocs_compilation.cpp.o"
+  "/home/alma/Documents/LogicToolbox/gui/edge.cpp" "/home/alma/Documents/LogicToolbox/test/CMakeFiles/LogicToolbox.dir/__/gui/edge.cpp.o"
+  "/home/alma/Documents/LogicToolbox/gui/graphwidget.cpp" "/home/alma/Documents/LogicToolbox/test/CMakeFiles/LogicToolbox.dir/__/gui/graphwidget.cpp.o"
+  "/home/alma/Documents/LogicToolbox/gui/mainwindow.cpp" "/home/alma/Documents/LogicToolbox/test/CMakeFiles/LogicToolbox.dir/__/gui/mainwindow.cpp.o"
+  "/home/alma/Documents/LogicToolbox/gui/node.cpp" "/home/alma/Documents/LogicToolbox/test/CMakeFiles/LogicToolbox.dir/__/gui/node.cpp.o"
+  "/home/alma/Documents/LogicToolbox/src/Core/Operators.cpp" "/home/alma/Documents/LogicToolbox/test/CMakeFiles/LogicToolbox.dir/__/src/Core/Operators.cpp.o"
+  "/home/alma/Documents/LogicToolbox/src/Evaluator/CoreEvaluator.cpp" "/home/alma/Documents/LogicToolbox/test/CMakeFiles/LogicToolbox.dir/__/src/Evaluator/CoreEvaluator.cpp.o"
+  "/home/alma/Documents/LogicToolbox/src/Evaluator/ResultTree.cpp" "/home/alma/Documents/LogicToolbox/test/CMakeFiles/LogicToolbox.dir/__/src/Evaluator/ResultTree.cpp.o"
+  "/home/alma/Documents/LogicToolbox/src/Graph/Graph.cpp" "/home/alma/Documents/LogicToolbox/test/CMakeFiles/LogicToolbox.dir/__/src/Graph/Graph.cpp.o"
+  "/home/alma/Documents/LogicToolbox/src/Parser/Expression.cpp" "/home/alma/Documents/LogicToolbox/test/CMakeFiles/LogicToolbox.dir/__/src/Parser/Expression.cpp.o"
+  "/home/alma/Documents/LogicToolbox/src/Parser/Token.cpp" "/home/alma/Documents/LogicToolbox/test/CMakeFiles/LogicToolbox.dir/__/src/Parser/Token.cpp.o"
+  "/home/alma/Documents/LogicToolbox/src/Universe/Universe.cpp" "/home/alma/Documents/LogicToolbox/test/CMakeFiles/LogicToolbox.dir/__/src/Universe/Universe.cpp.o"
+  "/home/alma/Documents/LogicToolbox/src/Universe/Variable.cpp" "/home/alma/Documents/LogicToolbox/test/CMakeFiles/LogicToolbox.dir/__/src/Universe/Variable.cpp.o"
+  "/home/alma/Documents/LogicToolbox/src/Universe/World.cpp" "/home/alma/Documents/LogicToolbox/test/CMakeFiles/LogicToolbox.dir/__/src/Universe/World.cpp.o"
+  "/home/alma/Documents/LogicToolbox/test/hello.cpp" "/home/alma/Documents/LogicToolbox/test/CMakeFiles/LogicToolbox.dir/hello.cpp.o"
+  "/home/alma/Documents/LogicToolbox/test/main.cpp" "/home/alma/Documents/LogicToolbox/test/CMakeFiles/LogicToolbox.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

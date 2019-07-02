@@ -27,7 +27,6 @@ int main(int argc, char *argv[])
     int y=dw.height()*0.5;*/
   //  w.setFixedSize(x,y);
     w.show();
-    std::cout << "RADI";
     hello();
     return a.exec();
 }

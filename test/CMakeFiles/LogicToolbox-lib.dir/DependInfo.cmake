@@ -4,8 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/alma/LogicToolbox/test/LogicToolbox-lib_autogen/mocs_compilation.cpp" "/home/alma/LogicToolbox/test/CMakeFiles/LogicToolbox-lib.dir/LogicToolbox-lib_autogen/mocs_compilation.cpp.o"
-  "/home/alma/LogicToolbox/test/hello.cpp" "/home/alma/LogicToolbox/test/CMakeFiles/LogicToolbox-lib.dir/hello.cpp.o"
+  "/home/alma/Documents/LogicToolbox/test/LogicToolbox-lib_autogen/mocs_compilation.cpp" "/home/alma/Documents/LogicToolbox/test/CMakeFiles/LogicToolbox-lib.dir/LogicToolbox-lib_autogen/mocs_compilation.cpp.o"
+  "/home/alma/Documents/LogicToolbox/test/hello.cpp" "/home/alma/Documents/LogicToolbox/test/CMakeFiles/LogicToolbox-lib.dir/hello.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

@@ -1,0 +1,51 @@
+{
+    "Logic": "K",
+    "Name": "Universe",
+    "VariableNames": [
+        "A",
+        "B",
+        "C"
+    ],
+    "Worlds": [
+        {
+            "AdjWorlds": [
+                "Y"
+            ],
+            "Name": "X",
+            "Variables": [
+                {
+                    "Name": "A",
+                    "Value": true
+                },
+                {
+                    "Name": "B",
+                    "Value": true
+                },
+                {
+                    "Name": "C",
+                    "Value": true
+                }
+            ]
+        },
+        {
+            "AdjWorlds": [
+                "X"
+            ],
+            "Name": "Y",
+            "Variables": [
+                {
+                    "Name": "A",
+                    "Value": true
+                },
+                {
+                    "Name": "B",
+                    "Value": true
+                },
+                {
+                    "Name": "C",
+                    "Value": false
+                }
+            ]
+        }
+    ]
+}

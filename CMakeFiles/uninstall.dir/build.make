@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/alma/LogicToolbox
+CMAKE_SOURCE_DIR = /home/alma/Documents/LogicToolbox
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/alma/LogicToolbox
+CMAKE_BINARY_DIR = /home/alma/Documents/LogicToolbox
 
 # Utility rule file for uninstall.
 
@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /home/alma/LogicToolbox
 include CMakeFiles/uninstall.dir/progress.make
 
 CMakeFiles/uninstall:
-	/usr/bin/cmake -P /home/alma/LogicToolbox/CMakeFiles/Uninstall.cmake
+	/usr/bin/cmake -P /home/alma/Documents/LogicToolbox/CMakeFiles/Uninstall.cmake
 
 uninstall: CMakeFiles/uninstall
 uninstall: CMakeFiles/uninstall.dir/build.make
@@ -71,6 +71,6 @@ CMakeFiles/uninstall.dir/clean:
 .PHONY : CMakeFiles/uninstall.dir/clean
 
 CMakeFiles/uninstall.dir/depend:
-	cd /home/alma/LogicToolbox && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/alma/LogicToolbox /home/alma/LogicToolbox /home/alma/LogicToolbox /home/alma/LogicToolbox /home/alma/LogicToolbox/CMakeFiles/uninstall.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/alma/Documents/LogicToolbox && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/alma/Documents/LogicToolbox /home/alma/Documents/LogicToolbox /home/alma/Documents/LogicToolbox /home/alma/Documents/LogicToolbox /home/alma/Documents/LogicToolbox/CMakeFiles/uninstall.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/uninstall.dir/depend
 

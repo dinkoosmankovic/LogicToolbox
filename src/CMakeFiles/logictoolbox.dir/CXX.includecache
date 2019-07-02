@@ -6,27 +6,27 @@
 
 #IncludeRegexTransform: 
 
-/home/alma/aleksa/LogicToolbox/include/CoreEvaluator.h
+/home/alma/Documents/LogicToolbox/include/CoreEvaluator.h
 Expression.h
-/home/alma/aleksa/LogicToolbox/include/Expression.h
+/home/alma/Documents/LogicToolbox/include/Expression.h
 Universe.h
-/home/alma/aleksa/LogicToolbox/include/Universe.h
+/home/alma/Documents/LogicToolbox/include/Universe.h
 rapidjson/document.h
-/home/alma/aleksa/LogicToolbox/include/rapidjson/document.h
+/home/alma/Documents/LogicToolbox/include/rapidjson/document.h
 ResultTree.h
-/home/alma/aleksa/LogicToolbox/include/ResultTree.h
+/home/alma/Documents/LogicToolbox/include/ResultTree.h
 rapidjson/filereadstream.h
-/home/alma/aleksa/LogicToolbox/include/rapidjson/filereadstream.h
+/home/alma/Documents/LogicToolbox/include/rapidjson/filereadstream.h
 cstdio
 -
 iostream
 -
 Graph.h
-/home/alma/aleksa/LogicToolbox/include/Graph.h
+/home/alma/Documents/LogicToolbox/include/Graph.h
 chrono
 -
 
-/home/alma/aleksa/LogicToolbox/include/Expression.h
+/home/alma/Documents/LogicToolbox/include/Expression.h
 stddef.h
 -
 vector
@@ -38,23 +38,23 @@ queue
 string
 -
 Token.h
-/home/alma/aleksa/LogicToolbox/include/Token.h
+/home/alma/Documents/LogicToolbox/include/Token.h
 
-/home/alma/aleksa/LogicToolbox/include/Graph.h
+/home/alma/Documents/LogicToolbox/include/Graph.h
 graphviz/gvc.h
-/home/alma/aleksa/LogicToolbox/include/graphviz/gvc.h
+/home/alma/Documents/LogicToolbox/include/graphviz/gvc.h
 ResultTree.h
-/home/alma/aleksa/LogicToolbox/include/ResultTree.h
+/home/alma/Documents/LogicToolbox/include/ResultTree.h
 Universe.h
-/home/alma/aleksa/LogicToolbox/include/Universe.h
+/home/alma/Documents/LogicToolbox/include/Universe.h
 fstream
 -
 
-/home/alma/aleksa/LogicToolbox/include/Operators.h
+/home/alma/Documents/LogicToolbox/include/Operators.h
 World.h
-/home/alma/aleksa/LogicToolbox/include/World.h
+/home/alma/Documents/LogicToolbox/include/World.h
 Variable.h
-/home/alma/aleksa/LogicToolbox/include/Variable.h
+/home/alma/Documents/LogicToolbox/include/Variable.h
 utility
 -
 vector
@@ -66,25 +66,25 @@ queue
 stdexcept
 -
 Token.h
-/home/alma/aleksa/LogicToolbox/include/Token.h
+/home/alma/Documents/LogicToolbox/include/Token.h
 
-/home/alma/aleksa/LogicToolbox/include/ResultTree.h
+/home/alma/Documents/LogicToolbox/include/ResultTree.h
 Expression.h
-/home/alma/aleksa/LogicToolbox/include/Expression.h
+/home/alma/Documents/LogicToolbox/include/Expression.h
 Universe.h
-/home/alma/aleksa/LogicToolbox/include/Universe.h
+/home/alma/Documents/LogicToolbox/include/Universe.h
 Operators.h
-/home/alma/aleksa/LogicToolbox/include/Operators.h
+/home/alma/Documents/LogicToolbox/include/Operators.h
 stack
 -
 iostream
 -
 graphviz/gvc.h
-/home/alma/aleksa/LogicToolbox/include/graphviz/gvc.h
+/home/alma/Documents/LogicToolbox/include/graphviz/gvc.h
 chrono
 -
 
-/home/alma/aleksa/LogicToolbox/include/Token.h
+/home/alma/Documents/LogicToolbox/include/Token.h
 string
 -
 map
@@ -92,7 +92,7 @@ map
 utility
 -
 
-/home/alma/aleksa/LogicToolbox/include/Universe.h
+/home/alma/Documents/LogicToolbox/include/Universe.h
 string
 -
 vector
@@ -102,13 +102,13 @@ cmath
 stdexcept
 -
 World.h
-/home/alma/aleksa/LogicToolbox/include/World.h
+/home/alma/Documents/LogicToolbox/include/World.h
 
-/home/alma/aleksa/LogicToolbox/include/Variable.h
+/home/alma/Documents/LogicToolbox/include/Variable.h
 string
 -
 
-/home/alma/aleksa/LogicToolbox/include/World.h
+/home/alma/Documents/LogicToolbox/include/World.h
 string
 -
 vector
@@ -116,47 +116,47 @@ vector
 stdexcept
 -
 Variable.h
-/home/alma/aleksa/LogicToolbox/include/Variable.h
+/home/alma/Documents/LogicToolbox/include/Variable.h
 
-/home/alma/aleksa/LogicToolbox/src/Core/Operators.cpp
+/home/alma/Documents/LogicToolbox/src/Core/Operators.cpp
 ../../include/Operators.h
-/home/alma/aleksa/LogicToolbox/include/Operators.h
+/home/alma/Documents/LogicToolbox/include/Operators.h
 
-/home/alma/aleksa/LogicToolbox/src/Evaluator/CoreEvaluator.cpp
+/home/alma/Documents/LogicToolbox/src/Evaluator/CoreEvaluator.cpp
 ../../include/CoreEvaluator.h
-/home/alma/aleksa/LogicToolbox/include/CoreEvaluator.h
+/home/alma/Documents/LogicToolbox/include/CoreEvaluator.h
 
-/home/alma/aleksa/LogicToolbox/src/Evaluator/ResultTree.cpp
+/home/alma/Documents/LogicToolbox/src/Evaluator/ResultTree.cpp
 search.h
 -
 ../../include/ResultTree.h
-/home/alma/aleksa/LogicToolbox/include/ResultTree.h
+/home/alma/Documents/LogicToolbox/include/ResultTree.h
 
-/home/alma/aleksa/LogicToolbox/src/Graph/Graph.cpp
+/home/alma/Documents/LogicToolbox/src/Graph/Graph.cpp
 ../../include/Graph.h
-/home/alma/aleksa/LogicToolbox/include/Graph.h
+/home/alma/Documents/LogicToolbox/include/Graph.h
 
-/home/alma/aleksa/LogicToolbox/src/Parser/Expression.cpp
+/home/alma/Documents/LogicToolbox/src/Parser/Expression.cpp
 ../../include/Expression.h
-/home/alma/aleksa/LogicToolbox/include/Expression.h
+/home/alma/Documents/LogicToolbox/include/Expression.h
 
-/home/alma/aleksa/LogicToolbox/src/Parser/Token.cpp
+/home/alma/Documents/LogicToolbox/src/Parser/Token.cpp
 ../../include/Token.h
-/home/alma/aleksa/LogicToolbox/include/Token.h
+/home/alma/Documents/LogicToolbox/include/Token.h
 
-/home/alma/aleksa/LogicToolbox/src/Universe/Universe.cpp
+/home/alma/Documents/LogicToolbox/src/Universe/Universe.cpp
 ../../include/Universe.h
-/home/alma/aleksa/LogicToolbox/include/Universe.h
+/home/alma/Documents/LogicToolbox/include/Universe.h
 
-/home/alma/aleksa/LogicToolbox/src/Universe/Variable.cpp
+/home/alma/Documents/LogicToolbox/src/Universe/Variable.cpp
 ../../include/Variable.h
-/home/alma/aleksa/LogicToolbox/include/Variable.h
+/home/alma/Documents/LogicToolbox/include/Variable.h
 string
 -
 
-/home/alma/aleksa/LogicToolbox/src/Universe/World.cpp
+/home/alma/Documents/LogicToolbox/src/Universe/World.cpp
 ../../include/World.h
-/home/alma/aleksa/LogicToolbox/include/World.h
+/home/alma/Documents/LogicToolbox/include/World.h
 
 src/rapidjson/allocators.h
 rapidjson.h

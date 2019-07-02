@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/alma/LogicToolbox
+CMAKE_SOURCE_DIR = /home/alma/Documents/LogicToolbox
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/alma/LogicToolbox
+CMAKE_BINARY_DIR = /home/alma/Documents/LogicToolbox
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -93,8 +93,8 @@ rebuild_cache/fast: rebuild_cache
 
 # Special rule for the target edit_cache
 edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
-	/usr/bin/cmake-gui -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -126,14 +126,14 @@ install/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/alma/LogicToolbox && $(CMAKE_COMMAND) -E cmake_progress_start /home/alma/LogicToolbox/CMakeFiles /home/alma/LogicToolbox/test/CMakeFiles/progress.marks
-	cd /home/alma/LogicToolbox && $(MAKE) -f CMakeFiles/Makefile2 test/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/alma/LogicToolbox/CMakeFiles 0
+	cd /home/alma/Documents/LogicToolbox && $(CMAKE_COMMAND) -E cmake_progress_start /home/alma/Documents/LogicToolbox/CMakeFiles /home/alma/Documents/LogicToolbox/test/CMakeFiles/progress.marks
+	cd /home/alma/Documents/LogicToolbox && $(MAKE) -f CMakeFiles/Makefile2 test/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/alma/Documents/LogicToolbox/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/alma/LogicToolbox && $(MAKE) -f CMakeFiles/Makefile2 test/clean
+	cd /home/alma/Documents/LogicToolbox && $(MAKE) -f CMakeFiles/Makefile2 test/clean
 .PHONY : clean
 
 # The main clean target
@@ -143,22 +143,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/alma/LogicToolbox && $(MAKE) -f CMakeFiles/Makefile2 test/preinstall
+	cd /home/alma/Documents/LogicToolbox && $(MAKE) -f CMakeFiles/Makefile2 test/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/alma/LogicToolbox && $(MAKE) -f CMakeFiles/Makefile2 test/preinstall
+	cd /home/alma/Documents/LogicToolbox && $(MAKE) -f CMakeFiles/Makefile2 test/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/alma/LogicToolbox && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/alma/Documents/LogicToolbox && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 test/CMakeFiles/LogicToolbox-lib.dir/rule:
-	cd /home/alma/LogicToolbox && $(MAKE) -f CMakeFiles/Makefile2 test/CMakeFiles/LogicToolbox-lib.dir/rule
+	cd /home/alma/Documents/LogicToolbox && $(MAKE) -f CMakeFiles/Makefile2 test/CMakeFiles/LogicToolbox-lib.dir/rule
 .PHONY : test/CMakeFiles/LogicToolbox-lib.dir/rule
 
 # Convenience name for target.
@@ -168,12 +168,12 @@ LogicToolbox-lib: test/CMakeFiles/LogicToolbox-lib.dir/rule
 
 # fast build rule for target.
 LogicToolbox-lib/fast:
-	cd /home/alma/LogicToolbox && $(MAKE) -f test/CMakeFiles/LogicToolbox-lib.dir/build.make test/CMakeFiles/LogicToolbox-lib.dir/build
+	cd /home/alma/Documents/LogicToolbox && $(MAKE) -f test/CMakeFiles/LogicToolbox-lib.dir/build.make test/CMakeFiles/LogicToolbox-lib.dir/build
 .PHONY : LogicToolbox-lib/fast
 
 # Convenience name for target.
 test/CMakeFiles/LogicToolbox.dir/rule:
-	cd /home/alma/LogicToolbox && $(MAKE) -f CMakeFiles/Makefile2 test/CMakeFiles/LogicToolbox.dir/rule
+	cd /home/alma/Documents/LogicToolbox && $(MAKE) -f CMakeFiles/Makefile2 test/CMakeFiles/LogicToolbox.dir/rule
 .PHONY : test/CMakeFiles/LogicToolbox.dir/rule
 
 # Convenience name for target.
@@ -183,12 +183,12 @@ LogicToolbox: test/CMakeFiles/LogicToolbox.dir/rule
 
 # fast build rule for target.
 LogicToolbox/fast:
-	cd /home/alma/LogicToolbox && $(MAKE) -f test/CMakeFiles/LogicToolbox.dir/build.make test/CMakeFiles/LogicToolbox.dir/build
+	cd /home/alma/Documents/LogicToolbox && $(MAKE) -f test/CMakeFiles/LogicToolbox.dir/build.make test/CMakeFiles/LogicToolbox.dir/build
 .PHONY : LogicToolbox/fast
 
 # Convenience name for target.
 test/CMakeFiles/LogicToolbox-lib_autogen.dir/rule:
-	cd /home/alma/LogicToolbox && $(MAKE) -f CMakeFiles/Makefile2 test/CMakeFiles/LogicToolbox-lib_autogen.dir/rule
+	cd /home/alma/Documents/LogicToolbox && $(MAKE) -f CMakeFiles/Makefile2 test/CMakeFiles/LogicToolbox-lib_autogen.dir/rule
 .PHONY : test/CMakeFiles/LogicToolbox-lib_autogen.dir/rule
 
 # Convenience name for target.
@@ -198,12 +198,12 @@ LogicToolbox-lib_autogen: test/CMakeFiles/LogicToolbox-lib_autogen.dir/rule
 
 # fast build rule for target.
 LogicToolbox-lib_autogen/fast:
-	cd /home/alma/LogicToolbox && $(MAKE) -f test/CMakeFiles/LogicToolbox-lib_autogen.dir/build.make test/CMakeFiles/LogicToolbox-lib_autogen.dir/build
+	cd /home/alma/Documents/LogicToolbox && $(MAKE) -f test/CMakeFiles/LogicToolbox-lib_autogen.dir/build.make test/CMakeFiles/LogicToolbox-lib_autogen.dir/build
 .PHONY : LogicToolbox-lib_autogen/fast
 
 # Convenience name for target.
 test/CMakeFiles/LogicToolbox_autogen.dir/rule:
-	cd /home/alma/LogicToolbox && $(MAKE) -f CMakeFiles/Makefile2 test/CMakeFiles/LogicToolbox_autogen.dir/rule
+	cd /home/alma/Documents/LogicToolbox && $(MAKE) -f CMakeFiles/Makefile2 test/CMakeFiles/LogicToolbox_autogen.dir/rule
 .PHONY : test/CMakeFiles/LogicToolbox_autogen.dir/rule
 
 # Convenience name for target.
@@ -213,7 +213,7 @@ LogicToolbox_autogen: test/CMakeFiles/LogicToolbox_autogen.dir/rule
 
 # fast build rule for target.
 LogicToolbox_autogen/fast:
-	cd /home/alma/LogicToolbox && $(MAKE) -f test/CMakeFiles/LogicToolbox_autogen.dir/build.make test/CMakeFiles/LogicToolbox_autogen.dir/build
+	cd /home/alma/Documents/LogicToolbox && $(MAKE) -f test/CMakeFiles/LogicToolbox_autogen.dir/build.make test/CMakeFiles/LogicToolbox_autogen.dir/build
 .PHONY : LogicToolbox_autogen/fast
 
 LogicToolbox-lib_autogen/mocs_compilation.o: LogicToolbox-lib_autogen/mocs_compilation.cpp.o
@@ -222,7 +222,7 @@ LogicToolbox-lib_autogen/mocs_compilation.o: LogicToolbox-lib_autogen/mocs_compi
 
 # target to build an object file
 LogicToolbox-lib_autogen/mocs_compilation.cpp.o:
-	cd /home/alma/LogicToolbox && $(MAKE) -f test/CMakeFiles/LogicToolbox-lib.dir/build.make test/CMakeFiles/LogicToolbox-lib.dir/LogicToolbox-lib_autogen/mocs_compilation.cpp.o
+	cd /home/alma/Documents/LogicToolbox && $(MAKE) -f test/CMakeFiles/LogicToolbox-lib.dir/build.make test/CMakeFiles/LogicToolbox-lib.dir/LogicToolbox-lib_autogen/mocs_compilation.cpp.o
 .PHONY : LogicToolbox-lib_autogen/mocs_compilation.cpp.o
 
 LogicToolbox-lib_autogen/mocs_compilation.i: LogicToolbox-lib_autogen/mocs_compilation.cpp.i
@@ -231,7 +231,7 @@ LogicToolbox-lib_autogen/mocs_compilation.i: LogicToolbox-lib_autogen/mocs_compi
 
 # target to preprocess a source file
 LogicToolbox-lib_autogen/mocs_compilation.cpp.i:
-	cd /home/alma/LogicToolbox && $(MAKE) -f test/CMakeFiles/LogicToolbox-lib.dir/build.make test/CMakeFiles/LogicToolbox-lib.dir/LogicToolbox-lib_autogen/mocs_compilation.cpp.i
+	cd /home/alma/Documents/LogicToolbox && $(MAKE) -f test/CMakeFiles/LogicToolbox-lib.dir/build.make test/CMakeFiles/LogicToolbox-lib.dir/LogicToolbox-lib_autogen/mocs_compilation.cpp.i
 .PHONY : LogicToolbox-lib_autogen/mocs_compilation.cpp.i
 
 LogicToolbox-lib_autogen/mocs_compilation.s: LogicToolbox-lib_autogen/mocs_compilation.cpp.s
@@ -240,7 +240,7 @@ LogicToolbox-lib_autogen/mocs_compilation.s: LogicToolbox-lib_autogen/mocs_compi
 
 # target to generate assembly for a file
 LogicToolbox-lib_autogen/mocs_compilation.cpp.s:
-	cd /home/alma/LogicToolbox && $(MAKE) -f test/CMakeFiles/LogicToolbox-lib.dir/build.make test/CMakeFiles/LogicToolbox-lib.dir/LogicToolbox-lib_autogen/mocs_compilation.cpp.s
+	cd /home/alma/Documents/LogicToolbox && $(MAKE) -f test/CMakeFiles/LogicToolbox-lib.dir/build.make test/CMakeFiles/LogicToolbox-lib.dir/LogicToolbox-lib_autogen/mocs_compilation.cpp.s
 .PHONY : LogicToolbox-lib_autogen/mocs_compilation.cpp.s
 
 LogicToolbox_autogen/mocs_compilation.o: LogicToolbox_autogen/mocs_compilation.cpp.o
@@ -249,7 +249,7 @@ LogicToolbox_autogen/mocs_compilation.o: LogicToolbox_autogen/mocs_compilation.c
 
 # target to build an object file
 LogicToolbox_autogen/mocs_compilation.cpp.o:
-	cd /home/alma/LogicToolbox && $(MAKE) -f test/CMakeFiles/LogicToolbox.dir/build.make test/CMakeFiles/LogicToolbox.dir/LogicToolbox_autogen/mocs_compilation.cpp.o
+	cd /home/alma/Documents/LogicToolbox && $(MAKE) -f test/CMakeFiles/LogicToolbox.dir/build.make test/CMakeFiles/LogicToolbox.dir/LogicToolbox_autogen/mocs_compilation.cpp.o
 .PHONY : LogicToolbox_autogen/mocs_compilation.cpp.o
 
 LogicToolbox_autogen/mocs_compilation.i: LogicToolbox_autogen/mocs_compilation.cpp.i
@@ -258,7 +258,7 @@ LogicToolbox_autogen/mocs_compilation.i: LogicToolbox_autogen/mocs_compilation.c
 
 # target to preprocess a source file
 LogicToolbox_autogen/mocs_compilation.cpp.i:
-	cd /home/alma/LogicToolbox && $(MAKE) -f test/CMakeFiles/LogicToolbox.dir/build.make test/CMakeFiles/LogicToolbox.dir/LogicToolbox_autogen/mocs_compilation.cpp.i
+	cd /home/alma/Documents/LogicToolbox && $(MAKE) -f test/CMakeFiles/LogicToolbox.dir/build.make test/CMakeFiles/LogicToolbox.dir/LogicToolbox_autogen/mocs_compilation.cpp.i
 .PHONY : LogicToolbox_autogen/mocs_compilation.cpp.i
 
 LogicToolbox_autogen/mocs_compilation.s: LogicToolbox_autogen/mocs_compilation.cpp.s
@@ -267,62 +267,35 @@ LogicToolbox_autogen/mocs_compilation.s: LogicToolbox_autogen/mocs_compilation.c
 
 # target to generate assembly for a file
 LogicToolbox_autogen/mocs_compilation.cpp.s:
-	cd /home/alma/LogicToolbox && $(MAKE) -f test/CMakeFiles/LogicToolbox.dir/build.make test/CMakeFiles/LogicToolbox.dir/LogicToolbox_autogen/mocs_compilation.cpp.s
+	cd /home/alma/Documents/LogicToolbox && $(MAKE) -f test/CMakeFiles/LogicToolbox.dir/build.make test/CMakeFiles/LogicToolbox.dir/LogicToolbox_autogen/mocs_compilation.cpp.s
 .PHONY : LogicToolbox_autogen/mocs_compilation.cpp.s
 
-__/gui/cvor.o: __/gui/cvor.cpp.o
+__/gui/edge.o: __/gui/edge.cpp.o
 
-.PHONY : __/gui/cvor.o
-
-# target to build an object file
-__/gui/cvor.cpp.o:
-	cd /home/alma/LogicToolbox && $(MAKE) -f test/CMakeFiles/LogicToolbox.dir/build.make test/CMakeFiles/LogicToolbox.dir/__/gui/cvor.cpp.o
-.PHONY : __/gui/cvor.cpp.o
-
-__/gui/cvor.i: __/gui/cvor.cpp.i
-
-.PHONY : __/gui/cvor.i
-
-# target to preprocess a source file
-__/gui/cvor.cpp.i:
-	cd /home/alma/LogicToolbox && $(MAKE) -f test/CMakeFiles/LogicToolbox.dir/build.make test/CMakeFiles/LogicToolbox.dir/__/gui/cvor.cpp.i
-.PHONY : __/gui/cvor.cpp.i
-
-__/gui/cvor.s: __/gui/cvor.cpp.s
-
-.PHONY : __/gui/cvor.s
-
-# target to generate assembly for a file
-__/gui/cvor.cpp.s:
-	cd /home/alma/LogicToolbox && $(MAKE) -f test/CMakeFiles/LogicToolbox.dir/build.make test/CMakeFiles/LogicToolbox.dir/__/gui/cvor.cpp.s
-.PHONY : __/gui/cvor.cpp.s
-
-__/gui/grana.o: __/gui/grana.cpp.o
-
-.PHONY : __/gui/grana.o
+.PHONY : __/gui/edge.o
 
 # target to build an object file
-__/gui/grana.cpp.o:
-	cd /home/alma/LogicToolbox && $(MAKE) -f test/CMakeFiles/LogicToolbox.dir/build.make test/CMakeFiles/LogicToolbox.dir/__/gui/grana.cpp.o
-.PHONY : __/gui/grana.cpp.o
+__/gui/edge.cpp.o:
+	cd /home/alma/Documents/LogicToolbox && $(MAKE) -f test/CMakeFiles/LogicToolbox.dir/build.make test/CMakeFiles/LogicToolbox.dir/__/gui/edge.cpp.o
+.PHONY : __/gui/edge.cpp.o
 
-__/gui/grana.i: __/gui/grana.cpp.i
+__/gui/edge.i: __/gui/edge.cpp.i
 
-.PHONY : __/gui/grana.i
+.PHONY : __/gui/edge.i
 
 # target to preprocess a source file
-__/gui/grana.cpp.i:
-	cd /home/alma/LogicToolbox && $(MAKE) -f test/CMakeFiles/LogicToolbox.dir/build.make test/CMakeFiles/LogicToolbox.dir/__/gui/grana.cpp.i
-.PHONY : __/gui/grana.cpp.i
+__/gui/edge.cpp.i:
+	cd /home/alma/Documents/LogicToolbox && $(MAKE) -f test/CMakeFiles/LogicToolbox.dir/build.make test/CMakeFiles/LogicToolbox.dir/__/gui/edge.cpp.i
+.PHONY : __/gui/edge.cpp.i
 
-__/gui/grana.s: __/gui/grana.cpp.s
+__/gui/edge.s: __/gui/edge.cpp.s
 
-.PHONY : __/gui/grana.s
+.PHONY : __/gui/edge.s
 
 # target to generate assembly for a file
-__/gui/grana.cpp.s:
-	cd /home/alma/LogicToolbox && $(MAKE) -f test/CMakeFiles/LogicToolbox.dir/build.make test/CMakeFiles/LogicToolbox.dir/__/gui/grana.cpp.s
-.PHONY : __/gui/grana.cpp.s
+__/gui/edge.cpp.s:
+	cd /home/alma/Documents/LogicToolbox && $(MAKE) -f test/CMakeFiles/LogicToolbox.dir/build.make test/CMakeFiles/LogicToolbox.dir/__/gui/edge.cpp.s
+.PHONY : __/gui/edge.cpp.s
 
 __/gui/graphwidget.o: __/gui/graphwidget.cpp.o
 
@@ -330,7 +303,7 @@ __/gui/graphwidget.o: __/gui/graphwidget.cpp.o
 
 # target to build an object file
 __/gui/graphwidget.cpp.o:
-	cd /home/alma/LogicToolbox && $(MAKE) -f test/CMakeFiles/LogicToolbox.dir/build.make test/CMakeFiles/LogicToolbox.dir/__/gui/graphwidget.cpp.o
+	cd /home/alma/Documents/LogicToolbox && $(MAKE) -f test/CMakeFiles/LogicToolbox.dir/build.make test/CMakeFiles/LogicToolbox.dir/__/gui/graphwidget.cpp.o
 .PHONY : __/gui/graphwidget.cpp.o
 
 __/gui/graphwidget.i: __/gui/graphwidget.cpp.i
@@ -339,7 +312,7 @@ __/gui/graphwidget.i: __/gui/graphwidget.cpp.i
 
 # target to preprocess a source file
 __/gui/graphwidget.cpp.i:
-	cd /home/alma/LogicToolbox && $(MAKE) -f test/CMakeFiles/LogicToolbox.dir/build.make test/CMakeFiles/LogicToolbox.dir/__/gui/graphwidget.cpp.i
+	cd /home/alma/Documents/LogicToolbox && $(MAKE) -f test/CMakeFiles/LogicToolbox.dir/build.make test/CMakeFiles/LogicToolbox.dir/__/gui/graphwidget.cpp.i
 .PHONY : __/gui/graphwidget.cpp.i
 
 __/gui/graphwidget.s: __/gui/graphwidget.cpp.s
@@ -348,8 +321,62 @@ __/gui/graphwidget.s: __/gui/graphwidget.cpp.s
 
 # target to generate assembly for a file
 __/gui/graphwidget.cpp.s:
-	cd /home/alma/LogicToolbox && $(MAKE) -f test/CMakeFiles/LogicToolbox.dir/build.make test/CMakeFiles/LogicToolbox.dir/__/gui/graphwidget.cpp.s
+	cd /home/alma/Documents/LogicToolbox && $(MAKE) -f test/CMakeFiles/LogicToolbox.dir/build.make test/CMakeFiles/LogicToolbox.dir/__/gui/graphwidget.cpp.s
 .PHONY : __/gui/graphwidget.cpp.s
+
+__/gui/mainwindow.o: __/gui/mainwindow.cpp.o
+
+.PHONY : __/gui/mainwindow.o
+
+# target to build an object file
+__/gui/mainwindow.cpp.o:
+	cd /home/alma/Documents/LogicToolbox && $(MAKE) -f test/CMakeFiles/LogicToolbox.dir/build.make test/CMakeFiles/LogicToolbox.dir/__/gui/mainwindow.cpp.o
+.PHONY : __/gui/mainwindow.cpp.o
+
+__/gui/mainwindow.i: __/gui/mainwindow.cpp.i
+
+.PHONY : __/gui/mainwindow.i
+
+# target to preprocess a source file
+__/gui/mainwindow.cpp.i:
+	cd /home/alma/Documents/LogicToolbox && $(MAKE) -f test/CMakeFiles/LogicToolbox.dir/build.make test/CMakeFiles/LogicToolbox.dir/__/gui/mainwindow.cpp.i
+.PHONY : __/gui/mainwindow.cpp.i
+
+__/gui/mainwindow.s: __/gui/mainwindow.cpp.s
+
+.PHONY : __/gui/mainwindow.s
+
+# target to generate assembly for a file
+__/gui/mainwindow.cpp.s:
+	cd /home/alma/Documents/LogicToolbox && $(MAKE) -f test/CMakeFiles/LogicToolbox.dir/build.make test/CMakeFiles/LogicToolbox.dir/__/gui/mainwindow.cpp.s
+.PHONY : __/gui/mainwindow.cpp.s
+
+__/gui/node.o: __/gui/node.cpp.o
+
+.PHONY : __/gui/node.o
+
+# target to build an object file
+__/gui/node.cpp.o:
+	cd /home/alma/Documents/LogicToolbox && $(MAKE) -f test/CMakeFiles/LogicToolbox.dir/build.make test/CMakeFiles/LogicToolbox.dir/__/gui/node.cpp.o
+.PHONY : __/gui/node.cpp.o
+
+__/gui/node.i: __/gui/node.cpp.i
+
+.PHONY : __/gui/node.i
+
+# target to preprocess a source file
+__/gui/node.cpp.i:
+	cd /home/alma/Documents/LogicToolbox && $(MAKE) -f test/CMakeFiles/LogicToolbox.dir/build.make test/CMakeFiles/LogicToolbox.dir/__/gui/node.cpp.i
+.PHONY : __/gui/node.cpp.i
+
+__/gui/node.s: __/gui/node.cpp.s
+
+.PHONY : __/gui/node.s
+
+# target to generate assembly for a file
+__/gui/node.cpp.s:
+	cd /home/alma/Documents/LogicToolbox && $(MAKE) -f test/CMakeFiles/LogicToolbox.dir/build.make test/CMakeFiles/LogicToolbox.dir/__/gui/node.cpp.s
+.PHONY : __/gui/node.cpp.s
 
 __/src/Core/Operators.o: __/src/Core/Operators.cpp.o
 
@@ -357,7 +384,7 @@ __/src/Core/Operators.o: __/src/Core/Operators.cpp.o
 
 # target to build an object file
 __/src/Core/Operators.cpp.o:
-	cd /home/alma/LogicToolbox && $(MAKE) -f test/CMakeFiles/LogicToolbox.dir/build.make test/CMakeFiles/LogicToolbox.dir/__/src/Core/Operators.cpp.o
+	cd /home/alma/Documents/LogicToolbox && $(MAKE) -f test/CMakeFiles/LogicToolbox.dir/build.make test/CMakeFiles/LogicToolbox.dir/__/src/Core/Operators.cpp.o
 .PHONY : __/src/Core/Operators.cpp.o
 
 __/src/Core/Operators.i: __/src/Core/Operators.cpp.i
@@ -366,7 +393,7 @@ __/src/Core/Operators.i: __/src/Core/Operators.cpp.i
 
 # target to preprocess a source file
 __/src/Core/Operators.cpp.i:
-	cd /home/alma/LogicToolbox && $(MAKE) -f test/CMakeFiles/LogicToolbox.dir/build.make test/CMakeFiles/LogicToolbox.dir/__/src/Core/Operators.cpp.i
+	cd /home/alma/Documents/LogicToolbox && $(MAKE) -f test/CMakeFiles/LogicToolbox.dir/build.make test/CMakeFiles/LogicToolbox.dir/__/src/Core/Operators.cpp.i
 .PHONY : __/src/Core/Operators.cpp.i
 
 __/src/Core/Operators.s: __/src/Core/Operators.cpp.s
@@ -375,7 +402,7 @@ __/src/Core/Operators.s: __/src/Core/Operators.cpp.s
 
 # target to generate assembly for a file
 __/src/Core/Operators.cpp.s:
-	cd /home/alma/LogicToolbox && $(MAKE) -f test/CMakeFiles/LogicToolbox.dir/build.make test/CMakeFiles/LogicToolbox.dir/__/src/Core/Operators.cpp.s
+	cd /home/alma/Documents/LogicToolbox && $(MAKE) -f test/CMakeFiles/LogicToolbox.dir/build.make test/CMakeFiles/LogicToolbox.dir/__/src/Core/Operators.cpp.s
 .PHONY : __/src/Core/Operators.cpp.s
 
 __/src/Evaluator/CoreEvaluator.o: __/src/Evaluator/CoreEvaluator.cpp.o
@@ -384,7 +411,7 @@ __/src/Evaluator/CoreEvaluator.o: __/src/Evaluator/CoreEvaluator.cpp.o
 
 # target to build an object file
 __/src/Evaluator/CoreEvaluator.cpp.o:
-	cd /home/alma/LogicToolbox && $(MAKE) -f test/CMakeFiles/LogicToolbox.dir/build.make test/CMakeFiles/LogicToolbox.dir/__/src/Evaluator/CoreEvaluator.cpp.o
+	cd /home/alma/Documents/LogicToolbox && $(MAKE) -f test/CMakeFiles/LogicToolbox.dir/build.make test/CMakeFiles/LogicToolbox.dir/__/src/Evaluator/CoreEvaluator.cpp.o
 .PHONY : __/src/Evaluator/CoreEvaluator.cpp.o
 
 __/src/Evaluator/CoreEvaluator.i: __/src/Evaluator/CoreEvaluator.cpp.i
@@ -393,7 +420,7 @@ __/src/Evaluator/CoreEvaluator.i: __/src/Evaluator/CoreEvaluator.cpp.i
 
 # target to preprocess a source file
 __/src/Evaluator/CoreEvaluator.cpp.i:
-	cd /home/alma/LogicToolbox && $(MAKE) -f test/CMakeFiles/LogicToolbox.dir/build.make test/CMakeFiles/LogicToolbox.dir/__/src/Evaluator/CoreEvaluator.cpp.i
+	cd /home/alma/Documents/LogicToolbox && $(MAKE) -f test/CMakeFiles/LogicToolbox.dir/build.make test/CMakeFiles/LogicToolbox.dir/__/src/Evaluator/CoreEvaluator.cpp.i
 .PHONY : __/src/Evaluator/CoreEvaluator.cpp.i
 
 __/src/Evaluator/CoreEvaluator.s: __/src/Evaluator/CoreEvaluator.cpp.s
@@ -402,7 +429,7 @@ __/src/Evaluator/CoreEvaluator.s: __/src/Evaluator/CoreEvaluator.cpp.s
 
 # target to generate assembly for a file
 __/src/Evaluator/CoreEvaluator.cpp.s:
-	cd /home/alma/LogicToolbox && $(MAKE) -f test/CMakeFiles/LogicToolbox.dir/build.make test/CMakeFiles/LogicToolbox.dir/__/src/Evaluator/CoreEvaluator.cpp.s
+	cd /home/alma/Documents/LogicToolbox && $(MAKE) -f test/CMakeFiles/LogicToolbox.dir/build.make test/CMakeFiles/LogicToolbox.dir/__/src/Evaluator/CoreEvaluator.cpp.s
 .PHONY : __/src/Evaluator/CoreEvaluator.cpp.s
 
 __/src/Evaluator/ResultTree.o: __/src/Evaluator/ResultTree.cpp.o
@@ -411,7 +438,7 @@ __/src/Evaluator/ResultTree.o: __/src/Evaluator/ResultTree.cpp.o
 
 # target to build an object file
 __/src/Evaluator/ResultTree.cpp.o:
-	cd /home/alma/LogicToolbox && $(MAKE) -f test/CMakeFiles/LogicToolbox.dir/build.make test/CMakeFiles/LogicToolbox.dir/__/src/Evaluator/ResultTree.cpp.o
+	cd /home/alma/Documents/LogicToolbox && $(MAKE) -f test/CMakeFiles/LogicToolbox.dir/build.make test/CMakeFiles/LogicToolbox.dir/__/src/Evaluator/ResultTree.cpp.o
 .PHONY : __/src/Evaluator/ResultTree.cpp.o
 
 __/src/Evaluator/ResultTree.i: __/src/Evaluator/ResultTree.cpp.i
@@ -420,7 +447,7 @@ __/src/Evaluator/ResultTree.i: __/src/Evaluator/ResultTree.cpp.i
 
 # target to preprocess a source file
 __/src/Evaluator/ResultTree.cpp.i:
-	cd /home/alma/LogicToolbox && $(MAKE) -f test/CMakeFiles/LogicToolbox.dir/build.make test/CMakeFiles/LogicToolbox.dir/__/src/Evaluator/ResultTree.cpp.i
+	cd /home/alma/Documents/LogicToolbox && $(MAKE) -f test/CMakeFiles/LogicToolbox.dir/build.make test/CMakeFiles/LogicToolbox.dir/__/src/Evaluator/ResultTree.cpp.i
 .PHONY : __/src/Evaluator/ResultTree.cpp.i
 
 __/src/Evaluator/ResultTree.s: __/src/Evaluator/ResultTree.cpp.s
@@ -429,7 +456,7 @@ __/src/Evaluator/ResultTree.s: __/src/Evaluator/ResultTree.cpp.s
 
 # target to generate assembly for a file
 __/src/Evaluator/ResultTree.cpp.s:
-	cd /home/alma/LogicToolbox && $(MAKE) -f test/CMakeFiles/LogicToolbox.dir/build.make test/CMakeFiles/LogicToolbox.dir/__/src/Evaluator/ResultTree.cpp.s
+	cd /home/alma/Documents/LogicToolbox && $(MAKE) -f test/CMakeFiles/LogicToolbox.dir/build.make test/CMakeFiles/LogicToolbox.dir/__/src/Evaluator/ResultTree.cpp.s
 .PHONY : __/src/Evaluator/ResultTree.cpp.s
 
 __/src/Graph/Graph.o: __/src/Graph/Graph.cpp.o
@@ -438,7 +465,7 @@ __/src/Graph/Graph.o: __/src/Graph/Graph.cpp.o
 
 # target to build an object file
 __/src/Graph/Graph.cpp.o:
-	cd /home/alma/LogicToolbox && $(MAKE) -f test/CMakeFiles/LogicToolbox.dir/build.make test/CMakeFiles/LogicToolbox.dir/__/src/Graph/Graph.cpp.o
+	cd /home/alma/Documents/LogicToolbox && $(MAKE) -f test/CMakeFiles/LogicToolbox.dir/build.make test/CMakeFiles/LogicToolbox.dir/__/src/Graph/Graph.cpp.o
 .PHONY : __/src/Graph/Graph.cpp.o
 
 __/src/Graph/Graph.i: __/src/Graph/Graph.cpp.i
@@ -447,7 +474,7 @@ __/src/Graph/Graph.i: __/src/Graph/Graph.cpp.i
 
 # target to preprocess a source file
 __/src/Graph/Graph.cpp.i:
-	cd /home/alma/LogicToolbox && $(MAKE) -f test/CMakeFiles/LogicToolbox.dir/build.make test/CMakeFiles/LogicToolbox.dir/__/src/Graph/Graph.cpp.i
+	cd /home/alma/Documents/LogicToolbox && $(MAKE) -f test/CMakeFiles/LogicToolbox.dir/build.make test/CMakeFiles/LogicToolbox.dir/__/src/Graph/Graph.cpp.i
 .PHONY : __/src/Graph/Graph.cpp.i
 
 __/src/Graph/Graph.s: __/src/Graph/Graph.cpp.s
@@ -456,7 +483,7 @@ __/src/Graph/Graph.s: __/src/Graph/Graph.cpp.s
 
 # target to generate assembly for a file
 __/src/Graph/Graph.cpp.s:
-	cd /home/alma/LogicToolbox && $(MAKE) -f test/CMakeFiles/LogicToolbox.dir/build.make test/CMakeFiles/LogicToolbox.dir/__/src/Graph/Graph.cpp.s
+	cd /home/alma/Documents/LogicToolbox && $(MAKE) -f test/CMakeFiles/LogicToolbox.dir/build.make test/CMakeFiles/LogicToolbox.dir/__/src/Graph/Graph.cpp.s
 .PHONY : __/src/Graph/Graph.cpp.s
 
 __/src/Parser/Expression.o: __/src/Parser/Expression.cpp.o
@@ -465,7 +492,7 @@ __/src/Parser/Expression.o: __/src/Parser/Expression.cpp.o
 
 # target to build an object file
 __/src/Parser/Expression.cpp.o:
-	cd /home/alma/LogicToolbox && $(MAKE) -f test/CMakeFiles/LogicToolbox.dir/build.make test/CMakeFiles/LogicToolbox.dir/__/src/Parser/Expression.cpp.o
+	cd /home/alma/Documents/LogicToolbox && $(MAKE) -f test/CMakeFiles/LogicToolbox.dir/build.make test/CMakeFiles/LogicToolbox.dir/__/src/Parser/Expression.cpp.o
 .PHONY : __/src/Parser/Expression.cpp.o
 
 __/src/Parser/Expression.i: __/src/Parser/Expression.cpp.i
@@ -474,7 +501,7 @@ __/src/Parser/Expression.i: __/src/Parser/Expression.cpp.i
 
 # target to preprocess a source file
 __/src/Parser/Expression.cpp.i:
-	cd /home/alma/LogicToolbox && $(MAKE) -f test/CMakeFiles/LogicToolbox.dir/build.make test/CMakeFiles/LogicToolbox.dir/__/src/Parser/Expression.cpp.i
+	cd /home/alma/Documents/LogicToolbox && $(MAKE) -f test/CMakeFiles/LogicToolbox.dir/build.make test/CMakeFiles/LogicToolbox.dir/__/src/Parser/Expression.cpp.i
 .PHONY : __/src/Parser/Expression.cpp.i
 
 __/src/Parser/Expression.s: __/src/Parser/Expression.cpp.s
@@ -483,7 +510,7 @@ __/src/Parser/Expression.s: __/src/Parser/Expression.cpp.s
 
 # target to generate assembly for a file
 __/src/Parser/Expression.cpp.s:
-	cd /home/alma/LogicToolbox && $(MAKE) -f test/CMakeFiles/LogicToolbox.dir/build.make test/CMakeFiles/LogicToolbox.dir/__/src/Parser/Expression.cpp.s
+	cd /home/alma/Documents/LogicToolbox && $(MAKE) -f test/CMakeFiles/LogicToolbox.dir/build.make test/CMakeFiles/LogicToolbox.dir/__/src/Parser/Expression.cpp.s
 .PHONY : __/src/Parser/Expression.cpp.s
 
 __/src/Parser/Token.o: __/src/Parser/Token.cpp.o
@@ -492,7 +519,7 @@ __/src/Parser/Token.o: __/src/Parser/Token.cpp.o
 
 # target to build an object file
 __/src/Parser/Token.cpp.o:
-	cd /home/alma/LogicToolbox && $(MAKE) -f test/CMakeFiles/LogicToolbox.dir/build.make test/CMakeFiles/LogicToolbox.dir/__/src/Parser/Token.cpp.o
+	cd /home/alma/Documents/LogicToolbox && $(MAKE) -f test/CMakeFiles/LogicToolbox.dir/build.make test/CMakeFiles/LogicToolbox.dir/__/src/Parser/Token.cpp.o
 .PHONY : __/src/Parser/Token.cpp.o
 
 __/src/Parser/Token.i: __/src/Parser/Token.cpp.i
@@ -501,7 +528,7 @@ __/src/Parser/Token.i: __/src/Parser/Token.cpp.i
 
 # target to preprocess a source file
 __/src/Parser/Token.cpp.i:
-	cd /home/alma/LogicToolbox && $(MAKE) -f test/CMakeFiles/LogicToolbox.dir/build.make test/CMakeFiles/LogicToolbox.dir/__/src/Parser/Token.cpp.i
+	cd /home/alma/Documents/LogicToolbox && $(MAKE) -f test/CMakeFiles/LogicToolbox.dir/build.make test/CMakeFiles/LogicToolbox.dir/__/src/Parser/Token.cpp.i
 .PHONY : __/src/Parser/Token.cpp.i
 
 __/src/Parser/Token.s: __/src/Parser/Token.cpp.s
@@ -510,7 +537,7 @@ __/src/Parser/Token.s: __/src/Parser/Token.cpp.s
 
 # target to generate assembly for a file
 __/src/Parser/Token.cpp.s:
-	cd /home/alma/LogicToolbox && $(MAKE) -f test/CMakeFiles/LogicToolbox.dir/build.make test/CMakeFiles/LogicToolbox.dir/__/src/Parser/Token.cpp.s
+	cd /home/alma/Documents/LogicToolbox && $(MAKE) -f test/CMakeFiles/LogicToolbox.dir/build.make test/CMakeFiles/LogicToolbox.dir/__/src/Parser/Token.cpp.s
 .PHONY : __/src/Parser/Token.cpp.s
 
 __/src/Universe/Universe.o: __/src/Universe/Universe.cpp.o
@@ -519,7 +546,7 @@ __/src/Universe/Universe.o: __/src/Universe/Universe.cpp.o
 
 # target to build an object file
 __/src/Universe/Universe.cpp.o:
-	cd /home/alma/LogicToolbox && $(MAKE) -f test/CMakeFiles/LogicToolbox.dir/build.make test/CMakeFiles/LogicToolbox.dir/__/src/Universe/Universe.cpp.o
+	cd /home/alma/Documents/LogicToolbox && $(MAKE) -f test/CMakeFiles/LogicToolbox.dir/build.make test/CMakeFiles/LogicToolbox.dir/__/src/Universe/Universe.cpp.o
 .PHONY : __/src/Universe/Universe.cpp.o
 
 __/src/Universe/Universe.i: __/src/Universe/Universe.cpp.i
@@ -528,7 +555,7 @@ __/src/Universe/Universe.i: __/src/Universe/Universe.cpp.i
 
 # target to preprocess a source file
 __/src/Universe/Universe.cpp.i:
-	cd /home/alma/LogicToolbox && $(MAKE) -f test/CMakeFiles/LogicToolbox.dir/build.make test/CMakeFiles/LogicToolbox.dir/__/src/Universe/Universe.cpp.i
+	cd /home/alma/Documents/LogicToolbox && $(MAKE) -f test/CMakeFiles/LogicToolbox.dir/build.make test/CMakeFiles/LogicToolbox.dir/__/src/Universe/Universe.cpp.i
 .PHONY : __/src/Universe/Universe.cpp.i
 
 __/src/Universe/Universe.s: __/src/Universe/Universe.cpp.s
@@ -537,7 +564,7 @@ __/src/Universe/Universe.s: __/src/Universe/Universe.cpp.s
 
 # target to generate assembly for a file
 __/src/Universe/Universe.cpp.s:
-	cd /home/alma/LogicToolbox && $(MAKE) -f test/CMakeFiles/LogicToolbox.dir/build.make test/CMakeFiles/LogicToolbox.dir/__/src/Universe/Universe.cpp.s
+	cd /home/alma/Documents/LogicToolbox && $(MAKE) -f test/CMakeFiles/LogicToolbox.dir/build.make test/CMakeFiles/LogicToolbox.dir/__/src/Universe/Universe.cpp.s
 .PHONY : __/src/Universe/Universe.cpp.s
 
 __/src/Universe/Variable.o: __/src/Universe/Variable.cpp.o
@@ -546,7 +573,7 @@ __/src/Universe/Variable.o: __/src/Universe/Variable.cpp.o
 
 # target to build an object file
 __/src/Universe/Variable.cpp.o:
-	cd /home/alma/LogicToolbox && $(MAKE) -f test/CMakeFiles/LogicToolbox.dir/build.make test/CMakeFiles/LogicToolbox.dir/__/src/Universe/Variable.cpp.o
+	cd /home/alma/Documents/LogicToolbox && $(MAKE) -f test/CMakeFiles/LogicToolbox.dir/build.make test/CMakeFiles/LogicToolbox.dir/__/src/Universe/Variable.cpp.o
 .PHONY : __/src/Universe/Variable.cpp.o
 
 __/src/Universe/Variable.i: __/src/Universe/Variable.cpp.i
@@ -555,7 +582,7 @@ __/src/Universe/Variable.i: __/src/Universe/Variable.cpp.i
 
 # target to preprocess a source file
 __/src/Universe/Variable.cpp.i:
-	cd /home/alma/LogicToolbox && $(MAKE) -f test/CMakeFiles/LogicToolbox.dir/build.make test/CMakeFiles/LogicToolbox.dir/__/src/Universe/Variable.cpp.i
+	cd /home/alma/Documents/LogicToolbox && $(MAKE) -f test/CMakeFiles/LogicToolbox.dir/build.make test/CMakeFiles/LogicToolbox.dir/__/src/Universe/Variable.cpp.i
 .PHONY : __/src/Universe/Variable.cpp.i
 
 __/src/Universe/Variable.s: __/src/Universe/Variable.cpp.s
@@ -564,7 +591,7 @@ __/src/Universe/Variable.s: __/src/Universe/Variable.cpp.s
 
 # target to generate assembly for a file
 __/src/Universe/Variable.cpp.s:
-	cd /home/alma/LogicToolbox && $(MAKE) -f test/CMakeFiles/LogicToolbox.dir/build.make test/CMakeFiles/LogicToolbox.dir/__/src/Universe/Variable.cpp.s
+	cd /home/alma/Documents/LogicToolbox && $(MAKE) -f test/CMakeFiles/LogicToolbox.dir/build.make test/CMakeFiles/LogicToolbox.dir/__/src/Universe/Variable.cpp.s
 .PHONY : __/src/Universe/Variable.cpp.s
 
 __/src/Universe/World.o: __/src/Universe/World.cpp.o
@@ -573,7 +600,7 @@ __/src/Universe/World.o: __/src/Universe/World.cpp.o
 
 # target to build an object file
 __/src/Universe/World.cpp.o:
-	cd /home/alma/LogicToolbox && $(MAKE) -f test/CMakeFiles/LogicToolbox.dir/build.make test/CMakeFiles/LogicToolbox.dir/__/src/Universe/World.cpp.o
+	cd /home/alma/Documents/LogicToolbox && $(MAKE) -f test/CMakeFiles/LogicToolbox.dir/build.make test/CMakeFiles/LogicToolbox.dir/__/src/Universe/World.cpp.o
 .PHONY : __/src/Universe/World.cpp.o
 
 __/src/Universe/World.i: __/src/Universe/World.cpp.i
@@ -582,7 +609,7 @@ __/src/Universe/World.i: __/src/Universe/World.cpp.i
 
 # target to preprocess a source file
 __/src/Universe/World.cpp.i:
-	cd /home/alma/LogicToolbox && $(MAKE) -f test/CMakeFiles/LogicToolbox.dir/build.make test/CMakeFiles/LogicToolbox.dir/__/src/Universe/World.cpp.i
+	cd /home/alma/Documents/LogicToolbox && $(MAKE) -f test/CMakeFiles/LogicToolbox.dir/build.make test/CMakeFiles/LogicToolbox.dir/__/src/Universe/World.cpp.i
 .PHONY : __/src/Universe/World.cpp.i
 
 __/src/Universe/World.s: __/src/Universe/World.cpp.s
@@ -591,7 +618,7 @@ __/src/Universe/World.s: __/src/Universe/World.cpp.s
 
 # target to generate assembly for a file
 __/src/Universe/World.cpp.s:
-	cd /home/alma/LogicToolbox && $(MAKE) -f test/CMakeFiles/LogicToolbox.dir/build.make test/CMakeFiles/LogicToolbox.dir/__/src/Universe/World.cpp.s
+	cd /home/alma/Documents/LogicToolbox && $(MAKE) -f test/CMakeFiles/LogicToolbox.dir/build.make test/CMakeFiles/LogicToolbox.dir/__/src/Universe/World.cpp.s
 .PHONY : __/src/Universe/World.cpp.s
 
 hello.o: hello.cpp.o
@@ -600,8 +627,8 @@ hello.o: hello.cpp.o
 
 # target to build an object file
 hello.cpp.o:
-	cd /home/alma/LogicToolbox && $(MAKE) -f test/CMakeFiles/LogicToolbox-lib.dir/build.make test/CMakeFiles/LogicToolbox-lib.dir/hello.cpp.o
-	cd /home/alma/LogicToolbox && $(MAKE) -f test/CMakeFiles/LogicToolbox.dir/build.make test/CMakeFiles/LogicToolbox.dir/hello.cpp.o
+	cd /home/alma/Documents/LogicToolbox && $(MAKE) -f test/CMakeFiles/LogicToolbox-lib.dir/build.make test/CMakeFiles/LogicToolbox-lib.dir/hello.cpp.o
+	cd /home/alma/Documents/LogicToolbox && $(MAKE) -f test/CMakeFiles/LogicToolbox.dir/build.make test/CMakeFiles/LogicToolbox.dir/hello.cpp.o
 .PHONY : hello.cpp.o
 
 hello.i: hello.cpp.i
@@ -610,8 +637,8 @@ hello.i: hello.cpp.i
 
 # target to preprocess a source file
 hello.cpp.i:
-	cd /home/alma/LogicToolbox && $(MAKE) -f test/CMakeFiles/LogicToolbox-lib.dir/build.make test/CMakeFiles/LogicToolbox-lib.dir/hello.cpp.i
-	cd /home/alma/LogicToolbox && $(MAKE) -f test/CMakeFiles/LogicToolbox.dir/build.make test/CMakeFiles/LogicToolbox.dir/hello.cpp.i
+	cd /home/alma/Documents/LogicToolbox && $(MAKE) -f test/CMakeFiles/LogicToolbox-lib.dir/build.make test/CMakeFiles/LogicToolbox-lib.dir/hello.cpp.i
+	cd /home/alma/Documents/LogicToolbox && $(MAKE) -f test/CMakeFiles/LogicToolbox.dir/build.make test/CMakeFiles/LogicToolbox.dir/hello.cpp.i
 .PHONY : hello.cpp.i
 
 hello.s: hello.cpp.s
@@ -620,8 +647,8 @@ hello.s: hello.cpp.s
 
 # target to generate assembly for a file
 hello.cpp.s:
-	cd /home/alma/LogicToolbox && $(MAKE) -f test/CMakeFiles/LogicToolbox-lib.dir/build.make test/CMakeFiles/LogicToolbox-lib.dir/hello.cpp.s
-	cd /home/alma/LogicToolbox && $(MAKE) -f test/CMakeFiles/LogicToolbox.dir/build.make test/CMakeFiles/LogicToolbox.dir/hello.cpp.s
+	cd /home/alma/Documents/LogicToolbox && $(MAKE) -f test/CMakeFiles/LogicToolbox-lib.dir/build.make test/CMakeFiles/LogicToolbox-lib.dir/hello.cpp.s
+	cd /home/alma/Documents/LogicToolbox && $(MAKE) -f test/CMakeFiles/LogicToolbox.dir/build.make test/CMakeFiles/LogicToolbox.dir/hello.cpp.s
 .PHONY : hello.cpp.s
 
 main.o: main.cpp.o
@@ -630,7 +657,7 @@ main.o: main.cpp.o
 
 # target to build an object file
 main.cpp.o:
-	cd /home/alma/LogicToolbox && $(MAKE) -f test/CMakeFiles/LogicToolbox.dir/build.make test/CMakeFiles/LogicToolbox.dir/main.cpp.o
+	cd /home/alma/Documents/LogicToolbox && $(MAKE) -f test/CMakeFiles/LogicToolbox.dir/build.make test/CMakeFiles/LogicToolbox.dir/main.cpp.o
 .PHONY : main.cpp.o
 
 main.i: main.cpp.i
@@ -639,7 +666,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	cd /home/alma/LogicToolbox && $(MAKE) -f test/CMakeFiles/LogicToolbox.dir/build.make test/CMakeFiles/LogicToolbox.dir/main.cpp.i
+	cd /home/alma/Documents/LogicToolbox && $(MAKE) -f test/CMakeFiles/LogicToolbox.dir/build.make test/CMakeFiles/LogicToolbox.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -648,7 +675,7 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	cd /home/alma/LogicToolbox && $(MAKE) -f test/CMakeFiles/LogicToolbox.dir/build.make test/CMakeFiles/LogicToolbox.dir/main.cpp.s
+	cd /home/alma/Documents/LogicToolbox && $(MAKE) -f test/CMakeFiles/LogicToolbox.dir/build.make test/CMakeFiles/LogicToolbox.dir/main.cpp.s
 .PHONY : main.cpp.s
 
 # Help Target
@@ -673,15 +700,18 @@ help:
 	@echo "... LogicToolbox_autogen/mocs_compilation.o"
 	@echo "... LogicToolbox_autogen/mocs_compilation.i"
 	@echo "... LogicToolbox_autogen/mocs_compilation.s"
-	@echo "... __/gui/cvor.o"
-	@echo "... __/gui/cvor.i"
-	@echo "... __/gui/cvor.s"
-	@echo "... __/gui/grana.o"
-	@echo "... __/gui/grana.i"
-	@echo "... __/gui/grana.s"
+	@echo "... __/gui/edge.o"
+	@echo "... __/gui/edge.i"
+	@echo "... __/gui/edge.s"
 	@echo "... __/gui/graphwidget.o"
 	@echo "... __/gui/graphwidget.i"
 	@echo "... __/gui/graphwidget.s"
+	@echo "... __/gui/mainwindow.o"
+	@echo "... __/gui/mainwindow.i"
+	@echo "... __/gui/mainwindow.s"
+	@echo "... __/gui/node.o"
+	@echo "... __/gui/node.i"
+	@echo "... __/gui/node.s"
 	@echo "... __/src/Core/Operators.o"
 	@echo "... __/src/Core/Operators.i"
 	@echo "... __/src/Core/Operators.s"
@@ -726,6 +756,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/alma/LogicToolbox && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/alma/Documents/LogicToolbox && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

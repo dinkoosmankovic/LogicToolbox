@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/alma/LogicToolbox
+CMAKE_SOURCE_DIR = /home/alma/Documents/LogicToolbox
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/alma/LogicToolbox
+CMAKE_BINARY_DIR = /home/alma/Documents/LogicToolbox
 
 # Include any dependencies generated for this target.
 include test/CMakeFiles/LogicToolbox.dir/depend.make
@@ -59,16 +59,16 @@ include test/CMakeFiles/LogicToolbox.dir/flags.make
 
 test/CMakeFiles/LogicToolbox.dir/main.cpp.o: test/CMakeFiles/LogicToolbox.dir/flags.make
 test/CMakeFiles/LogicToolbox.dir/main.cpp.o: test/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alma/LogicToolbox/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object test/CMakeFiles/LogicToolbox.dir/main.cpp.o"
-	cd /home/alma/LogicToolbox/test && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/LogicToolbox.dir/main.cpp.o -c /home/alma/LogicToolbox/test/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alma/Documents/LogicToolbox/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object test/CMakeFiles/LogicToolbox.dir/main.cpp.o"
+	cd /home/alma/Documents/LogicToolbox/test && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/LogicToolbox.dir/main.cpp.o -c /home/alma/Documents/LogicToolbox/test/main.cpp
 
 test/CMakeFiles/LogicToolbox.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/LogicToolbox.dir/main.cpp.i"
-	cd /home/alma/LogicToolbox/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alma/LogicToolbox/test/main.cpp > CMakeFiles/LogicToolbox.dir/main.cpp.i
+	cd /home/alma/Documents/LogicToolbox/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alma/Documents/LogicToolbox/test/main.cpp > CMakeFiles/LogicToolbox.dir/main.cpp.i
 
 test/CMakeFiles/LogicToolbox.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/LogicToolbox.dir/main.cpp.s"
-	cd /home/alma/LogicToolbox/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alma/LogicToolbox/test/main.cpp -o CMakeFiles/LogicToolbox.dir/main.cpp.s
+	cd /home/alma/Documents/LogicToolbox/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alma/Documents/LogicToolbox/test/main.cpp -o CMakeFiles/LogicToolbox.dir/main.cpp.s
 
 test/CMakeFiles/LogicToolbox.dir/main.cpp.o.requires:
 
@@ -83,16 +83,16 @@ test/CMakeFiles/LogicToolbox.dir/main.cpp.o.provides.build: test/CMakeFiles/Logi
 
 test/CMakeFiles/LogicToolbox.dir/hello.cpp.o: test/CMakeFiles/LogicToolbox.dir/flags.make
 test/CMakeFiles/LogicToolbox.dir/hello.cpp.o: test/hello.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alma/LogicToolbox/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object test/CMakeFiles/LogicToolbox.dir/hello.cpp.o"
-	cd /home/alma/LogicToolbox/test && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/LogicToolbox.dir/hello.cpp.o -c /home/alma/LogicToolbox/test/hello.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alma/Documents/LogicToolbox/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object test/CMakeFiles/LogicToolbox.dir/hello.cpp.o"
+	cd /home/alma/Documents/LogicToolbox/test && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/LogicToolbox.dir/hello.cpp.o -c /home/alma/Documents/LogicToolbox/test/hello.cpp
 
 test/CMakeFiles/LogicToolbox.dir/hello.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/LogicToolbox.dir/hello.cpp.i"
-	cd /home/alma/LogicToolbox/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alma/LogicToolbox/test/hello.cpp > CMakeFiles/LogicToolbox.dir/hello.cpp.i
+	cd /home/alma/Documents/LogicToolbox/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alma/Documents/LogicToolbox/test/hello.cpp > CMakeFiles/LogicToolbox.dir/hello.cpp.i
 
 test/CMakeFiles/LogicToolbox.dir/hello.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/LogicToolbox.dir/hello.cpp.s"
-	cd /home/alma/LogicToolbox/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alma/LogicToolbox/test/hello.cpp -o CMakeFiles/LogicToolbox.dir/hello.cpp.s
+	cd /home/alma/Documents/LogicToolbox/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alma/Documents/LogicToolbox/test/hello.cpp -o CMakeFiles/LogicToolbox.dir/hello.cpp.s
 
 test/CMakeFiles/LogicToolbox.dir/hello.cpp.o.requires:
 
@@ -107,16 +107,16 @@ test/CMakeFiles/LogicToolbox.dir/hello.cpp.o.provides.build: test/CMakeFiles/Log
 
 test/CMakeFiles/LogicToolbox.dir/__/src/Parser/Token.cpp.o: test/CMakeFiles/LogicToolbox.dir/flags.make
 test/CMakeFiles/LogicToolbox.dir/__/src/Parser/Token.cpp.o: src/Parser/Token.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alma/LogicToolbox/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object test/CMakeFiles/LogicToolbox.dir/__/src/Parser/Token.cpp.o"
-	cd /home/alma/LogicToolbox/test && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/LogicToolbox.dir/__/src/Parser/Token.cpp.o -c /home/alma/LogicToolbox/src/Parser/Token.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alma/Documents/LogicToolbox/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object test/CMakeFiles/LogicToolbox.dir/__/src/Parser/Token.cpp.o"
+	cd /home/alma/Documents/LogicToolbox/test && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/LogicToolbox.dir/__/src/Parser/Token.cpp.o -c /home/alma/Documents/LogicToolbox/src/Parser/Token.cpp
 
 test/CMakeFiles/LogicToolbox.dir/__/src/Parser/Token.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/LogicToolbox.dir/__/src/Parser/Token.cpp.i"
-	cd /home/alma/LogicToolbox/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alma/LogicToolbox/src/Parser/Token.cpp > CMakeFiles/LogicToolbox.dir/__/src/Parser/Token.cpp.i
+	cd /home/alma/Documents/LogicToolbox/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alma/Documents/LogicToolbox/src/Parser/Token.cpp > CMakeFiles/LogicToolbox.dir/__/src/Parser/Token.cpp.i
 
 test/CMakeFiles/LogicToolbox.dir/__/src/Parser/Token.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/LogicToolbox.dir/__/src/Parser/Token.cpp.s"
-	cd /home/alma/LogicToolbox/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alma/LogicToolbox/src/Parser/Token.cpp -o CMakeFiles/LogicToolbox.dir/__/src/Parser/Token.cpp.s
+	cd /home/alma/Documents/LogicToolbox/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alma/Documents/LogicToolbox/src/Parser/Token.cpp -o CMakeFiles/LogicToolbox.dir/__/src/Parser/Token.cpp.s
 
 test/CMakeFiles/LogicToolbox.dir/__/src/Parser/Token.cpp.o.requires:
 
@@ -131,16 +131,16 @@ test/CMakeFiles/LogicToolbox.dir/__/src/Parser/Token.cpp.o.provides.build: test/
 
 test/CMakeFiles/LogicToolbox.dir/__/src/Parser/Expression.cpp.o: test/CMakeFiles/LogicToolbox.dir/flags.make
 test/CMakeFiles/LogicToolbox.dir/__/src/Parser/Expression.cpp.o: src/Parser/Expression.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alma/LogicToolbox/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object test/CMakeFiles/LogicToolbox.dir/__/src/Parser/Expression.cpp.o"
-	cd /home/alma/LogicToolbox/test && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/LogicToolbox.dir/__/src/Parser/Expression.cpp.o -c /home/alma/LogicToolbox/src/Parser/Expression.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alma/Documents/LogicToolbox/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object test/CMakeFiles/LogicToolbox.dir/__/src/Parser/Expression.cpp.o"
+	cd /home/alma/Documents/LogicToolbox/test && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/LogicToolbox.dir/__/src/Parser/Expression.cpp.o -c /home/alma/Documents/LogicToolbox/src/Parser/Expression.cpp
 
 test/CMakeFiles/LogicToolbox.dir/__/src/Parser/Expression.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/LogicToolbox.dir/__/src/Parser/Expression.cpp.i"
-	cd /home/alma/LogicToolbox/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alma/LogicToolbox/src/Parser/Expression.cpp > CMakeFiles/LogicToolbox.dir/__/src/Parser/Expression.cpp.i
+	cd /home/alma/Documents/LogicToolbox/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alma/Documents/LogicToolbox/src/Parser/Expression.cpp > CMakeFiles/LogicToolbox.dir/__/src/Parser/Expression.cpp.i
 
 test/CMakeFiles/LogicToolbox.dir/__/src/Parser/Expression.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/LogicToolbox.dir/__/src/Parser/Expression.cpp.s"
-	cd /home/alma/LogicToolbox/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alma/LogicToolbox/src/Parser/Expression.cpp -o CMakeFiles/LogicToolbox.dir/__/src/Parser/Expression.cpp.s
+	cd /home/alma/Documents/LogicToolbox/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alma/Documents/LogicToolbox/src/Parser/Expression.cpp -o CMakeFiles/LogicToolbox.dir/__/src/Parser/Expression.cpp.s
 
 test/CMakeFiles/LogicToolbox.dir/__/src/Parser/Expression.cpp.o.requires:
 
@@ -155,16 +155,16 @@ test/CMakeFiles/LogicToolbox.dir/__/src/Parser/Expression.cpp.o.provides.build: 
 
 test/CMakeFiles/LogicToolbox.dir/__/src/Evaluator/CoreEvaluator.cpp.o: test/CMakeFiles/LogicToolbox.dir/flags.make
 test/CMakeFiles/LogicToolbox.dir/__/src/Evaluator/CoreEvaluator.cpp.o: src/Evaluator/CoreEvaluator.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alma/LogicToolbox/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object test/CMakeFiles/LogicToolbox.dir/__/src/Evaluator/CoreEvaluator.cpp.o"
-	cd /home/alma/LogicToolbox/test && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/LogicToolbox.dir/__/src/Evaluator/CoreEvaluator.cpp.o -c /home/alma/LogicToolbox/src/Evaluator/CoreEvaluator.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alma/Documents/LogicToolbox/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object test/CMakeFiles/LogicToolbox.dir/__/src/Evaluator/CoreEvaluator.cpp.o"
+	cd /home/alma/Documents/LogicToolbox/test && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/LogicToolbox.dir/__/src/Evaluator/CoreEvaluator.cpp.o -c /home/alma/Documents/LogicToolbox/src/Evaluator/CoreEvaluator.cpp
 
 test/CMakeFiles/LogicToolbox.dir/__/src/Evaluator/CoreEvaluator.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/LogicToolbox.dir/__/src/Evaluator/CoreEvaluator.cpp.i"
-	cd /home/alma/LogicToolbox/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alma/LogicToolbox/src/Evaluator/CoreEvaluator.cpp > CMakeFiles/LogicToolbox.dir/__/src/Evaluator/CoreEvaluator.cpp.i
+	cd /home/alma/Documents/LogicToolbox/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alma/Documents/LogicToolbox/src/Evaluator/CoreEvaluator.cpp > CMakeFiles/LogicToolbox.dir/__/src/Evaluator/CoreEvaluator.cpp.i
 
 test/CMakeFiles/LogicToolbox.dir/__/src/Evaluator/CoreEvaluator.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/LogicToolbox.dir/__/src/Evaluator/CoreEvaluator.cpp.s"
-	cd /home/alma/LogicToolbox/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alma/LogicToolbox/src/Evaluator/CoreEvaluator.cpp -o CMakeFiles/LogicToolbox.dir/__/src/Evaluator/CoreEvaluator.cpp.s
+	cd /home/alma/Documents/LogicToolbox/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alma/Documents/LogicToolbox/src/Evaluator/CoreEvaluator.cpp -o CMakeFiles/LogicToolbox.dir/__/src/Evaluator/CoreEvaluator.cpp.s
 
 test/CMakeFiles/LogicToolbox.dir/__/src/Evaluator/CoreEvaluator.cpp.o.requires:
 
@@ -179,16 +179,16 @@ test/CMakeFiles/LogicToolbox.dir/__/src/Evaluator/CoreEvaluator.cpp.o.provides.b
 
 test/CMakeFiles/LogicToolbox.dir/__/src/Evaluator/ResultTree.cpp.o: test/CMakeFiles/LogicToolbox.dir/flags.make
 test/CMakeFiles/LogicToolbox.dir/__/src/Evaluator/ResultTree.cpp.o: src/Evaluator/ResultTree.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alma/LogicToolbox/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object test/CMakeFiles/LogicToolbox.dir/__/src/Evaluator/ResultTree.cpp.o"
-	cd /home/alma/LogicToolbox/test && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/LogicToolbox.dir/__/src/Evaluator/ResultTree.cpp.o -c /home/alma/LogicToolbox/src/Evaluator/ResultTree.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alma/Documents/LogicToolbox/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object test/CMakeFiles/LogicToolbox.dir/__/src/Evaluator/ResultTree.cpp.o"
+	cd /home/alma/Documents/LogicToolbox/test && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/LogicToolbox.dir/__/src/Evaluator/ResultTree.cpp.o -c /home/alma/Documents/LogicToolbox/src/Evaluator/ResultTree.cpp
 
 test/CMakeFiles/LogicToolbox.dir/__/src/Evaluator/ResultTree.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/LogicToolbox.dir/__/src/Evaluator/ResultTree.cpp.i"
-	cd /home/alma/LogicToolbox/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alma/LogicToolbox/src/Evaluator/ResultTree.cpp > CMakeFiles/LogicToolbox.dir/__/src/Evaluator/ResultTree.cpp.i
+	cd /home/alma/Documents/LogicToolbox/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alma/Documents/LogicToolbox/src/Evaluator/ResultTree.cpp > CMakeFiles/LogicToolbox.dir/__/src/Evaluator/ResultTree.cpp.i
 
 test/CMakeFiles/LogicToolbox.dir/__/src/Evaluator/ResultTree.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/LogicToolbox.dir/__/src/Evaluator/ResultTree.cpp.s"
-	cd /home/alma/LogicToolbox/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alma/LogicToolbox/src/Evaluator/ResultTree.cpp -o CMakeFiles/LogicToolbox.dir/__/src/Evaluator/ResultTree.cpp.s
+	cd /home/alma/Documents/LogicToolbox/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alma/Documents/LogicToolbox/src/Evaluator/ResultTree.cpp -o CMakeFiles/LogicToolbox.dir/__/src/Evaluator/ResultTree.cpp.s
 
 test/CMakeFiles/LogicToolbox.dir/__/src/Evaluator/ResultTree.cpp.o.requires:
 
@@ -203,16 +203,16 @@ test/CMakeFiles/LogicToolbox.dir/__/src/Evaluator/ResultTree.cpp.o.provides.buil
 
 test/CMakeFiles/LogicToolbox.dir/__/src/Universe/Universe.cpp.o: test/CMakeFiles/LogicToolbox.dir/flags.make
 test/CMakeFiles/LogicToolbox.dir/__/src/Universe/Universe.cpp.o: src/Universe/Universe.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alma/LogicToolbox/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object test/CMakeFiles/LogicToolbox.dir/__/src/Universe/Universe.cpp.o"
-	cd /home/alma/LogicToolbox/test && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/LogicToolbox.dir/__/src/Universe/Universe.cpp.o -c /home/alma/LogicToolbox/src/Universe/Universe.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alma/Documents/LogicToolbox/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object test/CMakeFiles/LogicToolbox.dir/__/src/Universe/Universe.cpp.o"
+	cd /home/alma/Documents/LogicToolbox/test && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/LogicToolbox.dir/__/src/Universe/Universe.cpp.o -c /home/alma/Documents/LogicToolbox/src/Universe/Universe.cpp
 
 test/CMakeFiles/LogicToolbox.dir/__/src/Universe/Universe.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/LogicToolbox.dir/__/src/Universe/Universe.cpp.i"
-	cd /home/alma/LogicToolbox/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alma/LogicToolbox/src/Universe/Universe.cpp > CMakeFiles/LogicToolbox.dir/__/src/Universe/Universe.cpp.i
+	cd /home/alma/Documents/LogicToolbox/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alma/Documents/LogicToolbox/src/Universe/Universe.cpp > CMakeFiles/LogicToolbox.dir/__/src/Universe/Universe.cpp.i
 
 test/CMakeFiles/LogicToolbox.dir/__/src/Universe/Universe.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/LogicToolbox.dir/__/src/Universe/Universe.cpp.s"
-	cd /home/alma/LogicToolbox/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alma/LogicToolbox/src/Universe/Universe.cpp -o CMakeFiles/LogicToolbox.dir/__/src/Universe/Universe.cpp.s
+	cd /home/alma/Documents/LogicToolbox/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alma/Documents/LogicToolbox/src/Universe/Universe.cpp -o CMakeFiles/LogicToolbox.dir/__/src/Universe/Universe.cpp.s
 
 test/CMakeFiles/LogicToolbox.dir/__/src/Universe/Universe.cpp.o.requires:
 
@@ -227,16 +227,16 @@ test/CMakeFiles/LogicToolbox.dir/__/src/Universe/Universe.cpp.o.provides.build: 
 
 test/CMakeFiles/LogicToolbox.dir/__/src/Universe/Variable.cpp.o: test/CMakeFiles/LogicToolbox.dir/flags.make
 test/CMakeFiles/LogicToolbox.dir/__/src/Universe/Variable.cpp.o: src/Universe/Variable.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alma/LogicToolbox/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object test/CMakeFiles/LogicToolbox.dir/__/src/Universe/Variable.cpp.o"
-	cd /home/alma/LogicToolbox/test && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/LogicToolbox.dir/__/src/Universe/Variable.cpp.o -c /home/alma/LogicToolbox/src/Universe/Variable.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alma/Documents/LogicToolbox/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object test/CMakeFiles/LogicToolbox.dir/__/src/Universe/Variable.cpp.o"
+	cd /home/alma/Documents/LogicToolbox/test && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/LogicToolbox.dir/__/src/Universe/Variable.cpp.o -c /home/alma/Documents/LogicToolbox/src/Universe/Variable.cpp
 
 test/CMakeFiles/LogicToolbox.dir/__/src/Universe/Variable.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/LogicToolbox.dir/__/src/Universe/Variable.cpp.i"
-	cd /home/alma/LogicToolbox/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alma/LogicToolbox/src/Universe/Variable.cpp > CMakeFiles/LogicToolbox.dir/__/src/Universe/Variable.cpp.i
+	cd /home/alma/Documents/LogicToolbox/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alma/Documents/LogicToolbox/src/Universe/Variable.cpp > CMakeFiles/LogicToolbox.dir/__/src/Universe/Variable.cpp.i
 
 test/CMakeFiles/LogicToolbox.dir/__/src/Universe/Variable.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/LogicToolbox.dir/__/src/Universe/Variable.cpp.s"
-	cd /home/alma/LogicToolbox/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alma/LogicToolbox/src/Universe/Variable.cpp -o CMakeFiles/LogicToolbox.dir/__/src/Universe/Variable.cpp.s
+	cd /home/alma/Documents/LogicToolbox/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alma/Documents/LogicToolbox/src/Universe/Variable.cpp -o CMakeFiles/LogicToolbox.dir/__/src/Universe/Variable.cpp.s
 
 test/CMakeFiles/LogicToolbox.dir/__/src/Universe/Variable.cpp.o.requires:
 
@@ -251,16 +251,16 @@ test/CMakeFiles/LogicToolbox.dir/__/src/Universe/Variable.cpp.o.provides.build: 
 
 test/CMakeFiles/LogicToolbox.dir/__/src/Universe/World.cpp.o: test/CMakeFiles/LogicToolbox.dir/flags.make
 test/CMakeFiles/LogicToolbox.dir/__/src/Universe/World.cpp.o: src/Universe/World.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alma/LogicToolbox/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object test/CMakeFiles/LogicToolbox.dir/__/src/Universe/World.cpp.o"
-	cd /home/alma/LogicToolbox/test && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/LogicToolbox.dir/__/src/Universe/World.cpp.o -c /home/alma/LogicToolbox/src/Universe/World.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alma/Documents/LogicToolbox/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object test/CMakeFiles/LogicToolbox.dir/__/src/Universe/World.cpp.o"
+	cd /home/alma/Documents/LogicToolbox/test && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/LogicToolbox.dir/__/src/Universe/World.cpp.o -c /home/alma/Documents/LogicToolbox/src/Universe/World.cpp
 
 test/CMakeFiles/LogicToolbox.dir/__/src/Universe/World.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/LogicToolbox.dir/__/src/Universe/World.cpp.i"
-	cd /home/alma/LogicToolbox/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alma/LogicToolbox/src/Universe/World.cpp > CMakeFiles/LogicToolbox.dir/__/src/Universe/World.cpp.i
+	cd /home/alma/Documents/LogicToolbox/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alma/Documents/LogicToolbox/src/Universe/World.cpp > CMakeFiles/LogicToolbox.dir/__/src/Universe/World.cpp.i
 
 test/CMakeFiles/LogicToolbox.dir/__/src/Universe/World.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/LogicToolbox.dir/__/src/Universe/World.cpp.s"
-	cd /home/alma/LogicToolbox/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alma/LogicToolbox/src/Universe/World.cpp -o CMakeFiles/LogicToolbox.dir/__/src/Universe/World.cpp.s
+	cd /home/alma/Documents/LogicToolbox/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alma/Documents/LogicToolbox/src/Universe/World.cpp -o CMakeFiles/LogicToolbox.dir/__/src/Universe/World.cpp.s
 
 test/CMakeFiles/LogicToolbox.dir/__/src/Universe/World.cpp.o.requires:
 
@@ -275,16 +275,16 @@ test/CMakeFiles/LogicToolbox.dir/__/src/Universe/World.cpp.o.provides.build: tes
 
 test/CMakeFiles/LogicToolbox.dir/__/src/Core/Operators.cpp.o: test/CMakeFiles/LogicToolbox.dir/flags.make
 test/CMakeFiles/LogicToolbox.dir/__/src/Core/Operators.cpp.o: src/Core/Operators.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alma/LogicToolbox/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object test/CMakeFiles/LogicToolbox.dir/__/src/Core/Operators.cpp.o"
-	cd /home/alma/LogicToolbox/test && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/LogicToolbox.dir/__/src/Core/Operators.cpp.o -c /home/alma/LogicToolbox/src/Core/Operators.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alma/Documents/LogicToolbox/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object test/CMakeFiles/LogicToolbox.dir/__/src/Core/Operators.cpp.o"
+	cd /home/alma/Documents/LogicToolbox/test && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/LogicToolbox.dir/__/src/Core/Operators.cpp.o -c /home/alma/Documents/LogicToolbox/src/Core/Operators.cpp
 
 test/CMakeFiles/LogicToolbox.dir/__/src/Core/Operators.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/LogicToolbox.dir/__/src/Core/Operators.cpp.i"
-	cd /home/alma/LogicToolbox/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alma/LogicToolbox/src/Core/Operators.cpp > CMakeFiles/LogicToolbox.dir/__/src/Core/Operators.cpp.i
+	cd /home/alma/Documents/LogicToolbox/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alma/Documents/LogicToolbox/src/Core/Operators.cpp > CMakeFiles/LogicToolbox.dir/__/src/Core/Operators.cpp.i
 
 test/CMakeFiles/LogicToolbox.dir/__/src/Core/Operators.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/LogicToolbox.dir/__/src/Core/Operators.cpp.s"
-	cd /home/alma/LogicToolbox/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alma/LogicToolbox/src/Core/Operators.cpp -o CMakeFiles/LogicToolbox.dir/__/src/Core/Operators.cpp.s
+	cd /home/alma/Documents/LogicToolbox/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alma/Documents/LogicToolbox/src/Core/Operators.cpp -o CMakeFiles/LogicToolbox.dir/__/src/Core/Operators.cpp.s
 
 test/CMakeFiles/LogicToolbox.dir/__/src/Core/Operators.cpp.o.requires:
 
@@ -299,16 +299,16 @@ test/CMakeFiles/LogicToolbox.dir/__/src/Core/Operators.cpp.o.provides.build: tes
 
 test/CMakeFiles/LogicToolbox.dir/__/src/Graph/Graph.cpp.o: test/CMakeFiles/LogicToolbox.dir/flags.make
 test/CMakeFiles/LogicToolbox.dir/__/src/Graph/Graph.cpp.o: src/Graph/Graph.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alma/LogicToolbox/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object test/CMakeFiles/LogicToolbox.dir/__/src/Graph/Graph.cpp.o"
-	cd /home/alma/LogicToolbox/test && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/LogicToolbox.dir/__/src/Graph/Graph.cpp.o -c /home/alma/LogicToolbox/src/Graph/Graph.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alma/Documents/LogicToolbox/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object test/CMakeFiles/LogicToolbox.dir/__/src/Graph/Graph.cpp.o"
+	cd /home/alma/Documents/LogicToolbox/test && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/LogicToolbox.dir/__/src/Graph/Graph.cpp.o -c /home/alma/Documents/LogicToolbox/src/Graph/Graph.cpp
 
 test/CMakeFiles/LogicToolbox.dir/__/src/Graph/Graph.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/LogicToolbox.dir/__/src/Graph/Graph.cpp.i"
-	cd /home/alma/LogicToolbox/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alma/LogicToolbox/src/Graph/Graph.cpp > CMakeFiles/LogicToolbox.dir/__/src/Graph/Graph.cpp.i
+	cd /home/alma/Documents/LogicToolbox/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alma/Documents/LogicToolbox/src/Graph/Graph.cpp > CMakeFiles/LogicToolbox.dir/__/src/Graph/Graph.cpp.i
 
 test/CMakeFiles/LogicToolbox.dir/__/src/Graph/Graph.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/LogicToolbox.dir/__/src/Graph/Graph.cpp.s"
-	cd /home/alma/LogicToolbox/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alma/LogicToolbox/src/Graph/Graph.cpp -o CMakeFiles/LogicToolbox.dir/__/src/Graph/Graph.cpp.s
+	cd /home/alma/Documents/LogicToolbox/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alma/Documents/LogicToolbox/src/Graph/Graph.cpp -o CMakeFiles/LogicToolbox.dir/__/src/Graph/Graph.cpp.s
 
 test/CMakeFiles/LogicToolbox.dir/__/src/Graph/Graph.cpp.o.requires:
 
@@ -321,66 +321,66 @@ test/CMakeFiles/LogicToolbox.dir/__/src/Graph/Graph.cpp.o.provides: test/CMakeFi
 test/CMakeFiles/LogicToolbox.dir/__/src/Graph/Graph.cpp.o.provides.build: test/CMakeFiles/LogicToolbox.dir/__/src/Graph/Graph.cpp.o
 
 
-test/CMakeFiles/LogicToolbox.dir/__/gui/grana.cpp.o: test/CMakeFiles/LogicToolbox.dir/flags.make
-test/CMakeFiles/LogicToolbox.dir/__/gui/grana.cpp.o: gui/grana.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alma/LogicToolbox/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object test/CMakeFiles/LogicToolbox.dir/__/gui/grana.cpp.o"
-	cd /home/alma/LogicToolbox/test && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/LogicToolbox.dir/__/gui/grana.cpp.o -c /home/alma/LogicToolbox/gui/grana.cpp
+test/CMakeFiles/LogicToolbox.dir/__/gui/edge.cpp.o: test/CMakeFiles/LogicToolbox.dir/flags.make
+test/CMakeFiles/LogicToolbox.dir/__/gui/edge.cpp.o: gui/edge.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alma/Documents/LogicToolbox/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object test/CMakeFiles/LogicToolbox.dir/__/gui/edge.cpp.o"
+	cd /home/alma/Documents/LogicToolbox/test && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/LogicToolbox.dir/__/gui/edge.cpp.o -c /home/alma/Documents/LogicToolbox/gui/edge.cpp
 
-test/CMakeFiles/LogicToolbox.dir/__/gui/grana.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/LogicToolbox.dir/__/gui/grana.cpp.i"
-	cd /home/alma/LogicToolbox/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alma/LogicToolbox/gui/grana.cpp > CMakeFiles/LogicToolbox.dir/__/gui/grana.cpp.i
+test/CMakeFiles/LogicToolbox.dir/__/gui/edge.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/LogicToolbox.dir/__/gui/edge.cpp.i"
+	cd /home/alma/Documents/LogicToolbox/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alma/Documents/LogicToolbox/gui/edge.cpp > CMakeFiles/LogicToolbox.dir/__/gui/edge.cpp.i
 
-test/CMakeFiles/LogicToolbox.dir/__/gui/grana.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/LogicToolbox.dir/__/gui/grana.cpp.s"
-	cd /home/alma/LogicToolbox/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alma/LogicToolbox/gui/grana.cpp -o CMakeFiles/LogicToolbox.dir/__/gui/grana.cpp.s
+test/CMakeFiles/LogicToolbox.dir/__/gui/edge.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/LogicToolbox.dir/__/gui/edge.cpp.s"
+	cd /home/alma/Documents/LogicToolbox/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alma/Documents/LogicToolbox/gui/edge.cpp -o CMakeFiles/LogicToolbox.dir/__/gui/edge.cpp.s
 
-test/CMakeFiles/LogicToolbox.dir/__/gui/grana.cpp.o.requires:
+test/CMakeFiles/LogicToolbox.dir/__/gui/edge.cpp.o.requires:
 
-.PHONY : test/CMakeFiles/LogicToolbox.dir/__/gui/grana.cpp.o.requires
+.PHONY : test/CMakeFiles/LogicToolbox.dir/__/gui/edge.cpp.o.requires
 
-test/CMakeFiles/LogicToolbox.dir/__/gui/grana.cpp.o.provides: test/CMakeFiles/LogicToolbox.dir/__/gui/grana.cpp.o.requires
-	$(MAKE) -f test/CMakeFiles/LogicToolbox.dir/build.make test/CMakeFiles/LogicToolbox.dir/__/gui/grana.cpp.o.provides.build
-.PHONY : test/CMakeFiles/LogicToolbox.dir/__/gui/grana.cpp.o.provides
+test/CMakeFiles/LogicToolbox.dir/__/gui/edge.cpp.o.provides: test/CMakeFiles/LogicToolbox.dir/__/gui/edge.cpp.o.requires
+	$(MAKE) -f test/CMakeFiles/LogicToolbox.dir/build.make test/CMakeFiles/LogicToolbox.dir/__/gui/edge.cpp.o.provides.build
+.PHONY : test/CMakeFiles/LogicToolbox.dir/__/gui/edge.cpp.o.provides
 
-test/CMakeFiles/LogicToolbox.dir/__/gui/grana.cpp.o.provides.build: test/CMakeFiles/LogicToolbox.dir/__/gui/grana.cpp.o
+test/CMakeFiles/LogicToolbox.dir/__/gui/edge.cpp.o.provides.build: test/CMakeFiles/LogicToolbox.dir/__/gui/edge.cpp.o
 
 
-test/CMakeFiles/LogicToolbox.dir/__/gui/cvor.cpp.o: test/CMakeFiles/LogicToolbox.dir/flags.make
-test/CMakeFiles/LogicToolbox.dir/__/gui/cvor.cpp.o: gui/cvor.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alma/LogicToolbox/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object test/CMakeFiles/LogicToolbox.dir/__/gui/cvor.cpp.o"
-	cd /home/alma/LogicToolbox/test && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/LogicToolbox.dir/__/gui/cvor.cpp.o -c /home/alma/LogicToolbox/gui/cvor.cpp
+test/CMakeFiles/LogicToolbox.dir/__/gui/node.cpp.o: test/CMakeFiles/LogicToolbox.dir/flags.make
+test/CMakeFiles/LogicToolbox.dir/__/gui/node.cpp.o: gui/node.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alma/Documents/LogicToolbox/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object test/CMakeFiles/LogicToolbox.dir/__/gui/node.cpp.o"
+	cd /home/alma/Documents/LogicToolbox/test && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/LogicToolbox.dir/__/gui/node.cpp.o -c /home/alma/Documents/LogicToolbox/gui/node.cpp
 
-test/CMakeFiles/LogicToolbox.dir/__/gui/cvor.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/LogicToolbox.dir/__/gui/cvor.cpp.i"
-	cd /home/alma/LogicToolbox/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alma/LogicToolbox/gui/cvor.cpp > CMakeFiles/LogicToolbox.dir/__/gui/cvor.cpp.i
+test/CMakeFiles/LogicToolbox.dir/__/gui/node.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/LogicToolbox.dir/__/gui/node.cpp.i"
+	cd /home/alma/Documents/LogicToolbox/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alma/Documents/LogicToolbox/gui/node.cpp > CMakeFiles/LogicToolbox.dir/__/gui/node.cpp.i
 
-test/CMakeFiles/LogicToolbox.dir/__/gui/cvor.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/LogicToolbox.dir/__/gui/cvor.cpp.s"
-	cd /home/alma/LogicToolbox/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alma/LogicToolbox/gui/cvor.cpp -o CMakeFiles/LogicToolbox.dir/__/gui/cvor.cpp.s
+test/CMakeFiles/LogicToolbox.dir/__/gui/node.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/LogicToolbox.dir/__/gui/node.cpp.s"
+	cd /home/alma/Documents/LogicToolbox/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alma/Documents/LogicToolbox/gui/node.cpp -o CMakeFiles/LogicToolbox.dir/__/gui/node.cpp.s
 
-test/CMakeFiles/LogicToolbox.dir/__/gui/cvor.cpp.o.requires:
+test/CMakeFiles/LogicToolbox.dir/__/gui/node.cpp.o.requires:
 
-.PHONY : test/CMakeFiles/LogicToolbox.dir/__/gui/cvor.cpp.o.requires
+.PHONY : test/CMakeFiles/LogicToolbox.dir/__/gui/node.cpp.o.requires
 
-test/CMakeFiles/LogicToolbox.dir/__/gui/cvor.cpp.o.provides: test/CMakeFiles/LogicToolbox.dir/__/gui/cvor.cpp.o.requires
-	$(MAKE) -f test/CMakeFiles/LogicToolbox.dir/build.make test/CMakeFiles/LogicToolbox.dir/__/gui/cvor.cpp.o.provides.build
-.PHONY : test/CMakeFiles/LogicToolbox.dir/__/gui/cvor.cpp.o.provides
+test/CMakeFiles/LogicToolbox.dir/__/gui/node.cpp.o.provides: test/CMakeFiles/LogicToolbox.dir/__/gui/node.cpp.o.requires
+	$(MAKE) -f test/CMakeFiles/LogicToolbox.dir/build.make test/CMakeFiles/LogicToolbox.dir/__/gui/node.cpp.o.provides.build
+.PHONY : test/CMakeFiles/LogicToolbox.dir/__/gui/node.cpp.o.provides
 
-test/CMakeFiles/LogicToolbox.dir/__/gui/cvor.cpp.o.provides.build: test/CMakeFiles/LogicToolbox.dir/__/gui/cvor.cpp.o
+test/CMakeFiles/LogicToolbox.dir/__/gui/node.cpp.o.provides.build: test/CMakeFiles/LogicToolbox.dir/__/gui/node.cpp.o
 
 
 test/CMakeFiles/LogicToolbox.dir/__/gui/graphwidget.cpp.o: test/CMakeFiles/LogicToolbox.dir/flags.make
 test/CMakeFiles/LogicToolbox.dir/__/gui/graphwidget.cpp.o: gui/graphwidget.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alma/LogicToolbox/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object test/CMakeFiles/LogicToolbox.dir/__/gui/graphwidget.cpp.o"
-	cd /home/alma/LogicToolbox/test && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/LogicToolbox.dir/__/gui/graphwidget.cpp.o -c /home/alma/LogicToolbox/gui/graphwidget.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alma/Documents/LogicToolbox/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object test/CMakeFiles/LogicToolbox.dir/__/gui/graphwidget.cpp.o"
+	cd /home/alma/Documents/LogicToolbox/test && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/LogicToolbox.dir/__/gui/graphwidget.cpp.o -c /home/alma/Documents/LogicToolbox/gui/graphwidget.cpp
 
 test/CMakeFiles/LogicToolbox.dir/__/gui/graphwidget.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/LogicToolbox.dir/__/gui/graphwidget.cpp.i"
-	cd /home/alma/LogicToolbox/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alma/LogicToolbox/gui/graphwidget.cpp > CMakeFiles/LogicToolbox.dir/__/gui/graphwidget.cpp.i
+	cd /home/alma/Documents/LogicToolbox/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alma/Documents/LogicToolbox/gui/graphwidget.cpp > CMakeFiles/LogicToolbox.dir/__/gui/graphwidget.cpp.i
 
 test/CMakeFiles/LogicToolbox.dir/__/gui/graphwidget.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/LogicToolbox.dir/__/gui/graphwidget.cpp.s"
-	cd /home/alma/LogicToolbox/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alma/LogicToolbox/gui/graphwidget.cpp -o CMakeFiles/LogicToolbox.dir/__/gui/graphwidget.cpp.s
+	cd /home/alma/Documents/LogicToolbox/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alma/Documents/LogicToolbox/gui/graphwidget.cpp -o CMakeFiles/LogicToolbox.dir/__/gui/graphwidget.cpp.s
 
 test/CMakeFiles/LogicToolbox.dir/__/gui/graphwidget.cpp.o.requires:
 
@@ -393,18 +393,42 @@ test/CMakeFiles/LogicToolbox.dir/__/gui/graphwidget.cpp.o.provides: test/CMakeFi
 test/CMakeFiles/LogicToolbox.dir/__/gui/graphwidget.cpp.o.provides.build: test/CMakeFiles/LogicToolbox.dir/__/gui/graphwidget.cpp.o
 
 
+test/CMakeFiles/LogicToolbox.dir/__/gui/mainwindow.cpp.o: test/CMakeFiles/LogicToolbox.dir/flags.make
+test/CMakeFiles/LogicToolbox.dir/__/gui/mainwindow.cpp.o: gui/mainwindow.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alma/Documents/LogicToolbox/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object test/CMakeFiles/LogicToolbox.dir/__/gui/mainwindow.cpp.o"
+	cd /home/alma/Documents/LogicToolbox/test && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/LogicToolbox.dir/__/gui/mainwindow.cpp.o -c /home/alma/Documents/LogicToolbox/gui/mainwindow.cpp
+
+test/CMakeFiles/LogicToolbox.dir/__/gui/mainwindow.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/LogicToolbox.dir/__/gui/mainwindow.cpp.i"
+	cd /home/alma/Documents/LogicToolbox/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alma/Documents/LogicToolbox/gui/mainwindow.cpp > CMakeFiles/LogicToolbox.dir/__/gui/mainwindow.cpp.i
+
+test/CMakeFiles/LogicToolbox.dir/__/gui/mainwindow.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/LogicToolbox.dir/__/gui/mainwindow.cpp.s"
+	cd /home/alma/Documents/LogicToolbox/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alma/Documents/LogicToolbox/gui/mainwindow.cpp -o CMakeFiles/LogicToolbox.dir/__/gui/mainwindow.cpp.s
+
+test/CMakeFiles/LogicToolbox.dir/__/gui/mainwindow.cpp.o.requires:
+
+.PHONY : test/CMakeFiles/LogicToolbox.dir/__/gui/mainwindow.cpp.o.requires
+
+test/CMakeFiles/LogicToolbox.dir/__/gui/mainwindow.cpp.o.provides: test/CMakeFiles/LogicToolbox.dir/__/gui/mainwindow.cpp.o.requires
+	$(MAKE) -f test/CMakeFiles/LogicToolbox.dir/build.make test/CMakeFiles/LogicToolbox.dir/__/gui/mainwindow.cpp.o.provides.build
+.PHONY : test/CMakeFiles/LogicToolbox.dir/__/gui/mainwindow.cpp.o.provides
+
+test/CMakeFiles/LogicToolbox.dir/__/gui/mainwindow.cpp.o.provides.build: test/CMakeFiles/LogicToolbox.dir/__/gui/mainwindow.cpp.o
+
+
 test/CMakeFiles/LogicToolbox.dir/LogicToolbox_autogen/mocs_compilation.cpp.o: test/CMakeFiles/LogicToolbox.dir/flags.make
 test/CMakeFiles/LogicToolbox.dir/LogicToolbox_autogen/mocs_compilation.cpp.o: test/LogicToolbox_autogen/mocs_compilation.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alma/LogicToolbox/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object test/CMakeFiles/LogicToolbox.dir/LogicToolbox_autogen/mocs_compilation.cpp.o"
-	cd /home/alma/LogicToolbox/test && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/LogicToolbox.dir/LogicToolbox_autogen/mocs_compilation.cpp.o -c /home/alma/LogicToolbox/test/LogicToolbox_autogen/mocs_compilation.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alma/Documents/LogicToolbox/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object test/CMakeFiles/LogicToolbox.dir/LogicToolbox_autogen/mocs_compilation.cpp.o"
+	cd /home/alma/Documents/LogicToolbox/test && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/LogicToolbox.dir/LogicToolbox_autogen/mocs_compilation.cpp.o -c /home/alma/Documents/LogicToolbox/test/LogicToolbox_autogen/mocs_compilation.cpp
 
 test/CMakeFiles/LogicToolbox.dir/LogicToolbox_autogen/mocs_compilation.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/LogicToolbox.dir/LogicToolbox_autogen/mocs_compilation.cpp.i"
-	cd /home/alma/LogicToolbox/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alma/LogicToolbox/test/LogicToolbox_autogen/mocs_compilation.cpp > CMakeFiles/LogicToolbox.dir/LogicToolbox_autogen/mocs_compilation.cpp.i
+	cd /home/alma/Documents/LogicToolbox/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alma/Documents/LogicToolbox/test/LogicToolbox_autogen/mocs_compilation.cpp > CMakeFiles/LogicToolbox.dir/LogicToolbox_autogen/mocs_compilation.cpp.i
 
 test/CMakeFiles/LogicToolbox.dir/LogicToolbox_autogen/mocs_compilation.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/LogicToolbox.dir/LogicToolbox_autogen/mocs_compilation.cpp.s"
-	cd /home/alma/LogicToolbox/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alma/LogicToolbox/test/LogicToolbox_autogen/mocs_compilation.cpp -o CMakeFiles/LogicToolbox.dir/LogicToolbox_autogen/mocs_compilation.cpp.s
+	cd /home/alma/Documents/LogicToolbox/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alma/Documents/LogicToolbox/test/LogicToolbox_autogen/mocs_compilation.cpp -o CMakeFiles/LogicToolbox.dir/LogicToolbox_autogen/mocs_compilation.cpp.s
 
 test/CMakeFiles/LogicToolbox.dir/LogicToolbox_autogen/mocs_compilation.cpp.o.requires:
 
@@ -430,9 +454,10 @@ LogicToolbox_OBJECTS = \
 "CMakeFiles/LogicToolbox.dir/__/src/Universe/World.cpp.o" \
 "CMakeFiles/LogicToolbox.dir/__/src/Core/Operators.cpp.o" \
 "CMakeFiles/LogicToolbox.dir/__/src/Graph/Graph.cpp.o" \
-"CMakeFiles/LogicToolbox.dir/__/gui/grana.cpp.o" \
-"CMakeFiles/LogicToolbox.dir/__/gui/cvor.cpp.o" \
+"CMakeFiles/LogicToolbox.dir/__/gui/edge.cpp.o" \
+"CMakeFiles/LogicToolbox.dir/__/gui/node.cpp.o" \
 "CMakeFiles/LogicToolbox.dir/__/gui/graphwidget.cpp.o" \
+"CMakeFiles/LogicToolbox.dir/__/gui/mainwindow.cpp.o" \
 "CMakeFiles/LogicToolbox.dir/LogicToolbox_autogen/mocs_compilation.cpp.o"
 
 # External object files for target LogicToolbox
@@ -449,17 +474,18 @@ bin/LogicToolbox: test/CMakeFiles/LogicToolbox.dir/__/src/Universe/Variable.cpp.
 bin/LogicToolbox: test/CMakeFiles/LogicToolbox.dir/__/src/Universe/World.cpp.o
 bin/LogicToolbox: test/CMakeFiles/LogicToolbox.dir/__/src/Core/Operators.cpp.o
 bin/LogicToolbox: test/CMakeFiles/LogicToolbox.dir/__/src/Graph/Graph.cpp.o
-bin/LogicToolbox: test/CMakeFiles/LogicToolbox.dir/__/gui/grana.cpp.o
-bin/LogicToolbox: test/CMakeFiles/LogicToolbox.dir/__/gui/cvor.cpp.o
+bin/LogicToolbox: test/CMakeFiles/LogicToolbox.dir/__/gui/edge.cpp.o
+bin/LogicToolbox: test/CMakeFiles/LogicToolbox.dir/__/gui/node.cpp.o
 bin/LogicToolbox: test/CMakeFiles/LogicToolbox.dir/__/gui/graphwidget.cpp.o
+bin/LogicToolbox: test/CMakeFiles/LogicToolbox.dir/__/gui/mainwindow.cpp.o
 bin/LogicToolbox: test/CMakeFiles/LogicToolbox.dir/LogicToolbox_autogen/mocs_compilation.cpp.o
 bin/LogicToolbox: test/CMakeFiles/LogicToolbox.dir/build.make
 bin/LogicToolbox: /usr/lib/x86_64-linux-gnu/libQt5Widgets.so.5.9.5
 bin/LogicToolbox: /usr/lib/x86_64-linux-gnu/libQt5Gui.so.5.9.5
 bin/LogicToolbox: /usr/lib/x86_64-linux-gnu/libQt5Core.so.5.9.5
 bin/LogicToolbox: test/CMakeFiles/LogicToolbox.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/alma/LogicToolbox/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Linking CXX executable ../bin/LogicToolbox"
-	cd /home/alma/LogicToolbox/test && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/LogicToolbox.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/alma/Documents/LogicToolbox/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Linking CXX executable ../bin/LogicToolbox"
+	cd /home/alma/Documents/LogicToolbox/test && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/LogicToolbox.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 test/CMakeFiles/LogicToolbox.dir/build: bin/LogicToolbox
@@ -477,18 +503,19 @@ test/CMakeFiles/LogicToolbox.dir/requires: test/CMakeFiles/LogicToolbox.dir/__/s
 test/CMakeFiles/LogicToolbox.dir/requires: test/CMakeFiles/LogicToolbox.dir/__/src/Universe/World.cpp.o.requires
 test/CMakeFiles/LogicToolbox.dir/requires: test/CMakeFiles/LogicToolbox.dir/__/src/Core/Operators.cpp.o.requires
 test/CMakeFiles/LogicToolbox.dir/requires: test/CMakeFiles/LogicToolbox.dir/__/src/Graph/Graph.cpp.o.requires
-test/CMakeFiles/LogicToolbox.dir/requires: test/CMakeFiles/LogicToolbox.dir/__/gui/grana.cpp.o.requires
-test/CMakeFiles/LogicToolbox.dir/requires: test/CMakeFiles/LogicToolbox.dir/__/gui/cvor.cpp.o.requires
+test/CMakeFiles/LogicToolbox.dir/requires: test/CMakeFiles/LogicToolbox.dir/__/gui/edge.cpp.o.requires
+test/CMakeFiles/LogicToolbox.dir/requires: test/CMakeFiles/LogicToolbox.dir/__/gui/node.cpp.o.requires
 test/CMakeFiles/LogicToolbox.dir/requires: test/CMakeFiles/LogicToolbox.dir/__/gui/graphwidget.cpp.o.requires
+test/CMakeFiles/LogicToolbox.dir/requires: test/CMakeFiles/LogicToolbox.dir/__/gui/mainwindow.cpp.o.requires
 test/CMakeFiles/LogicToolbox.dir/requires: test/CMakeFiles/LogicToolbox.dir/LogicToolbox_autogen/mocs_compilation.cpp.o.requires
 
 .PHONY : test/CMakeFiles/LogicToolbox.dir/requires
 
 test/CMakeFiles/LogicToolbox.dir/clean:
-	cd /home/alma/LogicToolbox/test && $(CMAKE_COMMAND) -P CMakeFiles/LogicToolbox.dir/cmake_clean.cmake
+	cd /home/alma/Documents/LogicToolbox/test && $(CMAKE_COMMAND) -P CMakeFiles/LogicToolbox.dir/cmake_clean.cmake
 .PHONY : test/CMakeFiles/LogicToolbox.dir/clean
 
 test/CMakeFiles/LogicToolbox.dir/depend:
-	cd /home/alma/LogicToolbox && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/alma/LogicToolbox /home/alma/LogicToolbox/test /home/alma/LogicToolbox /home/alma/LogicToolbox/test /home/alma/LogicToolbox/test/CMakeFiles/LogicToolbox.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/alma/Documents/LogicToolbox && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/alma/Documents/LogicToolbox /home/alma/Documents/LogicToolbox/test /home/alma/Documents/LogicToolbox /home/alma/Documents/LogicToolbox/test /home/alma/Documents/LogicToolbox/test/CMakeFiles/LogicToolbox.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : test/CMakeFiles/LogicToolbox.dir/depend
 

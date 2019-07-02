@@ -4,21 +4,21 @@ endif()
 
 set(run 0)
 
-if("/home/alma/LogicToolbox/ThirdParty/src/googletest-stamp/googletest-gitinfo.txt" IS_NEWER_THAN "/home/alma/LogicToolbox/ThirdParty/src/googletest-stamp/googletest-gitclone-lastrun.txt")
+if("/home/alma/Documents/LogicToolbox/ThirdParty/src/googletest-stamp/googletest-gitinfo.txt" IS_NEWER_THAN "/home/alma/Documents/LogicToolbox/ThirdParty/src/googletest-stamp/googletest-gitclone-lastrun.txt")
   set(run 1)
 endif()
 
 if(NOT run)
-  message(STATUS "Avoiding repeated git clone, stamp file is up to date: '/home/alma/LogicToolbox/ThirdParty/src/googletest-stamp/googletest-gitclone-lastrun.txt'")
+  message(STATUS "Avoiding repeated git clone, stamp file is up to date: '/home/alma/Documents/LogicToolbox/ThirdParty/src/googletest-stamp/googletest-gitclone-lastrun.txt'")
   return()
 endif()
 
 execute_process(
-  COMMAND ${CMAKE_COMMAND} -E remove_directory "/home/alma/LogicToolbox/ThirdParty/src/googletest"
+  COMMAND ${CMAKE_COMMAND} -E remove_directory "/home/alma/Documents/LogicToolbox/ThirdParty/src/googletest"
   RESULT_VARIABLE error_code
   )
 if(error_code)
-  message(FATAL_ERROR "Failed to remove directory: '/home/alma/LogicToolbox/ThirdParty/src/googletest'")
+  message(FATAL_ERROR "Failed to remove directory: '/home/alma/Documents/LogicToolbox/ThirdParty/src/googletest'")
 endif()
 
 set(git_options)
@@ -53,7 +53,7 @@ set(number_of_tries 0)
 while(error_code AND number_of_tries LESS 3)
   execute_process(
     COMMAND "/usr/bin/git" ${git_options} clone ${git_clone_options} --origin "origin" "https://github.com/google/googletest.git" "googletest"
-    WORKING_DIRECTORY "/home/alma/LogicToolbox/ThirdParty/src"
+    WORKING_DIRECTORY "/home/alma/Documents/LogicToolbox/ThirdParty/src"
     RESULT_VARIABLE error_code
     )
   math(EXPR number_of_tries "${number_of_tries} + 1")
@@ -68,7 +68,7 @@ endif()
 
 execute_process(
   COMMAND "/usr/bin/git" ${git_options} checkout master --
-  WORKING_DIRECTORY "/home/alma/LogicToolbox/ThirdParty/src/googletest"
+  WORKING_DIRECTORY "/home/alma/Documents/LogicToolbox/ThirdParty/src/googletest"
   RESULT_VARIABLE error_code
   )
 if(error_code)
@@ -77,32 +77,32 @@ endif()
 
 execute_process(
   COMMAND "/usr/bin/git" ${git_options} submodule init 
-  WORKING_DIRECTORY "/home/alma/LogicToolbox/ThirdParty/src/googletest"
+  WORKING_DIRECTORY "/home/alma/Documents/LogicToolbox/ThirdParty/src/googletest"
   RESULT_VARIABLE error_code
   )
 if(error_code)
-  message(FATAL_ERROR "Failed to init submodules in: '/home/alma/LogicToolbox/ThirdParty/src/googletest'")
+  message(FATAL_ERROR "Failed to init submodules in: '/home/alma/Documents/LogicToolbox/ThirdParty/src/googletest'")
 endif()
 
 execute_process(
   COMMAND "/usr/bin/git" ${git_options} submodule update --recursive --init 
-  WORKING_DIRECTORY "/home/alma/LogicToolbox/ThirdParty/src/googletest"
+  WORKING_DIRECTORY "/home/alma/Documents/LogicToolbox/ThirdParty/src/googletest"
   RESULT_VARIABLE error_code
   )
 if(error_code)
-  message(FATAL_ERROR "Failed to update submodules in: '/home/alma/LogicToolbox/ThirdParty/src/googletest'")
+  message(FATAL_ERROR "Failed to update submodules in: '/home/alma/Documents/LogicToolbox/ThirdParty/src/googletest'")
 endif()
 
 # Complete success, update the script-last-run stamp file:
 #
 execute_process(
   COMMAND ${CMAKE_COMMAND} -E copy
-    "/home/alma/LogicToolbox/ThirdParty/src/googletest-stamp/googletest-gitinfo.txt"
-    "/home/alma/LogicToolbox/ThirdParty/src/googletest-stamp/googletest-gitclone-lastrun.txt"
-  WORKING_DIRECTORY "/home/alma/LogicToolbox/ThirdParty/src/googletest"
+    "/home/alma/Documents/LogicToolbox/ThirdParty/src/googletest-stamp/googletest-gitinfo.txt"
+    "/home/alma/Documents/LogicToolbox/ThirdParty/src/googletest-stamp/googletest-gitclone-lastrun.txt"
+  WORKING_DIRECTORY "/home/alma/Documents/LogicToolbox/ThirdParty/src/googletest"
   RESULT_VARIABLE error_code
   )
 if(error_code)
-  message(FATAL_ERROR "Failed to copy script-last-run stamp file: '/home/alma/LogicToolbox/ThirdParty/src/googletest-stamp/googletest-gitclone-lastrun.txt'")
+  message(FATAL_ERROR "Failed to copy script-last-run stamp file: '/home/alma/Documents/LogicToolbox/ThirdParty/src/googletest-stamp/googletest-gitclone-lastrun.txt'")
 endif()
 

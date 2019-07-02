@@ -6,5 +6,5 @@ CXX_FLAGS =  -std=c++11 -Wall -O0 -ggdb -fPIC
 
 CXX_DEFINES = -DLogicToolbox_lib_EXPORTS
 
-CXX_INCLUDES = -I/home/alma/LogicToolbox/test -I/home/alma/LogicToolbox/test/LogicToolbox-lib_autogen/include -I/home/alma/LogicToolbox -I/home/alma/LogicToolbox/src -I/home/alma/LogicToolbox/test/../../include/ModuleOne 
+CXX_INCLUDES = -I/home/alma/Documents/LogicToolbox/test -I/home/alma/Documents/LogicToolbox/test/LogicToolbox-lib_autogen/include -I/home/alma/Documents/LogicToolbox -I/home/alma/Documents/LogicToolbox/src -I/home/alma/Documents/LogicToolbox/test/../../include/ModuleOne 
 

@@ -6,5 +6,5 @@ CXX_FLAGS =  -std=c++11 -Wall -O0 -ggdb   -fPIC -std=gnu++11
 
 CXX_DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
 
-CXX_INCLUDES = -I/home/alma/LogicToolbox/test -I/home/alma/LogicToolbox/test/LogicToolbox_autogen/include -I/home/alma/LogicToolbox -I/home/alma/LogicToolbox/src -I/home/alma/LogicToolbox/test/../../include/ModuleOne -isystem /usr/include/x86_64-linux-gnu/qt5 -isystem /usr/include/x86_64-linux-gnu/qt5/QtWidgets -isystem /usr/include/x86_64-linux-gnu/qt5/QtGui -isystem /usr/include/x86_64-linux-gnu/qt5/QtCore -isystem /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ 
+CXX_INCLUDES = -I/home/alma/Documents/LogicToolbox/test -I/home/alma/Documents/LogicToolbox/test/LogicToolbox_autogen/include -I/home/alma/Documents/LogicToolbox -I/home/alma/Documents/LogicToolbox/src -I/home/alma/Documents/LogicToolbox/test/../../include/ModuleOne -isystem /usr/include/x86_64-linux-gnu/qt5 -isystem /usr/include/x86_64-linux-gnu/qt5/QtWidgets -isystem /usr/include/x86_64-linux-gnu/qt5/QtGui -isystem /usr/include/x86_64-linux-gnu/qt5/QtCore -isystem /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ 
 

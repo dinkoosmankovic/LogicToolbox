@@ -2,34 +2,34 @@
 	"sources" : 
 	[
 		{
-			"file" : "/home/alma/LogicToolbox/testCoverage/CMakeFiles/googletest"
+			"file" : "/home/alma/Documents/LogicToolbox/testCoverage/CMakeFiles/googletest"
 		},
 		{
-			"file" : "/home/alma/LogicToolbox/testCoverage/CMakeFiles/googletest.rule"
+			"file" : "/home/alma/Documents/LogicToolbox/testCoverage/CMakeFiles/googletest.rule"
 		},
 		{
-			"file" : "/home/alma/LogicToolbox/testCoverage/CMakeFiles/googletest-complete.rule"
+			"file" : "/home/alma/Documents/LogicToolbox/testCoverage/CMakeFiles/googletest-complete.rule"
 		},
 		{
-			"file" : "/home/alma/LogicToolbox/ThirdParty/src/googletest-stamp/googletest-install.rule"
+			"file" : "/home/alma/Documents/LogicToolbox/ThirdParty/src/googletest-stamp/googletest-install.rule"
 		},
 		{
-			"file" : "/home/alma/LogicToolbox/ThirdParty/src/googletest-stamp/googletest-mkdir.rule"
+			"file" : "/home/alma/Documents/LogicToolbox/ThirdParty/src/googletest-stamp/googletest-mkdir.rule"
 		},
 		{
-			"file" : "/home/alma/LogicToolbox/ThirdParty/src/googletest-stamp/googletest-download.rule"
+			"file" : "/home/alma/Documents/LogicToolbox/ThirdParty/src/googletest-stamp/googletest-download.rule"
 		},
 		{
-			"file" : "/home/alma/LogicToolbox/ThirdParty/src/googletest-stamp/googletest-update.rule"
+			"file" : "/home/alma/Documents/LogicToolbox/ThirdParty/src/googletest-stamp/googletest-update.rule"
 		},
 		{
-			"file" : "/home/alma/LogicToolbox/ThirdParty/src/googletest-stamp/googletest-patch.rule"
+			"file" : "/home/alma/Documents/LogicToolbox/ThirdParty/src/googletest-stamp/googletest-patch.rule"
 		},
 		{
-			"file" : "/home/alma/LogicToolbox/ThirdParty/src/googletest-stamp/googletest-configure.rule"
+			"file" : "/home/alma/Documents/LogicToolbox/ThirdParty/src/googletest-stamp/googletest-configure.rule"
 		},
 		{
-			"file" : "/home/alma/LogicToolbox/ThirdParty/src/googletest-stamp/googletest-build.rule"
+			"file" : "/home/alma/Documents/LogicToolbox/ThirdParty/src/googletest-stamp/googletest-build.rule"
 		}
 	],
 	"target" : 

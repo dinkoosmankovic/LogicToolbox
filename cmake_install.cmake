@@ -1,8 +1,8 @@
-# Install script for directory: /home/alma/LogicToolbox
+# Install script for directory: /home/alma/Documents/LogicToolbox
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/alma/LogicToolbox/installed")
+  set(CMAKE_INSTALL_PREFIX "/usr/local")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -38,61 +38,61 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  if(EXISTS "$ENV{DESTDIR}/home/alma/LogicToolbox/installed/lib/CMake/LogicToolbox/LogicToolboxTargets.cmake")
+  if(EXISTS "$ENV{DESTDIR}/usr/local/lib/CMake/LogicToolbox/LogicToolboxTargets.cmake")
     file(DIFFERENT EXPORT_FILE_CHANGED FILES
-         "$ENV{DESTDIR}/home/alma/LogicToolbox/installed/lib/CMake/LogicToolbox/LogicToolboxTargets.cmake"
-         "/home/alma/LogicToolbox/CMakeFiles/Export/_home/alma/LogicToolbox/installed/lib/CMake/LogicToolbox/LogicToolboxTargets.cmake")
+         "$ENV{DESTDIR}/usr/local/lib/CMake/LogicToolbox/LogicToolboxTargets.cmake"
+         "/home/alma/Documents/LogicToolbox/CMakeFiles/Export/_usr/local/lib/CMake/LogicToolbox/LogicToolboxTargets.cmake")
     if(EXPORT_FILE_CHANGED)
-      file(GLOB OLD_CONFIG_FILES "$ENV{DESTDIR}/home/alma/LogicToolbox/installed/lib/CMake/LogicToolbox/LogicToolboxTargets-*.cmake")
+      file(GLOB OLD_CONFIG_FILES "$ENV{DESTDIR}/usr/local/lib/CMake/LogicToolbox/LogicToolboxTargets-*.cmake")
       if(OLD_CONFIG_FILES)
-        message(STATUS "Old export file \"$ENV{DESTDIR}/home/alma/LogicToolbox/installed/lib/CMake/LogicToolbox/LogicToolboxTargets.cmake\" will be replaced.  Removing files [${OLD_CONFIG_FILES}].")
+        message(STATUS "Old export file \"$ENV{DESTDIR}/usr/local/lib/CMake/LogicToolbox/LogicToolboxTargets.cmake\" will be replaced.  Removing files [${OLD_CONFIG_FILES}].")
         file(REMOVE ${OLD_CONFIG_FILES})
       endif()
     endif()
   endif()
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/alma/LogicToolbox/installed/lib/CMake/LogicToolbox/LogicToolboxTargets.cmake")
+   "/usr/local/lib/CMake/LogicToolbox/LogicToolboxTargets.cmake")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/home/alma/LogicToolbox/installed/lib/CMake/LogicToolbox" TYPE FILE FILES "/home/alma/LogicToolbox/CMakeFiles/Export/_home/alma/LogicToolbox/installed/lib/CMake/LogicToolbox/LogicToolboxTargets.cmake")
+file(INSTALL DESTINATION "/usr/local/lib/CMake/LogicToolbox" TYPE FILE FILES "/home/alma/Documents/LogicToolbox/CMakeFiles/Export/_usr/local/lib/CMake/LogicToolbox/LogicToolboxTargets.cmake")
   if("${CMAKE_INSTALL_CONFIG_NAME}" MATCHES "^([Dd][Ee][Bb][Uu][Gg])$")
     list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-     "/home/alma/LogicToolbox/installed/lib/CMake/LogicToolbox/LogicToolboxTargets-debug.cmake")
+     "/usr/local/lib/CMake/LogicToolbox/LogicToolboxTargets-debug.cmake")
     if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
         message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
     endif()
     if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
         message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
     endif()
-file(INSTALL DESTINATION "/home/alma/LogicToolbox/installed/lib/CMake/LogicToolbox" TYPE FILE FILES "/home/alma/LogicToolbox/CMakeFiles/Export/_home/alma/LogicToolbox/installed/lib/CMake/LogicToolbox/LogicToolboxTargets-debug.cmake")
+file(INSTALL DESTINATION "/usr/local/lib/CMake/LogicToolbox" TYPE FILE FILES "/home/alma/Documents/LogicToolbox/CMakeFiles/Export/_usr/local/lib/CMake/LogicToolbox/LogicToolboxTargets-debug.cmake")
   endif()
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xdevx" OR NOT CMAKE_INSTALL_COMPONENT)
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/alma/LogicToolbox/installed/lib/CMake/LogicToolbox/LogicToolboxConfig.cmake;/home/alma/LogicToolbox/installed/lib/CMake/LogicToolbox/LogicToolboxConfigVersion.cmake")
+   "/usr/local/lib/CMake/LogicToolbox/LogicToolboxConfig.cmake;/usr/local/lib/CMake/LogicToolbox/LogicToolboxConfigVersion.cmake")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/home/alma/LogicToolbox/installed/lib/CMake/LogicToolbox" TYPE FILE FILES
-    "/home/alma/LogicToolbox/CMakeFiles/LogicToolboxConfig.cmake"
-    "/home/alma/LogicToolbox/CMakeFiles/LogicToolboxConfigVersion.cmake"
+file(INSTALL DESTINATION "/usr/local/lib/CMake/LogicToolbox" TYPE FILE FILES
+    "/home/alma/Documents/LogicToolbox/CMakeFiles/LogicToolboxConfig.cmake"
+    "/home/alma/Documents/LogicToolbox/CMakeFiles/LogicToolboxConfigVersion.cmake"
     )
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/alma/LogicToolbox/testCoverage/cmake_install.cmake")
-  include("/home/alma/LogicToolbox/gui/cmake_install.cmake")
-  include("/home/alma/LogicToolbox/src/cmake_install.cmake")
-  include("/home/alma/LogicToolbox/test/cmake_install.cmake")
+  include("/home/alma/Documents/LogicToolbox/testCoverage/cmake_install.cmake")
+  include("/home/alma/Documents/LogicToolbox/gui/cmake_install.cmake")
+  include("/home/alma/Documents/LogicToolbox/src/cmake_install.cmake")
+  include("/home/alma/Documents/LogicToolbox/test/cmake_install.cmake")
 
 endif()
 
@@ -104,5 +104,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/alma/LogicToolbox/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/alma/Documents/LogicToolbox/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

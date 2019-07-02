@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/alma/LogicToolbox
+CMAKE_SOURCE_DIR = /home/alma/Documents/LogicToolbox
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/alma/LogicToolbox
+CMAKE_BINARY_DIR = /home/alma/Documents/LogicToolbox
 
 # Utility rule file for docs.
 
@@ -54,8 +54,8 @@ CMAKE_BINARY_DIR = /home/alma/LogicToolbox
 include CMakeFiles/docs.dir/progress.make
 
 CMakeFiles/docs:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/alma/LogicToolbox/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating API documentation with Doxygen"
-	/usr/bin/doxygen /home/alma/LogicToolbox/Doxyfile
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/alma/Documents/LogicToolbox/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating API documentation with Doxygen"
+	/usr/bin/doxygen /home/alma/Documents/LogicToolbox/Doxyfile
 
 docs: CMakeFiles/docs
 docs: CMakeFiles/docs.dir/build.make
@@ -72,6 +72,6 @@ CMakeFiles/docs.dir/clean:
 .PHONY : CMakeFiles/docs.dir/clean
 
 CMakeFiles/docs.dir/depend:
-	cd /home/alma/LogicToolbox && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/alma/LogicToolbox /home/alma/LogicToolbox /home/alma/LogicToolbox /home/alma/LogicToolbox /home/alma/LogicToolbox/CMakeFiles/docs.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/alma/Documents/LogicToolbox && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/alma/Documents/LogicToolbox /home/alma/Documents/LogicToolbox /home/alma/Documents/LogicToolbox /home/alma/Documents/LogicToolbox /home/alma/Documents/LogicToolbox/CMakeFiles/docs.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/docs.dir/depend
 

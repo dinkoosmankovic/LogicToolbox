@@ -20,11 +20,15 @@
 #include <QDir>
 #include <QFile>
 #include <tuple>
+#include <QLabel>
+#include <QWidget>
 
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "graphwidget.h"
 #include "node.h"
+
+//PRILIKOM KREIRANJE JSONA ALFABETSKI KREIRA
 
 QList<QMap<QString, QList<QString>>> listAllAdjWrlds;
 QList<std::tuple<QString, QString, bool>> varValue;
@@ -115,7 +119,6 @@ void MainWindow::on_pushButton_clicked() {
                         varsValue.insert("Value",QJsonValue::fromVariant(value));
                          variablesValue.push_back(varsValue);
                     }
-
                 }
                 wlrdInfo.insert("Variables",  variablesValue);
                 if (i.key() == temp[k]) {
@@ -139,10 +142,21 @@ void MainWindow::on_pushButton_clicked() {
     if (!jsonFile.open(QIODevice::WriteOnly)) return;
     jsonFile.write(QJsonDocument(doc).toJson(QJsonDocument::Indented));
     jsonFile.close();   // Close file
+
+    //Message box after creating file
+    QWidget *msg = new QWidget;
+    msg->setWindowTitle("Message");
+    msg->resize(263, 60);
+    QLabel *label = new QLabel(msg);
+    QFont f("Times New Roman", 14, QFont::Bold);
+    label->setFont(f);
+    label->setText("  JSON file created successfully!");
+    msg->show();
 }
 
 void MainWindow::on_pushButton_2_clicked() {
     QString selectedWrld = ui->comboBox_2->currentText();
+    ui->comboBox_2->removeItem(ui->comboBox_2->currentIndex());
     QString temp = ui->lineEdit_3->text();
     QList<QString> adjWorlds;
     adjWorlds.append(temp.split(','));
@@ -154,7 +168,18 @@ void MainWindow::on_pushButton_2_clicked() {
 }
 
 void MainWindow::on_pushButton_3_clicked() {
+    //trueVar -list with variables which are true
+    //falseVar -list with variables which are false
+     QWidget *msg = new QWidget;
+     msg->setWindowTitle("Error");
+     msg->resize(400, 60);
+     QLabel *label = new QLabel(msg);
+     QFont f("Times New Roman", 12, QFont::Bold);
+     label->setFont(f);
+     bool condA = true;
+     bool condB = true;
      QString selectedWrld = ui->comboBox_3->currentText();
+     QList<QString> allVariables = getVarNames();
      QList<QString> trueVar;
      QList<QString> falseVar;
      QString trueV = ui->lineEdit_5->text();
@@ -162,22 +187,47 @@ void MainWindow::on_pushButton_3_clicked() {
      if(trueV.size() != 0) trueVar.append(trueV.split(','));
      if(falseV.size() != 0) falseVar.append(falseV.split(','));
 
-     std::tuple<QString,QString, bool> vars;
-     if(trueVar.size() != 0) {
-         for (int i = 0; i< trueVar.size(); i++) {
-             vars = std::make_tuple(selectedWrld, trueVar[i], true);
-             varValue.append(vars);
+     if (trueVar.size() != 0 && falseVar.size() != 0) {
+         for (int i = 0; i<trueVar.size(); i++) {
+             for (int j = 0; j<falseVar.size(); j++) {
+                 if (trueVar[i] == falseVar[j]) condA = false;
+
+             }
          }
      }
 
-     if(falseVar.size() != 0) {
-         for (int i = 0; i< falseVar.size(); i++) {
-              vars = std::make_tuple(selectedWrld, falseVar[i], false);
-              varValue.append(vars);
+     if(trueVar.size() + falseVar.size() != allVariables.size()) condB = false;
+     if(condA && condB) {
+         ui->comboBox_3->removeItem(ui->comboBox_3->currentIndex());
+         std::tuple<QString,QString, bool> vars;
+         if(trueVar.size() != 0) {
+             for (int i = 0; i< trueVar.size(); i++) {
+                 vars = std::make_tuple(selectedWrld, trueVar[i], true);
+                 varValue.append(vars);
+             }
          }
-     }
 
-     setValueOfVarible(varValue);
-     ui->lineEdit_5->clear();
-     ui->lineEdit_6->clear();
+         if(falseVar.size() != 0) {
+             for (int i = 0; i< falseVar.size(); i++) {
+                  vars = std::make_tuple(selectedWrld, falseVar[i], false);
+                  varValue.append(vars);
+             }
+         }
+         setValueOfVarible(varValue);
+         ui->lineEdit_5->clear();
+         ui->lineEdit_6->clear();
+         ui->pushButton->setDisabled(false);
+    }
+    else if (!condA) {
+        label->setText("  Variable can't be TRUE and FALSE at the same time!");
+        msg->show();
+        ui->pushButton->setDisabled(true);
+    }
+    else if (!condB) {
+        label->setText("  You didn't choose value for all variables!");
+        msg->resize(300, 60);
+        msg->show();
+        ui->pushButton->setDisabled(true);
+    }
+
 }

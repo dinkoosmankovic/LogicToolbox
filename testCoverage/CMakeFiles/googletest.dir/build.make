@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/alma/LogicToolbox
+CMAKE_SOURCE_DIR = /home/alma/Documents/LogicToolbox
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/alma/LogicToolbox
+CMAKE_BINARY_DIR = /home/alma/Documents/LogicToolbox
 
 # Utility rule file for googletest.
 
@@ -64,53 +64,53 @@ testCoverage/CMakeFiles/googletest-complete: ThirdParty/src/googletest-stamp/goo
 testCoverage/CMakeFiles/googletest-complete: ThirdParty/src/googletest-stamp/googletest-configure
 testCoverage/CMakeFiles/googletest-complete: ThirdParty/src/googletest-stamp/googletest-build
 testCoverage/CMakeFiles/googletest-complete: ThirdParty/src/googletest-stamp/googletest-install
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/alma/LogicToolbox/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Completed 'googletest'"
-	cd /home/alma/LogicToolbox/testCoverage && /usr/bin/cmake -E make_directory /home/alma/LogicToolbox/testCoverage/CMakeFiles
-	cd /home/alma/LogicToolbox/testCoverage && /usr/bin/cmake -E touch /home/alma/LogicToolbox/testCoverage/CMakeFiles/googletest-complete
-	cd /home/alma/LogicToolbox/testCoverage && /usr/bin/cmake -E touch /home/alma/LogicToolbox/ThirdParty/src/googletest-stamp/googletest-done
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/alma/Documents/LogicToolbox/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Completed 'googletest'"
+	cd /home/alma/Documents/LogicToolbox/testCoverage && /usr/bin/cmake -E make_directory /home/alma/Documents/LogicToolbox/testCoverage/CMakeFiles
+	cd /home/alma/Documents/LogicToolbox/testCoverage && /usr/bin/cmake -E touch /home/alma/Documents/LogicToolbox/testCoverage/CMakeFiles/googletest-complete
+	cd /home/alma/Documents/LogicToolbox/testCoverage && /usr/bin/cmake -E touch /home/alma/Documents/LogicToolbox/ThirdParty/src/googletest-stamp/googletest-done
 
 ThirdParty/src/googletest-stamp/googletest-install: ThirdParty/src/googletest-stamp/googletest-build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/alma/LogicToolbox/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "No install step for 'googletest'"
-	cd /home/alma/LogicToolbox/ThirdParty/src/googletest-build && /usr/bin/cmake -E echo_append
-	cd /home/alma/LogicToolbox/ThirdParty/src/googletest-build && /usr/bin/cmake -E touch /home/alma/LogicToolbox/ThirdParty/src/googletest-stamp/googletest-install
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/alma/Documents/LogicToolbox/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "No install step for 'googletest'"
+	cd /home/alma/Documents/LogicToolbox/ThirdParty/src/googletest-build && /usr/bin/cmake -E echo_append
+	cd /home/alma/Documents/LogicToolbox/ThirdParty/src/googletest-build && /usr/bin/cmake -E touch /home/alma/Documents/LogicToolbox/ThirdParty/src/googletest-stamp/googletest-install
 
 ThirdParty/src/googletest-stamp/googletest-mkdir:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/alma/LogicToolbox/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Creating directories for 'googletest'"
-	cd /home/alma/LogicToolbox/testCoverage && /usr/bin/cmake -E make_directory /home/alma/LogicToolbox/ThirdParty/src/googletest
-	cd /home/alma/LogicToolbox/testCoverage && /usr/bin/cmake -E make_directory /home/alma/LogicToolbox/ThirdParty/src/googletest-build
-	cd /home/alma/LogicToolbox/testCoverage && /usr/bin/cmake -E make_directory /home/alma/LogicToolbox/ThirdParty
-	cd /home/alma/LogicToolbox/testCoverage && /usr/bin/cmake -E make_directory /home/alma/LogicToolbox/ThirdParty/tmp
-	cd /home/alma/LogicToolbox/testCoverage && /usr/bin/cmake -E make_directory /home/alma/LogicToolbox/ThirdParty/src/googletest-stamp
-	cd /home/alma/LogicToolbox/testCoverage && /usr/bin/cmake -E make_directory /home/alma/LogicToolbox/ThirdParty/src
-	cd /home/alma/LogicToolbox/testCoverage && /usr/bin/cmake -E touch /home/alma/LogicToolbox/ThirdParty/src/googletest-stamp/googletest-mkdir
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/alma/Documents/LogicToolbox/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Creating directories for 'googletest'"
+	cd /home/alma/Documents/LogicToolbox/testCoverage && /usr/bin/cmake -E make_directory /home/alma/Documents/LogicToolbox/ThirdParty/src/googletest
+	cd /home/alma/Documents/LogicToolbox/testCoverage && /usr/bin/cmake -E make_directory /home/alma/Documents/LogicToolbox/ThirdParty/src/googletest-build
+	cd /home/alma/Documents/LogicToolbox/testCoverage && /usr/bin/cmake -E make_directory /home/alma/Documents/LogicToolbox/ThirdParty
+	cd /home/alma/Documents/LogicToolbox/testCoverage && /usr/bin/cmake -E make_directory /home/alma/Documents/LogicToolbox/ThirdParty/tmp
+	cd /home/alma/Documents/LogicToolbox/testCoverage && /usr/bin/cmake -E make_directory /home/alma/Documents/LogicToolbox/ThirdParty/src/googletest-stamp
+	cd /home/alma/Documents/LogicToolbox/testCoverage && /usr/bin/cmake -E make_directory /home/alma/Documents/LogicToolbox/ThirdParty/src
+	cd /home/alma/Documents/LogicToolbox/testCoverage && /usr/bin/cmake -E touch /home/alma/Documents/LogicToolbox/ThirdParty/src/googletest-stamp/googletest-mkdir
 
 ThirdParty/src/googletest-stamp/googletest-download: ThirdParty/src/googletest-stamp/googletest-gitinfo.txt
 ThirdParty/src/googletest-stamp/googletest-download: ThirdParty/src/googletest-stamp/googletest-mkdir
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/alma/LogicToolbox/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Performing download step (git clone) for 'googletest'"
-	cd /home/alma/LogicToolbox/ThirdParty/src && /usr/bin/cmake -P /home/alma/LogicToolbox/ThirdParty/src/googletest-stamp/googletest-download-Debug.cmake
-	cd /home/alma/LogicToolbox/ThirdParty/src && /usr/bin/cmake -E touch /home/alma/LogicToolbox/ThirdParty/src/googletest-stamp/googletest-download
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/alma/Documents/LogicToolbox/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Performing download step (git clone) for 'googletest'"
+	cd /home/alma/Documents/LogicToolbox/ThirdParty/src && /usr/bin/cmake -P /home/alma/Documents/LogicToolbox/ThirdParty/src/googletest-stamp/googletest-download-Debug.cmake
+	cd /home/alma/Documents/LogicToolbox/ThirdParty/src && /usr/bin/cmake -E touch /home/alma/Documents/LogicToolbox/ThirdParty/src/googletest-stamp/googletest-download
 
 ThirdParty/src/googletest-stamp/googletest-update: ThirdParty/src/googletest-stamp/googletest-download
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/alma/LogicToolbox/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "No update step for 'googletest'"
-	cd /home/alma/LogicToolbox/ThirdParty/src/googletest && /usr/bin/cmake -E echo_append
-	cd /home/alma/LogicToolbox/ThirdParty/src/googletest && /usr/bin/cmake -E touch /home/alma/LogicToolbox/ThirdParty/src/googletest-stamp/googletest-update
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/alma/Documents/LogicToolbox/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "No update step for 'googletest'"
+	cd /home/alma/Documents/LogicToolbox/ThirdParty/src/googletest && /usr/bin/cmake -E echo_append
+	cd /home/alma/Documents/LogicToolbox/ThirdParty/src/googletest && /usr/bin/cmake -E touch /home/alma/Documents/LogicToolbox/ThirdParty/src/googletest-stamp/googletest-update
 
 ThirdParty/src/googletest-stamp/googletest-patch: ThirdParty/src/googletest-stamp/googletest-download
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/alma/LogicToolbox/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "No patch step for 'googletest'"
-	cd /home/alma/LogicToolbox/testCoverage && /usr/bin/cmake -E echo_append
-	cd /home/alma/LogicToolbox/testCoverage && /usr/bin/cmake -E touch /home/alma/LogicToolbox/ThirdParty/src/googletest-stamp/googletest-patch
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/alma/Documents/LogicToolbox/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "No patch step for 'googletest'"
+	cd /home/alma/Documents/LogicToolbox/testCoverage && /usr/bin/cmake -E echo_append
+	cd /home/alma/Documents/LogicToolbox/testCoverage && /usr/bin/cmake -E touch /home/alma/Documents/LogicToolbox/ThirdParty/src/googletest-stamp/googletest-patch
 
 ThirdParty/src/googletest-stamp/googletest-configure: ThirdParty/tmp/googletest-cfgcmd.txt
 ThirdParty/src/googletest-stamp/googletest-configure: ThirdParty/src/googletest-stamp/googletest-update
 ThirdParty/src/googletest-stamp/googletest-configure: ThirdParty/src/googletest-stamp/googletest-patch
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/alma/LogicToolbox/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Performing configure step for 'googletest'"
-	cd /home/alma/LogicToolbox/ThirdParty/src/googletest-build && /usr/bin/cmake -P /home/alma/LogicToolbox/ThirdParty/src/googletest-stamp/googletest-configure-Debug.cmake
-	cd /home/alma/LogicToolbox/ThirdParty/src/googletest-build && /usr/bin/cmake -E touch /home/alma/LogicToolbox/ThirdParty/src/googletest-stamp/googletest-configure
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/alma/Documents/LogicToolbox/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Performing configure step for 'googletest'"
+	cd /home/alma/Documents/LogicToolbox/ThirdParty/src/googletest-build && /usr/bin/cmake -P /home/alma/Documents/LogicToolbox/ThirdParty/src/googletest-stamp/googletest-configure-Debug.cmake
+	cd /home/alma/Documents/LogicToolbox/ThirdParty/src/googletest-build && /usr/bin/cmake -E touch /home/alma/Documents/LogicToolbox/ThirdParty/src/googletest-stamp/googletest-configure
 
 ThirdParty/src/googletest-stamp/googletest-build: ThirdParty/src/googletest-stamp/googletest-configure
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/alma/LogicToolbox/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Performing build step for 'googletest'"
-	cd /home/alma/LogicToolbox/ThirdParty/src/googletest-build && /usr/bin/cmake -Dmake=$(MAKE) -P /home/alma/LogicToolbox/ThirdParty/src/googletest-stamp/googletest-build-Debug.cmake
-	cd /home/alma/LogicToolbox/ThirdParty/src/googletest-build && /usr/bin/cmake -E touch /home/alma/LogicToolbox/ThirdParty/src/googletest-stamp/googletest-build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/alma/Documents/LogicToolbox/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Performing build step for 'googletest'"
+	cd /home/alma/Documents/LogicToolbox/ThirdParty/src/googletest-build && /usr/bin/cmake -Dmake=$(MAKE) -P /home/alma/Documents/LogicToolbox/ThirdParty/src/googletest-stamp/googletest-build-Debug.cmake
+	cd /home/alma/Documents/LogicToolbox/ThirdParty/src/googletest-build && /usr/bin/cmake -E touch /home/alma/Documents/LogicToolbox/ThirdParty/src/googletest-stamp/googletest-build
 
 googletest: testCoverage/CMakeFiles/googletest
 googletest: testCoverage/CMakeFiles/googletest-complete
@@ -131,10 +131,10 @@ testCoverage/CMakeFiles/googletest.dir/build: googletest
 .PHONY : testCoverage/CMakeFiles/googletest.dir/build
 
 testCoverage/CMakeFiles/googletest.dir/clean:
-	cd /home/alma/LogicToolbox/testCoverage && $(CMAKE_COMMAND) -P CMakeFiles/googletest.dir/cmake_clean.cmake
+	cd /home/alma/Documents/LogicToolbox/testCoverage && $(CMAKE_COMMAND) -P CMakeFiles/googletest.dir/cmake_clean.cmake
 .PHONY : testCoverage/CMakeFiles/googletest.dir/clean
 
 testCoverage/CMakeFiles/googletest.dir/depend:
-	cd /home/alma/LogicToolbox && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/alma/LogicToolbox /home/alma/LogicToolbox/testCoverage /home/alma/LogicToolbox /home/alma/LogicToolbox/testCoverage /home/alma/LogicToolbox/testCoverage/CMakeFiles/googletest.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/alma/Documents/LogicToolbox && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/alma/Documents/LogicToolbox /home/alma/Documents/LogicToolbox/testCoverage /home/alma/Documents/LogicToolbox /home/alma/Documents/LogicToolbox/testCoverage /home/alma/Documents/LogicToolbox/testCoverage/CMakeFiles/googletest.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : testCoverage/CMakeFiles/googletest.dir/depend
 
