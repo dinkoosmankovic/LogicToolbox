@@ -1,0 +1,11 @@
+{
+    "Logic": "K",
+    "Name": "universe",
+    "VariableNames": [
+        "a",
+        "b",
+        "c"
+    ],
+    "Worlds": [
+    ]
+}

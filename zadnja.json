@@ -1,48 +1,48 @@
 {
     "Logic": "K",
-    "Name": "Universe",
+    "Name": "universe",
     "VariableNames": [
-        "A",
-        "B",
-        "C"
+        "a",
+        "b",
+        "c"
     ],
     "Worlds": [
         {
             "AdjWorlds": [
-                "Y"
+                "y"
             ],
-            "Name": "X",
+            "Name": "x",
             "Variables": [
                 {
-                    "Name": "A",
+                    "Name": "a",
                     "Value": true
                 },
                 {
-                    "Name": "B",
+                    "Name": "b",
                     "Value": true
                 },
                 {
-                    "Name": "C",
+                    "Name": "c",
                     "Value": true
                 }
             ]
         },
         {
             "AdjWorlds": [
-                "X"
+                "x"
             ],
-            "Name": "Y",
+            "Name": "y",
             "Variables": [
                 {
-                    "Name": "A",
+                    "Name": "a",
                     "Value": true
                 },
                 {
-                    "Name": "B",
+                    "Name": "b",
                     "Value": true
                 },
                 {
-                    "Name": "C",
+                    "Name": "c",
                     "Value": false
                 }
             ]

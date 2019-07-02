@@ -43,6 +43,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     this->setWindowTitle("Create .json file");
     ui->groupBox->setStyleSheet("QGroupBox {  border: 1px solid gray;}");
     ui->groupBox_2->setStyleSheet("QGroupBox {  border: 1px solid gray;}");
+    ui->pushButton->setDisabled(true);
 }
 
 MainWindow::~MainWindow() { delete ui; }
@@ -81,8 +82,28 @@ void MainWindow::on_lineEdit_4_editingFinished() {
 
 void MainWindow::on_pushButton_clicked() {
 
+    bool condB = false;
+
+    QWidget *wdg = new QWidget;
+    wdg->setWindowTitle("Error");
+    wdg->resize(400, 60);
+    QLabel *label = new QLabel(wdg);
+    QFont f("Times New Roman", 12, QFont::Bold);
+    label->setFont(f);
+
     setLogicType(ui->comboBox->currentText());
-    setUniverseName(ui->lineEdit->text());
+
+    if (ui->lineEdit->text() != "") {
+        condB = true;
+        setUniverseName(ui->lineEdit->text());
+    }
+
+    if (!condB) {
+        label->setText(" You didn't enter universe name!");
+        wdg->resize(300, 60);
+        wdg->show();
+      //  ui->pushButton->setDisabled(true);
+    }
 
     //Creating JSON file
     QJsonObject jsontx;
@@ -144,14 +165,10 @@ void MainWindow::on_pushButton_clicked() {
     jsonFile.close();   // Close file
 
     //Message box after creating file
-    QWidget *msg = new QWidget;
-    msg->setWindowTitle("Message");
-    msg->resize(263, 60);
-    QLabel *label = new QLabel(msg);
-    QFont f("Times New Roman", 14, QFont::Bold);
-    label->setFont(f);
+    wdg->resize(263, 60);
+
     label->setText("  JSON file created successfully!");
-    msg->show();
+    wdg->show();
 }
 
 void MainWindow::on_pushButton_2_clicked() {
@@ -178,6 +195,8 @@ void MainWindow::on_pushButton_3_clicked() {
      label->setFont(f);
      bool condA = true;
      bool condB = true;
+     bool condD = true;
+     bool condC = true;
      QString selectedWrld = ui->comboBox_3->currentText();
      QList<QString> allVariables = getVarNames();
      QList<QString> trueVar;
@@ -196,8 +215,16 @@ void MainWindow::on_pushButton_3_clicked() {
          }
      }
 
-     if(trueVar.size() + falseVar.size() != allVariables.size()) condB = false;
-     if(condA && condB) {
+     if (trueVar.size() + falseVar.size() == allVariables.size()) {
+         qStableSort(allVariables.begin(), allVariables.end());
+         QList<QString> temp = trueVar + falseVar;
+          qStableSort(temp.begin(), temp.end());
+          if (temp != allVariables) condC = false;
+     }
+     if(trueVar.size() + falseVar.size() > allVariables.size()) condD = false;
+     if(trueVar.size() + falseVar.size() < allVariables.size()) condB = false;
+
+     if(condA && condB && condC && condD) {
          ui->comboBox_3->removeItem(ui->comboBox_3->currentIndex());
          std::tuple<QString,QString, bool> vars;
          if(trueVar.size() != 0) {
@@ -213,10 +240,11 @@ void MainWindow::on_pushButton_3_clicked() {
                   varValue.append(vars);
              }
          }
+
          setValueOfVarible(varValue);
          ui->lineEdit_5->clear();
          ui->lineEdit_6->clear();
-         ui->pushButton->setDisabled(false);
+         if (ui->comboBox_3->count() == 0) ui->pushButton->setDisabled(false);
     }
     else if (!condA) {
         label->setText("  Variable can't be TRUE and FALSE at the same time!");
@@ -229,5 +257,17 @@ void MainWindow::on_pushButton_3_clicked() {
         msg->show();
         ui->pushButton->setDisabled(true);
     }
+     else if (!condC) {
+         label->setText("  Some of the entered variables do not exist!");
+         msg->resize(300, 60);
+         msg->show();
+         ui->pushButton->setDisabled(true);
+     }
+     else if (!condD) {
+         label->setText("  You entered extra variables!");
+         msg->resize(300, 60);
+         msg->show();
+         ui->pushButton->setDisabled(true);
+     }
 
 }
