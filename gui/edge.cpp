@@ -7,7 +7,7 @@
 static const double PI = 3.14159265358979323846264338327950288419717;
 static double doublePI = 2.0 * PI;
 
-Edge::Edge (Node *sourceNode, Node *destNode) : arrowSize(18) {
+Edge::Edge (Node *sourceNode, Node *destNode) : arrowSize(16) {
      setAcceptedMouseButtons(0);
      sourceN = sourceNode;
      destN = destNode;

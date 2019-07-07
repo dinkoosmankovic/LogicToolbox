@@ -14,7 +14,7 @@ class Edge;
 class GraphWidget;
 class QGraphicsSceneMouseEvent;
 
-class Node : public QGraphicsEllipseItem {
+class Node : public QGraphicsItem {
 
 private:
     QList<Edge *> edgesList;

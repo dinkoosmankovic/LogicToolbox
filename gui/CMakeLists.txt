@@ -14,6 +14,7 @@ set ( SOURCES
     graphwidget.cpp
     edge.cpp
     mainwindow.cpp
+BarWidget.cpp
 
 )
 set(HEADERS
@@ -21,6 +22,7 @@ set(HEADERS
     edge.h
     graphwidget.h
     mainwindow.h
+BarWidget.h
 
 )
 set (FORMS

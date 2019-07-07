@@ -23,6 +23,7 @@
 #include <QGraphicsScene>
 #include <QGraphicsView>
 #include <QGraphicsRectItem>
+#include <QGraphicsTextItem>
 
 /*TODO
   PREPRAVITI SVE GETTER-E NA CONST ------ ZA SVAKU KLASU
@@ -55,6 +56,7 @@ QPainterPath Node::shape() const
 {
     QPainterPath temp;
     temp.addEllipse(-radius, -radius, 2 * radius, 2 * radius);
+
     return temp;
 }
 
@@ -70,15 +72,19 @@ void Node::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWid
         gradient.setCenter(3, 3);
         gradient.setFocalPoint(3, 3);
         gradient.setColorAt(1, QColor(Qt::black).light(120));
-        gradient.setColorAt(0, QColor(Qt::darkRed).light(120));
+        gradient.setColorAt(0, QColor(Qt::darkCyan).light(120));
     }
     else {
         gradient.setColorAt(0, Qt::black);
-        gradient.setColorAt(1, Qt::darkRed);
+        gradient.setColorAt(1, Qt::darkCyan);
     }
     painter->setBrush(gradient);
     painter->setPen(QPen(Qt::black, 0));
     painter->drawEllipse( -radius, -radius, 2 * radius, 2 * radius );
+    QFont f("Arial", 12, QFont::Bold);
+    painter->setFont(f);
+    painter->setPen(Qt::white);
+    painter->drawText(boundingRect(),Qt::AlignCenter,this->worldName);
 }
 
 QVariant Node::itemChange(GraphicsItemChange change, const QVariant &value)

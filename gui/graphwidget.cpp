@@ -20,11 +20,14 @@
 #include <QGraphicsScene>
 #include <QGraphicsView>
 #include <QGraphicsRectItem>
-
+#include <QObject>
+#include <QEvent>
+#include <QHBoxLayout>
 #include "mainwindow.h"
 #include "graphwidget.h"
 #include "node.h"
 #include "edge.h"
+#include "BarWidget.h"
 
  QGraphicsScene *scena;
  QString path;
@@ -36,6 +39,7 @@
 
  GraphWidget::GraphWidget(QWidget *parent) : QGraphicsView(parent),timerId(0){
      scena = new QGraphicsScene(this);
+     bar = new BarWidget();
      scena->setItemIndexMethod(QGraphicsScene::NoIndex);
      scena->setSceneRect(-250, -250, 600, 525);
      setScene(scena);
@@ -45,23 +49,17 @@
      setTransformationAnchor(AnchorUnderMouse);
      scale(qreal(1.35), qreal(1.1));
      setMinimumSize(800,750);
-
+   //  scena->addWidget(bar);
      QPushButton *load = new QPushButton("Load .json file", this);
      connect(load, SIGNAL (released()), this, SLOT(loadFile()));
      load->setGeometry(QRect(QPoint(0,33),QSize(150, 50)));
      QFont f("Times New Roman", 12, QFont::Bold);
      load->setFont(f);
-
      QPushButton *create = new QPushButton("Create .json file", this);
      connect(create, SIGNAL (released()), this, SLOT(createFile()));
      create->setGeometry(QRect(QPoint(180,33),QSize(150, 50)));
      create->setFont(f);
 
-     /*Label *label = new QLabel(this);
-     QFont fa("Times New Roman", 22, QFont::Bold);
-     label->setFont(fa);
-     label->setText("<font color='red'>Učitajte datoteku da bi se prikazo graf</font>");
-     label->setGeometry(120,262,600,200);*/
  }
 
  void GraphWidget::loadFile() {
@@ -101,7 +99,7 @@
      else if(jObj["Worlds"].toArray().size() != 0) numOfWorlds = jObj["Worlds"].toArray().size();
 
      int posA = -100;
-     int posB = -50;
+     int posB = 0;
      Node *node = new Node(this);
      QMap<QString, Node*> world;
      for (int i = 0; i<numOfWorlds; i++) {

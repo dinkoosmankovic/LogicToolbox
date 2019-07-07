@@ -3,6 +3,9 @@
 #include <QGraphicsView>
 #include <QLabel>
 #include <QString>
+#include <QObject>
+#include <QEvent>
+#include "BarWidget.h"
 
 class Node;
 
@@ -13,12 +16,16 @@ public:
     GraphWidget (QWidget *parent = 0);
     void moving();
 
+
+
 protected:
     void drawBackground(QPainter *painter, const QRectF &rect);
     void JSONParser();
 
 private:
+    BarWidget *bar;
     int timerId;
+       QGraphicsView         * view;
     QLabel *createLabel(QWidget *parent, QString text);
 
 

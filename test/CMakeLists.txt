@@ -9,7 +9,7 @@ set(CMAKE_AUTOUIC ON)
 include_directories(../../include/${MODULE_NAME})
 add_executable(${TARGET_NAME} main.cpp ${SRC} ../src/Parser/Token.cpp ../include/Token.h ../src/Parser/Expression.cpp ../include/Expression.h ../src/Evaluator/CoreEvaluator.cpp ../include/CoreEvaluator.h ../src/Evaluator/ResultTree.cpp ../include/ResultTree.h
         ../src/Universe/Universe.cpp ../include/Universe.h ../src/Universe/Variable.cpp ../include/Variable.h ../src/Universe/World.cpp ../include/World.h ../src/Core/Operators.cpp ../include/Operators.h ../src/Graph/Graph.cpp ../include/Graph.h
-        ../gui/edge.cpp ../gui/node.cpp  ../gui/graphwidget.cpp ../gui/node.h ../gui/edge.h ../gui/graphwidget.h ../gui/mainwindow.h ../gui/mainwindow.cpp ../gui/mainwindow.ui)
+        ../gui/edge.cpp ../gui/node.cpp  ../gui/graphwidget.cpp ../gui/node.h ../gui/edge.h ../gui/graphwidget.h ../gui/mainwindow.h ../gui/mainwindow.cpp ../gui/mainwindow.ui ../gui/BarWidget.cpp ../gui/BarWidget.h)
 target_link_libraries(${TARGET_NAME} ${LIBRARIES} gvc cgraph cdt)
 
 # Build a library from all specified source files
