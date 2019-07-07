@@ -7,7 +7,7 @@
 static const double PI = 3.14159265358979323846264338327950288419717;
 static double doublePI = 2.0 * PI;
 
-Edge::Edge (Node *sourceNode, Node *destNode) : arrowSize(10) {
+Edge::Edge (Node *sourceNode, Node *destNode) : arrowSize(18) {
      setAcceptedMouseButtons(0);
      sourceN = sourceNode;
      destN = destNode;
@@ -30,7 +30,7 @@ void Edge::adjust()
     qreal length = line.length();
     prepareGeometryChange();
     if (length > qreal(20.)) {
-        QPointF edgeOffset((line.dx() * 10) / length, (line.dy() * 10) / length);
+        QPointF edgeOffset((line.dx() * 20) / length, (line.dy() * 20) / length); //20 is radius of the node
         sourcePoint = line.p1() + edgeOffset;
         destinationPoint = line.p2() - edgeOffset;
     }
@@ -62,8 +62,7 @@ void Edge::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidget *)
 
     // Drawing arrows
     double angle = ::acos(line.dx() / line.length());
-    if (line.dy() >= 0)
-        angle = doublePI - angle;
+    if (line.dy() >= 0) angle = doublePI - angle;
 
   /*  QPointF izvorisnaArrowP1 = sourcePoint + QPointF(sin(angle + PI / 3) * arrowSize,
                                                   cos(angle + PI / 3) * arrowSize);

@@ -5,13 +5,16 @@
 #include <QString>
 #include <QMap>
 #include <iostream>
-
+#include <QGraphicsScene>
+#include <QGraphicsView>
+#include <QGraphicsRectItem>
+#include <QRect>
 
 class Edge;
 class GraphWidget;
 class QGraphicsSceneMouseEvent;
 
-class Node : public QGraphicsItem {
+class Node : public QGraphicsEllipseItem {
 
 private:
     QList<Edge *> edgesList;
@@ -20,6 +23,7 @@ private:
     QString worldName;
     QPointF newPosition;
     GraphWidget *graph;
+    int radius;
 
 public:
     enum { Type = UserType + 1};

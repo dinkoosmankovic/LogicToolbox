@@ -16,6 +16,10 @@
 #include <QLabel>
 #include <QWidget>
 #include <QLineEdit>
+#include <QRectF>
+#include <QGraphicsScene>
+#include <QGraphicsView>
+#include <QGraphicsRectItem>
 
 #include "mainwindow.h"
 #include "graphwidget.h"
@@ -130,7 +134,7 @@
          node->setPos(posA, posB);
          node->setName(worldName);
          posA += 60;
-         posB += 2 * posA - 50 / 2;
+         posB += 2 * posA - 80 / 2;
          scena->addItem(node);
          worldList.append(world);
      }

@@ -1,11 +1,197 @@
 {
     "Logic": "K",
-    "Name": "universe",
+    "Name": "Alma",
     "VariableNames": [
-        "a",
-        "b",
-        "c"
+        "A",
+        "B",
+        "C"
     ],
     "Worlds": [
+        {
+            "AdjWorlds": [
+                "Y",
+                "Z"
+            ],
+            "Name": "X",
+            "Variables": [
+                {
+                    "Name": "A",
+                    "Value": true
+                },
+                {
+                    "Name": "B",
+                    "Value": true
+                },
+                {
+                    "Name": "C",
+                    "Value": true
+                }
+            ]
+        },
+        {
+            "AdjWorlds": [
+                "X",
+                "Z"
+            ],
+            "Name": "Y",
+            "Variables": [
+                {
+                    "Name": "A",
+                    "Value": false
+                },
+                {
+                    "Name": "B",
+                    "Value": false
+                },
+                {
+                    "Name": "C",
+                    "Value": false
+                }
+            ]
+        },
+        {
+            "AdjWorlds": [
+                "X"
+            ],
+            "Name": "Z",
+            "Variables": [
+                {
+                    "Name": "A",
+                    "Value": true
+                },
+                {
+                    "Name": "B",
+                    "Value": true
+                },
+                {
+                    "Name": "C",
+                    "Value": false
+                }
+            ]
+        },
+        {
+            "AdjWorlds": [
+                "Y"
+            ],
+            "Name": "W",
+            "Variables": [
+                {
+                    "Name": "A",
+                    "Value": true
+                },
+                {
+                    "Name": "B",
+                    "Value": false
+                },
+                {
+                    "Name": "C",
+                    "Value": false
+                }
+            ]
+        },
+        {
+            "AdjWorlds": [
+                "Y",
+                "Z"
+            ],
+            "Name": "X",
+            "Variables": [
+                {
+                    "Name": "A",
+                    "Value": true
+                },
+                {
+                    "Name": "B",
+                    "Value": true
+                },
+                {
+                    "Name": "C",
+                    "Value": true
+                }
+            ]
+        },
+        {
+            "AdjWorlds": [
+                "Z",
+                "T"
+            ],
+            "Name": "Y",
+            "Variables": [
+                {
+                    "Name": "A",
+                    "Value": false
+                },
+                {
+                    "Name": "B",
+                    "Value": false
+                },
+                {
+                    "Name": "C",
+                    "Value": false
+                }
+            ]
+        },
+        {
+            "AdjWorlds": [
+                "W",
+                "X"
+            ],
+            "Name": "Z",
+            "Variables": [
+                {
+                    "Name": "A",
+                    "Value": true
+                },
+                {
+                    "Name": "B",
+                    "Value": true
+                },
+                {
+                    "Name": "C",
+                    "Value": false
+                }
+            ]
+        },
+        {
+            "AdjWorlds": [
+                "Y",
+                "Z"
+            ],
+            "Name": "W",
+            "Variables": [
+                {
+                    "Name": "A",
+                    "Value": true
+                },
+                {
+                    "Name": "B",
+                    "Value": false
+                },
+                {
+                    "Name": "C",
+                    "Value": false
+                }
+            ]
+        },
+        {
+            "AdjWorlds": [
+                "X"
+            ],
+            "Name": "T",
+            "Variables": [
+                {
+                    "Name": "A",
+                    "Value": false
+                },
+                {
+                    "Name": "B",
+                    "Value": false
+                },
+                {
+                    "Name": "C",
+                    "Value": false
+                }
+            ]
+        }
     ]
 }

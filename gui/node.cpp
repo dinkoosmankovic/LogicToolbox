@@ -20,15 +20,16 @@
 #include "node.h"
 #include "graphwidget.h"
 #include "mainwindow.h"
-
+#include <QGraphicsScene>
+#include <QGraphicsView>
+#include <QGraphicsRectItem>
 
 /*TODO
-  POVEĆATI VELIČINU ELIPSE
   PREPRAVITI SVE GETTER-E NA CONST ------ ZA SVAKU KLASU
  */
 
 Node::Node(GraphWidget *graphWidget) : graph(graphWidget) {
-
+    radius = 20;
     setCacheMode(DeviceCoordinateCache);
     setZValue(-1);
     setFlag(ItemIsMovable); //Moving nodes
@@ -46,14 +47,14 @@ QList<Edge *> Node::edges() const {
 
 QRectF Node::boundingRect() const
 {
-    qreal adjust = 2;
-    return QRectF(-10 - adjust, -10 - adjust,23 + adjust, 23 + adjust);
+   return QRectF(-radius, -radius, 2 * radius, 2 * radius);
 }
+
 
 QPainterPath Node::shape() const
 {
     QPainterPath temp;
-    temp.addEllipse(-10, -10, 30, 30);
+    temp.addEllipse(-radius, -radius, 2 * radius, 2 * radius);
     return temp;
 }
 
@@ -63,9 +64,8 @@ void Node::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWid
 
     painter->setPen(Qt::NoPen);
     painter->setBrush(Qt::darkGray);
-    painter->drawEllipse(-7, -7, 20, 20);
-
-    QRadialGradient gradient(-3, -3, 10);
+    painter->drawEllipse( radius - 3, radius - 3, 2 * radius, 2 * radius );
+    QRadialGradient gradient(-3, -3, radius);
     if (option->state & QStyle::State_Sunken) {
         gradient.setCenter(3, 3);
         gradient.setFocalPoint(3, 3);
@@ -78,7 +78,7 @@ void Node::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWid
     }
     painter->setBrush(gradient);
     painter->setPen(QPen(Qt::black, 0));
-    painter->drawEllipse(-7, -7, 20, 20);
+    painter->drawEllipse( -radius, -radius, 2 * radius, 2 * radius );
 }
 
 QVariant Node::itemChange(GraphicsItemChange change, const QVariant &value)
