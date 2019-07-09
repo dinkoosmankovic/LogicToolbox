@@ -44,6 +44,7 @@ public:
     bool advance();
     void mouseDoubleClickEvent(QGraphicsSceneMouseEvent *event);
 
+
 protected:
     QVariant itemChange(GraphicsItemChange promjena,const QVariant &vrijednost);
     void mousePressEvent(QGraphicsSceneMouseEvent *event);

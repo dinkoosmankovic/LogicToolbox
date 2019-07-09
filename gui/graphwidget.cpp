@@ -24,14 +24,14 @@
 #include <QEvent>
 #include <QHBoxLayout>
 #include <QGroupBox>
-
+#include <QMouseEvent>
 
 #include "mainwindow.h"
 #include "graphwidget.h"
 #include "node.h"
 #include "edge.h"
 
-QGraphicsScene *scena;
+
 QString path;
 QPushButton *add;
 
@@ -67,10 +67,10 @@ QPushButton *add;
  }
 
  void GraphWidget::loadFile() {
-     scena->clear();
      QString file = QFileDialog::getOpenFileName(this,tr("Open"),"",tr("LogicToolbox (*.json)"));
      path = file;
      add->setDisabled(false);
+     if(path != "") scena->clear();
      JSONParser();
  }
 
@@ -91,6 +91,7 @@ QPushButton *add;
 
  void GraphWidget::JSONParser() {
 
+
      //Reading JSON file
      QList<QMap<QString, Node*>> worldList;
      QList<Node*> nodeList;
@@ -99,7 +100,6 @@ QPushButton *add;
      QByteArray rawData = file.readAll();
      QJsonDocument doc(QJsonDocument::fromJson(rawData));
      QJsonObject jObj = doc.object();
-
      int numOfWorlds;
      if(jObj["Worlds"].toArray().size() == 0) qDebug() << "Universe doesn't have \"Worlds\" tag!";
      else if(jObj["Worlds"].toArray().size() != 0) numOfWorlds = jObj["Worlds"].toArray().size();
@@ -114,6 +114,7 @@ QPushButton *add;
          int numOfVariables = jObj["Worlds"].toArray()[i].toObject().value("Variables").toArray().size();
          int numOfAdjacent = jObj["Worlds"].toArray()[i].toObject().value("AdjWorlds").toArray().size();
          QString worldName = jObj["Worlds"].toArray()[i].toObject().value("Name").toString();
+
          node = new Node(this);
          nodeList.append(node);
          world.clear();
@@ -139,7 +140,6 @@ QPushButton *add;
          node->setName(worldName);
          posA += 60;
          posB += 2 * posA - 80 / 2;
-       //  view->scene()->addItem(node);
          scena->addItem(node);
          worldList.append(world);
      }
@@ -159,6 +159,8 @@ QPushButton *add;
              }
          }
      }
+
+
  }
 
  void GraphWidget::moving()
@@ -207,4 +209,12 @@ QPushButton *add;
      QFont f("Times New Roman", 12, QFont::Bold);
      btn->setFont(f);
      return btn;
+ }
+
+ void GraphWidget::mousePressEvent(QMouseEvent *event){
+     QPointF pt = mapToScene(event->pos());
+    // n->setPos(pt.x(), pt.y()); // get the position of click on scene
+     QGraphicsItem *dlt = itemAt(event->pos());
+     Node *tmp = dynamic_cast<Node*>(dlt);
+     if (tmp)scena->removeItem(dlt);
  }

@@ -25,7 +25,7 @@ Node *Edge::destNode() const {
 }
 void Edge::adjust()
 {
-     if (!sourceN || !destN) return;
+    if (!sourceN || !destN) return;
     QLineF line(mapFromItem(sourceN, 0, 0), mapFromItem(destN, 0, 0));
     qreal length = line.length();
     prepareGeometryChange();
@@ -63,16 +63,8 @@ void Edge::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidget *)
     // Drawing arrows
     double angle = ::acos(line.dx() / line.length());
     if (line.dy() >= 0) angle = doublePI - angle;
-
-  /*  QPointF izvorisnaArrowP1 = sourcePoint + QPointF(sin(angle + PI / 3) * arrowSize,
-                                                  cos(angle + PI / 3) * arrowSize);
-    QPointF izvorisnaArrowP2 = sourcePoint + QPointF(sin(angle + PI - PI / 3) * arrowSize,
-                                                  cos(angle + PI - PI / 3) * arrowSize);*/
-    QPointF destinationArrowP1 = destinationPoint + QPointF(sin(angle - PI / 3) * arrowSize,
-                                              cos(angle - PI / 3) * arrowSize);
-    QPointF destinationArrowP2 = destinationPoint + QPointF(sin(angle - PI + PI / 3) * arrowSize,
-                                              cos(angle - PI + PI / 3) * arrowSize);
-
+    QPointF destinationArrowP1 = destinationPoint + QPointF(sin(angle - PI / 3) * arrowSize, cos(angle - PI / 3) * arrowSize);
+    QPointF destinationArrowP2 = destinationPoint + QPointF(sin(angle - PI + PI / 3) * arrowSize, cos(angle - PI + PI / 3) * arrowSize);
     painter->setBrush(Qt::black);
     painter->drawPolygon(QPolygonF() << line.p2() << destinationArrowP1 << destinationArrowP2);
 }

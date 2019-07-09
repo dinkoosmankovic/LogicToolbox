@@ -35,6 +35,7 @@ Node::Node(GraphWidget *graphWidget) : graph(graphWidget) {
     setZValue(-1);
     setFlag(ItemIsMovable); //Moving nodes
     setFlag(ItemSendsGeometryChanges);
+    setFlag(ItemIsSelectable);
 }
 
 void Node::addEdge(Edge *edge) {
@@ -178,6 +179,7 @@ void Node::mouseDoubleClickEvent(QGraphicsSceneMouseEvent *event) {
 
 void Node::mousePressEvent(QGraphicsSceneMouseEvent *event)
 {
+
     update();
     QGraphicsItem::mousePressEvent(event);
 }
