@@ -23,42 +23,46 @@
 #include <QObject>
 #include <QEvent>
 #include <QHBoxLayout>
+#include <QGroupBox>
+
+
 #include "mainwindow.h"
 #include "graphwidget.h"
 #include "node.h"
 #include "edge.h"
-#include "BarWidget.h"
 
- QGraphicsScene *scena;
- QString path;
+QGraphicsScene *scena;
+QString path;
+QPushButton *add;
 
  //TODO
- // napisati neki tekst na početku ali neće!!!
- // kreirati klasu universe sa svim atributima???
  // uradiiti validaciju pri čitanju i kreiranju json
 
  GraphWidget::GraphWidget(QWidget *parent) : QGraphicsView(parent),timerId(0){
+
      scena = new QGraphicsScene(this);
-     bar = new BarWidget();
      scena->setItemIndexMethod(QGraphicsScene::NoIndex);
-     scena->setSceneRect(-250, -250, 600, 525);
+     scena->setSceneRect(-250,-250, 600, 600);
      setScene(scena);
      setCacheMode(CacheBackground);
      setViewportUpdateMode(BoundingRectViewportUpdate);
      setRenderHint(QPainter::Antialiasing);
      setTransformationAnchor(AnchorUnderMouse);
      scale(qreal(1.35), qreal(1.1));
-     setMinimumSize(800,750);
-   //  scena->addWidget(bar);
-     QPushButton *load = new QPushButton("Load .json file", this);
+     setMinimumSize(800,950);
+
+     //Creating buttons
+     QPushButton *load = createButton(this, "Load .json file", 5,36);
      connect(load, SIGNAL (released()), this, SLOT(loadFile()));
-     load->setGeometry(QRect(QPoint(0,33),QSize(150, 50)));
-     QFont f("Times New Roman", 12, QFont::Bold);
-     load->setFont(f);
-     QPushButton *create = new QPushButton("Create .json file", this);
+     load->setToolTip("All nodes in the graph are movable!");
+
+     QPushButton *create = createButton(this, "Create .json file", 180, 36);
      connect(create, SIGNAL (released()), this, SLOT(createFile()));
-     create->setGeometry(QRect(QPoint(180,33),QSize(150, 50)));
-     create->setFont(f);
+
+     add = createButton(this, "Add more worlds", 355, 36);
+     add->setToolTip("When you load the graph, add more, unconnected worlds to the loaded graph!");
+     connect(add, SIGNAL (released()), this, SLOT (addWorlds()));
+     if (path == "") add->setDisabled(true);
 
  }
 
@@ -66,22 +70,24 @@
      scena->clear();
      QString file = QFileDialog::getOpenFileName(this,tr("Open"),"",tr("LogicToolbox (*.json)"));
      path = file;
+     add->setDisabled(false);
      JSONParser();
  }
 
  void GraphWidget::createFile() {
-    /* QWidget *wdg = new QWidget;
-     wdg->setWindowTitle("Create .json file");
-     wdg->resize(500, 500);
-     QLabel *lbl = createLabel(wdg, "Enter logic type:");
-     lbl = createLabel(wdg, "\nEnter universe name:");
-     lbl = createLabel(wdg, "\n\nEnter number of variables:");
-     QLineEdit *edit = new QLineEdit(wdg);
-     edit->setGeometry(100,100,100,100);
-     wdg->show();*/
      MainWindow *win = new MainWindow(this);
      win->show();
  }
+
+ void GraphWidget::addWorlds() {
+     static int x =-200;
+     int y = 0;
+     Node *n = new Node(this);
+     n->setPos(x, y);
+     x += 40;
+     scena->addItem(n);
+ }
+
 
  void GraphWidget::JSONParser() {
 
@@ -133,6 +139,7 @@
          node->setName(worldName);
          posA += 60;
          posB += 2 * posA - 80 / 2;
+       //  view->scene()->addItem(node);
          scena->addItem(node);
          worldList.append(world);
      }
@@ -182,12 +189,22 @@
      painter->fillRect(rect.intersected(sceneRect), gradient);
      painter->setBrush(Qt::NoBrush);
      painter->drawRect(sceneRect);
+
+     //Text
+     QRectF textRect(sceneRect.left() + 4, sceneRect.top() + 4,sceneRect.width() - 4, sceneRect.height() - 4);
+     QString message(tr("Click 'Load file' to show existing graph or 'Create file' to create a new one"));
+     QFont font = painter->font();
+     font.setBold(true);
+     font.setPointSize(14);
+     painter->setFont(font);
+     painter->setPen(Qt::black);
+     painter->drawText(textRect, message);
  }
 
- QLabel *GraphWidget::createLabel(QWidget *parent,QString text) {
-     QLabel *label = new QLabel(parent);
-     QFont fa("Times New Roman", 12, QFont::DemiBold);
-     label->setFont(fa);
-     label->setText(text);
-     return label;
+ QPushButton *GraphWidget::createButton(QWidget *parent, QString text, int x, int y) {
+     QPushButton *btn = new QPushButton(text, parent);
+     btn->setGeometry(QRect(QPoint(x,y),QSize(160, 60)));
+     QFont f("Times New Roman", 12, QFont::Bold);
+     btn->setFont(f);
+     return btn;
  }
