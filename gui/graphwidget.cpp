@@ -212,9 +212,25 @@ QPushButton *add;
  }
 
  void GraphWidget::mousePressEvent(QMouseEvent *event){
-     QPointF pt = mapToScene(event->pos());
+    /* QPointF pt = mapToScene(event->pos());
     // n->setPos(pt.x(), pt.y()); // get the position of click on scene
      QGraphicsItem *dlt = itemAt(event->pos());
      Node *tmp = dynamic_cast<Node*>(dlt);
-     if (tmp)scena->removeItem(dlt);
+     if (tmp)scena->removeItem(dlt);*/
+     if(event->button() == Qt::RightButton) {
+         QPointF pt = mapToScene(event->pos());
+             // n->setPos(pt.x(), pt.y()); // get the position of click on scene
+              QGraphicsItem *dlt = itemAt(event->pos());
+              Node *tmp = dynamic_cast<Node*>(dlt);
+              if (tmp)scena->removeItem(dlt);
+         }
+     else if (event->button() == Qt::LeftButton) {
+         QGraphicsItem *dlt = itemAt(event->pos());
+         Node *tmp = dynamic_cast<Node*>(dlt);
+          //   dlt->setFlag(QGraphicsItem::ItemIsFocusable);
+            // dlt->setFlag(QGraphicsItem::ItemIsSelectable);
+        dlt->setFlag(QGraphicsItem::ItemIsMovable);
+     }
+     QGraphicsView::mousePressEvent(event);
  }
+
