@@ -7,7 +7,7 @@
 static const double PI = 3.14159265358979323846264338327950288419717;
 static double doublePI = 2.0 * PI;
 
-Edge::Edge (Node *sourceNode, Node *destNode) : arrowSize(16) {
+Edge::Edge (Node *sourceNode, Node *destNode) : arrowSize(14) {
      setAcceptedMouseButtons(0);
      sourceN = sourceNode;
      destN = destNode;
@@ -30,7 +30,7 @@ void Edge::adjust()
     qreal length = line.length();
     prepareGeometryChange();
     if (length > qreal(20.)) {
-        QPointF edgeOffset((line.dx() * 20) / length, (line.dy() * 20) / length); //20 is radius of the node
+        QPointF edgeOffset((line.dx() * 25) / length, (line.dy() * 25) / length); //25 is radius of the node
         sourcePoint = line.p1() + edgeOffset;
         destinationPoint = line.p2() - edgeOffset;
     }
@@ -48,13 +48,9 @@ QRectF Edge::boundingRect() const
 
 void Edge::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidget *)
 {
-     if (!sourceN || !destN) return;
-
+    if (!sourceN || !destN) return;
     QLineF line(sourcePoint, destinationPoint);
-    if (qFuzzyCompare(line.length(), qreal(0.))) {
-      //  std::cout << line.length()<<std::endl;
-        return;
-    }
+    if (qFuzzyCompare(line.length(), qreal(0.)))  return;
 
     // Drawing lines
     painter->setPen(QPen(Qt::black, 1, Qt::SolidLine, Qt::RoundCap, Qt::BevelJoin));
@@ -68,3 +64,4 @@ void Edge::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidget *)
     painter->setBrush(Qt::black);
     painter->drawPolygon(QPolygonF() << line.p2() << destinationArrowP1 << destinationArrowP2);
 }
+

@@ -31,8 +31,7 @@
 #include "node.h"
 #include "edge.h"
 
-
-QString path;
+QString pathLoc;
 QPushButton *add;
 
  //TODO
@@ -62,15 +61,14 @@ QPushButton *add;
      add = createButton(this, "Add more worlds", 355, 36);
      add->setToolTip("When you load the graph, add more, unconnected worlds to the loaded graph!");
      connect(add, SIGNAL (released()), this, SLOT (addWorlds()));
-     if (path == "") add->setDisabled(true);
-
+     if (pathLoc == "") add->setDisabled(true);
  }
 
  void GraphWidget::loadFile() {
      QString file = QFileDialog::getOpenFileName(this,tr("Open"),"",tr("LogicToolbox (*.json)"));
-     path = file;
+     pathLoc = file;
      add->setDisabled(false);
-     if(path != "") scena->clear();
+     if(pathLoc != "") scena->clear();
      JSONParser();
  }
 
@@ -82,20 +80,18 @@ QPushButton *add;
  void GraphWidget::addWorlds() {
      static int x =-200;
      int y = 0;
-     Node *n = new Node(this);
+     Node *n = new Node(this, pathLoc);
      n->setPos(x, y);
      x += 40;
      scena->addItem(n);
  }
 
-
  void GraphWidget::JSONParser() {
-
 
      //Reading JSON file
      QList<QMap<QString, Node*>> worldList;
      QList<Node*> nodeList;
-     QFile file(path);
+     QFile file(pathLoc);
      file.open(QIODevice::ReadOnly);
      QByteArray rawData = file.readAll();
      QJsonDocument doc(QJsonDocument::fromJson(rawData));
@@ -106,7 +102,7 @@ QPushButton *add;
 
      int posA = -100;
      int posB = 0;
-     Node *node = new Node(this);
+     Node *node = new Node(this,pathLoc);
      QMap<QString, Node*> world;
      for (int i = 0; i<numOfWorlds; i++) {
 
@@ -115,7 +111,7 @@ QPushButton *add;
          int numOfAdjacent = jObj["Worlds"].toArray()[i].toObject().value("AdjWorlds").toArray().size();
          QString worldName = jObj["Worlds"].toArray()[i].toObject().value("Name").toString();
 
-         node = new Node(this);
+         node = new Node(this,pathLoc);
          nodeList.append(node);
          world.clear();
          world.insert(worldName,node);
@@ -139,7 +135,7 @@ QPushButton *add;
          node->setPos(posA, posB);
          node->setName(worldName);
          posA += 60;
-         posB += 2 * posA - 80 / 2;
+         posB += 3.5 * posA + 30 / 2;
          scena->addItem(node);
          worldList.append(world);
      }
@@ -159,14 +155,11 @@ QPushButton *add;
              }
          }
      }
-
-
  }
 
  void GraphWidget::moving()
  {
-     if (!timerId)
-         timerId = startTimer(1000 / 25);
+     if (!timerId) timerId = startTimer(1000 / 25);
  }
 
  void GraphWidget::drawBackground(QPainter *painter, const QRectF &rect)
@@ -212,25 +205,31 @@ QPushButton *add;
  }
 
  void GraphWidget::mousePressEvent(QMouseEvent *event){
-    /* QPointF pt = mapToScene(event->pos());
     // n->setPos(pt.x(), pt.y()); // get the position of click on scene
-     QGraphicsItem *dlt = itemAt(event->pos());
-     Node *tmp = dynamic_cast<Node*>(dlt);
-     if (tmp)scena->removeItem(dlt);*/
+
      if(event->button() == Qt::RightButton) {
-         QPointF pt = mapToScene(event->pos());
-             // n->setPos(pt.x(), pt.y()); // get the position of click on scene
-              QGraphicsItem *dlt = itemAt(event->pos());
-              Node *tmp = dynamic_cast<Node*>(dlt);
-              if (tmp)scena->removeItem(dlt);
+     //    QPointF pt = mapToScene(event->pos());
+         QGraphicsItem *dlt = itemAt(event->pos());
+         Node *tmp = dynamic_cast<Node*>(dlt);
+         if (tmp) {
+             scena->removeItem(dlt);
+             QList<Edge*> e = tmp->edges();
+             for (int i = 0; i<e.size(); i++) {
+                 Edge *tmpEdge = dynamic_cast<Edge*>(e[i]);
+                 if (tmpEdge) {
+                     scena->removeItem(e[i]);
+                 }
+             }
          }
+     }
      else if (event->button() == Qt::LeftButton) {
          QGraphicsItem *dlt = itemAt(event->pos());
          Node *tmp = dynamic_cast<Node*>(dlt);
-          //   dlt->setFlag(QGraphicsItem::ItemIsFocusable);
-            // dlt->setFlag(QGraphicsItem::ItemIsSelectable);
-        dlt->setFlag(QGraphicsItem::ItemIsMovable);
+         /*dlt->setFlag(QGraphicsItem::ItemIsFocusable);
+         dlt->setFlag(QGraphicsItem::ItemIsSelectable);*/
+         if(tmp)dlt->setFlag(QGraphicsItem::ItemIsMovable);
      }
+
      QGraphicsView::mousePressEvent(event);
  }
 

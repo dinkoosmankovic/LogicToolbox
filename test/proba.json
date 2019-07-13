@@ -1,56 +1,57 @@
 {
     "Logic": "K",
-    "Name": "bih",
+    "Name": "BanjaLuka",
     "VariableNames": [
-        "a",
-        "b"
+        "x",
+        "y"
     ],
     "Worlds": [
         {
             "AdjWorlds": [
-                "w2",
-                "w3"
+                "b",
+                "c"
             ],
-            "Name": "w1",
+            "Name": "a",
             "Variables": [
                 {
-                    "Name": "a",
+                    "Name": "x",
                     "Value": true
                 },
                 {
-                    "Name": "b",
+                    "Name": "y",
                     "Value": true
                 }
             ]
         },
         {
             "AdjWorlds": [
-                "w3"
+                "a",
+                "c"
             ],
-            "Name": "w2",
+            "Name": "b",
             "Variables": [
                 {
-                    "Name": "a",
+                    "Name": "x",
                     "Value": false
                 },
                 {
-                    "Name": "b",
+                    "Name": "y",
                     "Value": false
                 }
             ]
         },
         {
             "AdjWorlds": [
-                "w2"
+                "a"
             ],
-            "Name": "w3",
+            "Name": "c",
             "Variables": [
                 {
-                    "Name": "a",
+                    "Name": "x",
                     "Value": true
                 },
                 {
-                    "Name": "b",
+                    "Name": "y",
                     "Value": false
                 }
             ]

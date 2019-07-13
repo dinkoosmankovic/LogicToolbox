@@ -9,6 +9,8 @@
 #include <QGraphicsView>
 #include <QGraphicsRectItem>
 #include <QRect>
+#include "../include/CoreEvaluator.h"
+#include "../include/ResultTree.h"
 
 class Edge;
 class GraphWidget;
@@ -22,14 +24,15 @@ private:
     QList<QString> adjacentWorlds;
     QString worldName;
     QPointF newPosition;
-    GraphWidget *graph;
+    GraphWidget *graphA;
     int radius;
+    QString path;
 
 public:
     enum { Type = UserType + 1};
     int type() const { return Type; }
-    Node(GraphWidget *graphWidget);
-    void printVariables();
+    Node(GraphWidget *graphWidget, QString path = "UniverseConfig.json");
+    QList<QString> getVariables() const;
     void addVariable (QMap<QString, bool>);
     void addEdge(Edge *edge);
     void setName(QString name);
@@ -42,12 +45,13 @@ public:
     QRectF boundingRect() const;
     void calculateForces();
     bool advance();
-    void mouseDoubleClickEvent(QGraphicsSceneMouseEvent *event);
-
+    QList<QMap<string,char*>> getResults() const;
 
 protected:
     QVariant itemChange(GraphicsItemChange promjena,const QVariant &vrijednost);
     void mousePressEvent(QGraphicsSceneMouseEvent *event);
     void mouseReleaseEvent(QGraphicsSceneMouseEvent *event);
+    void mouseDoubleClickEvent(QGraphicsSceneMouseEvent *event);
+    void hoverEnterEvent(QGraphicsSceneHoverEvent *event);
 };
 #endif // NODE_H

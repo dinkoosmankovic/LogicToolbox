@@ -1,10 +1,11 @@
 #ifndef EDGE_H
 #define EDGE_H
 #include <QGraphicsItem>
+#include <QList>
 
 class Node;
-
 class Edge : public QGraphicsItem {
+
 public:
     Edge (Node *sourceNode, Node *destNode);
     //GET
@@ -16,7 +17,7 @@ public:
 
 protected:
     QRectF boundingRect() const;
-     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
+    void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
 
 private:
      Node *sourceN, *destN;

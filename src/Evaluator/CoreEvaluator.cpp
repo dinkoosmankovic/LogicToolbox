@@ -7,9 +7,7 @@
 CoreEvaluator::CoreEvaluator(const char* PATH /* "UniverseConfig.json" */){
 
     //Read JSON file into Document class
-
     Document document;
-
     FILE* fp = fopen(const_cast<char*>(PATH), "r");
     char readBuffer[65536];
     FileReadStream is(fp, readBuffer, sizeof(readBuffer));

@@ -32,7 +32,7 @@ private:
     void setUniverseName (QString name) { universeName = name; }
     void setVarNames (QList<QString> name) { listOfVaribles = name; }
     void setWorldNames (QList<QString> name) { listOfWorldNames.append(name); }
-    void setValueOfVarible ( QList<std::tuple<QString, QString, bool>> val) { varValue = val; }
+    void setValueOfVarible (QList<std::tuple<QString, QString, bool>> val) { varValue = val; }
     void setAdjcWorlds (QList<QMap<QString,QList<QString>>> world) {adjcWorlds = world; }
 
     //GET

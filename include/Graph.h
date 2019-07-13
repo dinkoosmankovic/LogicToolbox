@@ -13,9 +13,9 @@
 class Graph {
     GVC_t* graphContext = nullptr;
     Agraph_t* agraph = nullptr;
-    map<World*,Agnode_t*> nodes;
     vector<Agedge_t*> edges;
     bool created = false;
+    map<World*,Agnode_t*> nodes;
 public:
     inline Graph() {}
     Graph(Universe* universe);

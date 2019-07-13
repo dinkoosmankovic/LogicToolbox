@@ -11,31 +11,39 @@
 #include <QList>
 #include <QTextEdit>
 #include <QLabel>
+#include <QWidget>
 #include <QFont>
 #include <QMap>
 #include <QDebug>
 #include <QPen>
 #include <QLinearGradient>
-#include "edge.h"
-#include "node.h"
-#include "graphwidget.h"
-#include "mainwindow.h"
 #include <QGraphicsScene>
 #include <QGraphicsView>
 #include <QGraphicsRectItem>
 #include <QGraphicsTextItem>
 
+#include "edge.h"
+#include "node.h"
+#include "graphwidget.h"
+#include "mainwindow.h"
+#include "../include/CoreEvaluator.h"
+#include "../include/ResultTree.h"
+#include "../include/Graph.h"
+
+
 /*TODO
   PREPRAVITI SVE GETTER-E NA CONST ------ ZA SVAKU KLASU
  */
 
-Node::Node(GraphWidget *graphWidget) : graph(graphWidget) {
-    radius = 20;
+Node::Node(GraphWidget *graphWidget, QString pathA) : graphA(graphWidget) {
+    radius = 25;
+    path = pathA;
     setCacheMode(DeviceCoordinateCache);
     setZValue(-1);
     setFlag(ItemIsMovable); //Moving nodes
     setFlag(ItemSendsGeometryChanges);
     setFlag(ItemIsSelectable);
+    setAcceptHoverEvents(true);
 }
 
 void Node::addEdge(Edge *edge) {
@@ -47,45 +55,96 @@ QList<Edge *> Node::edges() const {
     return edgesList;
 }
 
-QRectF Node::boundingRect() const
-{
+QRectF Node::boundingRect() const {
    return QRectF(-radius, -radius, 2 * radius, 2 * radius);
 }
 
-
-QPainterPath Node::shape() const
-{
+QPainterPath Node::shape() const {
     QPainterPath temp;
     temp.addEllipse(-radius, -radius, 2 * radius, 2 * radius);
-
     return temp;
+}
+
+QList<QMap<string,char*>> Node::getResults() const  {
+    CoreEvaluator coreEvaluator (path.toStdString().c_str());
+    QList<QMap<string,char*>> a;
+
+    QString variables = "#(";
+    auto temp =getVariables();
+    for (int j = 0; j<temp.size(); j++) {
+        variables+=temp[j];
+        if (j != temp.size() -1) variables += "|";
+    }
+    variables += ")";
+
+    if (variables.toStdString() != "#()") {
+        ResultTree resultTree = coreEvaluator.returnResultTree(variables.toStdString());
+        auto rootResult = resultTree.getFinalResult();
+        for(auto i = rootResult.begin(); i != rootResult.end(); i++){
+            char* color = (i->second? const_cast<char*>("green"): const_cast<char*>("red"));
+            QMap<string, char*> tmp;
+            tmp.insert(i->first->getName(), color);
+            a.append(tmp);
+        }
+    }
+   return a;
 }
 
 //Changing node color
 void Node::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *)
 {
-
-    painter->setPen(Qt::NoPen);
-    painter->setBrush(Qt::darkGray);
-    painter->drawEllipse( radius - 3, radius - 3, 2 * radius, 2 * radius );
+    static QList<QMap<string,char*>> a;
+    a = getResults();
     QRadialGradient gradient(-3, -3, radius);
-    if (option->state & QStyle::State_Sunken) {
-        gradient.setCenter(3, 3);
-        gradient.setFocalPoint(3, 3);
-        gradient.setColorAt(1, QColor(Qt::black).light(120));
-        gradient.setColorAt(0, QColor(Qt::darkCyan).light(120));
+    if (a.size() != 0) {
+        for (QMap<string, char*> mapa : a) {
+            QMap<string, char*>::iterator i;
+            for (i = mapa.begin(); i != mapa.end(); ++i) {
+                string wrld = i.key();
+                char* color = i.value();
+                if(this->worldName.toStdString() == wrld) {
+                    painter->setPen(Qt::NoPen);
+                    painter->setBrush(Qt::darkGray);
+                    painter->drawEllipse( radius - 3, radius - 3, 2 * radius, 2 * radius );
+                    if (option->state & QStyle::State_Sunken) {
+                        gradient.setCenter(3, 3);
+                        gradient.setFocalPoint(3, 3);
+                        gradient.setColorAt(1, QColor(Qt::black).light(120));
+                        gradient.setColorAt(0, QColor(color).light(120));
+                    }
+                    else {
+                        gradient.setColorAt(0, Qt::black);
+                        gradient.setColorAt(1, color);
+                    }
+                    painter->setBrush(gradient);
+                    painter->setPen(QPen(Qt::black, 0));
+                    painter->drawEllipse( -radius, -radius, 2 * radius, 2 * radius );
+                    QFont f("Arial", 11, QFont::Bold);
+                    painter->setFont(f);
+                    painter->setPen(Qt::white);
+                    painter->drawText(boundingRect(),Qt::AlignCenter,this->worldName);
+                }
+            }
+        }
     }
     else {
-        gradient.setColorAt(0, Qt::black);
-        gradient.setColorAt(1, Qt::darkCyan);
+        painter->setPen(Qt::NoPen);
+        painter->setBrush(Qt::darkGray);
+        painter->drawEllipse( radius - 3, radius - 3, 2 * radius, 2 * radius );
+        if (option->state & QStyle::State_Sunken) {
+            gradient.setCenter(3, 3);
+            gradient.setFocalPoint(3, 3);
+            gradient.setColorAt(1, QColor(Qt::black).light(120));
+            gradient.setColorAt(0, QColor(Qt::darkCyan).light(120));
+        }
+        else {
+            gradient.setColorAt(0, Qt::black);
+            gradient.setColorAt(1, Qt::darkCyan);
+        }
+        painter->setBrush(gradient);
+        painter->setPen(QPen(Qt::black, 0));
+        painter->drawEllipse( -radius, -radius, 2 * radius, 2 * radius );
     }
-    painter->setBrush(gradient);
-    painter->setPen(QPen(Qt::black, 0));
-    painter->drawEllipse( -radius, -radius, 2 * radius, 2 * radius );
-    QFont f("Arial", 12, QFont::Bold);
-    painter->setFont(f);
-    painter->setPen(Qt::white);
-    painter->drawText(boundingRect(),Qt::AlignCenter,this->worldName);
 }
 
 QVariant Node::itemChange(GraphicsItemChange change, const QVariant &value)
@@ -94,7 +153,7 @@ QVariant Node::itemChange(GraphicsItemChange change, const QVariant &value)
     case ItemPositionHasChanged:
         foreach (Edge *edge, edgesList)
             edge->adjust();
-        graph->moving();
+        graphA->moving();
         break;
     default:
         break;
@@ -179,7 +238,6 @@ void Node::mouseDoubleClickEvent(QGraphicsSceneMouseEvent *event) {
 
 void Node::mousePressEvent(QGraphicsSceneMouseEvent *event)
 {
-
     update();
     QGraphicsItem::mousePressEvent(event);
 }
@@ -190,14 +248,25 @@ void Node::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
     QGraphicsItem::mouseReleaseEvent(event);
 }
 
+void Node::hoverEnterEvent(QGraphicsSceneHoverEvent *event) {
+   QString tooltip = QString("Right click to delete world\nDouble click to open details about world\nLeft click to move world around the scene");
+   if (tooltip != toolTip()) setToolTip(tooltip);
+   update();
+   QGraphicsItem::hoverEnterEvent(event);
+}
 void Node::addVariable (QMap<QString, bool> var) {
     worldVariables.append(var);
 }
 
-void Node::printVariables() {
-    for (int i = 0; i<worldVariables.length(); i++) {
-       // std::cout << worldVariables[i].toStdString()<< std::endl;
+QList<QString> Node::getVariables() const {
+    QList<QString> var;
+    for (QMap<QString, bool> mapa : this->worldVariables) {
+        QMap<QString, bool>::iterator i;
+        for (i = mapa.begin(); i != mapa.end(); ++i) {
+            var.append(i.key());
+        }
     }
+    return var;
 }
 
 void Node::setName(QString name) {
