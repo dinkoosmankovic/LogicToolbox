@@ -1,3 +1,7 @@
+//
+// Created by Alma Ibrašimović, january 2019.
+//
+
 #include <QPainter>
 #include <math.h>
 #include <iostream>
@@ -8,12 +12,12 @@ static const double PI = 3.14159265358979323846264338327950288419717;
 static double doublePI = 2.0 * PI;
 
 Edge::Edge (Node *sourceNode, Node *destNode) : arrowSize(14) {
-     setAcceptedMouseButtons(0);
-     sourceN = sourceNode;
-     destN = destNode;
-     sourceN->addEdge(this);
-     destN->addEdge(this);
-     adjust();
+    setAcceptedMouseButtons(0);
+    sourceN = sourceNode;
+    destN = destNode;
+    sourceN->addEdge(this);
+    destN->addEdge(this);
+    adjust();
 }
 
 Node *Edge::sourceNode() const {
@@ -23,6 +27,7 @@ Node *Edge::sourceNode() const {
 Node *Edge::destNode() const {
     return destN;
 }
+
 void Edge::adjust()
 {
     if (!sourceN || !destN) return;

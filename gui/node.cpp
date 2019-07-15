@@ -1,3 +1,7 @@
+//
+// Created by Alma Ibrašimović, january 2019.
+//
+
 #include <iostream>
 #include <QGraphicsScene>
 #include <QGraphicsSceneMouseEvent>
@@ -69,8 +73,9 @@ QList<QMap<string,char*>> Node::getResults() const  {
     CoreEvaluator coreEvaluator (path.toStdString().c_str());
     QList<QMap<string,char*>> a;
 
+    //Available variables for the universe
     QString variables = "#(";
-    auto temp =getVariables();
+    auto temp = getVariables();
     for (int j = 0; j<temp.size(); j++) {
         variables+=temp[j];
         if (j != temp.size() -1) variables += "|";
@@ -254,6 +259,7 @@ void Node::hoverEnterEvent(QGraphicsSceneHoverEvent *event) {
    update();
    QGraphicsItem::hoverEnterEvent(event);
 }
+
 void Node::addVariable (QMap<QString, bool> var) {
     worldVariables.append(var);
 }
@@ -286,3 +292,4 @@ void Node::printAdjacentWorlds() {
 QList<QString> Node::getAdjacentWorlds() {
     return this->adjacentWorlds;
 }
+

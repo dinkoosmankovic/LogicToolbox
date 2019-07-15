@@ -1,3 +1,7 @@
+//
+// Created by Alma Ibrašimović, january 2019.
+//
+
 #ifndef NODE_H
 #define NODE_H
 #include <QGraphicsItem>
@@ -9,6 +13,7 @@
 #include <QGraphicsView>
 #include <QGraphicsRectItem>
 #include <QRect>
+#include <QPointF>
 #include "../include/CoreEvaluator.h"
 #include "../include/ResultTree.h"
 
@@ -27,6 +32,7 @@ private:
     GraphWidget *graphA;
     int radius;
     QString path;
+    QPointF position;
 
 public:
     enum { Type = UserType + 1};
@@ -46,6 +52,8 @@ public:
     void calculateForces();
     bool advance();
     QList<QMap<string,char*>> getResults() const;
+    QPointF getPosition() const { return position; }
+    void setPosition(QPointF pos) { position = pos; }
 
 protected:
     QVariant itemChange(GraphicsItemChange promjena,const QVariant &vrijednost);
@@ -53,5 +61,6 @@ protected:
     void mouseReleaseEvent(QGraphicsSceneMouseEvent *event);
     void mouseDoubleClickEvent(QGraphicsSceneMouseEvent *event);
     void hoverEnterEvent(QGraphicsSceneHoverEvent *event);
+
 };
 #endif // NODE_H

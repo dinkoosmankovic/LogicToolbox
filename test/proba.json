@@ -1,57 +1,91 @@
 {
     "Logic": "K",
-    "Name": "BanjaLuka",
+    "Name": "Universe A",
     "VariableNames": [
-        "x",
-        "y"
+        "A",
+        "B",
+        "C"
     ],
     "Worlds": [
         {
             "AdjWorlds": [
-                "b",
-                "c"
+                "Y",
+                "Z"
             ],
-            "Name": "a",
+            "Name": "X",
             "Variables": [
                 {
-                    "Name": "x",
+                    "Name": "A",
                     "Value": true
                 },
                 {
-                    "Name": "y",
+                    "Name": "B",
                     "Value": true
-                }
-            ]
-        },
-        {
-            "AdjWorlds": [
-                "a",
-                "c"
-            ],
-            "Name": "b",
-            "Variables": [
-                {
-                    "Name": "x",
-                    "Value": false
                 },
                 {
-                    "Name": "y",
+                    "Name": "C",
                     "Value": false
                 }
             ]
         },
         {
             "AdjWorlds": [
-                "a"
+                "W"
             ],
-            "Name": "c",
+            "Name": "Y",
             "Variables": [
                 {
-                    "Name": "x",
+                    "Name": "A",
                     "Value": true
                 },
                 {
-                    "Name": "y",
+                    "Name": "B",
+                    "Value": true
+                },
+                {
+                    "Name": "C",
+                    "Value": true
+                }
+            ]
+        },
+        {
+            "AdjWorlds": [
+                "X",
+                "W"
+            ],
+            "Name": "Z",
+            "Variables": [
+                {
+                    "Name": "C",
+                    "Value": true
+                },
+                {
+                    "Name": "A",
+                    "Value": false
+                },
+                {
+                    "Name": "B",
+                    "Value": false
+                }
+            ]
+        },
+        {
+            "AdjWorlds": [
+                "X",
+                "Y"
+            ],
+            "Name": "W",
+            "Variables": [
+                {
+                    "Name": "A",
+                    "Value": false
+                },
+                {
+                    "Name": "B",
+                    "Value": false
+                },
+                {
+                    "Name": "C",
                     "Value": false
                 }
             ]

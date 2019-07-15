@@ -1,3 +1,7 @@
+//
+// Created by Alma Ibrašimović, january 2019.
+//
+
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
@@ -19,14 +23,6 @@ public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
 
-private slots:
-    void on_lineEdit_2_editingFinished();
-    void on_lineEdit_4_editingFinished();
-    void on_pushButton_clicked();
-    void on_pushButton_2_clicked();
-    void on_pushButton_3_clicked();
-
-private:
     //SET
     void setLogicType (QString type) { logicType = type; }
     void setUniverseName (QString name) { universeName = name; }
@@ -44,6 +40,15 @@ private:
     QList<QString> getNamesOfTheWorlds() const { return listOfWorldNames; }
     QList<QMap<QString, QList<QString>>> getAdjcWorlds() const { return adjcWorlds; }
     QList<std::tuple<QString, QString, bool>> getValueOfVariable() const { return  varValue; }
+
+private slots:
+    void on_lineEdit_2_editingFinished();
+    void on_lineEdit_4_editingFinished();
+    void on_pushButton_clicked();
+    void on_pushButton_2_clicked();
+    void on_pushButton_3_clicked();
+
+private:
 
     //Atributes
     Ui::MainWindow *ui;

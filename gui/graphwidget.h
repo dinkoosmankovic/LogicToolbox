@@ -1,3 +1,7 @@
+//
+// Created by Alma Ibrašimović, january 2019.
+//
+
 #ifndef GRAPHWIDGET_H
 #define GRAPHWIDGET_H
 #include <QGraphicsView>
@@ -7,6 +11,7 @@
 #include <QPushButton>
 #include <QString>
 #include <QObject>
+#include <QList>
 #include <QEvent>
 #include <QGraphicsScene>
 #include <QGraphicsSceneMouseEvent>
@@ -19,16 +24,27 @@ class GraphWidget : public QGraphicsView {
 public:
     GraphWidget (QWidget *parent = 0);
     void moving();
-    void mousePressEvent(QMouseEvent *e);
+    void setUniverseName (QString name) { universeName = name; }
+    QString getUniverseName() const { return universeName; }
 
 protected:
     void drawBackground(QPainter *painter, const QRectF &rect);
+    void mousePressEvent(QMouseEvent *e);
     void JSONParser();
 
 private:
     int timerId;
+    QString pathLoc;
+    QPushButton *add;
+    QPushButton *connectW;
+    Node *first;
+    Node *second;
     QPushButton *createButton(QWidget *parent, QString text, int x, int y);
-    QGraphicsScene *scena;
+    QGraphicsScene *scene;
+    QString universeName;
+    QList<Node*> newNodes; //Worlds which are created on the button 'Add'
+    void setNewNodes (Node *n) { newNodes.append(n);}
+    QList<Node*> getNewNodes() const { return newNodes; }
 
 private slots:
 
@@ -36,6 +52,7 @@ private slots:
      void loadFile();
      void createFile();
      void addWorlds();
+     void connectWorlds();
 };
 
 

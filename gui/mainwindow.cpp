@@ -1,3 +1,7 @@
+//
+// Created by Alma Ibrašimović, january 2019.
+//
+
 #include <QPushButton>
 #include <QMessageBox>
 #include <QObject>
@@ -44,6 +48,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     ui->groupBox->setStyleSheet("QGroupBox {  border: 1px solid gray;}");
     ui->groupBox_2->setStyleSheet("QGroupBox {  border: 1px solid gray;}");
     ui->pushButton->setDisabled(true);
+    ui->pushButton->setToolTip("You have to enter all atributes for the universe before creating JSON file!");
 }
 
 MainWindow::~MainWindow() { delete ui; }
@@ -138,7 +143,7 @@ void MainWindow::on_pushButton_clicked() {
                     if (i.key() == world) {
                         varsValue.insert("Name", QJsonValue::fromVariant(variable));
                         varsValue.insert("Value",QJsonValue::fromVariant(value));
-                         variablesValue.push_back(varsValue);
+                        variablesValue.push_back(varsValue);
                     }
                 }
                 wlrdInfo.insert("Variables",  variablesValue);
@@ -166,22 +171,56 @@ void MainWindow::on_pushButton_clicked() {
 
     //Message box after creating file
     wdg->resize(263, 60);
-
     label->setText("  JSON file created successfully!");
     wdg->show();
 }
 
 void MainWindow::on_pushButton_2_clicked() {
+    QWidget *msg = new QWidget;
+    msg->setWindowTitle("Error");
+    QLabel *label = new QLabel(msg);
+    QFont f("Times New Roman", 12, QFont::Bold);
+    label->setFont(f);
+
     QString selectedWrld = ui->comboBox_2->currentText();
-    ui->comboBox_2->removeItem(ui->comboBox_2->currentIndex());
+    QList<QString> availableWorlds = getNamesOfTheWorlds();
     QString temp = ui->lineEdit_3->text();
     QList<QString> adjWorlds;
     adjWorlds.append(temp.split(','));
+    bool exists;
+    bool same = false;
+
+    for (int i = 0; i<adjWorlds.size(); i++) {
+        exists = false;
+        foreach (auto j, availableWorlds) {
+            if (adjWorlds[i] == j) exists = true;
+        }
+    }
+    for (int i = 0; i<adjWorlds.size(); i++) {
+        if (selectedWrld == adjWorlds[i]) {
+            same = true;
+            break;
+        }
+    }
+
     QMap<QString, QList<QString>> mapOfAdjWrld;
-    mapOfAdjWrld.insert(selectedWrld, adjWorlds);
-    listAllAdjWrlds.append(mapOfAdjWrld);
-    setAdjcWorlds(listAllAdjWrlds);
-    ui->lineEdit_3->clear();
+    if(exists && !same) {
+        ui->comboBox_2->removeItem(ui->comboBox_2->currentIndex());
+        mapOfAdjWrld.insert(selectedWrld, adjWorlds);
+        listAllAdjWrlds.append(mapOfAdjWrld);
+        setAdjcWorlds(listAllAdjWrlds);
+        ui->lineEdit_3->clear();
+    }
+    else if (!exists) {
+        label->setText(" World in adjecent worlds doesn't exist in this universe!");
+        msg->resize(390, 60);
+        msg->show();
+    }
+    else if (same) {
+        label->setText(" World cannot be connected to itself!");
+        msg->resize(300, 60);
+        msg->show();
+    }
 }
 
 void MainWindow::on_pushButton_3_clicked() {
@@ -244,7 +283,10 @@ void MainWindow::on_pushButton_3_clicked() {
          setValueOfVarible(varValue);
          ui->lineEdit_5->clear();
          ui->lineEdit_6->clear();
-         if (ui->comboBox_3->count() == 0) ui->pushButton->setDisabled(false);
+         if (ui->comboBox_3->count() == 0) {
+             ui->pushButton->setDisabled(false);
+             ui->pushButton->setToolTip("");
+         }
     }
     else if (!condA) {
         label->setText("  Variable can't be TRUE and FALSE at the same time!");
@@ -257,17 +299,16 @@ void MainWindow::on_pushButton_3_clicked() {
         msg->show();
         ui->pushButton->setDisabled(true);
     }
-     else if (!condC) {
+    else if (!condC) {
          label->setText("  Some of the entered variables do not exist!");
          msg->resize(300, 60);
          msg->show();
          ui->pushButton->setDisabled(true);
-     }
-     else if (!condD) {
+    }
+    else if (!condD) {
          label->setText("  You entered extra variables!");
          msg->resize(300, 60);
          msg->show();
          ui->pushButton->setDisabled(true);
-     }
-
+    }
 }

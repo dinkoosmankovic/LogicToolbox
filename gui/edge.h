@@ -1,7 +1,12 @@
+//
+// Created by Alma Ibrašimović, january 2019.
+//
+
 #ifndef EDGE_H
 #define EDGE_H
 #include <QGraphicsItem>
 #include <QList>
+#include <QRectF>
 
 class Node;
 class Edge : public QGraphicsItem {
@@ -24,5 +29,6 @@ private:
      QPointF sourcePoint;
      QPointF destinationPoint;
      qreal arrowSize;
+
 };
 #endif // EDGE_H

@@ -1,3 +1,7 @@
+//
+// Created by Alma Ibrašimović, january 2019.
+//
+
 #include <iostream>
 #include <QtGui>
 #include <math.h>
@@ -31,18 +35,18 @@
 #include "node.h"
 #include "edge.h"
 
-QString pathLoc;
-QPushButton *add;
+static int counter = 0;
 
  //TODO
  // uradiiti validaciju pri čitanju i kreiranju json
 
  GraphWidget::GraphWidget(QWidget *parent) : QGraphicsView(parent),timerId(0){
-
-     scena = new QGraphicsScene(this);
-     scena->setItemIndexMethod(QGraphicsScene::NoIndex);
-     scena->setSceneRect(-250,-250, 600, 600);
-     setScene(scena);
+     first = new Node(this);
+     second = new Node(this);
+     scene = new QGraphicsScene(this);
+     scene->setItemIndexMethod(QGraphicsScene::NoIndex);
+     scene->setSceneRect(-250,-250, 600, 600);
+     setScene(scene);
      setCacheMode(CacheBackground);
      setViewportUpdateMode(BoundingRectViewportUpdate);
      setRenderHint(QPainter::Antialiasing);
@@ -59,17 +63,28 @@ QPushButton *add;
      connect(create, SIGNAL (released()), this, SLOT(createFile()));
 
      add = createButton(this, "Add more worlds", 355, 36);
-     add->setToolTip("When you load the graph, add more, unconnected worlds to the loaded graph!");
+     add->setToolTip("When the graph is not loaded, add more, unconnected worlds to the loaded graph!");
      connect(add, SIGNAL (released()), this, SLOT (addWorlds()));
-     if (pathLoc == "") add->setDisabled(true);
+
+     connectW = createButton(this, "Connect worlds", 530, 36);
+     connectW->setToolTip("Click on the first and the second world, then click this button to connect them!");
+     connect(connectW, SIGNAL(released()), this, SLOT(connectWorlds()));
+
  }
 
  void GraphWidget::loadFile() {
+     static int i = 1;
      QString file = QFileDialog::getOpenFileName(this,tr("Open"),"",tr("LogicToolbox (*.json)"));
      pathLoc = file;
      add->setDisabled(false);
-     if(pathLoc != "") scena->clear();
+     if(pathLoc != "") {
+         scene->clear();
+         connectW->setDisabled(true);
+         add->setDisabled(true);
+     }
      JSONParser();
+     this->scene->setSceneRect(-250,-250, 600, 599 - i);
+     i++;
  }
 
  void GraphWidget::createFile() {
@@ -80,10 +95,17 @@ QPushButton *add;
  void GraphWidget::addWorlds() {
      static int x =-200;
      int y = 0;
-     Node *n = new Node(this, pathLoc);
+     Node *n = new Node(this);
      n->setPos(x, y);
-     x += 40;
-     scena->addItem(n);
+     n->setPosition(n->pos());
+     setNewNodes(n);
+     x += 100;
+     scene->addItem(n);
+ }
+
+ void GraphWidget::connectWorlds() {
+     if(first && second) this->scene->addItem(new Edge(first, second));
+     counter = 0;
  }
 
  void GraphWidget::JSONParser() {
@@ -97,6 +119,7 @@ QPushButton *add;
      QJsonDocument doc(QJsonDocument::fromJson(rawData));
      QJsonObject jObj = doc.object();
      int numOfWorlds;
+     setUniverseName(jObj["Name"].toString()); // Universe name
      if(jObj["Worlds"].toArray().size() == 0) qDebug() << "Universe doesn't have \"Worlds\" tag!";
      else if(jObj["Worlds"].toArray().size() != 0) numOfWorlds = jObj["Worlds"].toArray().size();
 
@@ -119,9 +142,9 @@ QPushButton *add;
          //Adding variables to the worlds
          for (int j = 0; j< numOfVariables; j++) {
              QString variableName = jObj["Worlds"].toArray()[i].toObject().value("Variables").toArray()[j].toObject().value("Name").toString();
-             bool istinitostVarijable = jObj["Worlds"].toArray()[i].toObject().value("Variables").toArray()[j].toObject().value("Value").toBool();
+             bool variableValue = jObj["Worlds"].toArray()[i].toObject().value("Variables").toArray()[j].toObject().value("Value").toBool();
              QMap<QString, bool> map;
-             map.insert(variableName, istinitostVarijable);
+             map.insert(variableName, variableValue);
              node->addVariable(map);
          }
 
@@ -136,7 +159,7 @@ QPushButton *add;
          node->setName(worldName);
          posA += 60;
          posB += 3.5 * posA + 30 / 2;
-         scena->addItem(node);
+         scene->addItem(node);
          worldList.append(world);
      }
 
@@ -147,9 +170,7 @@ QPushButton *add;
                  for (QMap<QString, Node*> map : worldList) {
                      QMap<QString, Node*>::iterator k;
                      for (k = map.begin(); k != map.end(); ++k) {
-                         if (nodeList[i]->getAdjacentWorlds()[j] == k.key()) {
-                                  scena->addItem(new Edge(nodeList[i], k.value()));
-                         }
+                         if (nodeList[i]->getAdjacentWorlds()[j] == k.key()) scene->addItem(new Edge(nodeList[i], k.value()));
                      }
                  }
              }
@@ -171,7 +192,6 @@ QPushButton *add;
      QRectF rightShadow(sceneRect.right(), sceneRect.top() + 5, 5, sceneRect.height());
      QRectF bottomShadow(sceneRect.left() + 5, sceneRect.bottom(), sceneRect.width(), 5);
 
-     //SJENE NA OKVIRU OD PROZORA
      if (rightShadow.intersects(rect) || rightShadow.contains(rect))
          painter->fillRect(rightShadow, Qt::darkGray);
      if (bottomShadow.intersects(rect) || bottomShadow.contains(rect))
@@ -193,7 +213,8 @@ QPushButton *add;
      font.setPointSize(14);
      painter->setFont(font);
      painter->setPen(Qt::black);
-     painter->drawText(textRect, message);
+     if (pathLoc == "") painter->drawText(textRect, message);
+     else if (pathLoc != "") painter->drawText(textRect,Qt::AlignHCenter, getUniverseName());
  }
 
  QPushButton *GraphWidget::createButton(QWidget *parent, QString text, int x, int y) {
@@ -206,30 +227,45 @@ QPushButton *add;
 
  void GraphWidget::mousePressEvent(QMouseEvent *event){
     // n->setPos(pt.x(), pt.y()); // get the position of click on scene
-
      if(event->button() == Qt::RightButton) {
-     //    QPointF pt = mapToScene(event->pos());
          QGraphicsItem *dlt = itemAt(event->pos());
          Node *tmp = dynamic_cast<Node*>(dlt);
          if (tmp) {
-             scena->removeItem(dlt);
+             scene->removeItem(dlt);
              QList<Edge*> e = tmp->edges();
              for (int i = 0; i<e.size(); i++) {
                  Edge *tmpEdge = dynamic_cast<Edge*>(e[i]);
                  if (tmpEdge) {
-                     scena->removeItem(e[i]);
+                     scene->removeItem(e[i]);
                  }
              }
          }
      }
      else if (event->button() == Qt::LeftButton) {
-         QGraphicsItem *dlt = itemAt(event->pos());
-         Node *tmp = dynamic_cast<Node*>(dlt);
-         /*dlt->setFlag(QGraphicsItem::ItemIsFocusable);
-         dlt->setFlag(QGraphicsItem::ItemIsSelectable);*/
-         if(tmp)dlt->setFlag(QGraphicsItem::ItemIsMovable);
+         QGraphicsItem *clicked = itemAt(event->pos());
+         Node *tmp = dynamic_cast<Node*>(clicked);
+         if (pathLoc == "" && tmp) {
+             auto newNodesList = getNewNodes();
+             for (int i = 0; i<newNodesList.size(); i++) {
+                 if (newNodesList[i]->pos() != newNodesList[i]->getPosition()) {
+                     counter = 0;
+                     newNodesList[i]->setPosition(newNodesList[i]->pos());
+                 }
+             }
+             if (counter == 0) {
+                 first = dynamic_cast<Node*>(clicked);
+             }
+             else if (counter == 1) {
+                 second = dynamic_cast<Node*>(clicked);
+             }
+         }
+
+         if(tmp) clicked->setFlag(QGraphicsItem::ItemIsMovable);
      }
 
+     counter++;
+     if(counter > 1) counter = 0;
      QGraphicsView::mousePressEvent(event);
  }
+
 
