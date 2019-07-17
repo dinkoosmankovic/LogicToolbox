@@ -61,6 +61,7 @@ protected:
     void mouseReleaseEvent(QGraphicsSceneMouseEvent *event);
     void mouseDoubleClickEvent(QGraphicsSceneMouseEvent *event);
     void hoverEnterEvent(QGraphicsSceneHoverEvent *event);
+//    void mouseMoveEvent(QGraphicsSceneMouseEvent *event);
 
 };
 #endif // NODE_H

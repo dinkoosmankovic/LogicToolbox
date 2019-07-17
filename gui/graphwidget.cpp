@@ -83,7 +83,7 @@ static int counter = 0;
          add->setDisabled(true);
      }
      JSONParser();
-     this->scene->setSceneRect(-250,-250, 600, 599 - i);
+     this->scene->setSceneRect(-250,-250, 600, 600 - i);
      i++;
  }
 

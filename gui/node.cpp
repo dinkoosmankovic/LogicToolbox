@@ -47,6 +47,7 @@ Node::Node(GraphWidget *graphWidget, QString pathA) : graphA(graphWidget) {
     setFlag(ItemIsMovable); //Moving nodes
     setFlag(ItemSendsGeometryChanges);
     setFlag(ItemIsSelectable);
+    setFlag(ItemSendsScenePositionChanges);
     setAcceptHoverEvents(true);
 }
 
@@ -154,15 +155,18 @@ void Node::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWid
 
 QVariant Node::itemChange(GraphicsItemChange change, const QVariant &value)
 {
-    switch (change) {
-    case ItemPositionHasChanged:
-        foreach (Edge *edge, edgesList)
-            edge->adjust();
+    if (change == ItemPositionChange && scene()) {
+        foreach (Edge *edge, edgesList) edge->adjust();
         graphA->moving();
-        break;
-    default:
-        break;
-    };
+        QPointF newPos = value.toPointF();
+        QRectF rect = scene()->sceneRect();
+        if (!rect.contains(newPos)) {
+            // Keep the item inside the scene rect.
+            newPos.setX(qMin(rect.right(), qMax(newPos.x(), rect.left())));
+            newPos.setY(qMin(rect.bottom(), qMax(newPos.y(), rect.top())));
+            return newPos;
+        }
+    }
 
     return QGraphicsItem::itemChange(change, value);
 }
@@ -292,4 +296,9 @@ void Node::printAdjacentWorlds() {
 QList<QString> Node::getAdjacentWorlds() {
     return this->adjacentWorlds;
 }
+/*
+void Node::mouseMoveEvent(QGraphicsSceneMouseEvent *event) {
 
+
+}
+*/
