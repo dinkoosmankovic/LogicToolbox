@@ -54,23 +54,38 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
 MainWindow::~MainWindow() { delete ui; }
 
 void MainWindow::on_lineEdit_2_editingFinished() {
+    QWidget *wdg = new QWidget;
+    wdg->setWindowTitle("Error");
+    wdg->resize(400, 60);
+    QLabel *label = new QLabel(wdg);
+    QFont f("Times New Roman", 12, QFont::Bold);
+    label->setFont(f);
     listOfWorldNames.clear();
     ui->comboBox_2->clear();
     ui->comboBox_3->clear();
+    bool cond = false;
     QString worlds = ui->lineEdit_2->text();
     QList<QString> wrldNms;
     wrldNms.append(worlds.split(','));
     setWorldNames(wrldNms);
     QList<QString> temp = getNamesOfTheWorlds();
-   // QVBoxLayout *vbox = new QVBoxLayout;
-    for (int i=0; i<getNumOfWorlds(); i++) {
-        ui->comboBox_2->addItem(temp[i]);
-        ui->comboBox_3->addItem(temp[i]);
-        /*checkBox1 = new QCheckBox;
-        checkBox1->setText(temp[i]);
-        vbox->addWidget(checkBox1);*/
+    QList<QString> var = getVarNames();
+    for (int i = 0; i<var.size(); i++) {
+        foreach (auto j, getNamesOfTheWorlds()) {
+            if (var[i] == j) cond = true;
+        }
     }
-   // ui->groupBox->setLayout(vbox);
+    if (cond) {
+        label->setText(" Name of the world cannot be the same as variable!");
+        wdg->resize(380, 60);
+        wdg->show();
+    }
+    if(!cond) {
+        for (int i=0; i<getNumOfWorlds(); i++) {
+            ui->comboBox_2->addItem(temp[i]);
+            ui->comboBox_3->addItem(temp[i]);
+        }
+    }
 }
 
 void MainWindow::on_lineEdit_4_editingFinished() {
@@ -79,25 +94,17 @@ void MainWindow::on_lineEdit_4_editingFinished() {
     QList<QString> varNames;
     varNames.append(variables.split(','));
     setVarNames(varNames);
-   /* QList<QString> temp = getVarNames();
-    for (int i = 0; i<getNumOfVariables(); i++) {
-        qDebug()<<temp[i];
-    }*/
 }
 
 void MainWindow::on_pushButton_clicked() {
-
     bool condB = false;
-
     QWidget *wdg = new QWidget;
     wdg->setWindowTitle("Error");
     wdg->resize(400, 60);
     QLabel *label = new QLabel(wdg);
     QFont f("Times New Roman", 12, QFont::Bold);
     label->setFont(f);
-
     setLogicType(ui->comboBox->currentText());
-
     if (ui->lineEdit->text() != "") {
         condB = true;
         setUniverseName(ui->lineEdit->text());
@@ -107,7 +114,6 @@ void MainWindow::on_pushButton_clicked() {
         label->setText(" You didn't enter universe name!");
         wdg->resize(300, 60);
         wdg->show();
-      //  ui->pushButton->setDisabled(true);
     }
 
     //Creating JSON file
@@ -160,22 +166,28 @@ void MainWindow::on_pushButton_clicked() {
     jsontx.insert("Worlds", worlds);
 
     //Saving JSON file
-    QJsonDocument doc(jsontx);
-    QString saveFileName = QFileDialog::getSaveFileName(this, tr("Save Json File"), QString(), tr("JSON (*.json)"));
-    QFileInfo fileInfo(saveFileName);
-    QDir::setCurrent(fileInfo.path());
-    QFile jsonFile(saveFileName+ ".json");
-    if (!jsonFile.open(QIODevice::WriteOnly)) return;
-    jsonFile.write(QJsonDocument(doc).toJson(QJsonDocument::Indented));
-    jsonFile.close();   // Close file
+    if(condB) {
+        QJsonDocument doc(jsontx);
+        QString saveFileName = QFileDialog::getSaveFileName(this, tr("Save Json File"), QString(), tr("JSON (*.json)"));
+        QFileInfo fileInfo(saveFileName);
+        QDir::setCurrent(fileInfo.path());
+        QFile jsonFile(saveFileName+ ".json");
+        if (!jsonFile.open(QIODevice::WriteOnly)) return;
+        jsonFile.write(QJsonDocument(doc).toJson(QJsonDocument::Indented));
+        jsonFile.close();   // Close file
 
-    //Message box after creating file
-    wdg->resize(263, 60);
-    label->setText("  JSON file created successfully!");
-    wdg->show();
+        //Message box after creating file
+        if(fileInfo.path() != "." ){
+            wdg->setWindowTitle("Success");
+            wdg->resize(263, 60);
+            label->setText("  JSON file created successfully!");
+            wdg->show();
+        }
+    }
 }
 
 void MainWindow::on_pushButton_2_clicked() {
+
     QWidget *msg = new QWidget;
     msg->setWindowTitle("Error");
     QLabel *label = new QLabel(msg);
@@ -221,6 +233,7 @@ void MainWindow::on_pushButton_2_clicked() {
         msg->resize(300, 60);
         msg->show();
     }
+    if (ui->comboBox_2->count() == 0) ui->pushButton_2->setDisabled(true);
 }
 
 void MainWindow::on_pushButton_3_clicked() {
@@ -311,4 +324,7 @@ void MainWindow::on_pushButton_3_clicked() {
          msg->show();
          ui->pushButton->setDisabled(true);
     }
+    if (ui->comboBox_3->count() == 0) ui->pushButton_3->setDisabled(true);
 }
+
+

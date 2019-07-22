@@ -1,6 +1,6 @@
 {
     "Logic": "K",
-    "Name": "UniverseB",
+    "Name": "mxmx",
     "VariableNames": [
         "a",
         "b"
@@ -8,9 +8,9 @@
     "Worlds": [
         {
             "AdjWorlds": [
-                "w2"
+                "y"
             ],
-            "Name": "w1",
+            "Name": "x",
             "Variables": [
                 {
                     "Name": "a",
@@ -24,9 +24,9 @@
         },
         {
             "AdjWorlds": [
-                "w1"
+                "x"
             ],
-            "Name": "w2",
+            "Name": "y",
             "Variables": [
                 {
                     "Name": "a",

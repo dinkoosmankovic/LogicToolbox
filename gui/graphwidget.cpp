@@ -105,6 +105,7 @@ static int counter = 0;
 
  void GraphWidget::connectWorlds() {
      if(first && second) this->scene->addItem(new Edge(first, second));
+
      counter = 0;
  }
 
@@ -259,7 +260,6 @@ static int counter = 0;
                  second = dynamic_cast<Node*>(clicked);
              }
          }
-
          if(tmp) clicked->setFlag(QGraphicsItem::ItemIsMovable);
      }
 
