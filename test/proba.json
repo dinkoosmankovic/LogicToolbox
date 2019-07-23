@@ -1,0 +1,73 @@
+{
+    "Logic": "K",
+    "Name": "Proba",
+    "VariableNames": [
+        "a",
+        "b",
+        "c"
+    ],
+    "Worlds": [
+        {
+            "AdjWorlds": [
+                "y",
+                "z"
+            ],
+            "Name": "x",
+            "Variables": [
+                {
+                    "Name": "a",
+                    "Value": true
+                },
+                {
+                    "Name": "b",
+                    "Value": true
+                },
+                {
+                    "Name": "c",
+                    "Value": true
+                }
+            ]
+        },
+        {
+            "AdjWorlds": [
+                "x",
+                "z"
+            ],
+            "Name": "y",
+            "Variables": [
+                {
+                    "Name": "a",
+                    "Value": false
+                },
+                {
+                    "Name": "b",
+                    "Value": false
+                },
+                {
+                    "Name": "c",
+                    "Value": false
+                }
+            ]
+        },
+        {
+            "AdjWorlds": [
+                "x"
+            ],
+            "Name": "z",
+            "Variables": [
+                {
+                    "Name": "a",
+                    "Value": true
+                },
+                {
+                    "Name": "b",
+                    "Value": true
+                },
+                {
+                    "Name": "c",
+                    "Value": false
+                }
+            ]
+        }
+    ]
+}

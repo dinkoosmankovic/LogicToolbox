@@ -29,6 +29,7 @@
 #include <QHBoxLayout>
 #include <QGroupBox>
 #include <QMouseEvent>
+#include <QLineEdit>
 
 #include "mainwindow.h"
 #include "graphwidget.h"
@@ -36,6 +37,9 @@
 #include "edge.h"
 
 static int counter = 0;
+QLineEdit *lineEdit;
+QLineEdit *lineEditA;
+QList<QString> variables;
 
  //TODO
  // uradiiti validaciju pri čitanju i kreiranju json
@@ -69,7 +73,6 @@ static int counter = 0;
      connectW = createButton(this, "Connect worlds", 530, 36);
      connectW->setToolTip("Click on the first and the second world, then click this button to connect them!");
      connect(connectW, SIGNAL(released()), this, SLOT(connectWorlds()));
-
  }
 
  void GraphWidget::loadFile() {
@@ -83,7 +86,7 @@ static int counter = 0;
          add->setDisabled(true);
      }
      JSONParser();
-     this->scene->setSceneRect(-250,-250, 600, 600 - i);
+     this->scene->setSceneRect(-250,-250, 600, 600 - (i - 0.9));
      i++;
  }
 
@@ -92,20 +95,104 @@ static int counter = 0;
      win->show();
  }
 
+ void GraphWidget::setNewUniverseName() {
+     if (lineEdit->text() != "" ) {
+         this->setUniverseName(lineEdit->text());
+         QString temp = lineEditA->text();
+         if(temp.size() != 0) variables.append(temp.split(','));
+         addWrlds = true;
+         static int i = 1, x = -200;
+         int y = 0;
+         Node *n = new Node(this);
+         n->setPos(x, y);
+         n->setPosition(n->pos());
+         n->setName("w" + QString::number(i));
+         setNewNodes(n);
+         x += 100; i++;
+         QMap<QString, bool> value;
+         foreach(auto a , variables) {
+             value.clear();
+             value.insert(a, false);
+             n->addVariable(value);
+         }
+         this->scene->setSceneRect(-250,-250, 600, 600 - (i - 0.9));
+         scene->addItem(n);
+         wdgA->close();
+     }
+     else if (lineEdit->text() == "") lineEdit->setPlaceholderText("Enter universe name first!");
+ }
+
  void GraphWidget::addWorlds() {
-     static int x =-200;
-     int y = 0;
-     Node *n = new Node(this);
-     n->setPos(x, y);
-     n->setPosition(n->pos());
-     setNewNodes(n);
-     x += 100;
-     scene->addItem(n);
+     static int i = 0;
+     if (i == 0) {
+         wdgA = new QWidget;
+         wdgA->setWindowTitle("Enter name and variables");
+         wdgA->resize(400, 160);
+         QPushButton *btnA = new QPushButton(wdgA);
+         QLabel *label = new QLabel(wdgA);
+         label->setGeometry(3,9,175,20);
+         QFont f("Times New Roman", 13, QFont::Bold);
+         label->setFont(f);
+         label->setText("Enter universe name:");
+         QLabel *labelA = new QLabel(wdgA);
+         labelA->setGeometry(3,40,175,50);
+         labelA->setFont(f);
+         labelA->setText("Enter variables:\n(with comma):");
+         lineEdit = new QLineEdit(wdgA);
+         lineEditA = new QLineEdit(wdgA);
+         lineEdit->setStyleSheet("QLineEdit{ "
+                                 "background-color:rgb(255,255,255);"
+                                 "border: 2px solid gray;"
+                                 "border-radius: 10px;"
+                                 "padding: 0 8px;"
+                                 "selection-background-color: darkgray;"
+                                 "font-size: 14px;}"
+                                 "QLineEdit:focus { "
+                                 "background-color:rgb(255,255,255);}"
+                                 );
+         lineEditA->setStyleSheet("QLineEdit{ "
+                                 "background-color:rgb(255,255,255);"
+                                 "border: 2px solid gray;"
+                                 "border-radius: 10px;"
+                                 "padding: 0 8px;"
+                                 "selection-background-color: darkgray;"
+                                 "font-size: 14px;}"
+                                 "QLineEdit:focus { "
+                                 "background-color:rgb(255,255,255);}"
+                                 );
+         lineEdit->setGeometry(182,9,200,20);
+         lineEditA->setGeometry(182,40,200,20);
+         btnA->setText("OK");
+         btnA->setGeometry(210,95,150,35);
+         btnA->setFont(QFont("Times New Roman", 12, QFont::Bold));
+         connect(btnA, SIGNAL(released()), this, SLOT(setNewUniverseName()));
+         wdgA->show();
+     }
+     if (i >= 1 && lineEdit->text() != "") {
+         addWrlds = true;
+         static int i = 2, x = -100, z = 1;
+         int y = 0;
+         Node *n = new Node(this);
+         n->setPos(x, y);
+         n->setPosition(n->pos());
+         n->setName("w" + QString::number(i));
+         setNewNodes(n);
+         x += 100; i++;
+         QMap<QString, bool> value;
+         foreach(auto a , variables) {
+            value.clear();
+            value.insert(a, false);
+            n->addVariable(value);
+         }
+         this->scene->setSceneRect(-250,-250, 600, 600 - (z - 0.9));
+         z++;
+         scene->addItem(n);
+     }
+     i++;
  }
 
  void GraphWidget::connectWorlds() {
      if(first && second) this->scene->addItem(new Edge(first, second));
-
      counter = 0;
  }
 
@@ -214,8 +301,8 @@ static int counter = 0;
      font.setPointSize(14);
      painter->setFont(font);
      painter->setPen(Qt::black);
-     if (pathLoc == "") painter->drawText(textRect, message);
-     else if (pathLoc != "") painter->drawText(textRect,Qt::AlignHCenter, getUniverseName());
+     if (pathLoc == "" && !addWrlds) painter->drawText(textRect, message);
+     else if (addWrlds || pathLoc != "") painter->drawText(textRect,Qt::AlignHCenter, getUniverseName());
  }
 
  QPushButton *GraphWidget::createButton(QWidget *parent, QString text, int x, int y) {
@@ -267,5 +354,3 @@ static int counter = 0;
      if(counter > 1) counter = 0;
      QGraphicsView::mousePressEvent(event);
  }
-
-

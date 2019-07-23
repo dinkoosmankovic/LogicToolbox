@@ -100,7 +100,9 @@ QList<QMap<string,char*>> Node::getResults() const  {
 void Node::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *)
 {
     static QList<QMap<string,char*>> a;
-    a = getResults();
+    QFont f("Arial", 11, QFont::Bold);
+    painter->setFont(f);
+    if (path != "UniverseConfig.json") a = getResults();
     QRadialGradient gradient(-3, -3, radius);
     if (a.size() != 0) {
         for (QMap<string, char*> mapa : a) {
@@ -125,8 +127,6 @@ void Node::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWid
                     painter->setBrush(gradient);
                     painter->setPen(QPen(Qt::black, 0));
                     painter->drawEllipse( -radius, -radius, 2 * radius, 2 * radius );
-                    QFont f("Arial", 11, QFont::Bold);
-                    painter->setFont(f);
                     painter->setPen(Qt::white);
                     painter->drawText(boundingRect(),Qt::AlignCenter,this->worldName);
                 }
@@ -150,6 +150,8 @@ void Node::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWid
         painter->setBrush(gradient);
         painter->setPen(QPen(Qt::black, 0));
         painter->drawEllipse( -radius, -radius, 2 * radius, 2 * radius );
+        painter->setPen(Qt::white);
+        painter->drawText(boundingRect(),Qt::AlignCenter,this->worldName);
     }
 }
 

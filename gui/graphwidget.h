@@ -13,6 +13,7 @@
 #include <QObject>
 #include <QList>
 #include <QEvent>
+#include <QWidget>
 #include <QGraphicsScene>
 #include <QGraphicsSceneMouseEvent>
 #include <QMouseEvent>
@@ -36,7 +37,9 @@ private:
     int timerId;
     QString pathLoc;
     QPushButton *add;
+    bool addWrlds = false;
     QPushButton *connectW;
+    QWidget *wdgA;
     Node *first;
     Node *second;
     QPushButton *createButton(QWidget *parent, QString text, int x, int y);
@@ -53,6 +56,7 @@ private slots:
      void createFile();
      void addWorlds();
      void connectWorlds();
+     void setNewUniverseName();
 };
 
 
