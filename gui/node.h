@@ -13,6 +13,8 @@
 #include <QGraphicsView>
 #include <QGraphicsRectItem>
 #include <QRect>
+#include <QObject>
+#include <QLabel>
 #include <QPointF>
 #include "../include/CoreEvaluator.h"
 #include "../include/ResultTree.h"
@@ -21,7 +23,8 @@ class Edge;
 class GraphWidget;
 class QGraphicsSceneMouseEvent;
 
-class Node : public QGraphicsItem {
+class Node : public QObject, public QGraphicsItem{
+     Q_OBJECT
 
 private:
     QList<Edge *> edgesList;
@@ -33,6 +36,9 @@ private:
     int radius;
     QString path;
     QPointF position;
+    QString variable;
+    QString value;
+    QLabel *label;
 
 public:
     enum { Type = UserType + 1};
@@ -61,7 +67,9 @@ protected:
     void mouseReleaseEvent(QGraphicsSceneMouseEvent *event);
     void mouseDoubleClickEvent(QGraphicsSceneMouseEvent *event);
     void hoverEnterEvent(QGraphicsSceneHoverEvent *event);
-//    void mouseMoveEvent(QGraphicsSceneMouseEvent *event);
 
+
+private slots:
+    void changeValue();
 };
 #endif // NODE_H

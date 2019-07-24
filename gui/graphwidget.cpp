@@ -96,7 +96,7 @@ QList<QString> variables;
  }
 
  void GraphWidget::setNewUniverseName() {
-     if (lineEdit->text() != "" ) {
+     if (lineEdit->text() != "" && lineEditA->text() != "") {
          this->setUniverseName(lineEdit->text());
          QString temp = lineEditA->text();
          if(temp.size() != 0) variables.append(temp.split(','));
@@ -119,7 +119,9 @@ QList<QString> variables;
          scene->addItem(n);
          wdgA->close();
      }
-     else if (lineEdit->text() == "") lineEdit->setPlaceholderText("Enter universe name first!");
+     if (lineEdit->text() == "") lineEdit->setPlaceholderText("Enter universe name first!");
+     if (lineEditA->text() == "") lineEditA->setPlaceholderText("Enter available variables!");
+
  }
 
  void GraphWidget::addWorlds() {
