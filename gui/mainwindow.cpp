@@ -326,6 +326,3 @@ void MainWindow::on_pushButton_3_clicked() {
     }
     if (ui->comboBox_3->count() == 0) ui->pushButton_3->setDisabled(true);
 }
-
-
-

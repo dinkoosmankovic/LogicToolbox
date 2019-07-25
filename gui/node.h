@@ -16,6 +16,8 @@
 #include <QObject>
 #include <QLabel>
 #include <QPointF>
+#include <QLineEdit>
+
 #include "../include/CoreEvaluator.h"
 #include "../include/ResultTree.h"
 
@@ -33,12 +35,13 @@ private:
     QString worldName;
     QPointF newPosition;
     GraphWidget *graphA;
-    int radius;
     QString path;
     QPointF position;
-    QString variable;
-    QString value;
-    QLabel *label;
+    QWidget *widget;
+    QLineEdit *lineA;
+    QLineEdit *lineB;
+    QList<QString> variableNames;
+    int radius;
 
 public:
     enum { Type = UserType + 1};
@@ -60,6 +63,8 @@ public:
     QList<QMap<string,char*>> getResults() const;
     QPointF getPosition() const { return position; }
     void setPosition(QPointF pos) { position = pos; }
+    void setVariableNames(QString name) { variableNames.append(name); }
+    QList<QString> getVariableNames() const { return variableNames; }
 
 protected:
     QVariant itemChange(GraphicsItemChange promjena,const QVariant &vrijednost);
@@ -68,8 +73,8 @@ protected:
     void mouseDoubleClickEvent(QGraphicsSceneMouseEvent *event);
     void hoverEnterEvent(QGraphicsSceneHoverEvent *event);
 
-
 private slots:
     void changeValue();
+    void listValue();
 };
 #endif // NODE_H

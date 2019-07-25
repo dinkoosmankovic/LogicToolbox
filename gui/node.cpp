@@ -36,8 +36,6 @@
 #include "../include/ResultTree.h"
 #include "../include/Graph.h"
 
-
-bool showed = false;
 /*TODO
   PREPRAVITI SVE GETTER-E NA CONST ------ ZA SVAKU KLASU
  */
@@ -228,67 +226,21 @@ void Node::calculateForces()
 }
 
 void Node::mouseDoubleClickEvent(QGraphicsSceneMouseEvent *event) {
-    QWidget *wdg = new QWidget;
-    wdg->setWindowTitle("World  \"" + this->worldName + "\" ");
-    wdg->resize(200, 200);
-    QString temp;
-    int j = 1;
-    for (QMap<QString, bool> mapa : this->worldVariables) {
-        QMap<QString, bool>::iterator i;
-        for (i = mapa.begin(); i != mapa.end(); ++i) {
-            if (this->worldVariables.size() >= 5) wdg->resize(250,400);
-            if(path == "UniverseConfig.json" && showed) {
-                wdg->resize(250,200);
-                if (this->worldVariables.size() >= 5) wdg->resize(250,380);
-                QPushButton *btn = new QPushButton(wdg);
-                btn->setFont(QFont("Times New Roman", 12, QFont::Bold));
-                btn->setText("Change value");
-                btn->setGeometry(100, j, 130,35);
-                variable = i.key();
-                if (i.value()) value = "True";
-                else value = "False";
-                QObject::connect(btn, SIGNAL(released()), this, SLOT(changeValue()));
-                j+=48;
-            }
-            variable = i.key();
-            if (i.value()) value = "True";
-            else value = "False";
-            if (path != "UniverseConfig.json") temp += " " + variable + " : " + value + "\n";
-            else if (path == "UniverseConfig.json") temp += " " + variable + " : " + value + "\n\n";
-        }
-    }
-    label = new QLabel(wdg);
-    QFont f("Times New Roman", 17, QFont::Bold);
-    label->setFont(f);
-    label->setText(temp);
-    label->setAlignment(Qt::AlignCenter); //NE CENTRIRA ''''
-    wdg->show();
-}
-
-void Node::mousePressEvent(QGraphicsSceneMouseEvent *event)
-{
-
-   update();
-   QGraphicsItem::mousePressEvent(event);
-}
-
-void Node::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
-{
-    if(path == "UniverseConfig.json" && !showed) {
-        showed = true;
+    if(path == "UniverseConfig.json") {
         QFont f("Times New Roman", 13, QFont::Bold);
-        QWidget *wdg = new QWidget;
-        wdg->resize(350,200);
-        QLabel *lbl = new QLabel(wdg);
+        widget = new QWidget;
+        widget->resize(350,210);
+        widget->setWindowTitle("Enter values of the variables");
+        QLabel *lbl = new QLabel(widget);
         lbl->setGeometry(2,5,163,20);
         lbl->setFont(f);
-        lbl->setText("Available variables: ");
-        QLineEdit *line =new  QLineEdit(wdg);
+        lbl->setText(" Available variables: ");
+        QLineEdit *line =new  QLineEdit(widget);
         line->setFont(f);
         line->setGeometry(170,5,170,20);
         line->setReadOnly(true);
         QString var;
-        auto temp = getVariables();
+        auto temp = getVariableNames();
         for (int i = 0; i<temp.size(); i++) {
             if (i == temp.size()-1) var += temp[i];
             else var += temp[i] + ", ";
@@ -304,11 +256,13 @@ void Node::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
                                 "QLineEdit:focus { "
                                 "background-color:rgb(255,255,255);}"
                                 );
-        QLabel *lblA = new QLabel(wdg);
-        lblA->setText("Enter variables which\nare 'TRUE': ");
+
+        //TRUE
+        QLabel *lblA = new QLabel(widget);
+        lblA->setText(" Enter variables which\n are 'TRUE': ");
         lblA->setGeometry(2,40,196,50);
         lblA->setFont(f);
-        QLineEdit *lineA =new  QLineEdit(wdg);
+        lineA = new  QLineEdit(widget);
         lineA->setFont(f);
         lineA->setGeometry(170,43,170,20);
         lineA->setStyleSheet("QLineEdit{ "
@@ -322,11 +276,13 @@ void Node::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
                                 "background-color:rgb(255,255,255);}"
                                 );
 
-        QLabel *lblB = new QLabel(wdg);
-        lblB->setText("Enter variables which\nare 'FALSE': ");
+
+        //FALSE
+        QLabel *lblB = new QLabel(widget);
+        lblB->setText(" Enter variables which\n are 'FALSE': ");
         lblB->setGeometry(2,100,196,50);
         lblB->setFont(f);
-        QLineEdit *lineB =new  QLineEdit(wdg);
+        lineB =new  QLineEdit(widget);
         lineB->setFont(f);
         lineB->setGeometry(170,103,170,20);
         lineB->setStyleSheet("QLineEdit{ "
@@ -339,14 +295,52 @@ void Node::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
                                 "QLineEdit:focus { "
                                 "background-color:rgb(255,255,255);}"
                                 );
-        QPushButton *btn = new QPushButton(wdg);
-        btn->setText("Sumbit");
-        btn->setGeometry(178,150, 150,30);
+
+        QPushButton *btn = new QPushButton(widget);
+        btn->setText("Submit new values");
+        btn->setGeometry(183,167,150,30);
         btn->setFont(f);
-        foreach (auto i, worldVariables) {
-            wdg->show();
-        }
+        QObject::connect(btn, SIGNAL(released()), this, SLOT(changeValue()));
+
+        QPushButton *btnA = new QPushButton(widget);
+        btnA->setText("List old values");
+        btnA->setGeometry(5,167,150,30);
+        btnA->setFont(f);
+        QObject::connect(btnA, SIGNAL(released()), this, SLOT(listValue()));
+        widget->show();
     }
+    else if(path != "UniverseConfig.json") {
+        QWidget *wdg = new QWidget;
+        wdg->setWindowTitle("World  \"" + this->worldName + "\" ");
+        wdg->resize(200, 200);
+        QString temp;
+        for (QMap<QString, bool> mapa : this->worldVariables) {
+            QMap<QString, bool>::iterator i;
+            for (i = mapa.begin(); i != mapa.end(); ++i) {
+                QString variable, value;
+                if (this->worldVariables.size() >= 5) wdg->resize(250,400);
+                variable = i.key();
+                if (i.value()) value = "True";
+                else value = "False";
+                temp += " " + variable + " : " + value + "\n";
+            }
+        }
+        QLabel *label = new QLabel(wdg);
+        QFont f("Times New Roman", 17, QFont::Bold);
+        label->setFont(f);
+        label->setText(temp);
+        wdg->show();
+    }
+}
+
+void Node::mousePressEvent(QGraphicsSceneMouseEvent *event)
+{
+   update();
+   QGraphicsItem::mousePressEvent(event);
+}
+
+void Node::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
+{
     update();
     QGraphicsItem::mouseReleaseEvent(event);
 }
@@ -392,7 +386,96 @@ QList<QString> Node::getAdjacentWorlds() {
 }
 
 void Node::changeValue() {
-    //label->setText(variable + "Proa");
- //  qDebug()<<variable;
-  // qDebug() << value;
+    auto allVariables = getVariableNames();
+    bool condA = true;
+    bool condB = true;
+    bool condD = true;
+    bool condC = true;
+    QWidget *msg = new QWidget;
+    msg->setWindowTitle("Error");
+    msg->resize(400, 60);
+    QLabel *label = new QLabel(msg);
+    QFont f("Times New Roman", 12, QFont::Bold);
+    label->setFont(f);
+    QList<QString> trueVar;
+    QList<QString> falseVar;
+    QString trueV = lineA->text();
+    QString falseV = lineB->text();
+    if(trueV.size() != 0) trueVar.append(trueV.split(','));
+    if(falseV.size() != 0) falseVar.append(falseV.split(','));
+
+    if (trueVar.size() != 0 && falseVar.size() != 0) {
+        for (int i = 0; i<trueVar.size(); i++) {
+            for (int j = 0; j<falseVar.size(); j++) {
+                if (trueVar[i] == falseVar[j]) condA = false;
+            }
+        }
+    }
+
+    if (trueVar.size() + falseVar.size() == allVariables.size()) {
+        qStableSort(allVariables.begin(), allVariables.end());
+        QList<QString> temp = trueVar + falseVar;
+         qStableSort(temp.begin(), temp.end());
+         if (temp != allVariables) condC = false;
+    }
+    if(trueVar.size() + falseVar.size() > allVariables.size()) condD = false;
+    if(trueVar.size() + falseVar.size() < allVariables.size()) condB = false;
+    if (condA && condB && condC && condD) {
+        QMap<QString, bool> map;
+        foreach (auto i, trueVar) {
+            map.clear();
+            map.insert(i, 1);
+            addVariable(map);
+        }
+        foreach (auto i, falseVar) {
+            map.clear();
+            map.insert(i, 0);
+            addVariable(map);
+        }
+        listValue();
+        widget->close();
+    }
+    else if (!condA) {
+        label->setText("  Variable can't be TRUE and FALSE at the same time!");
+        msg->show();
+    }
+    else if (!condB) {
+        label->setText("  You didn't choose value for all variables!");
+        msg->resize(300, 60);
+        msg->show();
+    }
+    else if (!condC) {
+         label->setText("  Some of the entered variables do not exist!");
+         msg->resize(300, 60);
+         msg->show();
+    }
+    else if (!condD) {
+         label->setText("  You entered extra variables!");
+         msg->resize(300, 60);
+         msg->show();
+    }
+}
+
+void Node::listValue() {
+    widget->close();
+    QWidget *wdg = new QWidget;
+    wdg->setWindowTitle("World  \"" + this->worldName + "\" ");
+    wdg->resize(200, 200);
+    QString temp;
+    for (QMap<QString, bool> mapa : this->worldVariables) {
+        QMap<QString, bool>::iterator i;
+        for (i = mapa.begin(); i != mapa.end(); ++i) {
+            QString variable, value;
+            if (this->worldVariables.size() >= 5) wdg->resize(200,400);
+            variable = i.key();
+            if (i.value()) value = "True";
+            else value = "False";
+            temp += " " + variable + " : " + value + "\n";
+        }
+    }
+    QLabel *label = new QLabel(wdg);
+    QFont f("Times New Roman", 17, QFont::Bold);
+    label->setFont(f);
+    label->setText(temp);
+    wdg->show();
 }

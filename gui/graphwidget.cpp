@@ -109,11 +109,8 @@ QList<QString> variables;
          n->setName("w" + QString::number(i));
          setNewNodes(n);
          x += 100; i++;
-         QMap<QString, bool> value;
-         foreach(auto a , variables) {
-             value.clear();
-             value.insert(a, false);
-             n->addVariable(value);
+         foreach (auto i, variables) {
+             n->setVariableNames(i);
          }
          this->scene->setSceneRect(-250,-250, 600, 600 - (i - 0.9));
          scene->addItem(n);
@@ -180,11 +177,8 @@ QList<QString> variables;
          n->setName("w" + QString::number(i));
          setNewNodes(n);
          x += 100; i++;
-         QMap<QString, bool> value;
-         foreach(auto a , variables) {
-            value.clear();
-            value.insert(a, false);
-            n->addVariable(value);
+         foreach (auto i, variables) {
+             n->setVariableNames(i);
          }
          this->scene->setSceneRect(-250,-250, 600, 600 - (z - 0.9));
          z++;
