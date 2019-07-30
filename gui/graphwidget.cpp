@@ -45,6 +45,7 @@ QList<QString> variables;
  // uradiiti validaciju pri čitanju i kreiranju json
 
  GraphWidget::GraphWidget(QWidget *parent) : QGraphicsView(parent),timerId(0){
+     setWindowFlags(Qt::Dialog | Qt::MSWindowsFixedSizeDialogHint);
      first = new Node(this);
      second = new Node(this);
      scene = new QGraphicsScene(this);

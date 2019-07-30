@@ -89,11 +89,21 @@ void MainWindow::on_lineEdit_2_editingFinished() {
 }
 
 void MainWindow::on_lineEdit_4_editingFinished() {
+
     QString variables = ui->lineEdit_4->text();
     ui->lineEdit_7->setText(variables);
     QList<QString> varNames;
     varNames.append(variables.split(','));
     setVarNames(varNames);
+    QList<QString> temp = getNamesOfTheWorlds();
+    if (temp.size() != 0 && adjcWorlds.size() == 0) {
+        ui->comboBox_2->clear();
+        ui->comboBox_3->clear();
+        for (int i=0; i<getNumOfWorlds(); i++) {
+            ui->comboBox_2->addItem(temp[i]);
+            ui->comboBox_3->addItem(temp[i]);
+        }
+    }
 }
 
 void MainWindow::on_pushButton_clicked() {
@@ -183,6 +193,9 @@ void MainWindow::on_pushButton_clicked() {
             label->setText("  JSON file created successfully!");
             wdg->show();
         }
+        ui->lineEdit->clear();
+        ui->lineEdit_2->clear();
+        ui->lineEdit_4->clear();
     }
 }
 
@@ -234,6 +247,8 @@ void MainWindow::on_pushButton_2_clicked() {
         msg->show();
     }
     if (ui->comboBox_2->count() == 0) ui->pushButton_2->setDisabled(true);
+    if (ui->comboBox_3->count() == 0 && ui->comboBox_2->count() == 0) ui->pushButton->setDisabled(false);
+
 }
 
 void MainWindow::on_pushButton_3_clicked() {
@@ -296,7 +311,8 @@ void MainWindow::on_pushButton_3_clicked() {
          setValueOfVarible(varValue);
          ui->lineEdit_5->clear();
          ui->lineEdit_6->clear();
-         if (ui->comboBox_3->count() == 0) {
+
+         if (ui->comboBox_3->count() == 0 && ui->comboBox_2->count() == 0) {
              ui->pushButton->setDisabled(false);
              ui->pushButton->setToolTip("");
          }
