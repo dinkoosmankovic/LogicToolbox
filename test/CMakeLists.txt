@@ -1,6 +1,7 @@
 
 # Specify .cpp files
 set(TARGET_NAME LogicToolbox)
+
 set(MODULE_NAME ModuleOne)
 set(SRC hello.cpp)
 set (CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)

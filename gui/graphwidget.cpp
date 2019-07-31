@@ -30,7 +30,7 @@
 #include <QGroupBox>
 #include <QMouseEvent>
 #include <QLineEdit>
-
+#include <ctime>
 #include "mainwindow.h"
 #include "graphwidget.h"
 #include "node.h"
@@ -60,10 +60,10 @@ QList<QString> variables;
      setMinimumSize(800,950);
 
      //Creating buttons
+
      QPushButton *load = createButton(this, "Load .json file", 5,36);
      connect(load, SIGNAL (released()), this, SLOT(loadFile()));
      load->setToolTip("All nodes in the graph are movable!");
-
      QPushButton *create = createButton(this, "Create .json file", 180, 36);
      connect(create, SIGNAL (released()), this, SLOT(createFile()));
 
@@ -77,6 +77,7 @@ QList<QString> variables;
  }
 
  void GraphWidget::loadFile() {
+     clock_t v1 = clock();
      static int i = 1;
      QString file = QFileDialog::getOpenFileName(this,tr("Open"),"",tr("LogicToolbox (*.json)"));
      pathLoc = file;
@@ -89,6 +90,9 @@ QList<QString> variables;
      JSONParser();
      this->scene->setSceneRect(-250,-250, 600, 600 - (i - 0.9));
      i++;
+     clock_t v2 = clock();
+
+          qDebug()<< "Ukupno: " << (v2 - v1) / (CLOCKS_PER_SEC / 1000) << ".ms";
  }
 
  void GraphWidget::createFile() {
