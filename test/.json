@@ -1,0 +1,42 @@
+{
+    "Logic": "K",
+    "Name": "mxmx",
+    "VariableNames": [
+        "a",
+        "b"
+    ],
+    "Worlds": [
+        {
+            "AdjWorlds": [
+                "y"
+            ],
+            "Name": "x",
+            "Variables": [
+                {
+                    "Name": "a",
+                    "Value": true
+                },
+                {
+                    "Name": "b",
+                    "Value": true
+                }
+            ]
+        },
+        {
+            "AdjWorlds": [
+                "x"
+            ],
+            "Name": "y",
+            "Variables": [
+                {
+                    "Name": "a",
+                    "Value": false
+                },
+                {
+                    "Name": "b",
+                    "Value": false
+                }
+            ]
+        }
+    ]
+}

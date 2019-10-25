@@ -5,14 +5,19 @@
 
 Run commands:
 
-  $ mkdir -p build/Release
+  $ mkdir build
 
-  $ cd build/Release
+  $ cd build
 
-  $ cmake ../..
+  $ cmake --DCMAKE_INSTALL_PREFIX=../installed ..
+  
+  $ make install
 
+  $ cmake .
+  
   $ make
 
+In order to configure project successfully in Qt Creator it is necessary to check "Select all kits" and then "Cofigure project".
 
 # 2. Building docs
 

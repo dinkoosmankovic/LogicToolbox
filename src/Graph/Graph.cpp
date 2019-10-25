@@ -68,11 +68,8 @@ bool Graph::saveImage(string FILE_PATH)
 void Graph::AddResults(ResultTree resultTree) {
 
     if(agraph == nullptr) throw logic_error("Agraph_t doesn't exist!");
-
     agattr(agraph,AGNODE,"color","black");
-
     auto rootResult = resultTree.getFinalResult();
-
     for(auto i = rootResult.begin(); i != rootResult.end(); i++){
         char* color = (i->second? const_cast<char*>("green"): const_cast<char*>("red"));
         agset(nodes[i->first],"color",color);

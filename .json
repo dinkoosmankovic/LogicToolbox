@@ -1,0 +1,27 @@
+{
+    "Logic": "K",
+    "Name": "UNiverse",
+    "VariableNames": [
+        "a",
+        "b",
+        "c"
+    ],
+    "Worlds": [
+        {
+            "AdjWorlds": [
+                "y"
+            ],
+            "Name": "x",
+            "Variables": [
+            ]
+        },
+        {
+            "AdjWorlds": [
+                "x"
+            ],
+            "Name": "y",
+            "Variables": [
+            ]
+        }
+    ]
+}

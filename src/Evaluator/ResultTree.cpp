@@ -16,6 +16,7 @@ ResultTree::ResultTree(Universe *universe, Expression e){
                 //Check if variable exists in universe
                 bool exists = false;
                 for(string name : universe->getVariableNames()){
+
                     if(name == i->value) {exists = true; break;}
                 }
 
