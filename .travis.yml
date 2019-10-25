@@ -5,7 +5,7 @@ sudo: required
 before_install:
   - sudo apt-get install graphviz graphviz-dev cmake
   - sudo apt-get install libgtest-dev libc6 libc6-dev
-  - sudo apt-get install qtbase5-dev
+  - sudo apt-get install qtbase5-dev qt5-default
   
 # Enable C++ support
 language: cpp
