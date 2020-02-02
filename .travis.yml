@@ -32,5 +32,4 @@ install:
 script:
   - mkdir build
   - cd build
-  - ${DEPS_DIR}/cmake/bin/cmake .. && make
-  - make check
+  - ${DEPS_DIR}/cmake/bin/cmake .. && make && make check
